@@ -43,7 +43,8 @@ test.skipIf(process.platform === 'win32')('loadOrCreateInstallationId persists a
     if (process.platform !== 'win32') {
       assert.equal(fs.statSync(filePath).mode & 0o777, 0o600)
     }
-  }))
+  })
+)
 
 test('loadOrCreateInstallationId tightens an existing identity file', () =>
   withTempDir(directory => {

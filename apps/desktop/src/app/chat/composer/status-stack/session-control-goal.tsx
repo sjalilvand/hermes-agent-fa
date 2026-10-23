@@ -582,7 +582,9 @@ export const SessionControlGoalSection = memo(function SessionControlGoalSection
                 </div>
                 <div className="mt-0.5 text-foreground/90 leading-relaxed">
                   {goal.wait_barrier.type === 'until' &&
-                    ctrl.waitUntil(new Date(goal.wait_barrier.until_at * 1000).toLocaleTimeString(getRuntimeI18nLocale()))}
+                    ctrl.waitUntil(
+                      new Date(goal.wait_barrier.until_at * 1000).toLocaleTimeString(getRuntimeI18nLocale())
+                    )}
                   {goal.wait_barrier.type === 'session' && ctrl.waitSession(goal.wait_barrier.target)}
                   {goal.wait_barrier.type === 'pid' && ctrl.waitPid(goal.wait_barrier.target)}
                   {goal.wait_barrier.reason && (

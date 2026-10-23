@@ -153,137 +153,140 @@ test('channel packaging reuses admitted identity and rejects unsupported or unsa
   }, /identity/)
 })
 
-test('channel stamps verify the real checkout and retain source version and native ownership', { timeout: 120_000 }, async (): Promise<void> => {
-  const {
-    resolveStamp,
-    buildStampPayload,
-    writeDesktopStamp
-  }: {
-    resolveStamp: (options: { env: NodeJS.ProcessEnv; repoRoot: string }) => InstallStamp
-    buildStampPayload: (
-      stamp: InstallStamp,
-      env: NodeJS.ProcessEnv,
-      platform: string,
-      payload: StampPayload
-    ) => InstallStamp
-    writeDesktopStamp: (directory: string, stamp: InstallStamp) => void
-  } = await import('../scripts/write-build-stamp.mjs')
-
-  const dir: string = fs.mkdtempSync(path.join(os.tmpdir(), 'channel-stamp-'))
-
-  try {
-    execFileSync('git', ['init', '-q', dir])
-    execFileSync(
-      'git',
-      [
-        '-c',
-        'user.name=Fixture',
-        '-c',
-        'user.email=fixture@example.test',
-        '-c',
-        'commit.gpgsign=false',
-        'commit',
-        '--allow-empty',
-        '-qm',
-        'fixture'
-      ],
-      { cwd: dir }
-    )
-
-    const build: ChannelBuildRequest = {
-      ...request(),
-      commit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: dir, encoding: 'utf8' }).trim()
-    }
-
-    const env: NodeJS.ProcessEnv = {
-      ...process.env,
-      HERMES_DESKTOP_VARIANT: 'bundled',
-      _HERMES_CHANNEL_REQUEST_JSON: JSON.stringify(build),
-      GITHUB_SHA: 'd'.repeat(40)
-    }
-
-    const provenance: InstallStamp = resolveStamp({ env, repoRoot: dir })
-    const payload: StampPayload = { runtime: { repoDir: 'repo', commands: { hermes: 'bin/hermes' } } }
-    const built: InstallStamp = buildStampPayload(provenance, env, 'darwin', payload)
-    assert.equal(built.source, 'channel-build')
-    assert.equal(built.updateMechanism, 'electron-updater')
-    assert.equal(built.baseVersion, build.sourceVersion)
-    assert.equal(built.tag, null)
-    assert.equal(built.receiverProtocol, 1)
-    assert.deepEqual(built.channelBuild, build)
-    assert.ok(Object.isFrozen(built.channelBuild?.identity))
-    fs.mkdirSync(path.join(dir, 'out/agent-payload/repo'), { recursive: true })
-    writeDesktopStamp(path.join(dir, 'out'), built)
-    assert.deepEqual(
-      JSON.parse(fs.readFileSync(path.join(dir, 'out/install-stamp.json'), 'utf8')),
-      JSON.parse(fs.readFileSync(path.join(dir, 'out/agent-payload/repo/install-stamp.json'), 'utf8'))
-    )
-    assert.throws((): void => {
-      resolveStamp({ env: { ...env, _HERMES_CHANNEL_REQUEST_JSON: JSON.stringify(request()) }, repoRoot: dir })
-    }, /checkout/)
-    delete process.env._HERMES_CHANNEL_REQUEST_JSON
-    process.env.HERMES_PAYLOAD_TAG = 'v0.0.1'
-    delete require.cache[require.resolve('../product-identity.cjs')]
-    const official: ProductIdentity = require('../product-identity.cjs')
-    delete process.env.HERMES_PAYLOAD_TAG
-
-    const receiver: ChannelBuildRequest = {
-      ...build,
-      channel: 'stable',
-      sequence: 1,
-      version: '0.0.1',
-      windowsVersion: '0.0.1.0',
-      releaseTag: 'v0.0.1',
-      receiverCandidate: true,
-      bundleEnv: {},
-      publicBase: 'https://builds.example.test/ci-disposable/1/2',
-      identity: { ...official, token: build.identity.token }
-    }
-
-    const receiverEnv: NodeJS.ProcessEnv = { ...env, _HERMES_CHANNEL_REQUEST_JSON: JSON.stringify(receiver) }
-
-    const stable: InstallStamp = buildStampPayload(
-      resolveStamp({ env: receiverEnv, repoRoot: dir }),
-      receiverEnv,
-      'darwin',
-      payload
-    )
-
-    assert.equal(stable.channelBuild, undefined)
-    assert.equal(stable.source, 'build')
-    assert.equal(stable.tag, receiver.releaseTag)
-    assert.equal(stable.displayVersion, receiver.version)
-    assert.equal(stable.updateMechanism, 'electron-updater')
-    const packaged: PackagingFacts = load(receiver)
-    assert.deepEqual(packaged.config.mac?.publish, [
-      { provider: 'generic', url: `${receiver.publicBase}/releases/darwin/stable/`, channel: 'stable' }
-    ])
-
+test(
+  'channel stamps verify the real checkout and retain source version and native ownership',
+  { timeout: 120_000 },
+  async (): Promise<void> => {
     const {
-      verifyBundleStamp
+      resolveStamp,
+      buildStampPayload,
+      writeDesktopStamp
     }: {
-      verifyBundleStamp: (
+      resolveStamp: (options: { env: NodeJS.ProcessEnv; repoRoot: string }) => InstallStamp
+      buildStampPayload: (
         stamp: InstallStamp,
-        options: {
-          commit: string
-          platform: string
-          channelRequest: ChannelBuildRequest
-        }
-      ) => string
-    } = await import('../../../tests/install/e2e-assets/bundle-smoke-metadata.mjs')
+        env: NodeJS.ProcessEnv,
+        platform: string,
+        payload: StampPayload
+      ) => InstallStamp
+      writeDesktopStamp: (directory: string, stamp: InstallStamp) => void
+    } = await import('../scripts/write-build-stamp.mjs')
 
-    assert.equal(
-      verifyBundleStamp(stable, { commit: receiver.commit, platform: 'darwin', channelRequest: receiver }),
-      receiver.version
-    )
-    assert.throws((): void => {
-      verifyBundleStamp(built, { commit: receiver.commit, platform: 'darwin', channelRequest: receiver })
-    })
-    execFileSync(
-      process.env.HERMES_PYTHON || 'python3',
-      [
-        '-c',
-        `
+    const dir: string = fs.mkdtempSync(path.join(os.tmpdir(), 'channel-stamp-'))
+
+    try {
+      execFileSync('git', ['init', '-q', dir])
+      execFileSync(
+        'git',
+        [
+          '-c',
+          'user.name=Fixture',
+          '-c',
+          'user.email=fixture@example.test',
+          '-c',
+          'commit.gpgsign=false',
+          'commit',
+          '--allow-empty',
+          '-qm',
+          'fixture'
+        ],
+        { cwd: dir }
+      )
+
+      const build: ChannelBuildRequest = {
+        ...request(),
+        commit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: dir, encoding: 'utf8' }).trim()
+      }
+
+      const env: NodeJS.ProcessEnv = {
+        ...process.env,
+        HERMES_DESKTOP_VARIANT: 'bundled',
+        _HERMES_CHANNEL_REQUEST_JSON: JSON.stringify(build),
+        GITHUB_SHA: 'd'.repeat(40)
+      }
+
+      const provenance: InstallStamp = resolveStamp({ env, repoRoot: dir })
+      const payload: StampPayload = { runtime: { repoDir: 'repo', commands: { hermes: 'bin/hermes' } } }
+      const built: InstallStamp = buildStampPayload(provenance, env, 'darwin', payload)
+      assert.equal(built.source, 'channel-build')
+      assert.equal(built.updateMechanism, 'electron-updater')
+      assert.equal(built.baseVersion, build.sourceVersion)
+      assert.equal(built.tag, null)
+      assert.equal(built.receiverProtocol, 1)
+      assert.deepEqual(built.channelBuild, build)
+      assert.ok(Object.isFrozen(built.channelBuild?.identity))
+      fs.mkdirSync(path.join(dir, 'out/agent-payload/repo'), { recursive: true })
+      writeDesktopStamp(path.join(dir, 'out'), built)
+      assert.deepEqual(
+        JSON.parse(fs.readFileSync(path.join(dir, 'out/install-stamp.json'), 'utf8')),
+        JSON.parse(fs.readFileSync(path.join(dir, 'out/agent-payload/repo/install-stamp.json'), 'utf8'))
+      )
+      assert.throws((): void => {
+        resolveStamp({ env: { ...env, _HERMES_CHANNEL_REQUEST_JSON: JSON.stringify(request()) }, repoRoot: dir })
+      }, /checkout/)
+      delete process.env._HERMES_CHANNEL_REQUEST_JSON
+      process.env.HERMES_PAYLOAD_TAG = 'v0.0.1'
+      delete require.cache[require.resolve('../product-identity.cjs')]
+      const official: ProductIdentity = require('../product-identity.cjs')
+      delete process.env.HERMES_PAYLOAD_TAG
+
+      const receiver: ChannelBuildRequest = {
+        ...build,
+        channel: 'stable',
+        sequence: 1,
+        version: '0.0.1',
+        windowsVersion: '0.0.1.0',
+        releaseTag: 'v0.0.1',
+        receiverCandidate: true,
+        bundleEnv: {},
+        publicBase: 'https://builds.example.test/ci-disposable/1/2',
+        identity: { ...official, token: build.identity.token }
+      }
+
+      const receiverEnv: NodeJS.ProcessEnv = { ...env, _HERMES_CHANNEL_REQUEST_JSON: JSON.stringify(receiver) }
+
+      const stable: InstallStamp = buildStampPayload(
+        resolveStamp({ env: receiverEnv, repoRoot: dir }),
+        receiverEnv,
+        'darwin',
+        payload
+      )
+
+      assert.equal(stable.channelBuild, undefined)
+      assert.equal(stable.source, 'build')
+      assert.equal(stable.tag, receiver.releaseTag)
+      assert.equal(stable.displayVersion, receiver.version)
+      assert.equal(stable.updateMechanism, 'electron-updater')
+      const packaged: PackagingFacts = load(receiver)
+      assert.deepEqual(packaged.config.mac?.publish, [
+        { provider: 'generic', url: `${receiver.publicBase}/releases/darwin/stable/`, channel: 'stable' }
+      ])
+
+      const {
+        verifyBundleStamp
+      }: {
+        verifyBundleStamp: (
+          stamp: InstallStamp,
+          options: {
+            commit: string
+            platform: string
+            channelRequest: ChannelBuildRequest
+          }
+        ) => string
+      } = await import('../../../tests/install/e2e-assets/bundle-smoke-metadata.mjs')
+
+      assert.equal(
+        verifyBundleStamp(stable, { commit: receiver.commit, platform: 'darwin', channelRequest: receiver }),
+        receiver.version
+      )
+      assert.throws((): void => {
+        verifyBundleStamp(built, { commit: receiver.commit, platform: 'darwin', channelRequest: receiver })
+      })
+      execFileSync(
+        process.env.HERMES_PYTHON || 'python3',
+        [
+          '-c',
+          `
 import json, sys
 from scripts.bundles.release_artifacts import stamp_matches
 stamp, request = json.loads(sys.argv[1]), json.loads(sys.argv[2])
@@ -296,15 +299,16 @@ except ValueError:
 else:
     raise AssertionError('receiver accepted preview updater ownership')
 `,
-        JSON.stringify(stable),
-        JSON.stringify(receiver)
-      ],
-      { cwd: repo }
-    )
-  } finally {
-    fs.rmSync(dir, { recursive: true, force: true })
+          JSON.stringify(stable),
+          JSON.stringify(receiver)
+        ],
+        { cwd: repo }
+      )
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true })
+    }
   }
-})
+)
 
 // Four real manifest/recording pairs cross Node and Python process boundaries.
 test('actual MSIX manifest writer consumes the channel quad across rollover instead of semver patch', (): void => {
@@ -357,10 +361,7 @@ test('actual MSIX manifest writer consumes the channel quad across rollover inst
     // Windows host without it, it demands a real *-unpacked/<exe> binary to
     // query, which this manifest-level fixture never builds. Ship the sidecar
     // the production recorder prefers.
-    fs.writeFileSync(
-      path.join(root, 'version-info-x64.json'),
-      JSON.stringify({ productVersion: '0.0.65535.0' })
-    )
+    fs.writeFileSync(path.join(root, 'version-info-x64.json'), JSON.stringify({ productVersion: '0.0.65535.0' }))
 
     fs.symlinkSync(path.join(repo, 'node_modules'), path.join(root, 'node_modules'), 'junction')
     const assets: string = path.join(app, 'assets/appx')

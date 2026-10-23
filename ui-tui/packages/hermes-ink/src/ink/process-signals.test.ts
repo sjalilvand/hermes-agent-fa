@@ -25,7 +25,7 @@ function createRecorder(): SignalTarget & {
       calls.push({ method: 'off', signal, listener })
 
       return undefined
-    },
+    }
   }
 }
 

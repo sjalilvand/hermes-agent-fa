@@ -246,7 +246,6 @@ export function RemoteFolderPicker() {
                   </Button>
                 </div>
                 {newFolderError && <div className="mt-1 ps-6 text-xs text-destructive">{newFolderError}</div>}
-
               </div>
             )}
             {loading ? (

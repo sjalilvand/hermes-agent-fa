@@ -42,20 +42,25 @@ function localeFormatter(make: (tag: string) => Intl.DateTimeFormat): Intl.DateT
 export const fmtClock = localeFormatter(tag => new Intl.DateTimeFormat(tag, { hour: 'numeric', minute: '2-digit' }))
 
 // Compact "day + clock", no year/seconds (artifacts, thread fallback, cron runs).
-export const fmtDayTime = localeFormatter(tag =>
-  new Intl.DateTimeFormat(tag, {
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    month: 'short'
-  })
+export const fmtDayTime = localeFormatter(
+  tag =>
+    new Intl.DateTimeFormat(tag, {
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      month: 'short'
+    })
 )
 
 // Medium date + short time (command center session detail).
-export const fmtDateTime = localeFormatter(tag => new Intl.DateTimeFormat(tag, { dateStyle: 'medium', timeStyle: 'short' }))
+export const fmtDateTime = localeFormatter(
+  tag => new Intl.DateTimeFormat(tag, { dateStyle: 'medium', timeStyle: 'short' })
+)
 
 // Date only, "5 Jun 2026" (starmap tooltip).
-export const fmtDate = localeFormatter(tag => new Intl.DateTimeFormat(tag, { day: 'numeric', month: 'short', year: 'numeric' }))
+export const fmtDate = localeFormatter(
+  tag => new Intl.DateTimeFormat(tag, { day: 'numeric', month: 'short', year: 'numeric' })
+)
 
 // Month name alone / with year — session-list date-bucket dividers ("September",
 // "September 2025").

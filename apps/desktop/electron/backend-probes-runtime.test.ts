@@ -19,29 +19,31 @@ interface RuntimeFixture {
   dependencies: string
 }
 
-test.skipIf(process.platform === 'win32')('the real bootstrap supplies ruamel-only dependencies and rejects foreign-path rescue', async (): Promise<void> => {
-  // The fixture drives the POSIX venv layout directly (seed/bin/python,
-  // site-packages .pth wiring, junctionless symlinks); the selected-environment
-  // rescue it exercises is also built around POSIX paths. Windows has its own
-  // probe specs (Scripts/python.exe layouts) in backend-probes.test.ts.
-  const temp: string = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-probe-runtime-'))
-  const home: string = path.join(temp, 'home')
+test.skipIf(process.platform === 'win32')(
+  'the real bootstrap supplies ruamel-only dependencies and rejects foreign-path rescue',
+  async (): Promise<void> => {
+    // The fixture drives the POSIX venv layout directly (seed/bin/python,
+    // site-packages .pth wiring, junctionless symlinks); the selected-environment
+    // rescue it exercises is also built around POSIX paths. Windows has its own
+    // probe specs (Scripts/python.exe layouts) in backend-probes.test.ts.
+    const temp: string = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-probe-runtime-'))
+    const home: string = path.join(temp, 'home')
 
-  const env: NodeJS.ProcessEnv = {
-    ...process.env,
-    HOME: home,
-    HERMES_HOME: home,
-    HERMES_RUNTIME_DIR: path.join(temp, 'tools'),
-    HERMES_DISABLE_LAZY_INSTALLS: '1',
-    UV_CACHE_DIR: path.join(temp, 'cache'),
-    UV_NO_CONFIG: '1',
-    PYTHONPATH: '',
-    PYTHONHOME: '',
-    PYTHONDONTWRITEBYTECODE: '1',
-    USERPROFILE: home
-  }
+    const env: NodeJS.ProcessEnv = {
+      ...process.env,
+      HOME: home,
+      HERMES_HOME: home,
+      HERMES_RUNTIME_DIR: path.join(temp, 'tools'),
+      HERMES_DISABLE_LAZY_INSTALLS: '1',
+      UV_CACHE_DIR: path.join(temp, 'cache'),
+      UV_NO_CONFIG: '1',
+      PYTHONPATH: '',
+      PYTHONHOME: '',
+      PYTHONDONTWRITEBYTECODE: '1',
+      USERPROFILE: home
+    }
 
-  const setup: string = `
+    const setup: string = `
 import json, os, re, shutil, subprocess, sys, tomllib, venv
 from pathlib import Path
 root, temp = map(Path, sys.argv[1:])
@@ -68,46 +70,48 @@ python = seed / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
 print(json.dumps({'python': str(python), 'site': str(site), 'dependencies': str(dependencies)}))
 `
 
-  try {
-    const fixture: RuntimeFixture = JSON.parse(
-      execFileSync(PYTHON, ['-I', '-c', setup, REPO, temp], {
-        cwd: temp,
-        env,
-        encoding: 'utf8',
-        timeout: 90_000,
-        windowsHide: true
-      })
-    ) as RuntimeFixture
+    try {
+      const fixture: RuntimeFixture = JSON.parse(
+        execFileSync(PYTHON, ['-I', '-c', setup, REPO, temp], {
+          cwd: temp,
+          env,
+          encoding: 'utf8',
+          timeout: 90_000,
+          windowsHide: true
+        })
+      ) as RuntimeFixture
 
-    assert.equal(await canImportHermesCli(fixture.python, { cwd: REPO, env }), true)
-    assert.equal(
-      await canImportHermesCli(fixture.python, {
-        cwd: REPO,
-        env: { ...env, PYTHONHOME: path.join(temp, 'foreign-home') }
-      }),
-      true,
-      'Python home overrides must be scrubbed before the interpreter starts'
-    )
+      assert.equal(await canImportHermesCli(fixture.python, { cwd: REPO, env }), true)
+      assert.equal(
+        await canImportHermesCli(fixture.python, {
+          cwd: REPO,
+          env: { ...env, PYTHONHOME: path.join(temp, 'foreign-home') }
+        }),
+        true,
+        'Python home overrides must be scrubbed before the interpreter starts'
+      )
 
-    fs.unlinkSync(path.join(fixture.site, 'selected-dependencies.pth'))
-    const foreign: string = path.join(temp, 'foreign-packages')
-    fs.symlinkSync(fixture.dependencies, foreign, process.platform === 'win32' ? 'junction' : 'dir')
-    assert.equal(
-      await canImportHermesCli(fixture.python, {
-        cwd: REPO,
-        env: { ...env, PYTHONPATH: foreign }
-      }),
-      false,
-      'foreign dependencies must not conceal an empty selected environment'
-    )
-    assert.equal(
-      await canImportHermesCli(fixture.python, {
-        cwd: REPO,
-        env: { ...env, PYTHONHOME: path.join(temp, 'foreign-home') }
-      }),
-      false
-    )
-  } finally {
-    fs.rmSync(temp, { recursive: true, force: true, maxRetries: 3 })
-  }
-}, 120_000)
+      fs.unlinkSync(path.join(fixture.site, 'selected-dependencies.pth'))
+      const foreign: string = path.join(temp, 'foreign-packages')
+      fs.symlinkSync(fixture.dependencies, foreign, process.platform === 'win32' ? 'junction' : 'dir')
+      assert.equal(
+        await canImportHermesCli(fixture.python, {
+          cwd: REPO,
+          env: { ...env, PYTHONPATH: foreign }
+        }),
+        false,
+        'foreign dependencies must not conceal an empty selected environment'
+      )
+      assert.equal(
+        await canImportHermesCli(fixture.python, {
+          cwd: REPO,
+          env: { ...env, PYTHONHOME: path.join(temp, 'foreign-home') }
+        }),
+        false
+      )
+    } finally {
+      fs.rmSync(temp, { recursive: true, force: true, maxRetries: 3 })
+    }
+  },
+  120_000
+)

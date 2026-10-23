@@ -369,62 +369,68 @@ test('open() abort kills an in-flight SSH child instead of waiting for timeout',
   assert.equal(child._killed, true)
 })
 
-test.skipIf(process.platform === 'win32')('open() is a no-op when the master is already alive and execs verify', async () => {
-  const ops: string[] = []
+test.skipIf(process.platform === 'win32')(
+  'open() is a no-op when the master is already alive and execs verify',
+  async () => {
+    const ops: string[] = []
 
-  const spawnFn = scriptedSpawn(args => {
-    ops.push(args.includes('check') ? 'check' : args.includes('exit 0') ? 'verify' : 'master')
+    const spawnFn = scriptedSpawn(args => {
+      ops.push(args.includes('check') ? 'check' : args.includes('exit 0') ? 'verify' : 'master')
 
-    return { code: 0 } // check succeeds → alive; verify exec succeeds → trusted
-  })
+      return { code: 0 } // check succeeds → alive; verify exec succeeds → trusted
+    })
 
-  const conn = new SshConnection({ host: 'box', user: 'me' }, { spawnFn, mux: true, controlDir: '/tmp/d' })
-  await conn.open()
-  assert.deepEqual(ops, ['check', 'verify'], 'alive master is exec-verified, then trusted without reopening')
-})
+    const conn = new SshConnection({ host: 'box', user: 'me' }, { spawnFn, mux: true, controlDir: '/tmp/d' })
+    await conn.open()
+    assert.deepEqual(ops, ['check', 'verify'], 'alive master is exec-verified, then trusted without reopening')
+  }
+)
 
-test.skipIf(process.platform === 'win32')('open() evicts a wedged master (check passes, exec hangs) and dials fresh', async () => {
-  // The macOS mode-switch wedge: ControlPersist master answers -O check but
-  // every exec through it hangs. open() must verify, evict (-O exit), and
-  // establish a fresh master instead of trusting the corpse.
-  const ops: string[] = []
+test.skipIf(process.platform === 'win32')(
+  'open() evicts a wedged master (check passes, exec hangs) and dials fresh',
+  async () => {
+    // The macOS mode-switch wedge: ControlPersist master answers -O check but
+    // every exec through it hangs. open() must verify, evict (-O exit), and
+    // establish a fresh master instead of trusting the corpse.
+    const ops: string[] = []
 
-  const spawnFn = scriptedSpawn(args => {
-    if (args.includes('check')) {
-      ops.push('check')
+    const spawnFn = scriptedSpawn(args => {
+      if (args.includes('check')) {
+        ops.push('check')
+
+        return { code: 0 }
+      }
+
+      if (args.includes('exit 0')) {
+        ops.push('verify')
+
+        return { hang: true }
+      }
+
+      if (args.includes('-O')) {
+        ops.push('evict')
+
+        return { code: 0 }
+      }
+
+      ops.push('master')
 
       return { code: 0 }
-    }
+    })
 
-    if (args.includes('exit 0')) {
-      ops.push('verify')
+    const conn = new SshConnection(
+      { host: 'box', user: 'me' },
+      { spawnFn, mux: true, controlDir: '/tmp/d', connectTimeoutMs: 50 }
+    )
 
-      return { hang: true }
-    }
-
-    if (args.includes('-O')) {
-      ops.push('evict')
-
-      return { code: 0 }
-    }
-
-    ops.push('master')
-
-    return { code: 0 }
-  })
-
-  const conn = new SshConnection(
-    { host: 'box', user: 'me' },
-    { spawnFn, mux: true, controlDir: '/tmp/d', connectTimeoutMs: 50 }
-  )
-
-  await conn.open()
-  assert.deepEqual(
-    ops,
-    ['check', 'verify', 'evict', 'master'],
-    'wedged master: verified, evicted, then a fresh master is dialed'
-  )
-})
+    await conn.open()
+    assert.deepEqual(
+      ops,
+      ['check', 'verify', 'evict', 'master'],
+      'wedged master: verified, evicted, then a fresh master is dialed'
+    )
+  }
+)
 
 test.skipIf(process.platform === 'win32')('close() removes the control socket when -O exit fails', async () => {
   const dir = path.join(os.tmpdir(), `hermes-ssh-close-${process.pid}-${Date.now()}`)
@@ -450,23 +456,26 @@ test.skipIf(process.platform === 'win32')('close() removes the control socket wh
   fs.rmSync(dir, { recursive: true, force: true })
 })
 
-test.skipIf(process.platform === 'win32')('open() creates the control-socket directory if it does not exist', async () => {
-  const dir = path.join(os.tmpdir(), `hermes-ssh-test-${process.pid}-${Date.now()}`)
-  assert.ok(!fs.existsSync(dir), 'precondition: control dir absent')
-  const spawnFn = scriptedSpawn(args => (args.includes('check') ? { code: 255 } : { code: 0 }))
-  const conn = new SshConnection({ host: 'box', user: 'me' }, { spawnFn, mux: true, controlDir: dir })
+test.skipIf(process.platform === 'win32')(
+  'open() creates the control-socket directory if it does not exist',
+  async () => {
+    const dir = path.join(os.tmpdir(), `hermes-ssh-test-${process.pid}-${Date.now()}`)
+    assert.ok(!fs.existsSync(dir), 'precondition: control dir absent')
+    const spawnFn = scriptedSpawn(args => (args.includes('check') ? { code: 255 } : { code: 0 }))
+    const conn = new SshConnection({ host: 'box', user: 'me' }, { spawnFn, mux: true, controlDir: dir })
 
-  try {
-    await conn.open()
-    assert.ok(fs.existsSync(dir), 'open() created the control-socket directory before spawning ssh')
-  } finally {
     try {
-      fs.rmSync(dir, { recursive: true, force: true })
-    } catch {
-      /* ignore */
+      await conn.open()
+      assert.ok(fs.existsSync(dir), 'open() created the control-socket directory before spawning ssh')
+    } finally {
+      try {
+        fs.rmSync(dir, { recursive: true, force: true })
+      } catch {
+        /* ignore */
+      }
     }
   }
-})
+)
 
 test('open() surfaces a classified auth error', async () => {
   const spawnFn = scriptedSpawn(args => {
@@ -731,51 +740,57 @@ test('exec() does not classify a signal death with empty stderr as unreachable',
   )
 })
 
-test.skipIf(process.platform === 'win32')('forward() does not classify a signal death with empty stderr as unreachable', async () => {
-  // Mux lane: the default muxes off on Windows, so without the gate this runs
-  // the no-mux tunnel path instead of the mux -O forward it was written for.
-  const spawnFn = scriptedSpawn([{ signal: 'SIGPIPE', stderr: '' }])
-  const conn = new SshConnection({ host: 'box', user: 'me' }, { spawnFn, controlDir: '/tmp/d' })
+test.skipIf(process.platform === 'win32')(
+  'forward() does not classify a signal death with empty stderr as unreachable',
+  async () => {
+    // Mux lane: the default muxes off on Windows, so without the gate this runs
+    // the no-mux tunnel path instead of the mux -O forward it was written for.
+    const spawnFn = scriptedSpawn([{ signal: 'SIGPIPE', stderr: '' }])
+    const conn = new SshConnection({ host: 'box', user: 'me' }, { spawnFn, controlDir: '/tmp/d' })
 
-  await assert.rejects(
-    () => conn.forward(5000, 6000),
-    (err: any) => assertSignalDeathNotUnreachable(err, 'SIGPIPE')
-  )
-})
+    await assert.rejects(
+      () => conn.forward(5000, 6000),
+      (err: any) => assertSignalDeathNotUnreachable(err, 'SIGPIPE')
+    )
+  }
+)
 
-test.skipIf(process.platform === 'win32')('close() does not report a signal-killed -O exit with empty stderr as unreachable', async () => {
-  // Mux lane: same reason as the forward() gate directly above.
-  const logs: string[] = []
+test.skipIf(process.platform === 'win32')(
+  'close() does not report a signal-killed -O exit with empty stderr as unreachable',
+  async () => {
+    // Mux lane: same reason as the forward() gate directly above.
+    const logs: string[] = []
 
-  const spawnFn = scriptedSpawn(args => {
-    if (args.includes('check')) {
-      return { code: 255 }
-    }
+    const spawnFn = scriptedSpawn(args => {
+      if (args.includes('check')) {
+        return { code: 255 }
+      }
 
-    if (args.includes('-M')) {
-      return { code: 0 }
-    }
+      if (args.includes('-M')) {
+        return { code: 0 }
+      }
 
-    return { signal: 'SIGINT', stderr: '' }
-  })
+      return { signal: 'SIGINT', stderr: '' }
+    })
 
-  const conn = new SshConnection(
-    { host: 'box', user: 'me' },
-    {
-      spawnFn,
-      controlDir: '/tmp/d',
-      controlMasterHolders: createControlMasterHolders(),
-      rememberLog: line => logs.push(line)
-    }
-  )
+    const conn = new SshConnection(
+      { host: 'box', user: 'me' },
+      {
+        spawnFn,
+        controlDir: '/tmp/d',
+        controlMasterHolders: createControlMasterHolders(),
+        rememberLog: line => logs.push(line)
+      }
+    )
 
-  await conn.open()
-  await conn.close()
+    await conn.open()
+    await conn.close()
 
-  const logged = logs.join('\n')
-  assert.match(logged, /SIGINT/)
-  assert.doesNotMatch(logged, /Could not reach/)
-})
+    const logged = logs.join('\n')
+    assert.match(logged, /SIGINT/)
+    assert.doesNotMatch(logged, /Could not reach/)
+  }
+)
 
 test('no-mux open() still classifies a normal non-zero exit with empty stderr as unreachable', async () => {
   const spawnFn = scriptedSpawn([{ code: 255, stderr: '' }])
@@ -1330,23 +1345,26 @@ test.skipIf(process.platform === 'win32')('closing one scope addresses only that
   assert.equal(second._opened, true)
 })
 
-test.skipIf(process.platform === 'win32')('failed ControlMaster close disowns the master instead of retrying it', async () => {
-  // Old contract kept _opened=true for a retry — which left wedged ControlPersist
-  // masters trusted and reattachable (the macOS mode-switch livelock). New
-  // contract: a master that refuses -O exit is disowned — socket dropped,
-  // connection marked closed — so the next open dials fresh.
-  const spawnFn = scriptedSpawn([{ code: 255, stderr: 'master refused exit' }])
+test.skipIf(process.platform === 'win32')(
+  'failed ControlMaster close disowns the master instead of retrying it',
+  async () => {
+    // Old contract kept _opened=true for a retry — which left wedged ControlPersist
+    // masters trusted and reattachable (the macOS mode-switch livelock). New
+    // contract: a master that refuses -O exit is disowned — socket dropped,
+    // connection marked closed — so the next open dials fresh.
+    const spawnFn = scriptedSpawn([{ code: 255, stderr: 'master refused exit' }])
 
-  const conn = new SshConnection(
-    { host: 'box', user: 'me' },
-    { spawnFn, mux: true, controlDir: '/tmp/d', controlMasterHolders: createControlMasterHolders() }
-  )
+    const conn = new SshConnection(
+      { host: 'box', user: 'me' },
+      { spawnFn, mux: true, controlDir: '/tmp/d', controlMasterHolders: createControlMasterHolders() }
+    )
 
-  conn._opened = true
-  await conn.close()
-  assert.equal(conn._opened, false)
-  assert.equal(spawnFn.calls.length, 1)
-})
+    conn._opened = true
+    await conn.close()
+    assert.equal(conn._opened, false)
+    assert.equal(spawnFn.calls.length, 1)
+  }
+)
 
 test('stopTunnelChild waits for process exit', async () => {
   const child: any = new EventEmitter()

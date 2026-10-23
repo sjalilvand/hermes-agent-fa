@@ -383,7 +383,6 @@ export const CatalogBrowser = memo(function CatalogBrowser({
                                 </Button>
                                 <span className="text-xs font-normal text-(--ui-text-tertiary)">
                                   {compactNumber(section.entries.length)}
-
                                 </span>
                               </h3>
                               <Button onClick={() => filters.chooseCategory(section.key)} size="inline" variant="text">

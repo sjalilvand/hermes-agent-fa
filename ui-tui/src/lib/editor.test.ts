@@ -49,10 +49,7 @@ describe('resolveEditor', () => {
 
   it('shell-tokenizes editors with arguments', () => {
     expect(resolveEditor({ EDITOR: 'code --wait', PATH: dir }, POSIX)).toEqual(['code', '--wait'])
-    expect(resolveEditor({ PATH: dir, VISUAL: 'emacsclient -t' }, POSIX)).toEqual([
-      'emacsclient',
-      '-t',
-    ])
+    expect(resolveEditor({ PATH: dir, VISUAL: 'emacsclient -t' }, POSIX)).toEqual(['emacsclient', '-t'])
   })
 
   it('ignores whitespace-only env vars', () => {

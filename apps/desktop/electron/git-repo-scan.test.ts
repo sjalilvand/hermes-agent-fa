@@ -86,23 +86,29 @@ describe('scanGitRepos', () => {
 // path.win32 primitives and NTFS paths make the fixtures unreachable. The
 // win32 containment rule has its own host-native test below.
 describe('macOS TCC-protected media exclusions (issue #57611 salvage)', () => {
-  it.skipIf(process.platform === 'win32')('finds a normal repo but skips root-level media folders on darwin', async () => {
-    const root = tempDir()
-    const dev = makeRepoAt(root, 'dev', 'proj')
-    makeRepoAt(root, 'Pictures', 'wallpapers')
-    makeRepoAt(root, 'Music', 'samples')
-    makeRepoAt(root, 'Movies', 'clips')
-    makeRepoAt(root, 'Public', 'shared')
+  it.skipIf(process.platform === 'win32')(
+    'finds a normal repo but skips root-level media folders on darwin',
+    async () => {
+      const root = tempDir()
+      const dev = makeRepoAt(root, 'dev', 'proj')
+      makeRepoAt(root, 'Pictures', 'wallpapers')
+      makeRepoAt(root, 'Music', 'samples')
+      makeRepoAt(root, 'Movies', 'clips')
+      makeRepoAt(root, 'Public', 'shared')
 
-    expect(foundRoots(await scanGitRepos([root], { enabled: true, platform: 'darwin' }))).toEqual([dev])
-  })
+      expect(foundRoots(await scanGitRepos([root], { enabled: true, platform: 'darwin' }))).toEqual([dev])
+    }
+  )
 
-  it.skipIf(process.platform === 'win32')('still scans a media-named directory below the search root on darwin', async () => {
-    const root = tempDir()
-    const nested = makeRepoAt(root, 'dev', 'Music', 'app')
+  it.skipIf(process.platform === 'win32')(
+    'still scans a media-named directory below the search root on darwin',
+    async () => {
+      const root = tempDir()
+      const nested = makeRepoAt(root, 'dev', 'Music', 'app')
 
-    expect(foundRoots(await scanGitRepos([root], { enabled: true, platform: 'darwin' }))).toEqual([nested])
-  })
+      expect(foundRoots(await scanGitRepos([root], { enabled: true, platform: 'darwin' }))).toEqual([nested])
+    }
+  )
 
   it.skipIf(process.platform === 'win32')('skips Apple media-library packages at any depth on darwin', async () => {
     const root = tempDir()

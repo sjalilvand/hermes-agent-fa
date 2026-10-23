@@ -568,7 +568,8 @@ export const en: Translations = {
       browserModeTitle: 'Opened in a browser, not the desktop app',
       browserModeDescription:
         'This address is only the interface. Hermes Desktop must run in its own window, where the desktop bridge is available. Nothing is broken — open the Hermes Desktop app instead.',
-      browserModeHint: 'Start the desktop app with “npm run dev” (development) or from the Start menu / Applications folder (installed build).',
+      browserModeHint:
+        'Start the desktop app with “npm run dev” (development) or from the Start menu / Applications folder (installed build).',
       browserModeDocs: 'Developer docs'
     }
   },
@@ -3184,8 +3185,7 @@ export const en: Translations = {
         'Set up a WeCom self-built app, expose its callback URL, and provide the corp ID, secret, agent ID, and AES key.',
       weixin:
         "Run `hermes gateway setup`, select Weixin, then scan and confirm the QR code with a personal WeChat account. Hermes connects through Tencent's iLink Bot API and saves the credentials.",
-      qqbot:
-        'Register an app on the QQ Open Platform (q.qq.com) and copy the App ID and Client Secret.',
+      qqbot: 'Register an app on the QQ Open Platform (q.qq.com) and copy the App ID and Client Secret.',
       api_server:
         'Expose Hermes as an OpenAI-compatible API. Set an auth key, then point Open WebUI / LobeChat / etc. at the host:port.',
       webhook:

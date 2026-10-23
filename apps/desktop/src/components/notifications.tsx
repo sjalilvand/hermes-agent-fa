@@ -151,7 +151,6 @@ function TopCenterStack({
             type="button"
             variant="text"
           >
-
             {copy.clearAll}
           </Button>
         </div>

@@ -115,10 +115,8 @@ test('retireIdle honours the pinned-tier eligibility override while every other 
     })
 
     try {
-      await retirer.retireIdle(
-        'pinned',
-        10 * 60_000,
-        candidate => Boolean(candidate.lastStreamedAt && Date.now() - (candidate.lastStreamedAt || 0) > 60 * 60_000)
+      await retirer.retireIdle('pinned', 10 * 60_000, candidate =>
+        Boolean(candidate.lastStreamedAt && Date.now() - (candidate.lastStreamedAt || 0) > 60 * 60_000)
       )
     } finally {
       retirer.dispose()
@@ -127,10 +125,6 @@ test('retireIdle honours the pinned-tier eligibility override while every other 
     // stale-streamed (keepalive-fresh, no streamed turn for 2h) retires;
     // fresh-streamed fails the override and stays; mid-turn is vetoed by the
     // retirer even though the override said yes.
-    assert.deepEqual(
-      stopped,
-      outcome === 'stale-streamed' ? ['pinned'] : [],
-      outcome
-    )
+    assert.deepEqual(stopped, outcome === 'stale-streamed' ? ['pinned'] : [], outcome)
   }
 })

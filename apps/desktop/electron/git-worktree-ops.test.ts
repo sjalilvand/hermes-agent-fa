@@ -127,7 +127,7 @@ test('listBranches: lists locals and flags the checked-out branch', async () => 
     // worktree paths back to the long form; identical to the default on POSIX.
     assert.equal(
       fs.realpathSync.native(branches.find(b => b.name === current).worktreePath),
-      fs.realpathSync.native(dir),
+      fs.realpathSync.native(dir)
     )
     assert.equal(branches.find(b => b.name === 'feature').checkedOut, false)
     assert.equal(branches.find(b => b.name === 'feature').isDefault, false)

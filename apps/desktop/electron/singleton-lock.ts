@@ -11,10 +11,7 @@ import path from 'node:path'
  * shared home directory: a target that does not start with this host's
  * name is not ours to judge, so it parses to null and stays in place.
  */
-export function parseSingletonLockPid(
-  linkTarget: string | null | undefined,
-  hostname: string
-): number | null {
+export function parseSingletonLockPid(linkTarget: string | null | undefined, hostname: string): number | null {
   if (typeof linkTarget !== 'string' || linkTarget === '') {
     return null
   }

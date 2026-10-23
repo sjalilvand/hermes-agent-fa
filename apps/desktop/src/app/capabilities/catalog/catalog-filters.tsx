@@ -46,7 +46,6 @@ function FacetItem({ row, active, onClick }: { row: FacetRow; active: boolean; o
       pressed={active}
       trailing={
         row.count !== undefined ? <SidebarSectionMeta>{compactNumber(row.count)}</SidebarSectionMeta> : undefined
-
       }
     />
   )

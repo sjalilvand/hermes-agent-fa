@@ -152,7 +152,6 @@ test('closed and destroyed windows drop out without throwing', () => {
   assert.deepEqual(closedWin.calls, [true])
 })
 
-
 function makeFullscreenableWindow() {
   const win = makeWindow()
   let fullscreen = false

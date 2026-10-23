@@ -19,15 +19,12 @@ declare module 'bidi-js' {
   }
 
   export interface BidiInstance {
-    getEmbeddingLevels(
-      text: string,
-      direction: 'auto' | 'ltr' | 'rtl',
-    ): BidiEmbeddingLevels
+    getEmbeddingLevels(text: string, direction: 'auto' | 'ltr' | 'rtl'): BidiEmbeddingLevels
     getReorderSegments(
       text: string,
       embeddingLevels: BidiEmbeddingLevels,
       start?: number,
-      end?: number,
+      end?: number
     ): readonly { readonly start: number; readonly end: number }[]
   }
 

@@ -64,24 +64,27 @@ test.skipIf(process.platform === 'win32')('collectSshConfigHosts does not loop o
   assert.deepEqual(hosts.sort(), ['a', 'b'])
 })
 
-test.skipIf(process.platform === 'win32')('collectSshConfigHosts expands globbed includes via injected globSync', () => {
-  const files = {
-    '/home/u/.ssh/config': 'Host root\nInclude config.d/*',
-    '/home/u/.ssh/config.d/10-work': 'Host work',
-    '/home/u/.ssh/config.d/20-home': 'Host home'
+test.skipIf(process.platform === 'win32')(
+  'collectSshConfigHosts expands globbed includes via injected globSync',
+  () => {
+    const files = {
+      '/home/u/.ssh/config': 'Host root\nInclude config.d/*',
+      '/home/u/.ssh/config.d/10-work': 'Host work',
+      '/home/u/.ssh/config.d/20-home': 'Host home'
+    }
+
+    const hosts = collectSshConfigHosts('/home/u/.ssh/config', {
+      homeDir: '/home/u',
+      readFile: p => files[p.replaceAll(path.sep, '/')] ?? null,
+      globSync: pattern =>
+        pattern.replaceAll(path.sep, '/').endsWith('config.d/*')
+          ? ['/home/u/.ssh/config.d/10-work', '/home/u/.ssh/config.d/20-home']
+          : [pattern]
+    })
+
+    assert.deepEqual(hosts.sort(), ['home', 'root', 'work'].sort())
   }
-
-  const hosts = collectSshConfigHosts('/home/u/.ssh/config', {
-    homeDir: '/home/u',
-    readFile: p => files[p.replaceAll(path.sep, '/')] ?? null,
-    globSync: pattern =>
-      pattern.replaceAll(path.sep, '/').endsWith('config.d/*')
-        ? ['/home/u/.ssh/config.d/10-work', '/home/u/.ssh/config.d/20-home']
-        : [pattern]
-  })
-
-  assert.deepEqual(hosts.sort(), ['home', 'root', 'work'].sort())
-})
+)
 
 test('parseSshGOutput pulls hostname/user/port/identityfile', () => {
   const out = [

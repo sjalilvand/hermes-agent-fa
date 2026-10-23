@@ -63,34 +63,37 @@ test('an under-cap or absent active log is left alone', () => {
   assert.deepEqual(touched, [])
 })
 
-test.skipIf(process.platform === 'win32')('truncation really frees the file, and an append-mode writer restarts at 0', () => {
-  // POSIX ftruncate against an open handle is the semantics under test; on
-  // NTFS the same truncate of an O_APPEND-held file fails with EPERM, and the
-  // production path renames instead of truncating on win32.
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-log-bound-'))
-  const file = path.join(dir, 'desktop-chromium.log')
-
-  try {
-    // Stand in for Chromium: an O_APPEND handle held across the reclaim.
-    const handle = fs.openSync(file, 'a')
+test.skipIf(process.platform === 'win32')(
+  'truncation really frees the file, and an append-mode writer restarts at 0',
+  () => {
+    // POSIX ftruncate against an open handle is the semantics under test; on
+    // NTFS the same truncate of an O_APPEND-held file fails with EPERM, and the
+    // production path renames instead of truncating on win32.
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-log-bound-'))
+    const file = path.join(dir, 'desktop-chromium.log')
 
     try {
-      fs.ftruncateSync(handle, LOG_MAX_BYTES + 1) // Grow without writing GBs.
+      // Stand in for Chromium: an O_APPEND handle held across the reclaim.
+      const handle = fs.openSync(file, 'a')
 
-      assert.equal(
-        reclaimActiveLogIfOversized(file, {
-          size: f => fs.statSync(f).size,
-          truncate: f => fs.truncateSync(f, 0)
-        }),
-        true
-      )
+      try {
+        fs.ftruncateSync(handle, LOG_MAX_BYTES + 1) // Grow without writing GBs.
 
-      fs.writeSync(handle, 'FATAL:after\n')
-      assert.equal(fs.readFileSync(file, 'utf8'), 'FATAL:after\n')
+        assert.equal(
+          reclaimActiveLogIfOversized(file, {
+            size: f => fs.statSync(f).size,
+            truncate: f => fs.truncateSync(f, 0)
+          }),
+          true
+        )
+
+        fs.writeSync(handle, 'FATAL:after\n')
+        assert.equal(fs.readFileSync(file, 'utf8'), 'FATAL:after\n')
+      } finally {
+        fs.closeSync(handle)
+      }
     } finally {
-      fs.closeSync(handle)
+      fs.rmSync(dir, { recursive: true, force: true })
     }
-  } finally {
-    fs.rmSync(dir, { recursive: true, force: true })
   }
-})
+)

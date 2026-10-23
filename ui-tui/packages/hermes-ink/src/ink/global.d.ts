@@ -27,14 +27,11 @@ declare global {
           readonly order: (a: string, b: string) => -1 | 0 | 1
           readonly satisfies: (version: string, range: string) => boolean
         }
-        readonly stringWidth: (
-          input: string,
-          options?: { readonly ambiguousIsNarrow?: boolean },
-        ) => number
+        readonly stringWidth: (input: string, options?: { readonly ambiguousIsNarrow?: boolean }) => number
         readonly wrapAnsi: (
           input: string,
           columns: number,
-          options?: { readonly hard?: boolean; readonly trim?: boolean; readonly wordWrap?: boolean },
+          options?: { readonly hard?: boolean; readonly trim?: boolean; readonly wordWrap?: boolean }
         ) => string
         readonly indexOfFirstDifference?: (a: string, b: string) => number | undefined
       }
