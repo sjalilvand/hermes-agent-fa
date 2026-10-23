@@ -1,6 +1,6 @@
 import { defineLocale } from './define-locale'
 
-// Persian / Farsi (فارسی) — RTL locale for the Hermes desktop app.
+// Persian / Farsi (فارسی) — RTL locale for the ماه‌افزار هوشمند رسا (Rasa) desktop app.
 // Partial locale: missing keys fall back to English via defineLocale, so
 // future desktop-only strings keep type-checking without a full re-port.
 export const fa = defineLocale({
@@ -15,7 +15,7 @@ export const fa = defineLocale({
     }
   },
   sharedMetrics: {
-    consentTitle: 'به بهبود Hermes کمک می‌کنید؟',
+    consentTitle: 'به بهبود رسا کمک می‌کنید؟',
     consentBody:
       'شاخص‌های اشتراکی فقط شمارنده‌های محدود هستند. هرگز پرامپت، فایل، مسیر یا متن خطا ندارند. جمع‌آوری محلی است. ارسال به Nous یک انتخاب جداست.',
     whatIsCollected: 'چه چیزی جمع‌آوری می‌شود',
@@ -26,9 +26,9 @@ export const fa = defineLocale({
     collectedMilestones: 'شمارهای سبدبندی‌شده راه‌اندازی',
     collectedReliability: 'نتیجه و زمان به‌روزرسانی، کرش‌ها، سرعت شروع و پاسخ، سلامت پلتفرم‌های پیام‌رسان',
     collectedUsage:
-      'نحوه استفاده از Hermes: دقت و بهره‌وری عامل (تطابق ویرایش‌ها، حلقه‌ها، بازیابی‌ها، توکن و فراخوانی ابزار به‌ازای هر وظیفه، شکستن‌های کش)، زمان فعال به‌تفکیک سطح و حالت دسکتاپ، کدام بخش‌ها، اقدامات و تنظیمات استفاده می‌شوند، کدام سریع بسته یا خاموش می‌شوند، و نتیجه راه‌اندازی ارائه‌دهندگان',
+      'نحوه استفاده از رسا: دقت و بهره‌وری عامل (تطابق ویرایش‌ها، حلقه‌ها، بازیابی‌ها، توکن و فراخوانی ابزار به‌ازای هر وظیفه، شکستن‌های کش)، زمان فعال به‌تفکیک سطح و حالت دسکتاپ، کدام بخش‌ها، اقدامات و تنظیمات استفاده می‌شوند، کدام سریع بسته یا خاموش می‌شوند، و نتیجه راه‌اندازی ارائه‌دهندگان',
     collectedMachine:
-      'حقایق کلی دستگاه: محدوده رم، نوع GPU، عمر نسخه Hermes و کانال انتشار، عقب‌ماندگی به‌روزرسانی‌ها، استفاده از سرور مدل محلی',
+      'حقایق کلی دستگاه: محدوده رم، نوع GPU، عمر نسخه رسا و کانال انتشار، عقب‌ماندگی به‌روزرسانی‌ها، استفاده از سرور مدل محلی',
     installId:
       'ارسال، هر بسته روزانه را به سرویس تله‌متری Nous می‌فرستد. بسته‌ها شناسه نصب این پروفایل را دارند: یک UUID تصادفی پایدار بدون اطلاعات شخصی، که با حذف پوشه shared-metrics بازنشانی می‌شود.',
     consentWindow:
@@ -44,7 +44,7 @@ export const fa = defineLocale({
     sendLabel: 'ارسال آمار استفاده به Nous',
     sendDesc:
       'هر بسته روزانه را به سرویس تله‌متری Nous آپلود می‌کند. فقط داده داخل پنجره رضایت فرستاده می‌شود. نیازمند روشن بودن جمع‌آوری است.',
-    unavailable: 'برای تغییر این تنظیم باک‌اند Hermes را به‌روزرسانی کنید.',
+    unavailable: 'برای تغییر این تنظیم باک‌اند رسا را به‌روزرسانی کنید.',
     stripBody: 'فقط شمارنده‌های محدود، هرگز پرامپت یا فایل نه.',
     stripChoices: { share: 'ارسال به Nous', local: 'فقط محلی', off: 'نه ممنون' },
     stripDetails: 'جزئیات'
@@ -105,7 +105,7 @@ export const fa = defineLocale({
     retry: 'تلاش دوباره',
     more: 'نمایش بیشتر',
     pinned: 'کامیت بازبینی‌شده',
-    snapshotHint: 'از کاتالوگ Hermes. مرور هرگز با مخازن منبع تماس نمی‌گیرد.',
+    snapshotHint: 'از کاتالوگ رسا. مرور هرگز با مخازن منبع تماس نمی‌گیرد.',
     installHint: 'پیش از نصب منبع را بازبینی کنید. تغییرات روی نشست‌های جدید اعمال می‌شود.',
     results: (count: number) => `${count.toLocaleString()} نتیجه`,
     back: 'بازگشت به نتایج'
@@ -159,7 +159,7 @@ export const fa = defineLocale({
     ownerMissing: 'برای مدیریت اتصال‌ها این گفتگو را دوباره باز کنید.',
     search: 'جستجوی یک برنامه',
     empty: 'برنامه‌ای منطبق نیست',
-    disclaimer: 'اتصال اختیاری است. فقط برنامه‌هایی را تأیید کنید که می‌خواهید Hermes استفاده کند.',
+    disclaimer: 'اتصال اختیاری است. فقط برنامه‌هایی را تأیید کنید که می‌خواهید رسا استفاده کند.',
     execution: 'ابزارهای اتصال‌دهنده',
     setup: server => `راه‌اندازی ${server}`,
     openInBrowser: 'باز کردن در مرورگر',
@@ -198,7 +198,7 @@ export const fa = defineLocale({
       kindCatalog: 'MCP · کاتالوگ',
       kindCustom: 'MCP · سفارشی',
       kindPlugin: (plugin: string) => `MCP · افزونه ${plugin}`,
-      inCatalog: 'در کاتالوگ Hermes',
+      inCatalog: 'در کاتالوگ رسا',
       hostedTwin: 'نسخه مدیریت‌شده موجود است',
       alsoLocal: 'روی همین دستگاه هم اجرا می‌شود',
       open: (name: string) => `باز کردن ${name}`,
@@ -248,7 +248,7 @@ export const fa = defineLocale({
       loading: 'در حال خواندن کاتالوگ و سرورهای این کامپیوتر',
       emptyTitle: 'هنوز برنامه‌ای اینجا نیست. برای شروع روی این دستگاه یک سرور اضافه کنید.',
       noMatchTitle: 'برنامه‌ای منطبق نیست',
-      noMatchBody: 'هیچ‌چیز با این جستجو نمی‌خواند. Hermes را به سرور MCP خودتان اشاره دهید تا اضافه شود.',
+      noMatchBody: 'هیچ‌چیز با این جستجو نمی‌خواند. رسا را به سرور MCP خودتان اشاره دهید تا اضافه شود.',
       clearSearch: 'پاک کردن جستجو',
       hostedFailedTitle: 'دسترسی به برنامه‌های مدیریت‌شده ممکن نشد.',
       hostedFailedBody: 'سرورهای روی این کامپیوتر بی‌تأثیرند و همچنان در حال اجرا هستند. چیزی خاموش نشد.',
@@ -262,7 +262,7 @@ export const fa = defineLocale({
       managedUnavailable: 'برنامه‌های مدیریت‌شده هنوز برای این حساب در دسترس نیستند.',
       writeFailed: 'این تغییر ذخیره نشد.',
       refreshFailed: 'فهرست ابزارها تازه‌سازی نشد.',
-      disconnectNoAccount: 'Hermes اینجا حسابی برای قطع اتصال ندارد. صفحه را تازه‌سازی و دوباره تلاش کنید.',
+      disconnectNoAccount: 'رسا اینجا حسابی برای قطع اتصال ندارد. صفحه را تازه‌سازی و دوباره تلاش کنید.',
       disconnectRefused:
         'Nous الان نمی‌تواند این ورود را حذف کند. برنامه را با کلید خاموش کنید یا بعداً تلاش کنید.'
     },
@@ -304,23 +304,23 @@ export const fa = defineLocale({
     dialog: {
       disconnect: 'قطع اتصال',
       disconnectTitle: (name: string) => `${name} قطع شود؟`,
-      disconnectBody: 'Hermes نقش این حساب را کنار می‌گذارد. هر زمان می‌توانید دوباره وصل شوید.',
+      disconnectBody: 'رسا نقش این حساب را کنار می‌گذارد. هر زمان می‌توانید دوباره وصل شوید.',
       menuRefreshTools: 'تازه‌سازی ابزارها',
       moreActions: 'اقدامات بیشتر',
       removeServerTitle: (name: string) => `${name} حذف شود؟`,
       removeServerBody: 'ورودی از mcp.json این کامپیوتر خارج می‌شود. چیز دیگری حذف نمی‌شود.',
-      appSwitch: (name: string) => `Hermes می‌تواند از ${name} استفاده کند`,
+      appSwitch: (name: string) => `رسا می‌تواند از ${name} استفاده کند`,
       waysTitle: (name: string) => `${name} کجا اجرا می‌شود`,
       wayNotConnected: (name: string) => `هنوز متصل نیست. در مرورگر به ${name} وارد شوید.`,
       wayHosted: 'مدیریت‌شده',
-      bothOn: (name: string) => `هر دو روشن‌اند، پس Hermes هر ابزار ${name} را دوبار می‌بیند.`,
+      bothOn: (name: string) => `هر دو روشن‌اند، پس رسا هر ابزار ${name} را دوبار می‌بیند.`,
       turnOffLocal: 'خاموش کردن سرور محلی',
       providedByPlugin: (plugin: string) => `ارائه‌شده توسط افزونه ${plugin}`,
       openPlugins: 'باز کردن زبانه افزونه‌ها',
       nousLine: 'برنامه‌های Nous بسته به حساب شما هستند، نه پروفایل.',
       rulesReadOnly: 'قوانین الان قابل تغییر نیستند.',
       rulesAppOff: (name: string) => `${name} را روشن کنید تا ابزارهایش تغییر کنند.`,
-      rulesSignIn: 'برای تعیین اینکه Hermes اینجا چه کاری مجاز است انجام دهد، وارد شوید.',
+      rulesSignIn: 'برای تعیین اینکه رسا اینجا چه کاری مجاز است انجام دهد، وارد شوید.',
       orgNote: (count: number) => `سازمان شما ${count} ابزار را خاموش کرده است.`,
       orgLink: 'باز کردن مدیریت اتصال‌دهنده‌ها',
       connectEnded: 'ورود کامل نشد.',
@@ -334,8 +334,8 @@ export const fa = defineLocale({
     tools: {
       title: 'ابزارها',
       notInstalledBody: 'روی این دستگاه نصبش کنید تا ابزارهایی که می‌آورد را ببینید.',
-      summaryTitle: (name: string) => `Hermes با ${name} چه می‌تواند بکند`,
-      summaryPreviewTitle: (name: string) => `پس از اتصال، Hermes با ${name} چه می‌تواند بکند`,
+      summaryTitle: (name: string) => `رسا با ${name} چه می‌تواند بکند`,
+      summaryPreviewTitle: (name: string) => `پس از اتصال، رسا با ${name} چه می‌تواند بکند`,
       summaryCount: (count: number) => `${count} ابزار`,
       summaryAllTools: 'همه ابزارها',
       summaryOther: 'سایر',
@@ -368,7 +368,7 @@ export const fa = defineLocale({
       needsAuthBody: 'ورود روی همین کامپیوتر می‌ماند. هیچ‌چیز از آن بیرون نمی‌رود.',
       retry: 'تلاش دوباره',
       goneTitle: (name: string) => `${name} از کاتالوگ خارج شد.`,
-      goneBody: 'Hermes دیگر نمی‌تواند صدایش کند. سطر تا حذف کردنش باقی می‌ماند تا چیزی گم نشود.',
+      goneBody: 'رسا دیگر نمی‌تواند صدایش کند. سطر تا حذف کردنش باقی می‌ماند تا چیزی گم نشود.',
       remove: 'حذف',
       offTitle: (name: string) => `${name} خاموش است.`,
       offBody: 'با کلید بالا روشنش کنید تا ابزارهایی که می‌آورد خوانده شود.',
@@ -409,6 +409,41 @@ export const fa = defineLocale({
     }
   },
 
+  sessionImport: {
+    title: 'ادامه از برنامه دیگر',
+    subtitle: 'گفتگو را به رسا بیاورید و از همان‌جا که رها کردید ادامه دهید.',
+    action: 'واردات نشست',
+    readingFrom: 'خواندن از',
+    connectedComputer: 'رایانه متصل',
+    destination: 'ورود به',
+    all: 'همه',
+    search: 'جستجو میان نشست‌های بارگذاری‌شده',
+    scanning: 'در حال یافتن گفتگوها',
+    scanError: 'یافتن نشست‌ها ممکن نشد',
+    scanHelp: 'اتصال باک‌اند را بررسی کنید و دوباره تلاش کنید. باک‌اند‌های قدیمی ممکن است به به‌روزرسانی نیاز داشته باشند.',
+    empty: 'گفتگویی یافت نشد',
+    emptyHelp: 'نشست‌های Claude Code و Codex روی این باک‌اند اینجا نمایش داده می‌شوند.',
+    noMatches: 'گفتگوی منطبقی یافت نشد',
+    searchHelp: 'عنوان یا پوشه دیگری را امتحان کنید، یا نشست‌های بیشتری بارگذاری کنید.',
+    skipped: 'برخی لاگ‌ها خالی، ناخوانا یا برای پیش‌نمایش بیش از حد بزرگ بودند.',
+    more: 'بارگذاری نشست‌های بیشتر',
+    messages: 'پیام',
+    choose: 'گفتگویی ارزش ادامه دادن',
+    chooseHelp: 'پیش از آوردن گفتگو به رسا، نشستی را انتخاب کنید تا تاریخچه آن خوانده شود.',
+    previewLoading: 'در حال باز کردن پیش‌نمایش',
+    previewError: 'پیش‌نمایش در دسترس نیست',
+    previewHelp: 'ممکن است منبع جابه‌جا یا تغییر کرده باشد. فهرست را تازه‌سازی کنید و دوباره تلاش کنید.',
+    previewLimit: 'پیش‌نمایش برای خوانایی کوتاه شده است. کل گفتگو وارد می‌شود.',
+    you: 'شما',
+    snapshot: 'این گفتگو از قبل در رسا موجود است. برای ادامه، نسخه موجود خود را باز کنید.',
+    copyNotice:
+      'متن گفتگو کپی می‌شود. فایل‌های منبع دست‌نخورده می‌مانند. خروجی ابزارها و استدلال‌ها منتقل نمی‌شوند.',
+    importing: 'در حال واردات…',
+    open: 'باز کردن در رسا',
+    continue: 'ادامه در رسا',
+    importError: 'واردات این گفتگو ممکن نشد.'
+  },
+
   common: {
     apply: 'اعمال',
     back: 'بازگشت',
@@ -424,6 +459,7 @@ export const fa = defineLocale({
     connect: 'اتصال',
     connecting: 'در حال اتصال',
     continue: 'ادامه',
+    bots: 'ربات‌ها',
     copied: 'کپی شد',
     copy: 'کپی',
     copyFailed: 'کپی ناموفق بود',
@@ -467,33 +503,51 @@ export const fa = defineLocale({
     renameLabel: 'نام جدید',
     deleteTitle: name => `حذف ${name}؟`,
     deleteBody: 'به سطل زباله منتقل می‌شود — از آنجا قابل بازیابی است.',
-    pathCopied: 'مسیر کپی شد'
+    pathCopied: 'مسیر کپی شد',
+    revealMissing: 'آن پوشه روی این رایانه نیست',
+    revealUnavailable: 'آن مسیر روی این رایانه نیست — روی ماشین باک‌اند قرار دارد. از «نمایش در درخت فایل‌ها» استفاده کنید.'
   },
 
   boot: {
-    ready: 'Hermes Desktop آماده است',
+    ready: 'رسا دسکتاپ آماده است',
     desktopBootFailedWithMessage: message => `راه‌اندازی دسکتاپ ناموفق بود: ${message}`,
     steps: {
       connectingGateway: 'اتصال به دروازه دسکتاپ زنده',
-      loadingSettings: 'بارگذاری تنظیمات Hermes',
+      loadingSettings: 'بارگذاری تنظیمات رسا',
       loadingSessions: 'بارگذاری نشست‌های اخیر',
-      retryingRemoteBackend: 'اتصال مجدد به باک‌اند راه دور Hermes…',
+      retryingRemoteBackend: 'اتصال مجدد به باک‌اند راه دور رسا…',
       startingDesktopConnection: 'آغاز اتصال دسکتاپ',
-      startingHermesDesktop: 'راه‌اندازی Hermes Desktop…'
+      startingHermesDesktop: 'راه‌اندازی رسا دسکتاپ…'
     },
     errors: {
-      backgroundExited: 'فرایند پس‌زمینه Hermes خارج شد.',
-      backgroundExitedDuringStartup: 'فرایند پس‌زمینه Hermes هنگام راه‌اندازی خارج شد.',
+      backgroundExited: 'فرایند پس‌زمینه رسا خارج شد.',
+      backgroundExitedDuringStartup: 'فرایند پس‌زمینه رسا هنگام راه‌اندازی خارج شد.',
       backendStopped: 'باک‌اند متوقف شد',
       desktopBootFailed: 'راه‌اندازی دسکتاپ ناموفق بود',
       gatewayConnectionLost: 'اتصال با دروازه قطع شد',
       gatewayConnectionLostDetail:
         'در پس‌زمینه همچنان در حال تلاش مجدد است. می‌توانید به خواندن و نوشتن ادامه دهید — اگر مشکل باقی ماند تنظیمات دروازه را باز کنید.',
       gatewaySignInRequired: 'ورود به دروازه لازم است',
+      gatewaySignInRequiredDetail: 'برای اتصال مجدد دوباره وارد شوید. گفتگوها و تنظیمات شما در امان‌اند.',
+      signInAgain: 'ورود دوباره',
+      restartHermes: 'راه‌اندازی مجدد رسا',
+      openLogs: 'باز کردن لاگ‌ها',
+      reconnectNow: 'اتصال مجدد همین حالا',
+      connectionSettings: 'تنظیمات اتصال',
       ipcBridgeUnavailable: 'پل IPC دسکتاپ در دسترس نیست.'
     },
+    // علّت‌های ساده برای شکست راه‌اندازی باک‌اند محلی (`classifyBootFailure`)؛
+    // خروجی خام پشت «نمایش لاگ‌های اخیر» می‌ماند.
+    causes: {
+      exitedEarly: 'سرویس پس‌زمینه رسا بلافاصله بعد از شروع متوقف شد.',
+      timedOut: 'سرویس پس‌زمینه رسا به‌موقع پاسخ نداد.',
+      permission: 'رسا نتوانست در پوشه داده‌هایش بنویسد (مشکل دسترسی).',
+      diskFull: 'دیسک پر است و رسا نتوانست راه‌اندازی شود.',
+      portInUse: 'برنامه دیگری از درگاه شبکه‌ای که رسا به آن نیاز دارد استفاده می‌کند.',
+      installMissing: 'بخشی از نصب رسا جا افتاده است. گزینه «تعمیر نصب» را برای بازگرداندن آن انتخاب کنید.'
+    },
     failure: {
-      title: 'Hermes راه‌اندازی نشد',
+      title: 'رسا راه‌اندازی نشد',
       description:
         'دروازه پس‌زمینه بالا نیامد. یکی از گام‌های بازیابی زیر را امتحان کنید. هیچ‌کدام از این‌ها گفتگوها یا تنظیمات شما را حذف نمی‌کند.',
       remoteTitle: 'ورود به دروازه راه دور لازم است',
@@ -506,6 +560,10 @@ export const fa = defineLocale({
       back: 'بازگشت',
       openLogs: 'باز کردن لاگ‌ها',
       repairHint: 'تعمیر، نصب‌کننده را دوباره اجرا می‌کند و ممکن است روی ماشین تازه چند دقیقه طول بکشد.',
+      details: 'جزئیات',
+      bundledReinstallHint:
+        'این نصب همراه نمی‌تواند از داخل برنامه خودش را تعمیر کند — برای بازگرداندن باک‌اند، برنامه را دوباره نصب کنید.',
+      reinstallApp: 'نصب مجدد برنامه',
       remoteSignInHint: signInLabel =>
         `از نشست مرورگر راه دور ذخیره‌شده خارج می‌شود و سپس ${signInLabel} را باز می‌کند. برای سوئیچ به باک‌اند همراه، از دروازه محلی استفاده کنید.`,
       signOutAndSignIn: 'خروج و ورود مجدد',
@@ -532,7 +590,7 @@ export const fa = defineLocale({
       // چه اتفاقی افتاده.
       browserModeTitle: 'در مرورگر باز شده، نه در برنامه دسکتاپ',
       browserModeDescription:
-        'این نشانی فقط رابط کاربری است. Hermes Desktop باید در پنجره اختصاصی خودش اجرا شود، جایی که پل دسکتاپ در دسترس است. چیزی خراب نشده — به‌جای این صفحه، برنامه Hermes Desktop را باز کنید.',
+        'این نشانی فقط رابط کاربری است. رسا دسکتاپ باید در پنجره اختصاصی خودش اجرا شود، جایی که پل دسکتاپ در دسترس است. چیزی خراب نشده — به‌جای این صفحه، برنامه رسا دسکتاپ را باز کنید.',
       browserModeHint:
         'برنامه دسکتاپ را با «npm run dev» (حالت توسعه) یا از منوی Start / پوشه Applications (نسخه نصب‌شده) اجرا کنید.',
       browserModeDocs: 'مستندات توسعه‌دهنده'
@@ -540,6 +598,8 @@ export const fa = defineLocale({
   },
 
   notifications: {
+    sharedProfileWarning:
+      'نصب دیگری از رسا از این پروفایل استفاده می‌کند. هر دو نصب تنظیمات و داده‌های آن را به اشتراک می‌گذارند، پس تغییرات ممکن است تداخل کنند. می‌توانید ادامه دهید، یا پیش از اعمال تغییرات نصب دیگر را ببندید.',
     region: 'اعلان‌ها',
     hide: 'پنهان',
     show: 'نمایش',
@@ -549,14 +609,20 @@ export const fa = defineLocale({
     details: 'جزئیات',
     copyDetail: 'کپی جزئیات',
     copyDetailFailed: 'کپی جزئیات اعلان ممکن نشد',
+    compressDeferredDone: 'فشرده‌سازی زمینه تمام شد',
     backendOutOfDateTitle: 'باک‌اند قدیمی است',
     backendOutOfDateMessage:
-      'باک‌اند Hermes شما قدیمی‌تر از این نسخه دسکتاپ است و ممکن است درست کار نکند. برای هم‌ترازی به‌روزرسانی کنید.',
+      'باک‌اند رسا شما قدیمی‌تر از این نسخه دسکتاپ است و ممکن است درست کار نکند. برای هم‌ترازی به‌روزرسانی کنید.',
+    desktopOutOfDateTitle: 'برنامه رسا قدیمی است',
+    desktopOutOfDateMessage:
+      'این برنامه رسا قدیمی‌تر از باک‌اندی است که به آن متصل است و ممکن است درست کار نکند. برای هم‌ترازی برنامه را به‌روزرسانی کنید.',
+    updateDesktopApp: 'به‌روزرسانی برنامه',
     installMethodUnsupportedTitle: 'روش نصب پشتیبانی‌نشده',
-    updateHermes: 'به‌روزرسانی Hermes',
+    updateHermes: 'به‌روزرسانی رسا',
     updateReadyTitle: 'به‌روزرسانی آماده است',
     updateReadyMessage: count => `${count} تغییر جدید موجود است.`,
     updateReadyMessageUnknown: 'یک به‌روزرسانی جدید موجود است.',
+    updateReadyMessageAppInstaller: 'نسخه جدید رسا آماده است. همین حالا به‌روزرسانی کنید تا ویندوز ادامه کار را انجام دهد.',
     seeWhatsNew: 'ببینید چه چیزهای جدیدی هست',
     mcp: {
       needsAuthTitle: 'سرور MCP به احراز هویت مجدد نیاز دارد',
@@ -564,7 +630,10 @@ export const fa = defineLocale({
       errorTitle: 'سرور MCP در دسترس نیست',
       errorMessage: name => `سرور MCP ${name} بررسی سلامت خود را پاس نکرد.`,
       signIn: 'ورود',
-      view: 'مشاهده'
+      view: 'مشاهده',
+      disable: 'غیرفعال کردن',
+      disabledMessage: name => `سرور MCP ${name} غیرفعال شد. هر زمان از قابلیت‌ها ← MCP می‌توانید دوباره فعالش کنید.`,
+      disableFailed: name => `غیرفعال کردن سرور MCP ${name} ممکن نشد.`
     },
     errors: {
       elevenLabsNeedsKey: 'تبدیل گفتار به متن ElevenLabs به ELEVENLABS_API_KEY نیاز دارد.',
@@ -572,10 +641,21 @@ export const fa = defineLocale({
       diskFull: 'دیسک پر است — کمی فضا آزاد کنید و دوباره تلاش کنید.',
       gatewayAuthFailed: 'احراز هویت دروازه ناموفق بود — API_SERVER_KEY را بررسی کنید.',
       methodNotAllowed:
-        'باک‌اند دسکتاپ آن درخواست را رد کرد (405 Method Not Allowed). راه‌اندازی مجدد Hermes Desktop را امتحان کنید.',
+        'باک‌اند دسکتاپ آن درخواست را رد کرد (405 Method Not Allowed). راه‌اندازی مجدد رسا دسکتاپ را امتحان کنید.',
       microphonePermission: 'مجوز میکروفون رد شد.',
       openaiRejectedApiKey: 'OpenAI کلید API را نپذیرفت.',
-      openaiTtsNeedsKey: 'TTS با OpenAI به VOICE_TOOLS_OPENAI_KEY یا OPENAI_API_KEY نیاز دارد.'
+      openaiTtsNeedsKey: 'TTS با OpenAI به VOICE_TOOLS_OPENAI_KEY یا OPENAI_API_KEY نیاز دارد.',
+      storageFailure: "رسا نتوانست در پوشه داده‌هایش ذخیره کند. برای بررسی و تعمیر، بخش تعمیرات را باز کنید.",
+      codeSkewRestartRequired:
+        'رسا به‌روز شده ولی هنوز نسخه قبلی را اجرا می‌کند. برای تکمیل به‌روزرسانی، آن را راه‌اندازی مجدد کنید.',
+      rpcOutOfSync: 'نسخه برنامه و باک‌اند با هم هماهنگ نیستند. هر دو را به‌روز کنید.',
+      restartHermesFailed: 'راه‌اندازی مجدد رسا ممکن نشد'
+    },
+    actions: {
+      restartHermes: 'راه‌اندازی مجدد رسا',
+      openKeys: 'باز کردن کلیدها',
+      openGateways: 'باز کردن دروازه‌ها',
+      openMaintenance: 'باز کردن تعمیرات'
     },
     voice: {
       configureSpeechToText: 'برای استفاده از حالت صوتی، تبدیل گفتار به متن را پیکربندی کنید.',
@@ -595,15 +675,23 @@ export const fa = defineLocale({
       transcriptionFailed: 'پیاده‌سازی صوت به متن ناموفق بود',
       transcriptionUnavailable: 'پیاده‌سازی صوت به متن هنوز در دسترس نیست.',
       tryRecordingAgain: 'دوباره ضبط کنید.',
-      unavailable: 'صوت در دسترس نیست'
+      unavailable: 'صوت در دسترس نیست',
+      liveEnded: 'نشست گفتگوی زنده صوتی پایان یافت',
+      liveEndedConnectionLost: 'نشست گفتگوی زنده صوتی اتصال خود را از دست داد.',
+      liveEndedClosed: 'نشست گفتگوی زنده صوتی توسط سرویس بسته شد.',
+      liveError: 'گفتگوی صوتی زنده',
+      liveDelegationFailed: 'تحویل درخواست به رسا ممکن نشد',
+      liveUnavailable: reason => `گفتگوی صوتی زنده GPT-Live در دسترس نیست: ${reason}. به‌جای آن از تبدیل گفتار به متن استفاده می‌شود.`
     },
     native: {
       approvalTitle: 'تأیید لازم است',
+      approvalTitleNamed: session => `تأیید لازم است — ${session}`,
       approveAction: 'تأیید',
       rejectAction: 'رد',
       inputTitle: 'ورودی لازم است',
-      inputBody: 'Hermes منتظر پاسخ شماست.',
-      turnDoneTitle: 'Hermes تمام شد',
+      inputTitleNamed: session => `ورودی لازم است — ${session}`,
+      inputBody: 'رسا منتظر پاسخ شماست.',
+      turnDoneTitle: 'رسا تمام شد',
       turnDoneBody: '',
       turnErrorTitle: 'نوبت ناموفق بود',
       backgroundDoneTitle: 'وظیفه پس‌زمینه تمام شد',
@@ -653,6 +741,7 @@ export const fa = defineLocale({
     rebind: 'تغییر کلید',
     reset: 'بازگشت به پیش‌فرض',
     resetAll: 'بازنشانی همه',
+    clear: 'پاک کردن',
     pressKey: 'کلیدی را فشار دهید…',
     set: 'تنظیم‌شده',
     conflictWith: label => `همچنین به «${label}» متصل است`,
@@ -691,16 +780,24 @@ export const fa = defineLocale({
       'session.focusSearch': 'جستجوی نشست‌ها',
       'session.togglePin': 'سنجاق / برداشتن نشست فعلی',
       'session.archive': 'بایگانی نشست فعلی',
+      'conversation.scrollPageUp': 'پیمایش گفتگو یک صفحه به بالا',
+      'conversation.scrollPageDown': 'پیمایش گفتگو یک صفحه به پایین',
       'workspace.newWorktree': 'worktree جدید',
       'workspace.openFolder': 'باز کردن پوشه به‌عنوان پروژه',
       'composer.focus': 'تمرکز روی نوشتار',
       'composer.modelPicker': 'باز کردن انتخاب‌گر مدل',
       'composer.voice': 'شروع / پایان گفتگوی صوتی',
+      'composer.dictate': 'شروع / پایان دیکته',
+      'composer.reasoningUp': 'افزایش سطح استدلال',
+      'composer.reasoningDown': 'کاهش سطح استدلال',
       'view.toggleSidebar': 'نمایش/پنهان نوار کناری نشست‌ها',
+      'view.cycleSidebarGrouping': 'چرخش گروه‌بندی نشست‌ها',
       'view.toggleRightSidebar': 'نمایش/پنهان مرورگر فایل',
       'view.toggleReview': 'نمایش/پنهان پنل بازبینی',
       'view.toggleStatusbar': 'نمایش/پنهان نوار وضعیت',
       'view.toggleTabStrip': 'نمایش/پنهان زبانه‌ها',
+      'view.toggleProfileRail': 'نمایش/پنهان نوار پروفایل‌ها',
+      'view.toggleSimpleMode': 'نمایش/پنهان حالت ساده',
       'view.showFiles': 'نمایش مرورگر فایل',
       'view.showBrowser': 'باز کردن مرورگر',
       'view.toggleHud': 'نمایش/پنهان حالت HUD',
@@ -719,6 +816,15 @@ export const fa = defineLocale({
       'view.findInPage': 'جستجو در صفحه',
       'view.findNext': 'یافتن مطابقت بعدی',
       'view.findPrevious': 'یافتن مطابقت قبلی',
+      'view.tabSlot.1': 'سوئیچ به زبانه ۱',
+      'view.tabSlot.2': 'سوئیچ به زبانه ۲',
+      'view.tabSlot.3': 'سوئیچ به زبانه ۳',
+      'view.tabSlot.4': 'سوئیچ به زبانه ۴',
+      'view.tabSlot.5': 'سوئیچ به زبانه ۵',
+      'view.tabSlot.6': 'سوئیچ به زبانه ۶',
+      'view.tabSlot.7': 'سوئیچ به زبانه ۷',
+      'view.tabSlot.8': 'سوئیچ به زبانه ۸',
+      'view.tabSlot.9': 'سوئیچ به زبانه ۹',
       'appearance.toggleMode': 'تغییر روشن / تاریک',
       'profile.default': 'سوئیچ به پروفایل پیش‌فرض',
       'profile.switch.1': 'سوئیچ به پروفایل ۱',
@@ -772,11 +878,62 @@ export const fa = defineLocale({
   },
 
   settings: {
+    subpages: {
+      appearanceTheme: 'پوسته',
+      appearanceTypography: 'تایپوگرافی',
+      appearanceWindowLayout: 'پنجره و چیدمان',
+      appearanceChatDisplay: 'نمایش گفتگو',
+      appearancePet: 'حیوان خانگی',
+      appearanceGeneral: 'عمومی',
+      modelMain: 'مدل اصلی',
+      modelAuxiliary: 'مدل‌های کمکی',
+      modelMoa: 'ترکیب عامل‌ها (Mixture of Agents)',
+      modelFallbacks: 'مدل‌های جایگزین',
+      chatBehavior: 'رفتار',
+      chatAttachments: 'پیوست‌ها',
+      workspaceProjects: 'پروژه‌ها و کشف خودکار',
+      workspaceShell: 'محیط شل',
+      workspaceFiles: 'فایل‌ها و اجرا',
+      safetyApprovals: 'تأییدها',
+      safetyPrivacy: 'حریم خصوصی و شبکه',
+      safetyCheckpoints: 'نقاط بازگشت',
+      browserProfile: 'پروفایل مرورگر',
+      browserNetwork: 'آدرس‌های محلی و خصوصی',
+      memoryPersistent: 'حافظه ماندگار',
+      memoryContext: 'زمینه و فشرده‌سازی',
+      voiceConversation: 'گفتگوی صوتی',
+      voiceTranscription: 'تبدیل گفتار به متن',
+      voiceSpeech: 'تبدیل متن به گفتار',
+      advancedRuntime: 'محدودیت‌های عامل',
+      advancedTools: 'دسترسی ابزارها',
+      advancedTerminal: 'باک‌اند ترمینال',
+      advancedOutput: 'محدودیت‌های خروجی',
+      advancedDelegation: 'زیرعامل‌ها',
+      advancedDesktop: 'دسکتاپ و راه‌اندازی',
+      gatewayConnection: 'این پنجره',
+      gatewayDevices: 'اتصال‌های ذخیره‌شده',
+      gatewayManagedUpdates: 'به‌روزرسانی‌های راه دور',
+      gatewayManagedUpdatesUnavailable: 'به‌روزرسانی‌های راه دور به نسخه‌ای از دسکتاپ نیاز دارند که از به‌روزرسانی مدیریت‌شده SSH پشتیبانی کند.',
+      gatewayManagedUpdatesEmpty: 'برای مدیریت به‌روزرسانی‌ها، یک اتصال SSH در اتصال‌های ذخیره‌شده اضافه کنید.',
+      keyboardShortcuts: 'کلیدهای میان‌بر',
+      hudGesture: 'ژست HUD',
+      screenCapture: 'ضبط صفحه‌نمایش',
+      notificationAlerts: 'هشدارهای دسکتاپ',
+      notificationSounds: 'صداها',
+      archivedSessions: 'بایگانی و نگهداری',
+      defaultDirectory: 'پوشه پروژه پیش‌فرض',
+      vaultCredentials: 'اعتبارنامه‌های ذخیره‌شده',
+      vaultSources: 'مدیران رمز عبور',
+      appUpdates: 'نسخه و به‌روزرسانی‌ها',
+      uninstall: 'حذف نصب',
+      billingOverview: 'نمای کلی',
+      billingPlans: 'طرح‌ها'
+    },
     closeSettings: 'بستن تنظیمات',
     exportConfig: 'خروجی پیکربندی',
     importConfig: 'ورود پیکربندی',
     resetToDefaults: 'بازگشت به پیش‌فرض‌ها',
-    resetConfirm: 'همه تنظیمات به پیش‌فرض‌های Hermes بازنشانی شود؟',
+    resetConfirm: 'همه تنظیمات به پیش‌فرض‌های رسا بازنشانی شود؟',
     exportFailed: 'خروجی گرفتن ناموفق بود',
     resetFailed: 'بازنشانی ناموفق بود',
     nav: {
@@ -784,6 +941,7 @@ export const fa = defineLocale({
       providerAccounts: 'حساب‌ها',
       providerApiKeys: 'کلیدهای API',
       providerCustomEndpoints: 'نقاط پایانی سفارشی',
+      providerLocalModels: 'مدل‌های محلی',
       gateway: 'دروازه‌ها',
       apiKeys: 'ابزارها و کلیدها',
       keybinds: 'کلیدهای میان‌بر',
@@ -791,9 +949,11 @@ export const fa = defineLocale({
       keysSettings: 'تنظیمات',
       mcp: 'MCP',
       archivedChats: 'گفتگوهای بایگانی‌شده',
+      sessions: 'نشست‌ها',
       about: 'درباره',
       billing: 'صورت‌حساب',
-      notifications: 'اعلان‌ها'
+      notifications: 'اعلان‌ها',
+      vault: 'رمزها و ورودها'
     },
     plugins: {
       title: 'افزونه‌های دسکتاپ',
@@ -807,7 +967,13 @@ export const fa = defineLocale({
       failed: 'ناموفق',
       empty: 'هنوز افزونه دسکتاپی نصب نشده است.',
       kinds: { bundled: 'همراه برنامه', disk: 'روی دیسک', runtime: 'زمان اجرا'      },
+      agentHalfMissing: 'نیمه عاملی این‌جا موجود نیست',
+      agentHalfMissingTip:
+        'این نیمه دسکتاپ یک افزونه همراه است، اما نیمه عاملی آن روی باک‌اند/پروفایل متصل فعلی نصب نیست. آن را از قابلیت‌ها ← افزونه‌ها نصب کنید.',
       installModal: {
+        installFromGit: 'نصب از Git',
+        reviewRepository: 'بازبینی مخزن',
+        repoPlaceholder: 'https://github.com/owner/repo',
         title: 'نصب افزونه',
         description: 'پیش از نصب هر چیزی، محتوای این مخزن را بازبینی کنید.',
         repoLabel: 'مخزن',
@@ -816,7 +982,20 @@ export const fa = defineLocale({
         desktopLabel: 'رابط دسکتاپ',
         agentTargetLocal: profile => `در باک‌اند ${profile} نصب می‌شود (~/.hermes/plugins/)`,
         agentTargetRemote: profile => `در باک‌اند ${profile} متصل‌شده نصب می‌شود`,
+        profileLabel: 'نصب برای پروفایل',
+        catalogPinned: (name, sha) =>
+          `مدخل کاتالوگ رسا «${name}» — جزء عاملی روی پین بازبینی‌شده${sha ? ` ${sha}` : ''} نصب می‌شود، نه سر نوک شاخه.`,
+        reviewedHeading: 'مدخل بازبینی‌شده کاتالوگ',
+        reviewedIntro:
+          'این مدخل در کامیت پین‌شده‌اش توسط انسان بازبینی شده است. همچنان می‌توانید کد دقیق را در ادامه ببینید.',
+        toolsConnected: n => (n === 1 ? '۱ ابزار متصل شد' : `${n} ابزار متصل شد`),
+        skillsReady: names => (names.length === 1 ? `مهارت ${names[0]} آماده است` : `${names.length} مهارت آماده است`),
+        nextChat: 'ابزارهای بیشتر در گفتگوی بعدی شما در دسترس‌اند',
+        serverNotConnected: (server, reason) => `سرور MCP ${server} متصل نیست${reason ? `: ${reason}` : '.'}`,
+        missingEnvAction: 'راه‌اندازی کن',
+        alreadyInstalled: name => `${name} از قبل نصب شده است.`,
         desktopTarget: 'در پوشه محلی desktop-plugins همین برنامه نصب می‌شود',
+        desktopTargetFromPackage: 'از بسته بالا در همین برنامه بارگذاری می‌شود — برای همه پروفایل‌ها یکسان',
         desktopOnlyNote: 'بسته‌های فقط-دسکتاپ افزونه عاملی در باک‌اند نصب نمی‌کنند.',
         insecureWarning:
           'این URL از طرح ناامن یا محلی استفاده می‌کند. برای نصب عملیاتی https:// یا git@ را ترجیح دهید.',
@@ -829,6 +1008,11 @@ export const fa = defineLocale({
         gitCloneLabel: 'آدرس کلون Git',
         enableAgent: 'فعال‌سازی افزونه عامل پس از نصب',
         forceReinstall: 'نصب مجدد اجباری (جایگزینی اگر از قبل نصب است)',
+        pinToCommit: 'پین به کامیت (اختیاری)',
+        pinToCommitPlaceholder: 'SHA کامل کامیت با ۴۰ نویسه',
+        pinToCommitHint:
+          'هر کسی این SHA را نصب کند همان کد را می‌گیرد؛ افزونه پس از آن تا پین مجدد، به‌روزرسانی را رد می‌کند. برای آخرین کامیت خالی بگذارید.',
+        pinToCommitInvalid: 'باید SHA کامل کامیت با ۴۰ نویسه باشد (شاخه و تگ پذیرفته نمی‌شوند).',
         install: 'نصب',
         installing: 'در حال نصب…',
         probing: 'بازرسی مخزن…',
@@ -838,8 +1022,85 @@ export const fa = defineLocale({
         agentSuccess: name => `افزونه عامل ${name} نصب شد`,
         desktopSuccess: name => `افزونه دسکتاپ ${name} نصب شد`,
         agentFailed: 'نصب افزونه عامل ناموفق بود',
+        installUncertain:
+          'رسا منتظر نتیجه نصب نماند، اما افزونه ممکن است همچنان در حال نصب باشد. این پنجره را ببندید و پیش از تلاش دوباره برای نصب، از افزونه‌ها گزینه «اسکن مجدد» را بزنید.',
         desktopFailed: 'نصب افزونه دسکتاپ ناموفق بود',
         missingEnv: vars => `متغیرهای محیطی جاافتاده: ${vars}. آن‌ها را در تنظیمات ← کلیدها اضافه کنید.`
+      }
+    },
+    vault: {
+      title: 'رمزها و ورودها',
+      blurb:
+        'بگویید «وارد GitHub شو» و عامل به‌جای شما وارد می‌شود. اولین باری که به صفحه ورود سایتی می‌رسد، همان‌جا از شما اطلاعات ورود را می‌پرسد؛ بعد از آن خودکار انجام می‌شود. رمزها روی همین رایانه رمزنگاری می‌شوند و مستقیم در صفحه پر می‌شوند — مدل هرگز آن‌ها را نمی‌بیند.',
+      count: n => `${n} مورد ذخیره شد`,
+      loadFailed: 'بارگذاری موارد گاوصندوق ممکن نشد',
+      empty: 'هنوز چیزی ذخیره نشده',
+      emptyDesc:
+        'لازم نیست این‌جا چیزی اضافه کنید. از عامل بخواهید وارد سایتی شود و او همان‌جا یک بار اطلاعات ورود را از شما می‌پرسد. اگر ترجیح می‌دهید از قبل وارد کنید، از «افزودن» استفاده کنید.',
+      add: 'افزودن',
+      addTitle: 'افزودن ورود، کارت یا نشانی',
+      addDescription: 'روی همین رایانه رمزنگاری‌شده ذخیره می‌شود. عامل هرگز رمز عبور را نمی‌بیند.',
+      added: 'ذخیره شد.',
+      adding: 'در حال ذخیره…',
+      addConfirm: 'ذخیره',
+      kindField: 'نوع',
+      kinds: { login: 'ورود', payment: 'کارت بانکی', address: 'نشانی' },
+      labelField: 'برچسب',
+      labelPlaceholder: 'مثلاً حساب کاری GitHub',
+      labelRequired: 'برچسب الزامی است.',
+      originField: 'مبدا سایت',
+      originPlaceholder: 'https://github.com',
+      originPlaceholderCheckout: 'https://shop.example.com',
+      originInvalid: 'URL معتبری مثل https://example.com وارد کنید.',
+      identifierTypeField: 'نوع شناسه',
+      identifierTypes: { email: 'ایمیل', phone: 'تلفن', username: 'نام کاربری' },
+      identifierField: 'شناسه',
+      identifierShown: identifier => identifier,
+      passwordField: 'رمز عبور',
+      loginFieldsRequired: 'شناسه و رمز عبور الزامی‌اند.',
+      cardNumberField: 'شماره کارت',
+      cardNameField: 'نام روی کارت',
+      expMonthField: 'ماه انقضا',
+      expYearField: 'سال انقضا',
+      cvcField: 'CVC',
+      postalField: 'کد پستی',
+      addressLine1Field: 'نشانی، خط ۱',
+      addressLine2Field: 'نشانی، خط ۲',
+      cityField: 'شهر',
+      stateField: 'استان / منطقه',
+      countryField: 'کشور',
+      optional: '(اختیاری)',
+      createdOn: date => `افزوده‌شده در ${date}`,
+      deleteAction: 'حذف مورد ذخیره‌شده',
+      otpField: 'کلید احرازگر',
+      otpPlaceholder: 'رمز Base32 یا پیوند otpauth://',
+      otpHint: 'همان «کلید راه‌اندازی» که سایت هنگام فعال‌سازی ورود دومرحله‌ای نشان می‌دهد. با ذخیره آن، رسا خودش کدها را تولید می‌کند.',
+      twoFactorBadge: 'ورود دومرحله‌ای خودکار',
+      deleteTitle: 'این مورد حذف شود؟',
+      deleteDescription: label => `«${label}» حذف می‌شود. این کار قابل بازگشت نیست.`,
+      deleteConfirm: 'حذف',
+      sources: {
+        title: 'مدیران رمز عبور',
+        blurb:
+          'مدیران رمز عبور نصب‌شده به‌طور خودکار شناسایی می‌شوند. اولین باری که عامل به ورودی از آن‌ها نیاز داشته باشد، از شما می‌خواهد قفلش را باز کنید (هر نشست یک بار)؛ فقط یک توکن نشست در حافظه می‌ماند و عامل هرگز رمز اصلی یا هیچ ورودی را نمی‌بیند.',
+        toggleFailed: 'به‌روزرسانی مدیر رمز عبور ممکن نشد',
+        notInstalled: name =>
+          `شناسایی نشد. ابزار خط فرمان ${name} را نصب و در آن وارد شوید؛ رسا به‌طور خودکار آن را پیدا می‌کند.`,
+        disabledDesc: 'شناسایی شده اما برای رسا خاموش است.',
+        lockedDesc: 'شناسایی شده. وقتی عامل به ورودی نیاز داشته باشد از شما می‌خواهد قفلش را باز کنید، یا همین حالا بازش کنید.',
+        unlockedDesc: 'برای این نشست باز شد. پس از ۳۰ دقیقه بی‌کاری یا بستن رسا خودکار قفل می‌شود.',
+        statusLocked: 'قفل',
+        statusNotDetected: 'شناسایی نشد',
+        statusOff: 'خاموش',
+        statusUnlocked: 'باز',
+        unlock: 'باز کردن قفل',
+        unlocking: 'در حال باز کردن قفل…',
+        lock: 'قفل کردن',
+        unlocked: name => `${name} برای این نشست باز شد.`,
+        unlockTitle: name => `باز کردن قفل ${name}`,
+        unlockDescription:
+          'رمز اصلی خود را وارد کنید. این رمز به مدیر رمز عبور روی همین رایانه تحویل داده و کنار گذاشته می‌شود — هرگز ذخیره، لاگ یا به عامل نشان داده نمی‌شود.',
+        masterPasswordPlaceholder: 'رمز اصلی'
       }
     },
     notifications: {
@@ -847,7 +1108,7 @@ export const fa = defineLocale({
       intro: 'اعلان‌های سیستم‌عامل (نه توست درون‌برنامه‌ای). به‌تفکیک دستگاه.',
       enableAll: 'فعال‌سازی اعلان‌ها',
       enableAllDesc: 'خاموش بودن، همه اعلان‌های زیر را بی‌صدا می‌کند.',
-      focusedHint: 'هشدارهای پایان کار فقط وقتی Hermes در پس‌زمینه است فعال می‌شوند.',
+      focusedHint: 'هشدارهای پایان کار فقط وقتی رسا در پس‌زمینه است فعال می‌شوند.',
       kinds: {
         approval: {
           label: 'تأیید لازم است',
@@ -855,11 +1116,11 @@ export const fa = defineLocale({
         },
         input: {
           label: 'ورودی لازم است',
-          description: 'Hermes پرسشی پرسیده یا به رمز/اسرار نیاز دارد.'
+          description: 'رسا پرسشی پرسیده یا به رمز/اسرار نیاز دارد.'
         },
         turnDone: {
           label: 'پاسخ آماده است',
-          description: 'یک نوبت وقتی Hermes در پس‌زمینه بود تمام شد.'
+          description: 'یک نوبت وقتی رسا در پس‌زمینه بود تمام شد.'
         },
         turnError: {
           label: 'نوبت ناموفق بود',
@@ -875,11 +1136,11 @@ export const fa = defineLocale({
         },
         plugin: {
           label: 'اعلان‌های افزونه',
-          description: 'یک افزونه دسکتاپ وقتی Hermes در پس‌زمینه بود اعلانی فرستاد.'
+          description: 'یک افزونه دسکتاپ وقتی رسا در پس‌زمینه بود اعلانی فرستاد.'
         }
       },
       test: 'ارسال اعلان آزمایشی',
-      testTitle: 'Hermes',
+      testTitle: 'رسا',
       testBody: 'اعلان‌ها کار می‌کنند.',
       testSent: 'آزمایشی ارسال شد. اگر چیزی ظاهر نشد، مجوزهای اعلان سیستم‌عامل و حالت تمرکز/مزاحم نشو را بررسی کنید.',
       testUnsupported: 'این سیستم از اعلان‌های بومی پشتیبانی نمی‌کند.',
@@ -898,7 +1159,7 @@ export const fa = defineLocale({
       advanced: 'پیشرفته'
     },
     searchPlaceholder: {
-      about: 'درباره Hermes Desktop',
+      about: 'درباره رسا دسکتاپ',
       config: 'جستجوی تنظیمات…',
       gateway: 'اتصال دروازه…',
       keys: 'جستجوی کلیدهای API…',
@@ -1004,9 +1265,9 @@ export const fa = defineLocale({
       fallbackProviders: 'ورودی‌های جایگزین به فرمت provider:model برای امتحان اگر مدل پیش‌فرض شکست بخورد.',
       'display.personality': 'سبک پیش‌فرض دستیار برای نشست‌های جدید.',
       'display.showReasoning': 'بخش‌های استدلال را وقتی باک‌اند ارائه دهد نمایش می‌دهد.',
-      timezone: 'وقتی Hermes به زمینه زمان محلی نیاز دارد استفاده می‌شود. خالی بگذارید تا منطقه سیستم استفاده شود.',
+      timezone: 'وقتی رسا به زمینه زمان محلی نیاز دارد استفاده می‌شود. خالی بگذارید تا منطقه سیستم استفاده شود.',
       'agent.imageInputMode': 'نحوه ارسال پیوست‌های تصویر به مدل را کنترل می‌کند.',
-      'agent.maxTurns': 'سقف نوبت‌های فراخوانی ابزار پیش از توقف اجرا توسط Hermes.',
+      'agent.maxTurns': 'سقف نوبت‌های فراخوانی ابزار پیش از توقف اجرا توسط رسا.',
       'terminal.cwd': 'پوشه پیش‌فرض پروژه برای ابزارها و ترمینال.',
       'terminal.persistentShell': 'وضعیت پوسته را بین فرمان‌ها وقتی باک‌اند پشتیبانی کند نگه می‌دارد.',
       'terminal.envPassthrough': 'متغیرهای محیطی که به اجرای ابزارها پاس داده می‌شوند.',
@@ -1015,8 +1276,8 @@ export const fa = defineLocale({
       'terminal.modalImage': 'تصویر استفاده‌شده وقتی Modal انتخاب شود.',
       'terminal.daytonaImage': 'تصویر استفاده‌شده وقتی Daytona انتخاب شود.',
       'codeExecution.mode': 'میزان محدودسازی اجرای کد به پروژه فعلی.',
-      fileReadMaxChars: 'حداکثر نویسه‌هایی که Hermes می‌تواند در یک درخواست از فایل بخواند.',
-      'approvals.mode': 'نحوه برخورد Hermes با فرمان‌هایی که تأیید صریح می‌خواهند.',
+      fileReadMaxChars: 'حداکثر نویسه‌هایی که رسا می‌تواند در یک درخواست از فایل بخواند.',
+      'approvals.mode': 'نحوه برخورد رسا با فرمان‌هایی که تأیید صریح می‌خواهند.',
       'approvals.timeout': 'مدت انتظار درخواست‌های تأیید پیش از پایان مهلت.',
       'security.redactSecrets': 'اسرار کشف‌شده را تا حد ممکن از محتوای قابل‌مشاهده مدل حذف می‌کند.',
       'checkpoints.enabled': 'پیش از ویرایش فایل‌ها تصویر لحظه‌ای بازگشت می‌سازد.',
@@ -1031,15 +1292,19 @@ export const fa = defineLocale({
       'stt.enabled': 'پیاده‌سازی صوتی محلی یا از طریق ارائه‌دهنده را فعال می‌کند.',
       'stt.elevenlabs.languageCode': 'کد زبان اختیاری ISO-639-3. خالی بگذارید برای تشخیص خودکار.',
       'updates.nonInteractiveLocalChanges':
-        'وقتی Hermes خودش را از برنامه به‌روزرسانی می‌کند بدون ترمینال، تغییرات محلی منبع را نگه می‌دارد یا نادیده می‌گیرد.'
+        'وقتی رسا خودش را از برنامه به‌روزرسانی می‌کند بدون ترمینال، تغییرات محلی منبع را نگه می‌دارد یا نادیده می‌گیرد.'
     },
     appearance: {
       title: 'ظاهر',
       intro: 'فقط دسکتاپ. حالت روشنایی است؛ پوسته پالت و پوسته گفتگوست.',
       colorMode: 'حالت رنگ',
-      colorModeDesc: 'یک حالت ثابت انتخاب کنید یا اجازه دهید Hermes از تنظیم سیستم شما پیروی کند.',
+      colorModeDesc: 'یک حالت ثابت انتخاب کنید یا اجازه دهید رسا از تنظیم سیستم شما پیروی کند.',
       toolViewTitle: 'نمایش فراخوانی ابزار',
       toolViewDesc: 'حالت Product بارهای خام ابزار را پنهان می‌کند؛ حالت Technical ورودی/خروجی کامل را نشان می‌دهد.',
+      hideCodeDiffsTitle: 'پنهان کردن دیف‌های کد',
+      hideCodeDiffsDesc: 'ویرایش فایل‌ها به‌صورت ردیف‌های ابزار درون‌خطی با شمارش خط‌های افزوده/حذف‌شده نشان داده می‌شود، بدون خود کد.',
+      hideThreadTimelineTitle: 'پنهان کردن نوارهای خط‌زمانی گفتگو',
+      hideThreadTimelineDesc: 'نوارهای ناوبری در لبه راست هر گفتگو را پنهان می‌کند.',
       reasoningCollapsedTitle: 'جمع‌کردن تفکر به‌صورت پیش‌فرض',
       reasoningCollapsedDesc: 'استدلال جریانی را بدون باز کردن در دسترس نگه می‌دارد تا خودتان باز کنید.',
       uiScaleTitle: 'مقیاس رابط',
@@ -1055,12 +1320,23 @@ export const fa = defineLocale({
       tabStripAuto: 'خودکار',
       tabStripAlways: 'همیشه',
       tabStripNever: 'هرگز',
+      appActionsTitle: 'اقدامات برنامه',
+      appActionsDesc: 'محل تنظیمات، چیدمان و HUD در نوار عنوان. حالت راست برای زبانه‌ها در سمت چپ جا می‌گذارد.',
+      appActionsLeft: 'چپ',
+      appActionsRight: 'راست',
       terminalFontTitle: 'فونت ترمینال',
       terminalFontDesc:
         'فونت نصب‌شده‌ای برای ترمینال‌های دسکتاپ انتخاب کنید. Nerd Fonts آیکون‌های Powerlevel10k و پوسته را رندر می‌کنند؛ خالی بگذارید تا JetBrains Mono همراه برنامه استفاده شود.',
       terminalFontPlaceholder: 'MesloLGS NF یا مجموعه فونت CSS',
       terminalFontPreview: 'پیش‌نمایش نویسه‌ها',
       terminalFontReset: 'استفاده از پیش‌فرض',
+      chatFontTitle: 'فونت گفتگو',
+      chatFontDesc:
+        'فونت نصب‌شده‌ای برای گفتگو و بقیه برنامه انتخاب کنید. برای قلم‌های خوانایی مثل OpenDyslexic مناسب است؛ خالی بگذارید تا فونت پوسته استفاده شود.',
+      chatFontPlaceholder: 'OpenDyslexic یا مجموعه فونت CSS',
+      chatFontPreview: 'پیش‌نمایش',
+      chatFontSample: 'گلوگاه مشکل‌یابی سیستم پیشرفته است. ۰۱۲۳۴۵۶۷۸۹ The quick brown fox',
+      chatFontReset: 'استفاده از فونت پوسته',
       translucencyTitle: 'شفافیت پنجره',
       translucencyDesc:
         'دسکتاپ شما از پشت کل پنجره دیده می‌شود، متن و همه‌چیز. برای روشن و تاریک جداگانه تنظیم می‌شود.',
@@ -1084,19 +1360,30 @@ export const fa = defineLocale({
       },
       backdropTitle: 'پس‌زمینه گفتگو',
       backdropDesc: 'تصویر مجسمه محو پشت مکالمه.',
+      userBubbleTitle: 'حباب پیام',
+      userBubbleDesc: 'شفافیت پیام‌های خودتان. در ۰ کاملاً توپر است؛ در ۱۰۰ فقط خط دور می‌ماند.',
+      textDirectionTitle: 'جهت متن',
+      textDirectionDesc:
+        'نحوه انتخاب جهت پیام‌های گفتگو و جعبه نوشتن. حالت خودکار از اولین نویسه هر پاراگراف پیروی می‌کند؛ وقتی متن‌های مخلوط درست ردیف نمی‌شوند، یک جهت را انتخاب کنید. کد همیشه چپ‌به‌راست می‌ماند.',
+      textDirection: { auto: 'خودکار', rtl: 'راست‌به‌چپ', ltr: 'چپ‌به‌راست' },
       introSplashTitle: 'صفحه خوش‌آمد',
       introSplashDesc: 'نشان متنی و پرامپت نمایش‌داده‌شده در گفتگوی خالی.',
+      modelPricingTitle: 'قیمت مدل‌ها',
+      modelPricingDesc: 'نمایش قیمت ورودی، خروجی و خواندن حافظه نهان به‌ازای هر میلیون توکن در انتخاب‌گر مدل.',
       reactionsTitle: 'واکنش‌های پیام',
       reactionsDesc:
-        'تپ‌بک‌های ایموجی به سبک iMessage — به پیام‌ها واکنش نشان دهید و Hermes هم می‌تواند به پیام شما واکنش دهد.',
+        'تپ‌بک‌های ایموجی به سبک iMessage — به پیام‌ها واکنش نشان دهید و رسا هم می‌تواند به پیام شما واکنش دهد.',
       tipsTitle: 'نکته‌های درون‌برنامه‌ای',
       tipsDesc:
-        'حباب کوچکی که به بخشی از برنامه اشاره می‌کند؛ گاهی در حالت بیکاری و وقتی مفید است توسط Hermes نشان داده می‌شود. بستن یکی آن را برای همیشه بازنششته می‌کند.',
+        'حباب کوچکی که به بخشی از برنامه اشاره می‌کند؛ گاهی در حالت بیکاری و وقتی مفید است توسط رسا نشان داده می‌شود. بستن یکی آن را برای همیشه بازنششته می‌کند.',
       tipsReset: (count: number) => `بازگرداندن ${count} نکته بسته‌شده`,
       toursTitle: 'تورهای راهنما',
-      toursDesc: 'اجازه دهید Hermes برنامه را قدم‌به‌قدم نشان دهد؛ صفحه را کم‌نور و هر قدم را روشن می‌کند.',
+      toursDesc: 'اجازه دهید رسا برنامه را قدم‌به‌قدم نشان دهد؛ صفحه را کم‌نور و هر قدم را روشن می‌کند.',
       composerPopoutTitle: 'نوشتار شناور',
       composerPopoutDesc: 'کشیدن نوشتار از جای ثابت خود را اجازه می‌دهد. خاموش کنید تا در پایین قفل بماند.',
+      fileBrowserTitle: 'مرورگر فایل',
+      fileBrowserDesc:
+        'وقتی فضای کاری باز است، مرورگر فایل را کنار گفتگو نشان می‌دهد. کلید تغییر حالت در نوار عنوان هم همین کار را می‌کند.',
       vibeHeartsTitle: 'قلب‌های Vibe',
       vibeHeartsDesc: 'قلب‌های شناور وقتی تشکر، عشق، good bot بگویید یا قلب بفرستید. جدا از واکنش‌های پیام بالاست.',
       embedsTitle: 'جاسازی درون‌خطی',
@@ -1106,12 +1393,16 @@ export const fa = defineLocale({
       embedsAlways: 'همیشه',
       embedsOff: 'خاموش',
       embedsReset: (count: number) => `بازنشانی ${count} سرویس مجاز`,
+      resumeLastSessionTitle: 'بازگشایی آخرین گفتگو هنگام اجرا',
+      resumeLastSessionDesc:
+        'با فعال بودن، برنامه در شروع سرد آخرین گفتگوی شما را دوباره باز می‌کند. خاموش کنید تا همیشه با یک گفتگوی تازه شروع شود.',
       product: 'محصول',
       productDesc: 'فعالیت ابزار به زبان انسان با خلاصه‌های موجز.',
       technical: 'فنی',
       technicalDesc: 'شامل آرگومان‌ها/نتایج خام ابزار و جزئیات سطح پایین.',
       themeTitle: 'پوسته',
       themeDesc: 'فقط پالت‌های دسکتاپ. حالت انتخاب‌شده روی آن اعمال می‌شود.',
+      themeSearchPlaceholder: 'جستجوی پوسته‌های خودتان یا VS Code Marketplace…',
       themeProfileNote: profile => `برای پروفایل ${profile} ذخیره شد — هر پروفایل پوسته خودش را دارد.`,
       installTitle: 'نصب از VS Code',
       installDesc:
@@ -1126,9 +1417,9 @@ export const fa = defineLocale({
       pet: {
         title: 'موجود زنده',
         intro:
-          'یک ماسکوت متحرک petdex به‌کار بگیرید که روی برنامه شناور است و به کارهای Hermes واکنش نشان می‌دهد — هنگام اجرای ابزار در حال کار، در موفقیت جشن، در خطا اخم.',
+          'یک ماسکوت متحرک petdex به‌کار بگیرید که روی برنامه شناور است و به کارهای رسا واکنش نشان می‌دهد — هنگام اجرای ابزار در حال کار، در موفقیت جشن، در خطا اخم.',
         restartHint:
-          'موجودهای زنده به راه‌اندازی سریع نیاز دارند — برنامه در حال اجرا پیش از افزودن این قابلیت بالا آمده. Hermes را ببندید و دوباره باز کنید و به اینجا برگردید.',
+          'موجودهای زنده به راه‌اندازی سریع نیاز دارند — برنامه در حال اجرا پیش از افزودن این قابلیت بالا آمده. رسا را ببندید و دوباره باز کنید و به اینجا برگردید.',
 
 
         scaleTitle: 'اندازه',
@@ -1163,6 +1454,89 @@ export const fa = defineLocale({
         turnOffFailed: 'خاموش کردن موجود ممکن نشد.'
       }
     },
+    uninstallSection: {
+      dangerZone: 'ناحیه خطر',
+      checkingInstalled: 'در حال بررسی نصب‌شده‌ها…',
+      uninstallHermes: 'حذف نصب رسا',
+      chooseHowMuch:
+        'انتخاب کنید چه مقدار حذف شود. برنامه برای انجام کار بسته می‌شود؛ هر وقت خواستید نصب‌کننده را دوباره باز کنید تا برگردید.',
+      confirmUninstall: 'تأیید حذف نصب',
+      confirmBody: what => `${what} حذف می‌شود. این کار قابل بازگشت نیست.`,
+      appLabel: 'برنامه:',
+      couldNotStart: 'حذف نصب شروع نشد.',
+      uninstalling: 'در حال حذف نصب…',
+      yesUninstall: 'بله، حذف نصب شود',
+      options: {
+        gui: {
+          title: 'حذف فقط رابط گفتگوی دسکتاپ',
+          description: 'این برنامه دسکتاپ حذف می‌شود. عامل رسا، پیکربندی و گفتگوهای شما همه می‌مانند.',
+          consequence: 'رابط گفتگوی دسکتاپ (این برنامه و داده‌هایش)'
+        },
+        lite: {
+          title: 'حذف رابط + عامل، با نگه داشتن داده‌ها',
+          description:
+            'برنامه و عامل رسا حذف می‌شوند، اما پیکربندی، گفتگوها و اسرار برای نصب مجدد بعدی نگه داشته می‌شوند.',
+          consequence: 'رابط گفتگو و عامل رسا (پیکربندی، گفتگوها و اسرار نگه داشته می‌شوند)'
+        },
+        full: {
+          title: 'حذف همه‌چیز',
+          description: 'برنامه، عامل و همه داده‌های کاربر حذف می‌شوند — پیکربندی، گفتگوها، وظایف زمان‌بندی‌شده، اسرار، لاگ‌ها.',
+          consequence: 'همه‌چیز — رابط گفتگو، عامل رسا و همه پیکربندی، گفتگوها، اسرار و لاگ‌های شما'
+        }
+      }
+    },
+    poolLimits: {
+      warmBotBackendsAria: 'باک‌اند‌های گرم ربات',
+      warmBotBackendsTitle: 'باک‌اند‌های گرم ربات',
+      backendIdleTimeoutAria: 'زمان انتظار بی‌کاری باک‌اند به میلی‌ثانیه',
+      backendIdleTimeoutTitle: 'زمان انتظار بی‌کاری باک‌اند'
+    },
+    customEndpoints: {
+      active: 'فعال',
+      apiKeySet: 'کلید API تنظیم شده',
+      use: 'استفاده',
+      editTitle: 'ویرایش نقطه پایانی',
+      addTitle: 'افزودن نقطه پایانی',
+      fields: {
+        name: 'نام',
+        providerId: 'شناسه ارائه‌دهنده',
+        endpointUrl: 'URL نقطه پایانی',
+        defaultModel: 'مدل پیش‌فرض',
+        context: 'زمینه',
+        apiKey: 'کلید API',
+        apiKeyNewPlaceholder: 'برای حفظ کلید فعلی خالی بگذارید',
+        apiKeyPlaceholder: 'اختیاری',
+        useNewChats: 'استفاده در گفتگوهای جدید',
+        discoverModels: 'کشف مدل‌ها'
+      },
+      test: 'آزمایش',
+      save: 'ذخیره',
+      newEndpoint: 'نقطه پایانی جدید',
+      apiMode: 'حالت API',
+      autoDetect: 'تشخیص خودکار',
+      couldNotLoad: 'بارگذاری نقاط پایانی سفارشی ممکن نشد',
+      endpointSaved: 'نقطه پایانی سفارشی ذخیره شد.',
+      saveFailed: 'ذخیره ناموفق بود',
+      endpointReachable: 'نقطه پایانی در دسترس است.',
+      endpointReachableTransport: transport => `نقطه پایانی در دسترس است (مسیر ${transport} سرو می‌شود).`,
+      endpointReachableModels: (reachable, count) => `${reachable} — ${count} مدل یافت شد.`,
+      endpointValidationFailed: 'اعتبارسنجی نقطه پایانی ناموفق بود.',
+      validationFailed: 'اعتبارسنجی ناموفق بود',
+      activationFailed: 'فعال‌سازی ناموفق بود',
+      deleteConfirm: name => `${name} حذف شود؟`,
+      deleteFailed: 'حذف ناموفق بود',
+      title: 'نقاط پایانی سفارشی',
+      deleteEndpoint: 'حذف نقطه پایانی',
+      emptyDescription: 'یک نقطه پایانی سازگار با OpenAI در زیر اضافه کنید.',
+      emptyTitle: 'نقطه پایانی سفارشی ندارید',
+      namePlaceholder: 'Axet Proxy',
+      contextPlaceholder: 'خودکار'
+    },
+    computerUse: {
+      accessibility: 'دسترس‌پذیری',
+      screenRecording: 'ضبط صفحه‌نمایش',
+      driverHealth: 'سلامت درایور'
+    },
     about: {
 
 
@@ -1194,6 +1568,11 @@ export const fa = defineLocale({
 
 },
     config: {
+      minimizeToTrayTitle: 'کمینه به سینی سیستم',
+      minimizeToTrayDesc:
+        'کمینه‌کردن پنجره‌ها یا بستن پنجره اصلی آن‌ها را در سینی سیستم (نوار منو در مک) پنهان می‌کند و رسا در حال اجرا می‌ماند. برای خروج از Quit Hermes در منوی سینی یا Cmd+Q استفاده کنید. پیش‌فرض خاموش است؛ فقط روی همین دستگاه اعمال می‌شود.',
+      minimizeToTrayUnavailable:
+        'سینی سیستم در دسترس نیست. پنجره‌ها به‌طور عادی کمینه و بسته می‌شوند. برای تلاش دوباره، این گزینه را خاموش و روشن کنید.',
       none: 'هیچ',
       noneParen: '(هیچ)',
       builtinOnly: 'فقط داخلی',
@@ -1202,7 +1581,7 @@ export const fa = defineLocale({
       searchPlaceholder: 'جستجو…',
       noResults: 'نتیجه‌ای یافت نشد',
       systemDefault: 'پیش‌فرض سیستم',
-      loading: 'در حال بارگذاری پیکربندی Hermes…',
+      loading: 'در حال بارگذاری پیکربندی رسا…',
       emptyTitle: 'چیزی برای پیکربندی نیست',
       emptyDesc: 'این بخش تنظیم قابل‌تغییری ندارد.',
       failedLoad: 'بارگذاری تنظیمات ناموفق بود',
@@ -1217,15 +1596,58 @@ export const fa = defineLocale({
       disableF12Title: 'غیرفعال کردن DevTools با F12',
       disableF12Desc:
         'باز شدن Developer Tools با F12 را مسدود می‌کند. Ctrl+Shift+I (یا Cmd+Opt+I در مک) همچنان کار می‌کند.',
+      alwaysExternalLinksTitle: 'باز کردن همیشه پیوندها در مرورگر بیرونی',
+      alwaysExternalLinksDesc:
+        'هر پیوندی که کلیک می‌کنید به‌جای مرورگر درون‌برنامه‌ای در مرورگر سیستم شما باز می‌شود. گزینه «باز کردن در مرورگر برنامه» در منوی راست‌کلیک همچنان کار می‌کند.',
       attachmentSizeTitle: 'حداکثر اندازه بارگذاری پیش‌نمایش/تصویر',
       attachmentSizeDesc:
         'حداکثر اندازه فایل محلی که دسکتاپ برای پیش‌نمایش و پیوست تصویر بارگذاری می‌کند، بر حسب مگابایت. پیش‌فرض ۱۶ است. پیوست تصویریِ راه‌داول سقف جداگانه ۲۵۶ مگابایت دارد. مقدار خیلی بالا کل فایل را در حافظه بار می‌کند و می‌تواند برنامه را هنگ کند.',
       attachmentSizeUnit: 'MB',
-      attachmentSizeLabel: 'حداکثر اندازه بارگذاری پیش‌نمایش/تصویر بر حسب مگابایت'
+      attachmentSizeLabel: 'حداکثر اندازه بارگذاری پیش‌نمایش/تصویر بر حسب مگابایت',
+      voiceShortcutHintTitle: 'میان‌بر ضبط صدا',
+      voiceShortcutHintDesc:
+        'میان‌بر ضبط صدا را در تنظیمات ← کلیدهای میان‌بر («شروع / پایان گفتگوی صوتی») تنظیم کنید. مقدار پیکربندی voice.record_key فقط برای CLI و TUI اعمال می‌شود.',
+      showOptions: 'نمایش گزینه‌ها'
+    },
+    hudModifier: {
+      title: 'ضربه بزنید تا HUD احضار شود',
+      description:
+        'در مک ⌘ + Option و در ویندوز/لینوکس Ctrl + Alt را فشار داده و رها کنید تا HUD از هر برنامه‌ای جلو بیاید. پیش‌فرض خاموش است؛ فقط روی همین دستگاه اعمال می‌شود.',
+      permission:
+        'به رسا در System Settings ← Privacy & Security ← Input Monitoring اجازه دهید و دوباره تلاش کنید. این ژست هیچ کلیدی را ثبت نمی‌کند یا صفحه شما را ضبط نمی‌کند.',
+      unavailable:
+        'کمکی ژست HUD شروع نشد یا غیرمنتظره متوقف شد. دوباره تلاش کنید یا رسا را راه‌اندازی مجدد کنید. میان‌بر HUD موجود همچنان داخل رسا کار می‌کند.',
+      missingHelper:
+        'این نصب رسا کمکی ژست HUD را ندارد. رسا را به‌روز یا دوباره نصب کنید و دوباره تلاش کنید.',
+      unsupportedSession:
+        'این نشست دسکتاپ از ضربه‌های سراسری اصلاح‌گر پشتیبانی نمی‌کند. لینوکس به X11 نیاز دارد؛ Wayland پشتیبانی نمی‌شود.'
+    },
+    screenshot: {
+      enabledTitle: 'میان‌بر تصویربرداری از صفحه',
+      enabledDesc:
+        'از هر برنامه‌ای هر دو کلید Command را همزمان فشار دهید تا فعال‌ترین پنجره آن ضبط و به پیش‌نویس فعلی شما در رسا پیوست شود. هرگز خودکار ارسال نمی‌شود. پیش‌فرض خاموش است؛ فقط روی همین مک اعمال می‌شود. محتوای پنجره ممکن است حساس باشد — پیش از ارسال، پیوست را بازبینی کنید.',
+      statusTitle: 'وضعیت میان‌بر تصویربرداری از صفحه',
+      checking: 'در حال بررسی میان‌بر تصویربرداری…',
+      disabled: 'میان‌بر تصویربرداری از صفحه خاموش است.',
+      starting: 'شنونده میان‌بر در حال راه‌اندازی است. هنوز آماده نیست.',
+      ready: 'میان‌بر آماده است. تصاویر بدون ارسال به پیش‌نویس فعلی شما پیوست می‌شوند.',
+      inputPermission:
+        'مجوز Input Monitoring به رسا اجازه می‌دهد وقتی برنامه دیگری فعال است، هر دو کلید Command را تشخیص دهد. به رسا در System Settings ← Privacy & Security ← Input Monitoring اجازه دهید، سپس به اینجا برگردید و دوباره تلاش کنید.',
+      screenPermission:
+        'مجوز Screen Recording به رسا اجازه می‌دهد هنگام استفاده از این میان‌بر، پنجره فعال‌ترین برنامه را ضبط کند. به رسا در System Settings ← Privacy & Security ← Screen Recording اجازه دهید، سپس به اینجا برگردید و دوباره تلاش کنید. اگر مک‌او‌اس خواست، رسا را راه‌اندازی مجدد کنید.',
+      openSettings: 'باز کردن System Settings',
+      retry: 'تلاش دوباره',
+      unavailable: 'میان‌بر تصویربرداری از صفحه در دسترس نیست. دوباره تلاش کنید یا خاموشش کنید.',
+      errorTitle: 'خطای میان‌بر تصویربرداری از صفحه',
+      loadFailed: 'خواندن وضعیت میان‌بر ممکن نشد. برای بررسی تنظیم فعلی دوباره تلاش کنید.',
+      saveFailed: 'تأیید تغییر میان‌بر ممکن نشد. برای بررسی تنظیم فعلی دوباره تلاش کنید.',
+      permissionFailed: 'باز کردن System Settings ممکن نشد. Privacy & Security را دستی باز کنید و دوباره تلاش کنید.',
+      captureFailed: 'ضبط فعال‌ترین پنجره ممکن نشد. چیزی پیوست یا ارسال نشد.',
+      contextChanged: 'پیش‌نویس فعلی حین ضبط تغییر کرد. تصویر پیوست یا ارسال نشد.'
     },
     quickEntry: {
       enabledTitle: 'ورود سریع',
-      enabledDesc: 'با یک میان‌بر سراسری از هر جا یک نوشتار کوچک احضار کنید و بدون باز کردن Hermes پرامپت بفرستید.',
+      enabledDesc: 'با یک میان‌بر سراسری از هر جا یک نوشتار کوچک احضار کنید و بدون باز کردن رسا پرامپت بفرستید.',
       shortcutTitle: 'میان‌بر ورود سریع',
       shortcutDesc: 'حداقل یک کلید اصلاح‌گر لازم است، مثل CommandOrControl+Shift+Space.',
       active: 'میان‌بر فعال است.',
@@ -1255,7 +1677,7 @@ export const fa = defineLocale({
     // v2 multi-connection registry: Settings → Gateways.
     connections: {
       title: 'دروازه‌های ثبت‌شده',
-      intro: 'این دستگاه و هر دروازه Hermes که می‌تواند از طریق اتصال راه دور، SSH یا Cloud برسد را مدیریت کنید.',
+      intro: 'این دستگاه و هر دروازه رسا که می‌تواند از طریق اتصال راه دور، SSH یا Cloud برسد را مدیریت کنید.',
       stagedNote:
         'سوئیچ دروازه از صفحه نشست‌ها انجام می‌شود. پروفایل‌ها، گفتگوها، پیام‌رسانی و وظایف cron با دروازه خودشان می‌مانند؛ کار روی دروازه‌های دیگر به اجرا ادامه می‌دهد.',
       launchModeTitle: 'در شروع، بازگشت به نشست‌ها روی آخرین دروازه استفاده‌شده',
@@ -1282,15 +1704,15 @@ export const fa = defineLocale({
       updateAllRunning: 'در حال به‌روزرسانی همه نمونه‌ها…',
       updateAllDone: 'به‌روزرسانی‌ها ارسال شد',
       updateAllFailed: 'ارسال گروهی به‌روزرسانی ناموفق بود',
-      updateSkippedCloud: 'مدیریت‌شده توسط Hermes Cloud',
+      updateSkippedCloud: 'مدیریت‌شده توسط رسا Cloud',
       kindLocal: 'محلی',
       kindRemote: 'دروازه راه دور',
-      kindCloud: 'Hermes Cloud',
+      kindCloud: 'رسا Cloud',
       kindSsh: 'SSH',
-      kindLocalDesc: 'زمان اجرا Hermes که این برنامه مدیریتش می‌کند.',
-      kindRemoteDesc: 'دروازه Hermes در دسترس از طریق HTTP(S) — LAN، Tailscale یا اینترنت.',
-      kindCloudDesc: 'نمونه میزبانی‌شده که از طریق حساب Hermes Cloud شما کشف می‌شود.',
-      kindSshDesc: 'نصب Hermes در دسترس از طریق SSH.',
+      kindLocalDesc: 'زمان اجرا رسا که این برنامه مدیریتش می‌کند.',
+      kindRemoteDesc: 'دروازه رسا در دسترس از طریق HTTP(S) — LAN، Tailscale یا اینترنت.',
+      kindCloudDesc: 'نمونه میزبانی‌شده که از طریق حساب رسا Cloud شما کشف می‌شود.',
+      kindSshDesc: 'نصب رسا در دسترس از طریق SSH.',
       labelTitle: 'نام',
       labelDesc:
         'الزامی. همه‌جا که این نمونه ظاهر می‌شود نشان داده می‌شود؛ باید یکتا باشد (مثل «Homelab»، «لپ‌تاپ کار»).',
@@ -1299,7 +1721,7 @@ export const fa = defineLocale({
       sshHostTitle: 'میزبان SSH',
       headersTitle: 'هدرهای اضافی دروازه',
       headersDesc:
-        'با هر درخواست HTTP و WebSocket به این دروازه فرستاده می‌شود — برای پروکسی‌های دسترسی مثل Cloudflare Access (CF-Access-Client-Id / CF-Access-Client-Secret). مقادیر رمزنگاری‌شده ذخیره می‌شوند. هدرهایی که Hermes مدیریت می‌کند (Authorization، Cookie، Host…) نادیده گرفته می‌شوند.',
+        'با هر درخواست HTTP و WebSocket به این دروازه فرستاده می‌شود — برای پروکسی‌های دسترسی مثل Cloudflare Access (CF-Access-Client-Id / CF-Access-Client-Secret). مقادیر رمزنگاری‌شده ذخیره می‌شوند. هدرهایی که رسا مدیریت می‌کند (Authorization، Cookie، Host…) نادیده گرفته می‌شوند.',
       headerValuePlaceholder: 'مقدار',
       headerValueSaved: 'ذخیره شد — برای حفظ، خالی بگذارید',
       headerAdd: 'افزودن هدر',
@@ -1310,7 +1732,7 @@ export const fa = defineLocale({
       sameBackendHint: (label: string) => `همان باک‌اند «${label}»`,
       localAddHint: 'محلی در دسترس نیست: اتصال محلی مدیریت‌شده از قبل وجود دارد (فقط یکی ممکن است).',
       cloudAddHint:
-        'نکته: ورود در بخش Hermes Cloud بالا، عامل‌های شما را خودکار کشف می‌کند — از این فرم فقط برای ثبت دستی آدرس نمونه‌ای شناخته‌شده استفاده کنید.',
+        'نکته: ورود در بخش رسا Cloud بالا، عامل‌های شما را خودکار کشف می‌کند — از این فرم فقط برای ثبت دستی آدرس نمونه‌ای شناخته‌شده استفاده کنید.',
       save: 'ذخیره اتصال',
       saving: 'در حال ذخیره…',
       cancel: 'لغو',
@@ -1341,23 +1763,23 @@ export const fa = defineLocale({
       title: 'اتصال دروازه',
       envOverride: 'override محیطی',
       intro:
-        'به‌طور پیش‌فرض محلی. وقتی این برنامه باید باک‌اند Hermes را جای دیگری براند، از راه دور استفاده کنید. اتصال‌های دروازه سطح دستگاه‌اند؛ پروفایل‌ها از دروازه‌هایی که وصل می‌شوید کشف می‌گردند.',
+        'به‌طور پیش‌فرض محلی. وقتی این برنامه باید باک‌اند رسا را جای دیگری براند، از راه دور استفاده کنید. اتصال‌های دروازه سطح دستگاه‌اند؛ پروفایل‌ها از دروازه‌هایی که وصل می‌شوید کشف می‌گردند.',
       envOverrideTitle: 'متغیرهای محیطی این نشست دسکتاپ را کنترل می‌کنند.',
       envOverrideDesc:
         'برای استفاده از تنظیم ذخیره‌شده زیر، HERMES_DESKTOP_REMOTE_URL و HERMES_DESKTOP_REMOTE_TOKEN را پاک کنید.',
       modeTitle: 'حالت اتصال',
       localTitle: 'دروازه محلی',
-      localDesc: 'یک باک‌اند خصوصی Hermes روی localhost اجرا می‌کند. پیش‌فرض است و آفلاین کار می‌کند.',
+      localDesc: 'یک باک‌اند خصوصی رسا روی localhost اجرا می‌کند. پیش‌فرض است و آفلاین کار می‌کند.',
       remoteTitle: 'دروازه راه دور',
-      remoteDesc: 'این پوسته دسکتاپ را به باک‌اند راه دور Hermes وصل می‌کند.',
+      remoteDesc: 'این پوسته دسکتاپ را به باک‌اند راه دور رسا وصل می‌کند.',
       remoteAuthHint:
         'دروازه‌های میزبانی‌شده از OAuth یا نام کاربری و رمز استفاده می‌کنند؛ موارد خودمیزبان ممکن است از توکن نشست استفاده کنند.',
-      cloudTitle: 'Hermes Cloud',
-      cloudDesc: 'یک‌بار به Hermes Cloud وارد شوید و از عامل‌های حساب خود انتخاب کنید — نیازی به چسباندن URL نیست.',
-      cloudSignInTitle: 'Hermes Cloud',
-      cloudSignIn: 'ورود به Hermes Cloud',
-      cloudSignedIn: 'وارد Hermes Cloud شدید',
-      cloudNeedsSignIn: 'برای کشف عامل‌های حساب خود، وارد Hermes Cloud شوید.',
+      cloudTitle: 'رسا Cloud',
+      cloudDesc: 'یک‌بار به رسا Cloud وارد شوید و از عامل‌های حساب خود انتخاب کنید — نیازی به چسباندن URL نیست.',
+      cloudSignInTitle: 'رسا Cloud',
+      cloudSignIn: 'ورود به رسا Cloud',
+      cloudSignedIn: 'وارد رسا Cloud شدید',
+      cloudNeedsSignIn: 'برای کشف عامل‌های حساب خود، وارد رسا Cloud شوید.',
       cloudSignedInDesc: 'وارد شده‌اید. عامل را از زیر انتخاب کنید؛ نشست خودکار تازه می‌شود.',
       cloudAgentsTitle: 'عامل‌های شما',
       cloudOrgPickerTitle: 'یک سازمان انتخاب کنید',
@@ -1372,12 +1794,17 @@ export const fa = defineLocale({
       },
       cloudRefresh: 'به‌روزرسانی',
       cloudConnect: 'اتصال',
+      cloudSavedTitle: 'دروازه‌های Cloud ذخیره‌شده',
+      cloudSavedDesc:
+        'از یک دروازه ذخیره‌شده بدون تغییر پیش‌فرضتان استفاده کنید. برای افزودن نمونه‌ها در زیر وارد شوید. مدیریت نام‌ها و ورود در فهرست اتصال‌های ذخیره‌شده انجام می‌شود.',
+      cloudUseSaved: 'استفاده از دروازه',
+      cloudActive: 'فعال در این پنجره',
       cloudConnecting: 'در حال اتصال…',
-      cloudDiscoverFailed: 'بارگذاری عامل‌های Hermes Cloud شما ممکن نشد',
+      cloudDiscoverFailed: 'بارگذاری عامل‌های رسا Cloud شما ممکن نشد',
       cloudConnectFailed: 'اتصال به آن عامل ممکن نشد',
-      cloudSignInFailed: 'ورود به Hermes Cloud ناموفق بود',
-      cloudSignedOutTitle: 'از Hermes Cloud خارج شدید',
-      cloudSignedOutMessage: 'نشست Hermes Cloud پاک شد.',
+      cloudSignInFailed: 'ورود به رسا Cloud ناموفق بود',
+      cloudSignedOutTitle: 'از رسا Cloud خارج شدید',
+      cloudSignedOutMessage: 'نشست رسا Cloud پاک شد.',
       cloudConnectedTitle: 'متصل',
       cloudConnectedPill: 'متصل',
       cloudConnectedTo: name => `متصل به ${name}.`,
@@ -1429,9 +1856,9 @@ export const fa = defineLocale({
       enterUrlFirst: 'ابتدا آدرس راه دور را وارد کنید.',
       restartingTitle: 'اتصال دروازه در حال راه‌اندازی مجدد',
       savedTitle: 'تنظیمات دروازه ذخیره شد',
-      restartingMessage: 'Hermes Desktop با تنظیمات ذخیره‌شده دوباره وصل می‌شود — پوسته باز می‌ماند.',
+      restartingMessage: 'رسا دسکتاپ با تنظیمات ذخیره‌شده دوباره وصل می‌شود — پوسته باز می‌ماند.',
       savedMessage: 'برای راه‌اندازی بعدی ذخیره شد.',
-      connectedTo: (baseUrl, version) => `متصل به ${baseUrl}${version ? ` · Hermes ${version}` : ''}`,
+      connectedTo: (baseUrl, version) => `متصل به ${baseUrl}${version ? ` · رسا ${version}` : ''}`,
       reachableTitle: 'دروازه راه دور در دسترس است',
       signedOutTitle: 'خارج شدید',
       signedOutMessage: 'نشست دروازه راه دور پاک شد.',
@@ -1443,7 +1870,7 @@ export const fa = defineLocale({
       saveFailed: 'ذخیره تنظیمات دروازه ممکن نشد',
       sshTitle: 'اتصال از طریق SSH',
       sshDesc:
-        'Hermes روی دستگاه راه دور از طریق SSH اجرا و به این برنامه تونل می‌شود — چیزی برای اجرا یا در معرض گذاشتن نیست. به دسترسی SSH کارآمد مبتنی بر کلید به میزبان نیاز دارد.',
+        'رسا روی دستگاه راه دور از طریق SSH اجرا و به این برنامه تونل می‌شود — چیزی برای اجرا یا در معرض گذاشتن نیست. به دسترسی SSH کارآمد مبتنی بر کلید به میزبان نیاز دارد.',
       sshTrustHint: 'نخستین کلید میزبانی که ارائه شود اعتماد و ثابت می‌شود؛ تغییرهای بعدی با شکست مواجه می‌شوند.',
       sshHostTitle: 'میزبان',
       sshHostDesc: 'user@host یا نام مستعار Host از ~/.ssh/config.',
@@ -1458,25 +1885,25 @@ export const fa = defineLocale({
       sshPortDesc: 'خالی = 22 یا پورت ~/.ssh/config.',
       sshKeyTitle: 'فایل هویت',
       sshKeyDesc: 'مسیر کلید خصوصی. خالی = ssh-agent یا ~/.ssh/config.',
-      sshHermesPathTitle: 'مسیر Hermes (اختیاری)',
+      sshHermesPathTitle: 'مسیر رسا (اختیاری)',
       sshHermesPathDesc: 'مسیر کامل باینری hermes راه دور. خالی = تشخیص خودکار.',
       sshHermesPathPlaceholder: 'تشخیص خودکار',
       sshTestConnection: 'آزمایش SSH',
       sshConnect: 'اتصال',
       sshButtonsHint: 'ذخیره در راه‌اندازی بعدی اعمال می‌شود. اتصال همان حالا وصل می‌شود.',
-      sshReachable: (host, platform) => `در دسترس: ${host} (${platform}) — Hermes یافت شد`,
+      sshReachable: (host, platform) => `در دسترس: ${host} (${platform}) — رسا یافت شد`,
       sshIncompleteHost: 'پیش از اتصال، میزبان SSH را وارد کنید.',
       sshErrUnreachable: 'از طریق SSH به آن میزبان دسترسی ممکن نشد. میزبان، پورت و شبکه خود را بررسی کنید.',
       sshErrAuth:
-        'احراز هویت SSH ناموفق بود. کلید خود را در ssh-agent بارگذاری کنید (ssh-add) یا IdentityFile را در ~/.ssh/config تنظیم کنید — Hermes دستور ssh را بدون تعامل اجرا می‌کند.',
+        'احراز هویت SSH ناموفق بود. کلید خود را در ssh-agent بارگذاری کنید (ssh-add) یا IdentityFile را در ~/.ssh/config تنظیم کنید — رسا دستور ssh را بدون تعامل اجرا می‌کند.',
       sshErrHostKey:
         'کلید میزبان از آخرین اتصال شما تغییر کرده. مطمئن شوید این انتظار می‌رود، سپس ssh-keygen -R <host> را اجرا و دوباره وصل شوید.',
       sshErrNotInstalled:
-        'Hermes روی میزبان راه دور نصب نیست. آنجا نصبش کنید (curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh) یا مسیر Hermes را تنظیم کنید.',
+        'رسا روی میزبان راه دور نصب نیست. آنجا نصبش کنید (curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh) یا مسیر رسا را تنظیم کنید.',
       sshErrPlatform:
-        'پلتفرم راه دور پشتیبانی نمی‌شود. حالت SSH دسکتاپ Hermes از میزبان‌های راه دور Linux، macOS و Windows پشتیبانی می‌کند.',
+        'پلتفرم راه دور پشتیبانی نمی‌شود. حالت SSH دسکتاپ رسا از میزبان‌های راه دور Linux، macOS و Windows پشتیبانی می‌کند.',
       sshErrTimeout: 'اتصال SSH مهلت تمام شد. میزبان ممکن است در دسترس نباشد یا خواب باشد.',
-      sshErrUpdateRequired: 'پیش از اتصال با SSH دسکتاپ، Hermes را روی میزبان راه دور به‌روزرسانی کنید.',
+      sshErrUpdateRequired: 'پیش از اتصال با SSH دسکتاپ، رسا را روی میزبان راه دور به‌روزرسانی کنید.',
       sshErrUnknown: 'اتصال SSH ناموفق بود.'
     },
     keys: {
@@ -1562,7 +1989,7 @@ export const fa = defineLocale({
       noOutput: 'هنوز خروجی نیست.',
       deepLinkTitle: 'سرور MCP اضافه شود؟',
       deepLinkDescription:
-        'یک لینک خواست این سرور MCP را به Hermes اضافه کند. پیکربندی دقیق زیر را بازبینی کنید — از خود لینک می‌آید، نه از Hermes.',
+        'یک لینک خواست این سرور MCP را به رسا اضافه کند. پیکربندی دقیق زیر را بازبینی کنید — از خود لینک می‌آید، نه از رسا.',
       deepLinkStdioWarning:
         'این سرور یک فرایند محلی با فرمان نشان‌داده‌شده زیر روی دستگاه شما اجرا می‌کند. فقط اگر به منبعش اعتماد دارید ادامه دهید.',
       deepLinkConfirm: 'افزودن سرور',
@@ -1581,27 +2008,59 @@ export const fa = defineLocale({
       importConfirmMany: count => `افزودن ${count} سرور به mcp.json`
     },
     model: {
+      setupProviderFallback: 'ارائه‌دهنده',
+      setUpProvider: name => `راه‌اندازی ${name}`,
+      staleAuxBefore: (count, names) => `${count} وظیفه کمکی (${names}) همچنان روی `,
+      staleAuxAfter: ' اجرا می‌شود، نه مدل اصلی شما.',
+      staleAuxOtherProviders: 'ارائه‌دهنده‌های دیگر',
+      moaEnabled: 'فعال',
+      moaSetDefault: 'تنظیم پیش‌فرض',
+      moaNewPresetPlaceholder: 'پیش‌تنظیم جدید',
+      moaAddPreset: 'افزودن پیش‌تنظیم',
+      customModel: 'مدل سفارشی…',
+      customModelPlaceholder: 'شناسه مدل',
+      chooseFromList: 'انتخاب از فهرست',
+      moaDefault: 'پیش‌فرض:',
+      moaReferenceToggle: (enabled, index) => `${enabled ? 'غیرفعال‌سازی' : 'فعال‌سازی'} مرجع ${index}`,
+      moaReferenceTitle: index => `مرجع ${index}`,
+      moaAddReference: 'افزودن مدل مرجع',
       loading: 'در حال بارگذاری پیکربندی مدل…',
       appliesDesc:
         'روی نشست‌های جدید اعمال می‌شود. برای تعویض زنده گفتگوی فعال از انتخاب‌گر مدل در نوشتار استفاده کنید.',
       provider: 'ارائه‌دهنده',
       model: 'مدل',
       applying: 'در حال اعمال…',
+      mainAppliedTitle: 'مدل اصلی به‌روز شد',
+      mainAppliedMessage: model => `نشست‌های جدید از ${model} استفاده می‌کنند.`,
       defaultsLabel: 'پیش‌فرض‌ها',
       reasoning: 'استدلال',
       reasoningOff: 'خاموش',
       defaultsFailed: 'ذخیره پیش‌فرض‌های مدل ناموفق بود',
+      loadFailed: 'بارگذاری مدل‌ها ممکن نشد',
+      restartRequired: 'این باک‌اند پس از به‌روزرسانی همچنان کد قدیمی را اجرا می‌کند. برای بارگذاری کد جدید، آن را راه‌اندازی مجدد کنید.',
+      restartBackend: 'راه‌اندازی مجدد باک‌اند',
+      restartingBackend: 'در حال راه‌اندازی مجدد باک‌اند…',
+      restartFailed: 'راه‌اندازی مجدد باک‌اند ممکن نشد',
       auxiliaryTitle: 'مدل‌های کمکی',
       resetAllToMain: 'بازنشانی همه به مدل اصلی',
+      staleAuxDismiss: 'دوباره نشان نده',
       auxiliaryDesc:
         'وظایف کمکی به‌طور پیش‌فرض روی مدل اصلی اجرا می‌شوند. برای بازنویسی، به هر وظیفه مدلی اختصاصی بدهید.',
       setToMain: 'تنظیم به مدل اصلی',
       change: 'تغییر',
       autoUseMain: 'خودکار · استفاده از مدل اصلی',
+      inheritMainEffort: 'ارث‌بری · میزان تلاش مدل اصلی',
       providerDefault: '(پیش‌فرض ارائه‌دهنده)',
       fallbackAdd: 'افزودن جایگزین',
       fallbackEmpty: 'مدل جایگزینی نیست — مگر آنکه شکست بخورد، مدل پیش‌فرض استفاده می‌شود.',
       notInCatalog: 'در فهرست مدل‌های این ارائه‌دهنده نیست — فراخوانی‌ها ممکن است به پشتیبان برگردند.',
+      moaTitle: 'ترکیب عامل‌ها (Mixture of Agents)',
+      moaPreset: 'پیش‌تنظیم',
+      moaDescription:
+        'پیش‌تنظیم‌های نام‌دار را پیکربندی کنید که به‌عنوان مدل در زیر ارائه‌دهنده ترکیب عامل‌ها ظاهر می‌شوند. تجمیع‌گر مدل مجری است — هر گام حلقه ابزار را اجرا می‌کند و تقریباً تمام هزینه اجرا به ارائه‌دهنده آن تعلق می‌گیرد. مرجع‌ها به‌طور پیش‌فرض هر نوبت کاربر فقط یک بار مشاوره می‌دهند.',
+      moaAggregator: 'تجمیع‌گر',
+      moaAggregatorBilled: 'مدل مجری · هزینه اجرا به آن تعلق می‌گیرد',
+      moaReferenceHint: 'به‌طور پیش‌فرض هر نوبت یک بار مشاوره می‌دهد',
       tasks: {
         vision: { label: 'بینایی', hint: 'تحلیل تصویر' },
         compression: { label: 'فشرده‌سازی', hint: 'تراکم زمینه' },
@@ -1610,14 +2069,149 @@ export const fa = defineLocale({
         mcp: { label: 'MCP', hint: 'مسیریابی ابزار MCP' },
         title_generation: { label: 'تولید عنوان', hint: 'عنوان‌های نشست' },
         review: { label: 'بازبینی', hint: 'زیرعامل بازبین /review' },
+        triage_specifier: { label: 'مشخص‌ساز دسته‌بندی', hint: 'تکمیل شرح کانبان' },
+        kanban_decomposer: { label: 'تجزیه‌گر کانبان', hint: 'تجزیه وظیفه' },
+        profile_describer: { label: 'توصیف‌گر پروفایل', hint: 'توصیف خودکار پروفایل‌ها' },
         curator: { label: 'امان', hint: 'بازبینی استفاده از مهارت' }
       }
+    },
+    localModels: {
+      connectionChanged: 'اتصال مدل‌های محلی تغییر کرد',
+      title: 'مدل‌های محلی',
+      runtimeTitle: 'محیط اجرای محلی',
+      runtimeReady: backend => `آماده · ${backend}`,
+      serverRunning: 'در حال اجرا',
+      runtimeInstalled: 'محیط اجرای llama.cpp نصب شد',
+      runtimeInstalledDetail: (tag, backend) =>
+        `نسخه ساخت ${tag}، باک‌اند ${backend}. رسا سرور را برای شما راه‌اندازی و مدیریت می‌کند.`,
+      installTitle: 'نصب محیط اجرای محلی',
+      installDetail:
+        'موتور استنتاج llama.cpp (چند صد مگابایت) دانلود می‌شود. مدل‌هایی که دانلود می‌کنید کاملاً روی همین ماشین اجرا می‌شوند — بدون حساب کاربری، هیچ‌چیز از رایانه شما خارج نمی‌شود.',
+      installAction: 'نصب محیط اجرا',
+      installing: 'در حال نصب محیط اجرا…',
+      installFailed: 'نصب محیط اجرا ناموفق بود',
+      hardwareTitle: 'این ماشین',
+      hardwareLoading: 'در حال بررسی سخت‌افزار شما…',
+      vram: label => `حافظه GPU ${label}`,
+      ram: label => `RAM ${label}`,
+      unifiedMemory: 'حافظه یکپارچه',
+      modelsTitle: 'مدل‌ها',
+      recommended: 'پیشنهادی',
+      /* راهنمای نشان «پیشنهادی»، کلیدزده‌شده بر شاخه‌ای از حل‌کننده که
+         انتخاب را انجام داده. عمداً کیفی است: پیش‌بینی‌ها ترتیب کاندیدها را
+         می‌سازند، نه قولی برای چاپ شدن. */
+      recommendedReason: {
+        'best-quality-resident':
+          'بالاترین‌کیفیت مدلی که کاملاً با سرعت کامل روی GPU شما اجرا می‌شود. وزن‌دهی انتخاب‌ها بین کیفیت و سرعت پیش‌بینی‌شده روی همین سخت‌افزار است.',
+        'speed-gated-quality':
+          'مدل باکیفیت‌تری روی این ماشین جا می‌شود اما روی پهنای باند حافظه‌اش خیلی کند پاسخ می‌دهد — این بهترین مدلی است که سرعت را نگه می‌دارد.',
+        'fastest-resident':
+          'هیچ مدلی روی این سخت‌افزار به سرعت کامل نمی‌رسد؛ این یکی نزدیک‌ترین است و کاملاً در حافظه GPU اجرا می‌شود.'
+      },
+      noRecommendationTitle: 'برای این ماشین پیشنهاد خودکاری نیست',
+      noRecommendationDetail:
+        'راه‌اندازی خودکار به مدلی منتخب نیاز دارد که کاملاً در حافظه GPU یا حافظه یکپارچه جا شود. همچنان می‌توانید مدل را از زیر انتخاب یا مدل‌های بیشتری ببینید.',
+      noRecommendationAction: 'مشاهده مدل‌ها',
+      downloaded: 'دانلودشده',
+      downloadAction: size => `دانلود · ${size}`,
+      downloadProgress: (done, total) => `${done} از ${total}`,
+      downloadStatusRunning: 'در حال دانلود',
+      downloadSpeed: rate => `${rate}`,
+      downloadEta: time => `~${time} باقی مانده`,
+      downloadEtaSeconds: count => `${count} ثانیه`,
+      downloadEtaMinutes: count => `${count} دقیقه`,
+      downloadEtaHours: (hours, minutes) => (minutes ? `${hours} ساعت و ${minutes} دقیقه` : `${hours} ساعت`),
+      downloadPausedLabel: 'متوقف شد',
+      downloadPauseAction: 'توقف',
+      downloadResumeAction: 'ادامه',
+      downloadDoneToast: model => `${model} آماده است.`,
+      installDoneToast: 'محیط اجرای محلی نصب و آماده شد.',
+      quickstartTitle: 'اجرای یک مدل روی همین ماشین',
+      quickstartDetail: (model, size) =>
+        `یک کلیک همه‌چیز را آماده می‌کند: موتور محلی، ${model} (دانلود ${size})، و پیش‌فرض گفتگوهای جدید شما. هیچ‌چیز از این رایانه خارج نمی‌شود.`,
+      quickstartDetailReady: model =>
+        `یک کلیک ${model} را پیش‌فرض گفتگوهای جدید شما می‌کند. همه‌چیز روی همین ماشین اجرا می‌شود.`,
+      quickstartAction: 'برای من راه‌اندازی کن',
+      quickstartConfigure: 'خودم انتخاب می‌کنم',
+      quickstartDoneToast: model => `${model} راه‌اندازی شد — گفتگوهای جدید روی همین ماشین اجرا می‌شوند.`,
+      quickstartFailed: 'راه‌اندازی مدل محلی ناموفق بود',
+      quickstartStageEngine: 'موتور',
+      quickstartStageModel: 'مدل',
+      quickstartStageFinish: 'پایان',
+      useAction: 'استفاده',
+      activePill: 'پیش‌فرض',
+      updateTitle: 'به‌روزرسانی موتور موجود است',
+      updateDetail: (next, current) =>
+        `نسخه ساخت جدیدتری از llama.cpp (${next}) آماده نصب است — شما روی ${current} هستید. مدل‌ها حین دانلود به کار ادامه می‌دهند.`,
+      updateAction: 'به‌روزرسانی موتور',
+      updating: 'در حال به‌روزرسانی موتور…',
+      upToDateTitle: 'موتور به‌روز است',
+      upToDateDetail: (tag, backend) => `در حال اجرای llama.cpp ${tag} (${backend}).`,
+      activeDetail: 'گفتگوهای جدید از این مدل استفاده می‌کنند — با اولین پیام شما بارگذاری می‌شود',
+      activeNotLoaded: 'با اولین پیام شما بارگذاری می‌شود',
+      loadedPill: 'در حافظه',
+      placementResident: 'همه روی GPU',
+      placementSpilled: 'تاحدی در RAM',
+      placementResidentTip: 'در این پنجره زمینه کاملاً در حافظه GPU اجرا می‌شود — سرعت کامل.',
+      placementSpilledTip:
+        'بخشی از این مدل از RAM سیستم اجرا می‌شود — کار می‌کند، اما کندتر. نسخه ساخت فشرده‌تر یا زمینه کوچک‌تر کامل جا می‌شود.',
+      loadingPill: 'در حال بارگذاری…',
+      ejectTip: 'حافظه GPU را آزاد می‌کند (با پیام بعدی دوباره بارگذاری می‌شود)',
+      ejected: 'مدل تخلیه شد — حافظه GPU آزاد شد.',
+      ejectFailed: 'تخلیه مدل ممکن نشد',
+      stopServer: 'خاموش کردن',
+      startServer: 'روشن کردن',
+      runtimeRunningDetail:
+        'سرور محلی در حال اجراست. خاموش کردن آن همه حافظه GPU را آزاد می‌کند و تا روشن کردن دوباره، گفتگوهای جدید نمی‌توانند از مدل‌های محلی استفاده کنند.',
+      serverStopped: 'سرور محلی متوقف شد — حافظه GPU آزاد شد.',
+      serverStarted: 'سرور محلی در حال اجراست.',
+      serverStopFailed: 'توقف سرور محلی ممکن نشد',
+      serverStartFailed: 'شروع سرور محلی ممکن نشد',
+      activating: 'در حال شروع…',
+      activateFailed: model => `سوئیچ به ${model} ممکن نشد`,
+      activateDoneToast: model => `گفتگوهای جدید از ${model} استفاده می‌کنند.`,
+      downloadFailed: model => `دانلود ${model} ناموفق بود`,
+      downloadPauseFailed: model => `توقف موقت دانلود ${model} ممکن نشد`,
+      downloadResumeFailed: model => `ادامه دانلود ${model} ممکن نشد`,
+      pillFitsGpu: 'در GPU شما جا می‌شود',
+      pillUsesRam: 'از RAM سیستم استفاده می‌کند',
+      pillTooBig: 'برای این ماشین خیلی بزرگ است',
+      browseTitle: 'یافتن مدل‌های بیشتر',
+      browseHint:
+        'کل Hugging Face را جستجو کنید. مدل‌هایی که این‌جا دانلود می‌کنید به‌طور خودکار برای ماشین شما اندازه‌گذاری می‌شوند، اما توسط ما آزمایش نشده‌اند.',
+      browsePlaceholder: 'جستجوی مدل‌ها بر اساس نام یا نویسنده…',
+      browseSearching: 'جستجو در Hugging Face',
+      browseListing: 'خواندن فایل‌های مدل',
+      browseShowFiles: 'نمایش فایل‌ها',
+      browseRefresh: 'تازه‌سازی',
+      browseDownloads: 'دانلود',
+      browseLikes: 'پسند',
+      browseGated: 'نیازمند ورود به Hugging Face',
+      browseNoGguf: 'فایل مدل سازگاری یافت نشد.',
+      browseFitUnknown: 'اندازه جا شدن نامشخص',
+      browseAlreadyDownloaded: 'از قبل دانلود شده است.',
+      addedByYou: 'افزوده‌شده توسط شما',
+      browseDownloadStarted: 'در حال دانلود {name}',
+      browseDownloadAria: 'دانلود {name}',
+      sideloadButton: 'افزودن فایل مدل',
+      sideloadTitle: 'انتخاب فایل مدل GGUF',
+      sideloadDone: '{name} اضافه شد.',
+      sideloadAlreadyPresent: 'از قبل در کتابخانه شما هست.',
+      pillFullContext: max => `زمینه کامل ${max}`,
+      pillFullContextTip: 'از همان ابتدا در پنجره زمینه کامل مدل اجرا می‌شود',
+      pillUpTo: max => `زمینه تا ${max}`,
+      pillGrowsTip: 'با نیاز گفتگوی شما به فضای بیشتر، به‌طور خودکار بزرگ می‌شود',
+      pillVision: 'تصویر می‌بیند',
+      deleteAction: 'حذف مدل',
+      deleteConfirm: model => `${model} از دیسک حذف شود؟`,
+      deleted: model => `${model} حذف شد.`,
+      deleteFailed: 'حذف ناموفق بود'
     },
     providers: {
       connectAccount: 'اتصال یک حساب',
       haveApiKey: 'به‌جای آن کلید API دارید؟',
       intro:
-        'با اشتراک وارد شوید — نیازی به کپی کلید API نیست. Hermes ورود مرورگری را خودش همین‌جا در برنامه انجام می‌دهد.',
+        'با اشتراک وارد شوید — نیازی به کپی کلید API نیست. رسا ورود مرورگری را خودش همین‌جا در برنامه انجام می‌دهد.',
       connected: 'متصل',
       collapse: 'جمع کردن',
       connectAnother: 'اتصال ارائه‌دهنده دیگر',
@@ -1638,7 +2232,7 @@ export const fa = defineLocale({
       noKeysMatch: 'ارائه‌دهنده‌ای مطابق جستجوی شما نیست.',
       localEndpoint: {
         title: 'نقطه پایانی محلی / سفارشی',
-        description: 'Hermes را به هر نقطه پایانی سازگار با OpenAI指向 کنید (Zyphra، vLLM، llama.cpp، Ollama و غیره).'
+        description: 'رسا را به هر نقطه پایانی سازگار با OpenAI指向 کنید (Zyphra، vLLM، llama.cpp، Ollama و غیره).'
       },
       loading: 'در حال بارگذاری ارائه‌دهندگان…'
     },
@@ -1706,6 +2300,8 @@ export const fa = defineLocale({
       nousAuthDoneTitle: 'Nous Portal متصل شد',
       nousAuthDoneMessage: 'باک‌اندهای اشتراک شما اکنون فعال‌اند.',
       nousAuthFailed: 'ورود به Nous Portal کامل نشد',
+      nousAuthFailedMessage: 'دوباره تلاش کنید.',
+      nousAuthTryAgain: 'تلاش دوباره',
       noApiKeyRequired: 'نیازی به کلید API نیست.',
       postSetupHint: step =>
         `این باک‌اند به یک نصب یک‌باره نیاز دارد (${step}). روی همین دستگاه اجرا می‌شود — ممکن است چند دقیقه طول بکشد.`,
@@ -1719,6 +2315,8 @@ export const fa = defineLocale({
       postSetupCompleteMessage: step => `${step} نصب شد.`,
       postSetupErrorTitle: 'راه‌اندازی با خطا تمام شد',
       postSetupErrorMessage: step => `لاگ ${step} را بررسی کنید.`,
+      postSetupOpenLogs: 'باز کردن لاگ‌ها',
+      postSetupRunAgain: 'اجرای دوباره',
       postSetupFailed: step => `اجرای راه‌اندازی ${step} ناموفق بود`,
       webSearchActive: backend => `جستجو: ${backend}`,
       webExtractActive: backend => `استخراج: ${backend}`,
@@ -1751,7 +2349,19 @@ export const fa = defineLocale({
           `فرمان‌های ترمینال اکنون از طریق ${backend} اجرا می‌شوند. روی نشست‌های جدید اعمال می‌شود.`,
         failedSelect: backend => `انتخاب ${backend} ناموفق بود`,
         needsSetupHint:
-          'همین حالا می‌توانید این باک‌اند را انتخاب کنید — فرمان‌ها تا کامل شدن راه‌اندازی شکست می‌خورند.'
+          'همین حالا می‌توانید این باک‌اند را انتخاب کنید — فرمان‌ها تا کامل شدن راه‌اندازی شکست می‌خورند.',
+        needsSetupConfirmTitle: backend => `با این حال ${backend} انتخاب شود؟`,
+        needsSetupConfirmDescription: detail =>
+          `${detail} نشست‌هایی که پس از این تغییر شروع شوند تا کامل شدن راه‌اندازی، ابزار ترمینال یا فایل نخواهند داشت.`,
+        needsSetupConfirmDescriptionGeneric:
+          'این باک‌اند هنوز راه‌اندازی نشده است. نشست‌هایی که پس از این تغییر شروع شوند تا کامل شدن راه‌اندازی، ابزار ترمینال یا فایل نخواهند داشت.',
+        needsSetupConfirmAction: 'با این حال انتخاب کن',
+        unavailableTitle: 'فرمان‌های ترمینال در دسترس نیستند',
+        unavailableMessage: backend =>
+          `رسا همین حالا نمی‌تواند فرمان شل اجرا کند: ${backend} آماده نیست. به Local سوئیچ کنید، یا راه‌اندازی ${backend} را کامل کنید و دوباره تلاش کنید.`,
+        openBackendSettings: 'باز کردن تنظیمات ترمینال',
+        useLocal: 'استفاده از Local',
+        switchedToLocal: 'فرمان‌های ترمینال اکنون به‌صورت محلی اجرا می‌شوند. روی نشست‌های جدید اعمال می‌شود.'
       },
       browserRealProfile: {
         label: 'استفاده از پروفایل واقعی مرورگر من',
@@ -1764,7 +2374,7 @@ export const fa = defineLocale({
         failedSave: 'ذخیره تنظیم پروفایل واقعی ممکن نشد',
         prompt: {
           title: 'در سایت‌هایتان وارد مانده بمانید',
-          body: 'به Hermes اجازه دهید با تصویر لحظه‌ای پروفایل مرورگر پیش‌فرض شما مرور کند تا سایت‌ها از قبل وارد‌شده باز شوند.',
+          body: 'به رسا اجازه دهید با تصویر لحظه‌ای پروفایل مرورگر پیش‌فرض شما مرور کند تا سایت‌ها از قبل وارد‌شده باز شوند.',
           bulletSnapshot: 'کوکی‌ها و ورودها در یک تصویر لحظه‌ای مدیریت‌شده کپی می‌شوند.',
           bulletLiveProfile: 'پروفایل زنده مرورگر شما هرگز مستقیم باز نمی‌شود.',
           bulletLocal: 'هیچ چیزی از این کامپیوتر بیرون نمی‌رود.',
@@ -1987,7 +2597,7 @@ export const fa = defineLocale({
         cliBillingDisabled: {
           title: 'خرج راه دور خاموش است',
           message:
-            'برای این حساب خرج راه دور خاموش است — مدیر صورت‌حساب می‌تواند آن را از صفحه Hermes Agent در Portal روشن کند.'
+            'برای این حساب خرج راه دور خاموش است — مدیر صورت‌حساب می‌تواند آن را از صفحه ماه‌افزار هوشمند رسا در Portal روشن کند.'
         },
         roleRequired: {
           title: 'نقش مدیر لازم است',
@@ -2117,7 +2727,7 @@ export const fa = defineLocale({
       halfDesktopHint: 'همین برنامه، یکسان برای همه پروفایل‌ها',
       halfAgent: 'عامل',
       halfAgentIn: (profile: string) => `عامل در ${profile}`,
-      defaultProfile: 'Hermes (پیش‌فرض)',
+      defaultProfile: 'رسا (پیش‌فرض)',
       kindAgent: 'عامل',
       kindDesktop: 'دسکتاپ',
       kindBoth: 'عامل + دسکتاپ',
@@ -2141,7 +2751,7 @@ export const fa = defineLocale({
       toolsetOff: (name: string, profile: string) => `ابزارهای عاملی ${name} برای ${profile} غیرفعال شد`,
       toolsetToggleFailed: (name: string) =>
         `تغییر وضعیت ابزارهای عاملی ${name} ممکن نشد؛ پنل دسکتاپ دست‌نخورده ماند`,
-      legacyBackend: 'این باک‌اند از کلیدهای افزونه قدیمی‌تر است — Hermes را به‌روزرسانی کنید تا از اینجا مدیریت شود.',
+      legacyBackend: 'این باک‌اند از کلیدهای افزونه قدیمی‌تر است — رسا را به‌روزرسانی کنید تا از اینجا مدیریت شود.',
       portableBadge: 'قابل‌حمل',
       serverStates: {
         connected: 'متصل',
@@ -2159,7 +2769,7 @@ export const fa = defineLocale({
       catalogHint:
         'روی هر افزونه «+ افزودن به این عامل» بزنید — ورودی‌های بازبینی‌شده در کامیت پین‌شده‌شان در پروفایل انتخابی نصب می‌شوند. افزونه‌های هم‌راه عامل+دسکتاپ هر دو نیمه را دارند.',
       alreadyInstalled: (name: string) => `${name} از قبل در این پروفایل نصب است.`,
-      catalogProvenance: (sha: string) => `از کاتالوگ Hermes نصب شد${sha ? ` در پین ${sha}` : ''}.`,
+      catalogProvenance: (sha: string) => `از کاتالوگ رسا نصب شد${sha ? ` در پین ${sha}` : ''}.`,
       pinnedProvenance: (sha: string) =>
         `به کامیت ${sha} سنجاق شد. به‌روزرسانی‌ها تا نصب مجدد با پین جدید رد می‌شوند.`,
       pinnedBadge: (sha: string) => `سنجاق در ${sha}`,
@@ -2186,9 +2796,9 @@ export const fa = defineLocale({
       deepLinkErrorTitle: 'لینک نصب افزونه رد شد',
       deepLinkCatalogInvalidName: 'نام کاتالوگِ لینک جاافتاده یا نامعتبر است.',
       deepLinkCatalogUnknown: (name: string) =>
-        `«${name}» در کاتالوگ افزونه Hermes نیست. چیزی نصب نشد.`,
+        `«${name}» در کاتالوگ افزونه رسا نیست. چیزی نصب نشد.`,
       deepLinkCatalogUnavailable:
-        'بارگذاری کاتالوگ افزونه Hermes ممکن نشد. اتصال را بررسی و لینک را دوباره باز کنید.',
+        'بارگذاری کاتالوگ افزونه رسا ممکن نشد. اتصال را بررسی و لینک را دوباره باز کنید.',
       settingsToggle: (name: string) => `تنظیمات: ${name}`,
       settingsForm: {
         save: 'ذخیره تنظیمات',
@@ -2273,7 +2883,7 @@ export const fa = defineLocale({
     loadFailed: 'بارگذاری گراف حافظه ممکن نشد',
     loading: 'در حال بارگذاری…',
     emptyTitle: 'هنوز چیزی آموخته نشده',
-    emptyDesc: 'همان‌طور که Hermes برای کار شما مهارت و خاطره می‌سازد، اینجا ظاهر می‌شوند.',
+    emptyDesc: 'همان‌طور که رسا برای کار شما مهارت و خاطره می‌سازد، اینجا ظاهر می‌شوند.',
     share: 'اشتراک نقشه',
     shareHint:
       'کد را برای اشتراک این نقشه کپی کنید، یا کدی را جای‌گذاری کنید تا بارگذاری شود. فقط چیدمان را شامل می‌شود، نه متن حافظه یا مهارت شما.',
@@ -2290,6 +2900,9 @@ export const fa = defineLocale({
   },
 
   agents: {
+    extendedTranscript: 'رونوشت گسترده',
+    transcriptTruncated: 'نمایش آخرین ۱۶ کیلوبایت',
+    transcriptUnavailable: 'رونوشت زنده در دسترس نیست',
     close: 'بستن عامل‌ها',
     title: 'درخت فراخوانی',
     subtitle: 'فعالیت زنده زیرعامل‌ها برای نوبت فعلی.',
@@ -2301,6 +2914,14 @@ export const fa = defineLocale({
     streaming: 'در حال جریان',
     files: 'فایل‌ها',
     moreFiles: count => `+${count} فایل بیشتر`,
+    moreAgents: count => `+${count} عامل بیشتر`,
+    queued: 'در صف',
+    waitingActivity: 'در انتظار فعالیت',
+    steer: 'هدایت',
+    steerPlaceholder: 'دستورالعمل برای این زیرعامل',
+    steerQueued: 'برای نقطه بازرسی بعدی صف شد',
+    stopRequested: 'درخواست توقف داده شد',
+    requestRejected: 'زیرعامل درخواست را نپذیرفت',
     delegation: index => `تفویض ${index}`,
     workers: count => `${count} کارگر`,
     workersActive: count => `${count} فعال`,
@@ -2344,7 +2965,7 @@ export const fa = defineLocale({
       placeholder: 'جستجوی موجودها…',
       loading: 'در حال بارگذاری گالری petdex…',
       error: 'دسترسی به گالری petdex ممکن نشد.',
-      staleBackend: 'برای استفاده از موجودها Hermes را راه‌اندازی مجدد کنید — باک‌اند قدیمی‌تر از این قابلیت است.',
+      staleBackend: 'برای استفاده از موجودها رسا را راه‌اندازی مجدد کنید — باک‌اند قدیمی‌تر از این قابلیت است.',
       empty: 'موجود منطبقی نیست.',
       turnOff: 'خاموش کردن',
       turnOn: 'روشن کردن',
@@ -2371,8 +2992,8 @@ export const fa = defineLocale({
       hatchComposing: 'در حال مونتاژ…',
       hatchSaving: 'تقریباً تمام…',
       namePlaceholder: 'نام موجود خود را بگذارید',
-      staleBackend: 'برای تولید موجودها، Hermes را به‌روزرسانی کنید.',
-      backgroundHint: 'می‌توانید این را ببندید — Hermes وقتی تمام شد خبر می‌دهد.',
+      staleBackend: 'برای تولید موجودها، رسا را به‌روزرسانی کنید.',
+      backgroundHint: 'می‌توانید این را ببندید — رسا وقتی تمام شد خبر می‌دهد.',
       slowProviderHint: 'این کار ممکن است چند دقیقه طول بکشد',
       remix: 'ری‌میکس',
       remixConfirmTitle: 'این شکل ری‌میکس شود؟',
@@ -2402,7 +3023,7 @@ export const fa = defineLocale({
     sections: { maintenance: 'نگهداری', sessions: 'نشست‌ها', system: 'سیستم', usage: 'مصرف' },
     nav: {
       newChat: { title: 'نشست جدید', detail: 'شروع یک نشست تازه' },
-      settings: { title: 'تنظیمات', detail: 'پیکربندی Hermes Desktop' },
+      settings: { title: 'تنظیمات', detail: 'پیکربندی رسا دسکتاپ' },
       capabilities: { title: 'قابلیت‌ها', detail: 'مهارت‌ها، ابزارها و سرورهای MCP' },
       messaging: { title: 'پیام‌رسانی', detail: 'راه‌اندازی Telegram، Slack، Discord و بیشتر' },
       artifacts: { title: 'ساخته‌ها', detail: 'مرور خروجی‌های تولیدشده' }
@@ -2424,11 +3045,16 @@ export const fa = defineLocale({
     noSessions: 'هنوز نشستی نیست.',
     gatewayRunning: 'دروازه پیام‌رسانی در حال اجراست',
     gatewayStopped: 'دروازه پیام‌رسانی متوقف است',
-    hermesActiveSessions: (version, count) => `Hermes ${version} · نشست‌های فعال ${count}`,
+    hermesActiveSessions: (version, count) => `رسا ${version} · نشست‌های فعال ${count}`,
     restartGateway: 'راه‌اندازی مجدد دروازه',
     openBrowser: 'باز کردن مرورگر',
     gatewayRestartFailed: 'راه‌اندازی مجدد دروازه ناموفق بود.',
-    updateHermes: 'به‌روزرسانی Hermes',
+    sharedGatewayRestartTitle: 'دروازه مشترک راه‌اندازی مجدد شود؟',
+    sharedGatewayRestartDescription: bots => `همه ربات‌های این دستگاه دوباره متصل می‌شوند: ${bots}`,
+    sharedGatewayRestartConfirm: 'راه‌اندازی مجدد همه',
+    sharedGatewayRestarted: count => `دروازه مشترک راه‌اندازی مجدد شد (${count} ربات)`,
+    toggleBrowser: 'نمایش/پنهان مرورگر',
+    updateHermes: 'به‌روزرسانی رسا',
     reloadWindow: 'بارگذاری مجدد پنجره',
     actionRunning: 'در حال اجرا',
     actionDone: 'انجام شد',
@@ -2506,6 +3132,13 @@ export const fa = defineLocale({
 
   messaging: {
     search: 'جستجوی پیام‌رسانی…',
+    statusFilter: {
+      all: 'همه',
+      bad: 'خطاها',
+      good: 'متصل',
+      muted: 'غیرفعال',
+      warn: 'نیازمند توجه'
+    },
     loading: 'در حال بارگذاری پلتفرم‌های پیام‌رسانی…',
     loadFailed: 'بارگذاری پلتفرم‌های پیام‌رسانی ناموفق بود',
     states: {
@@ -2830,13 +3463,29 @@ export const fa = defineLocale({
       gatewayUnreachable: gateway => `${gateway} · خارج از دسترس`,
       onGateway: (name, gateway) => `${name} · ${gateway}`,
       switchTo: (name, gateway) => `سوئیچ به ${name} روی ${gateway}`,
-      deleteOn: gateway => ` روی ${gateway}`
+      deleteOn: gateway => ` روی ${gateway}`,
+      localDevice: 'این دستگاه (باک‌اند محلی — اگر رسا نبود نصبش می‌کند، وگرنه یک نشست تازه باز می‌کند)',
+      switchDeviceTitle: 'سوئیچ به این دستگاه؟',
+      switchDeviceDesc:
+        'یک نشست تازه روی همین رایانه باز می‌شود. گفتگویی که در آن هستید روی دروازه دیگر باقی می‌ماند.',
+      switchDeviceConfirm: 'سوئیچ',
+      installDeviceTitle: 'سوئیچ به این دستگاه؟',
+      installDeviceDesc:
+        'اول رسا به‌صورت محلی نصب می‌شود، سپس یک نشست تازه روی همین رایانه باز می‌شود. تا تأیید نکنید چیزی نصب نمی‌شود.',
+      installDeviceConfirm: 'نصب محلی',
+      connectExistingInstead: 'اتصال به موجود به‌جای آن'
+    },
+    status: {
+      unread: (count: number) => (count === 1 ? '۱ نشست خوانده‌نشده' : `${count} نشست خوانده‌نشده`),
+      needsInput: (count: number) =>
+        count === 1 ? '۱ نشست منتظر پاسخ شماست' : `${count} نشست منتظر پاسخ شماست`,
+      working: (count: number) => (count === 1 ? '۱ نشست در حال اجرا' : `${count} نشست در حال اجرا`)
     },
     remoteOverride: {
       menuItem: 'اتصال به میزبان راه دور…',
       badge: (host: string) => `اجرا روی ${host}`,
       title: (profile: string) => `اتصال ${profile} به میزبان راه دور`,
-      description: 'نشست‌های این پروفایل روی Hermes راه دوری که به آن اشاره می‌کنید اجرا می‌شوند، نه این کامپیوتر.',
+      description: 'نشست‌های این پروفایل روی رسا راه دوری که به آن اشاره می‌کنید اجرا می‌شوند، نه این کامپیوتر.',
       urlLabel: 'آدرس راه دور',
       urlPlaceholder: 'https://hermes.example.com',
       urlInvalid: 'آدرس کاملی که با http:// یا https:// شروع شود وارد کنید',
@@ -2865,6 +3514,12 @@ export const fa = defineLocale({
       updateToken: 'توکن جدید وارد کنید…'
     },
     actions: 'اقدامات',
+    openInNewWindow: 'باز کردن در پنجره جدید',
+    setAsDefault: 'تنظیم به‌عنوان پیش‌فرض',
+    defaultProfile: 'پروفایل پیش‌فرض',
+    defaultSet: name => `${name} اکنون پیش‌فرض است`,
+    defaultDescription: 'وقتی رسا باز می‌شود و برای گفتگوهای جدید استفاده می‌شود. نشست‌های موجود در پروفایل خودشان می‌مانند.',
+    failedSetDefault: 'تنظیم پروفایل پیش‌فرض ممکن نشد',
     color: 'رنگ…',
     colorFor: 'رنگ',
     setColor: color => `تنظیم رنگ ${color}`,
@@ -2887,6 +3542,8 @@ export const fa = defineLocale({
     skillsLabel: 'مهارت‌ها',
     notSet: 'تنظیم نشده',
     soulDesc: 'پرامپت سیستمی و دستورالعمل‌های شخصیت که در این پروفایل پخته شده‌اند.',
+    soulMissing:
+      'هنوز فایل SOUL.md برای این پروفایل وجود ندارد. دستورالعمل‌ها را در زیر اضافه کنید و برای ساختن آن ذخیره کنید. پیش‌تنظیم‌های شخصیت در config.yaml جداگانه مدیریت می‌شوند.',
     soulOptional: 'اختیاری',
     soulPlaceholder: mode => `پرامپت سیستمی / شخصیت این پروفایل.\nخالی بگذارید تا پیش‌فرضِ ${mode} استفاده شود.`,
     soulPlaceholderCloned: 'کلون‌شده',
@@ -2901,7 +3558,7 @@ export const fa = defineLocale({
     deleteDescMid: ' و پوشه ',
     deleteDescSuffix: ' آن را برمی‌دارد. این اقدام قابل بازگشت نیست.',
     deleting: 'در حال حذف…',
-    createDesc: 'پروفایل‌ها محیط‌های مستقل Hermes هستند: پیکربندی، مهارت‌ها و SOUL.md جداگانه.',
+    createDesc: 'پروفایل‌ها محیط‌های مستقل رسا هستند: پیکربندی، مهارت‌ها و SOUL.md جداگانه.',
     nameLabel: 'نام',
     cloneFrom: 'کلون از',
     cloneFromNone: 'هیچ (خالی)',
@@ -2933,6 +3590,14 @@ export const fa = defineLocale({
     failedSaveSoul: 'ذخیره SOUL.md ناموفق بود',
     failedCreate: 'ایجاد پروفایل ناموفق بود',
     failedRename: 'تغییر نام پروفایل ناموفق بود'
+  },
+
+  modelAssignment: {
+    saveFailed: 'رسا آن تغییر مدل را ذخیره نکرد.',
+    confirmTitle: 'هشدار انتخاب مدل',
+    confirmDetail: 'فقط اگر این معامله را می‌پذیرید تأیید کنید.',
+    confirmAction: 'تأیید',
+    declined: 'تغییر مدل لغو شد — هشدار سطح آموزش داده را نپذیرفتید.'
   },
 
   cron: {
@@ -2994,12 +3659,16 @@ export const fa = defineLocale({
     everyHourAt: minute => `هر ساعت در :${minute}`,
     newCron: 'cron جدید',
     emptyDescNew:
-      'یک پرامپت را روی عبارت cron زمان‌بندی کنید. Hermes آن را اجرا و نتایج را به مقصدی که انتخاب می‌کنید تحویل می‌دهد.',
+      'یک پرامپت را روی عبارت cron زمان‌بندی کنید. رسا آن را اجرا و نتایج را به مقصدی که انتخاب می‌کنید تحویل می‌دهد.',
     emptyDescSearch: 'عبارت جستجوی گسترده‌تری امتحان کنید.',
     emptyTitleNew: 'هنوز وظیفه زمان‌بندی‌شده‌ای نیست',
     emptyTitleSearch: 'مطابقی نیست',
     last: 'آخرین:',
+    lastRunFailed: 'آخرین اجرا ناموفق بود:',
+    editJob: 'ویرایش وظیفه',
+    runAgain: 'اجرای دوباره',
     next: 'بعدی:',
+    overdueSince: 'از موعد گذشته:',
     noRuns: 'هنوز اجرایی نیست',
     manage: 'مدیریت',
     showRuns: 'نمایش اجراها',
@@ -3037,6 +3706,8 @@ export const fa = defineLocale({
     promptLabel: 'پرامپت',
     promptPlaceholder: 'رشته‌های خوانده‌نشده Slack من را خلاصه کن و ۵ مورد برتر را ایمیل بزن…',
     frequencyLabel: 'تناوب',
+    scriptLabel: 'اسکریپت',
+    scriptBadge: 'اسکریپت',
     deliverLabel: 'تحویل به',
     deliverNeedsHomeChannel: 'ابتدا یک کانال خانه تنظیم کنید',
     modelLabel: 'مدل',
@@ -3127,6 +3798,49 @@ export const fa = defineLocale({
   },
 
   sidebar: {
+    filter: {
+      grouping: 'گروه‌بندی',
+      ordering: 'ترتیب',
+      show: 'نمایش',
+      filters: 'فیلترها',
+      status: 'وضعیت',
+      pullRequest: 'درخواست ادغام',
+      profile: 'پروفایل',
+      project: 'پروژه',
+      archived: 'بایگانی‌شده',
+      resetToDefaults: 'بازگشت به پیش‌فرض‌ها',
+      expandAll: 'باز کردن همه',
+      collapseAll: 'جمع کردن همه',
+      inboxStyle: 'سبک صندوق ورودی',
+      updated: 'به‌روزشده',
+      created: 'ساخته‌شده',
+      tokens: 'توکن',
+      cost: 'هزینه',
+      manual: 'دستی',
+      preview: 'پیش‌نمایش',
+      pr: 'PR',
+      needsInput: 'نیازمند ورودی',
+      working: 'در حال کار',
+      unread: 'خوانده‌نشده',
+      draft: 'پیش‌نویس',
+      idle: 'بیکار',
+      open: 'باز',
+      merged: 'ادغام‌شده',
+      closed: 'بسته',
+      noPR: 'بدون PR'
+    },
+    gatewayGroups: {
+      grouping: 'دروازه و پروفایل',
+      rename: 'تغییر نام گروه',
+      aliasLabel: 'نام نمایشی',
+      aliasHint: 'فقط نام نمایشی؛ نام دروازه و پروفایل بدون تغییر می‌مانند.',
+      resetName: 'بازنشانی نام',
+      moveUp: 'انتقال به بالا',
+      moveDown: 'انتقال به پایین',
+      reorder: 'جابه‌جایی گروه',
+      actions: 'اقدامات گروه'
+    },
+    profileRail: 'نوار پروفایل‌ها',
     nav: {
       'new-session': 'نشست جدید',
       capabilities: 'قابلیت‌ها',
@@ -3141,6 +3855,10 @@ export const fa = defineLocale({
     results: 'نتایج',
     pinned: 'سنجاق‌شده',
     sessions: 'نشست‌ها',
+    terminal: 'ترمینال',
+    files: 'فایل‌ها',
+    review: 'بازبینی',
+    logs: 'لاگ‌ها',
     cronJobs: 'وظایف cron',
     groupAriaGrouped: 'نمایش نشست‌ها به‌صورت فهرست واحد',
     groupAriaUngrouped: 'گروه‌بندی نشست‌ها بر اساس فضای کار',
@@ -3152,11 +3870,21 @@ export const fa = defineLocale({
     shiftClickHint: 'برای سنجاق، با Shift روی گفتگو کلیک کنید',
     noWorkspace: 'بدون فضای کار',
     projectEmpty: 'هنوز نشستی نیست',
+    projectLoadFailed: 'بارگذاری نشست‌ها ممکن نشد',
     noSessions: 'هنوز نشستی نیست',
+    storageCorrupt: {
+      title: 'پایگاه داده نشست‌ها آسیب دیده است',
+      body: (profiles: string) =>
+        `رسا نمی‌تواند تمام تاریخچه نشست‌های ${profiles} را بخواند. گفتگوهای غایب در این فهرست حذف نشده‌اند؛ فایلی که در آن ذخیره شده‌اند آسیب دیده است.`,
+      action: 'رسا را روی این پروفایل ببندید، سپس فایل را بدون تغییر دادن بررسی کنید، یا یک تصویر لحظه‌ای بازیابی کنید:',
+      guide: 'راهنمای بازیابی'
+    },
     noFilterMatches: 'نشستی مطابق این فیلترها نیست',
     projects: {
+      showAllSessions: 'نمایش همه نشست‌ها',
       sectionLabel: 'پروژه‌ها',
       home: 'خانه',
+      autoDiscovered: 'کشف‌شده خودکار',
       newButton: 'پروژه جدید',
       createTitle: 'پروژه جدید',
       createDesc: 'یک فضای کاری نام‌گذاری و یک یا چند پوشه اضافه کنید.',
@@ -3191,9 +3919,9 @@ export const fa = defineLocale({
       removeFromSidebar: 'پنهان کردن از نوار کناری',
       createFailed: 'ایجاد پروژه ممکن نشد',
       staleBackend:
-        'برای ساخت پروژه‌ها، باک‌اند Hermes را به‌روزرسانی کنید — باک‌اند شما قدیمی‌تر از این برنامه دسکتاپ است (تنظیمات ← به‌روزرسانی‌ها ← باک‌اند).',
+        'برای ساخت پروژه‌ها، باک‌اند رسا را به‌روزرسانی کنید — باک‌اند شما قدیمی‌تر از این برنامه دسکتاپ است (تنظیمات ← به‌روزرسانی‌ها ← باک‌اند).',
       deleteConfirm:
-        'این کار پروژه ذخیره‌شده را از Hermes حذف می‌کند. فایل‌ها، مخازن git و worktreeها دست‌نخورده می‌مانند.',
+        'این کار پروژه ذخیره‌شده را از رسا حذف می‌کند. فایل‌ها، مخازن git و worktreeها دست‌نخورده می‌مانند.',
       startWork: 'worktree جدید',
       newWorktreeTitle: 'worktree جدید',
       newWorktreeDesc: 'نام شاخه این worktree را بنویسید.',
@@ -3203,7 +3931,7 @@ export const fa = defineLocale({
       baseBranchNone: 'شاخه‌ای یافت نشد',
       startWorkFailed: 'ایجاد worktree ممکن نشد',
       worktreeStaleBackend:
-        'برای ساخت worktree روی این اتصال راه دور، باک‌اند Hermes را به‌روزرسانی کنید — باک‌اند قدیمی‌تر از API شاخه‌های worktree است.',
+        'برای ساخت worktree روی این اتصال راه دور، باک‌اند رسا را به‌روزرسانی کنید — باک‌اند قدیمی‌تر از API شاخه‌های worktree است.',
       worktreeProjectLabel: 'پروژه',
       worktreeProjectPlaceholder: 'جستجوی پروژه‌ها…',
       worktreeProjectNone: 'پروژه‌ای با پوشه نیست',
@@ -3228,6 +3956,7 @@ export const fa = defineLocale({
       enter: label => `باز کردن ${label}`,
       reorder: label => `جابه‌جایی ${label}`,
       toggle: (label, open) => `${open ? 'نمایش' : 'پنهان کردن'} نشست‌های ${label}`,
+      showAllCount: count => `نمایش همه ${count} نشست`,
       back: 'همه پروژه‌ها'
     },
     newSessionIn: label => `نشست جدید در ${label}`,
@@ -3248,6 +3977,7 @@ export const fa = defineLocale({
       branchFrom: 'انشعاب',
       rename: 'تغییر نام…',
       archive: 'بایگانی',
+      unarchive: 'خروج از بایگانی',
       newWindow: 'پنجره جدید',
       openInTerminal: 'باز کردن در ترمینال',
       hideTabBar: 'پنهان کردن نوار زبانه',
@@ -3262,6 +3992,7 @@ export const fa = defineLocale({
       backgroundRunning: 'وظیفه پس‌زمینه در حال اجراست',
       draftSession: 'پیش‌نویس — هنوز چیزی ارسال نشده',
       handoffOrigin: platform => `تحویل‌گرفته از ${platform}`,
+      continuationOrigin: 'ادامه خودکار — این گفتگو فشرده و ادامه یافت',
       ownedByProfile: profile => `پروفایل: ${profile}`,
       renamed: 'نام تغییر کرد',
       renameFailed: 'تغییر نام ناموفق بود',
@@ -3297,12 +4028,12 @@ export const fa = defineLocale({
   composer: {
     message: 'پیام',
     wakingProfile: profile => `بیدار کردن ${profile}…`,
-    placeholderStarting: 'در حال شروع Hermes…',
-    placeholderReconnecting: 'در حال اتصال مجدد به Hermes…',
+    placeholderStarting: 'در حال شروع رسا…',
+    placeholderReconnecting: 'در حال اتصال مجدد به رسا…',
     placeholderFollowUp: 'ارسال پیگیری',
     newSessionPlaceholders: [
       'چه می‌سازیم؟',
-      'یک کار به Hermes بده',
+      'یک کار به رسا بده',
       'چه در سر داری؟',
       'توضیح بده چه نیاز داری',
       'از کجا شروع کنیم؟',
@@ -3338,9 +4069,17 @@ export const fa = defineLocale({
     stopDictation: 'توقف املا',
     transcribingDictation: 'در حال پیاده‌سازی املا',
     voiceControls: 'صوت',
+    voiceEngine: 'موتور گفتگوی صوتی',
+    voiceEngineChained: 'تبدیل گفتار به متن + صدای رسا',
+    voiceEngineLive: 'GPT-Live (دوطرفه کامل، با تفویض به رسا)',
+    voiceEngineLiveNeedsKey: 'به کلید API از OpenAI نیاز دارد',
+    voiceEngineChangeFailed: 'تغییر موتور گفتگوی صوتی ممکن نشد',
+    voiceEngineChainedShort: 'تبدیل گفتار به متن',
+    voiceEngineLiveShort: 'GPT-Live',
     voiceDictation: 'املا صوتی',
     speakReplies: 'خواندن پاسخ‌ها با صدا',
     stopSpeakingReplies: 'توقف خواندن پاسخ‌ها',
+    wakeWord: phrase => `کلمه بیدارباش "${phrase}"`,
     wakeWordListening: phrase => `کلمه بیدارباش: "${phrase}" — در حال گوش دادن`,
     wakeWordOff: phrase => `کلمه بیدارباش: "${phrase}" — خاموش`,
     wakeWordPausedVoice: phrase => `کلمه بیدارباش: "${phrase}" — موقتاً متوقف در گفتگوی صوتی`,
@@ -3381,7 +4120,7 @@ export const fa = defineLocale({
       '/journey': 'باز کردن گراف حافظه — مهارت‌ها و حافظه‌ها در طول زمان',
       '/queue': 'صف‌کردن پرامپت برای نوبت بعدی، یا فهرست/ویرایش/حذف/جابه‌جایی/پاک‌سازی صف',
       '/steer': 'درج پیام پس از فراخوان ابزار بعدی بدون قطع کردن جریان',
-      '/goal': 'تعیین هدفی ایستا که Hermes طی نوبت‌ها تا حصول آن روی آن کار می‌کند',
+      '/goal': 'تعیین هدفی ایستا که رسا طی نوبت‌ها تا حصول آن روی آن کار می‌کند',
       '/heartbeat': 'تنظیم پرامپت دوره‌ای که در بیکاری به این نشست برمی‌گردد',
       '/refine': 'بازبینی همین گفتگو و ذخیره درس‌ها در حافظه/مهارت‌ها',
       '/review': 'برای بازبینی کار بحث‌شده (PR، کد، مستندات) یک زیرعامل مستقل به‌کار می‌گیرد',
@@ -3393,7 +4132,7 @@ export const fa = defineLocale({
       '/egress': 'نمایش وضعیت پروکسی خروجی Docker',
       '/context': 'نمایش تفصیلی پنجره زمینه با سنجه مصرف، تفکیک دسته‌ها، آمار فشرده‌سازی و توان عبوری',
       '/whoami': 'نمایش دسترسی فرمان اسلش شما (admin / user)',
-      '/profile': 'تغییر پروفایل فعال Hermes',
+      '/profile': 'تغییر پروفایل فعال رسا',
       '/codex-runtime': 'تغییر وضعیت زمان‌اجر codex app-server برای مدل‌های OpenAI/Codex',
       '/personality': 'تنظیم شخصیت از پیش تعریف‌شده',
       '/battery': 'نمایش/پنهان نشانگر باتری رنگ‌بندی‌شده در نوار وضعیت',
@@ -3420,7 +4159,7 @@ export const fa = defineLocale({
       '/subscription': 'مشاهده طرح Nous و تغییر آن در مرورگر',
       '/topup': 'نمایش موجودی Nous و مدیریت صورتحساب در پرتال',
       '/platform': 'توقف، از سر گرفتن یا فهرست سکوی دروازه در حال خطا',
-      '/version': 'نمایش نسخه Hermes Agent',
+      '/version': 'نمایش نسخه ماه‌افزار هوشمند رسا',
       '/debug': 'بارگذاری گزارش اشکال‌زدایی (اطلاعات سیستم + لاگ‌ها) و گرفتن پیوند اشتراک',
       '/model': 'تغییر مدل این نشست'
     },
@@ -3435,7 +4174,7 @@ export const fa = defineLocale({
       'composer.history': 'چرخش پاپ‌آور / تاریخچه'
     },
     attachUrlTitle: 'پیوست یک URL',
-    attachUrlDesc: 'Hermes صفحه را می‌گیرد و به‌عنوان زمینه این نوبت اضافه می‌کند.',
+    attachUrlDesc: 'رسا صفحه را می‌گیرد و به‌عنوان زمینه این نوبت اضافه می‌کند.',
     urlPlaceholder: 'https://example.com/post',
     urlHintPre: 'URL کامل را بگنجانید، مثل ',
     attach: 'پیوست',
@@ -3446,7 +4185,12 @@ export const fa = defineLocale({
     attachments: count => `${count} پیوست`,
     editingInComposer: 'ویرایش در نوشتار',
     editingQueuedInComposer: 'ویرایش نوبت صف‌شده در نوشتار',
+    hiddenQueued: 'یادداشت راه‌اندازی',
+    restoredDraftNotice: 'پیام ارسال‌نشده شما بازیابی شد',
+    restoredDraftUndo: 'بازگردانی',
     queueEdit: 'ویرایش',
+    queueExpand: 'باز کردن',
+    queueCollapse: 'جمع کردن',
     queueSendNext: 'بعدی',
     queueSteer: 'هدایت — بازگرداندن نوبت زنده همین حالا',
     queueSend: 'ارسال',
@@ -3455,6 +4199,9 @@ export const fa = defineLocale({
     queueResumeTip: 'توسط توقف متوقف شده — ادامه ارسال نوبت‌های صف‌شده',
     queueStuckTitle: 'پیام صف‌شده ارسال نشد',
     queueStuckBody: 'یک نوبت صف‌شده مدام در ارسال شکست خورد. هنوز در صف است — دوباره ارسالش کنید.',
+    queueDroppedTitle: 'پرامپت صف‌شده حذف شد',
+    queueDroppedBody:
+      'این ردیف صف پس‌زمینه حذف شد چون نشستش پس از تلاش‌های مکرر قابل ازسرگیری نبود. بقیه صف بی‌تأثیر ماندند.',
     previewUnavailable: 'پیش‌نمایش در دسترس نیست',
     previewLabel: label => `پیش‌نمایش ${label}`,
     couldNotPreview: label => `پیش‌نمایش ${label} ممکن نشد`,
@@ -3678,7 +4425,7 @@ export const fa = defineLocale({
       createPr: 'ساخت PR',
       openPr: 'باز کردن PR',
       ghMissing: 'GitHub CLI (gh) را نصب و وارد شوید تا PR بسازید',
-      agentShip: 'از Hermes بخواه PR بسازد',
+      agentShip: 'از رسا بخواه PR بسازد',
       agentShipUnavailable: 'گفتگوی مالک این تغییرات روی صفحه نیست.',
       agentShipPrompt:
         'تغییرات فعلی را بازبینی کن، با پیام conventional-commit واضح کامیتشان کن، شاخه را push کن و یک pull request باز کن.',
@@ -3691,15 +4438,23 @@ export const fa = defineLocale({
   },
 
   updates: {
+    discontinuedTitle: 'این نسخه ساخت رسا دیگر پشتیبانی نمی‌شود',
+    discontinuedBody:
+      'این نسخه ساخت رسا دیگر پشتیبانی نمی‌شود و ممکن است از کار بیفتد — آن را حذف نصب کنید. داده‌های شما روی دیسک می‌ماند.',
+    channels: { stable: 'پایدار', canary: 'Canary' },
+    bundleSwapPending: 'برای تکمیل به‌روزرسانی، راه‌اندازی مجدد کنید',
+    bundleSwapPendingDesc:
+      'برنامه به‌روزشده از قبل نصب است — رسا فقط برای بارگذاری آن باید راه‌اندازی مجدد شود. گفتگوها و تنظیمات دست‌نخورده‌اند.',
+    bundleSwapPendingAction: 'راه‌اندازی مجدد رسا',
     stages: {
       idle: 'در حال آماده‌سازی…',
       prepare: 'در حال آماده‌سازی…',
       fetch: 'در حال دانلود…',
       pull: 'نزدیک به پایان…',
       pydeps: 'در حال جمع‌بندی…',
-      update: 'به‌روزرسانی Hermes…',
+      update: 'به‌روزرسانی رسا…',
       rebuild: 'بازسازی برنامه دسکتاپ…',
-      restart: 'راه‌اندازی مجدد Hermes…',
+      restart: 'راه‌اندازی مجدد رسا…',
       done: 'به‌روزرسانی کامل شد',
       manual: 'از ترمینال خود به‌روزرسانی کنید',
       guiSkew: 'به‌روزرسانی برنامه دسکتاپ',
@@ -3709,44 +4464,59 @@ export const fa = defineLocale({
     checkFailedTitle: 'بررسی به‌روزرسانی ممکن نشد',
     tryAgain: 'تلاش دوباره',
     notAvailableTitle: 'به‌روزرسانی موجود نیست',
-    unsupportedMessage: 'این نسخه Hermes نمی‌تواند از داخل برنامه خودش را به‌روز کند.',
+    unsupportedMessage: 'این نسخه رسا نمی‌تواند از داخل برنامه خودش را به‌روز کند.',
     connectionRetry: 'اتصال خود را بررسی و دوباره تلاش کنید.',
+    gitUnusable: 'رسا نتوانست روی این رایانه Git را اجرا کند، پس نتوانست به‌روزرسانی‌ها را بررسی کند.',
+    connectionSettings: 'تنظیمات اتصال',
+    openDownloadPage: 'باز کردن صفحه دانلود',
     latestBody: 'روی جدیدترین نسخه هستید.',
     latestBodyBackend: 'باک‌اند روی جدیدترین نسخه اجرا می‌شود.',
     allSetTitle: 'همه‌چیز آماده است',
     availableTitle: 'به‌روزرسانی جدید موجود است',
-    availableBody: 'نسخه جدید Hermes آماده نصب است.',
+    availableBody: 'نسخه جدید رسا آماده نصب است.',
     availableTitleBackend: 'به‌روزرسانی باک‌اند موجود است',
-    availableBodyBackend: 'نسخه جدیدتر باک‌اند Hermes متصل آماده نصب است.',
+    availableBodyBackend: 'نسخه جدیدتر باک‌اند رسا متصل آماده نصب است.',
     availableBodyNoChangelog: 'نسخه جدیدتر آماده است. یادداشت‌های انتشار برای این نوع نصب موجود نیست.',
+    availableBodyAppInstaller:
+      'نسخه جدید رسا آماده است. رسا بسته می‌شود، ویندوز به‌روزرسانی را تمام می‌کند و رسا خودش دوباره باز می‌شود.',
     updateNow: 'به‌روزرسانی الان',
     maybeLater: 'شاید بعداً',
     moreChanges: count => `+ ${count} تغییر دیگر شامل است.`,
+    copyFullLog: 'کپی فهرست کامل تغییرات',
     manualTitle: 'به‌روزرسانی از ترمینال',
+    manualUnavailableTitle: 'از این‌جا به‌روزرسانی ممکن نیست',
     manualBody:
-      'Hermes را از خط فرمان نصب کرده‌اید، پس به‌روزرسانی هم آنجا اجرا می‌شود. این را در ترمینال خود جای‌گذاری کنید:',
-    manualPickedUp: 'Hermes دفعه بعد که اجرایش کنید نسخه جدید را برمی‌دارد.',
+      'رسا را از خط فرمان نصب کرده‌اید، پس به‌روزرسانی هم آنجا اجرا می‌شود. این را در ترمینال خود جای‌گذاری کنید:',
+    manualBodyBackend: 'باک‌اند رسا بیرون از این برنامه مدیریت می‌شود. این را روی سروری که میزبانی‌اش می‌کند اجرا کنید:',
+    manualPickedUp: 'رسا دفعه بعد که اجرایش کنید نسخه جدید را برمی‌دارد.',
+    manualPickedUpBackend: 'باک‌اند پس از کامل شدن به‌روزرسانی، نسخه جدید را برمی‌دارد.',
     guiSkewTitle: 'به‌روزرسانی برنامه دسکتاپ',
     guiSkewBody:
-      'باک‌اند به‌روزرسانی شد، اما این بسته برنامه دسکتاپ تغییر نکرد. برنامه دسکتاپ Hermes (AppImage / .deb / .rpm شما) را به‌روزرسانی یا دوباره نصب کنید تا هم‌تراز شود.',
+      'باک‌اند به‌روزرسانی شد، اما این بسته برنامه دسکتاپ تغییر نکرد. برنامه دسکتاپ رسا (AppImage / .deb / .rpm شما) را به‌روزرسانی یا دوباره نصب کنید تا هم‌تراز شود.',
     copy: 'کپی',
     copied: 'کپی شد',
     done: 'انجام شد',
     applyingBody:
-      'به‌روزرسان Hermes در پنجره خودش کنترل را می‌گیرد و پس از پایان، Hermes را خودکار دوباره باز می‌کند. لطفاً حین به‌روزرسانی خودتان Hermes را باز نکنید.',
+      'به‌روزرسان رسا در پنجره خودش کنترل را می‌گیرد و پس از پایان، رسا را خودکار دوباره باز می‌کند. لطفاً حین به‌روزرسانی خودتان رسا را باز نکنید.',
     applyingBodyBackend:
-      'باک‌اند راه دور در حال اعمال به‌روزرسانی است و راه‌اندازی مجدد می‌شود. Hermes وقتی برگشت خودکار دوباره وصل می‌شود.',
-    applyingClose: 'این پنجره حین به‌روزرسانی بسته می‌شود و سپس Hermes خودش دوباره باز می‌شود.',
+      'باک‌اند راه دور در حال اعمال به‌روزرسانی است و راه‌اندازی مجدد می‌شود. رسا وقتی برگشت خودکار دوباره وصل می‌شود.',
+    applyingClose: 'این پنجره حین به‌روزرسانی بسته می‌شود و سپس رسا خودش دوباره باز می‌شود.',
+    applyingBodyAppInstaller:
+      'رسا بسته می‌شود و ویندوز به‌روزرسانی را تمام می‌کند. رسا پس از پایان خودش دوباره باز می‌شود — کاری لازم نیست انجام دهید.',
+    applyingCloseAppInstaller: 'این پنجره بسته می‌شود، ویندوز به‌روزرسانی را تمام می‌کند و رسا خودش دوباره باز می‌شود.',
+    checkUnknownTitleAppInstaller: 'بررسی به‌روزرسانی ممکن نشد',
+    checkUnknownBodyAppInstaller:
+      'ویندوز همین حالا نتوانست به‌روزرسانی‌ها را بررسی کند. به‌روزرسانی‌ها با راه‌اندازی مجدد رسا هم خودکار نصب می‌شوند.',
     errorTitle: 'به‌روزرسانی تمام نشد',
     errorBody: 'نگران نباشید — چیزی از دست نرفت. همین حالا می‌توانید دوباره تلاش کنید.',
-    blockerTitle: 'برای به‌روزرسانی Hermes، پیش‌نمایش‌های محلی بسته شوند؟',
+    blockerTitle: 'برای به‌روزرسانی رسا، پیش‌نمایش‌های محلی بسته شوند؟',
     blockerBody:
-      'Hermes برای به‌روزرسانی باید این پیش‌نمایش‌های محلی را متوقف کند. این کار فایل‌های شما را تغییر نمی‌دهد یا حذف نمی‌کند.',
-    foreignBlockerTitle: 'برای به‌روزرسانی Hermes، فرایندهای دیگر بسته شوند',
+      'رسا برای به‌روزرسانی باید این پیش‌نمایش‌های محلی را متوقف کند. این کار فایل‌های شما را تغییر نمی‌دهد یا حذف نمی‌کند.',
+    foreignBlockerTitle: 'برای به‌روزرسانی رسا، فرایندهای دیگر بسته شوند',
     foreignBlockerBody:
-      'Hermes نمی‌تواند این فرایندها را با امنیت خودکار ببندد. برنامه، ترمینال یا سرویس مالک هرکدام را ببندید، سپس به‌روزرسانی را دوباره امتحان کنید.',
+      'رسا نمی‌تواند این فرایندها را با امنیت خودکار ببندد. برنامه، ترمینال یا سرویس مالک هرکدام را ببندید، سپس به‌روزرسانی را دوباره امتحان کنید.',
     mixedBlockerBody:
-      'Hermes می‌تواند پیش‌نمایش‌های محلی فهرست‌شده زیر را ببندد. فرایندهای دیگر باید پیش از ادامه به‌روزرسانی دستی بسته شوند.',
+      'رسا می‌تواند پیش‌نمایش‌های محلی فهرست‌شده زیر را ببندد. فرایندهای دیگر باید پیش از ادامه به‌روزرسانی دستی بسته شوند.',
     closePreviewsAndUpdate: 'بستن پیش‌نمایش‌ها و به‌روزرسانی',
     closePreviewsAndCheckAgain: 'بستن پیش‌نمایش‌ها و بررسی دوباره',
     localPreview: 'پیش‌نمایش محلی',
@@ -3762,6 +4532,13 @@ export const fa = defineLocale({
     everythingSkipped: 'رد شد',
     everythingRowFailed: 'به‌روزرسانی ناموفق بود',
     everythingFanoutFailedTitle: 'به‌روزرسانی نمونه‌های دیگر ممکن نشد',
+    changeLogNew: 'تازه‌ها',
+    changeLogFixed: 'اصلاح شد',
+    changeLogFaster: 'سریع‌تر',
+    changeLogImproved: 'بهبود یافت',
+    changeLogOther: 'بهبودهای دیگر',
+    changeLogFallbackLabel: 'در این به‌روزرسانی',
+    changeLogFallbackItem: 'بهبودها و اصلاحات',
     applyStatus: {
       preparing: 'در حال به‌روزرسانی باک‌اند…',
       pulling: 'باک‌اند در حال به‌روزرسانی…',
@@ -3769,7 +4546,64 @@ export const fa = defineLocale({
       notAvailable: 'به‌روزرسانی برای این باک‌اند موجود نیست.',
       failed: 'به‌روزرسانی باک‌اند ناموفق بود.',
       noReturn: 'باک‌اند به حالت آنلاین برنگشت. به‌روزرسانی ممکن است کامل نشده باشد — میزبان باک‌اند را بررسی کنید.'
-    }
+    },
+    // پوشش وضعیت به‌روزرسانی + جزئیات نسخه (رابط به‌روزرسانی وابسته به سازوکار).
+    appName: 'رسا',
+    version: (value: string) => `نسخه ${value}`,
+    versionUnavailable: 'نسخه در دسترس نیست',
+    checkNow: 'بررسی الان',
+    seeWhatsNew: 'ببینید چه تازه است',
+    releaseNotes: 'یادداشت‌های انتشار',
+    onLatest: 'روی جدیدترین نسخه هستید.',
+    installing: 'یک به‌روزرسانی در حال نصب است.',
+    cantReach: 'نتوانستیم به سرور به‌روزرسانی برسیم.',
+    tapCheck: 'برای جستجوی به‌روزرسانی، «بررسی الان» را بزنید.',
+    updateReady: count => `یک به‌روزرسانی جدید آماده است (${count} تغییر شامل می‌شود).`,
+    updateReadyUnknown: 'یک به‌روزرسانی جدید آماده است.',
+    availableBodyRelease: tag => `نسخه ${tag} آماده نصب است.`,
+    lastChecked: age => `آخرین بررسی ${age}`,
+    never: 'هرگز',
+    justNowSuffix: ' · همین حالا',
+    bundleOutOfSync: 'ساخت برنامه قدیمی است',
+    bundleOutOfSyncDesc:
+      'محیط اجرای رسا به‌روز شد، اما خود برنامه دسکتاپ هنوز ساخت قدیمی‌تری دارد. برای گرفتن آخرین اصلاحات، به‌روزرسانی‌اش کنید.',
+    bundleOutOfSyncAction: 'گرفتن نصب‌کننده',
+    checkingShort: 'در حال بررسی…',
+    releaseAvailable: tag => `نسخه ${tag} موجود است.`,
+    versionDetailsTitle: 'جزئیات نسخه',
+    versionDetailsBody: 'این نصب بیرون از برنامه مدیریت می‌شود. همان‌طور که نصبش کردید، به‌روزش کنید.',
+    versionDetailsVersion: 'نسخه',
+    versionDetailsCommit: 'کامیت',
+    versionDetailsBuildOrigin: 'مبنا ساخت',
+    versionDetailsDistribution: 'توزیع',
+    versionDetailsDistributionDesktop: 'برنامه دسکتاپ',
+    versionDetailsDistributionDesktopMsix: 'برنامه دسکتاپ (MSIX)',
+    versionDetailsDistributionDesktopInstaller: 'برنامه دسکتاپ (نصب‌کننده)',
+    versionDetailsDistributionSourceInstaller: 'متن برنامه (اسکریپت نصب)',
+    versionDetailsDistributionSourceInstallerDesktop: 'متن برنامه (اسکریپت نصب) + hermes desktop',
+    versionDetailsDistributionSource: 'متن برنامه',
+    versionDetailsDistributionSourceDesktop: 'متن برنامه + hermes desktop',
+    versionDetailsDistributionStore: 'Microsoft Store',
+    versionDetailsRuntime: 'محیط اجرا',
+    versionDetailsRuntimeEmbedded: 'محیط اجرای همراه',
+    versionDetailsRuntimeExternal: 'بیرونی (استفاده از محیط اجرای ماشین)',
+    versionDetailsInstallId: 'شناسه نصب',
+    versionDetailsUncommittedChanges: 'تغییرات کامیت‌نشده'
+  },
+
+  handoffTour: {
+    profileTitle: 'اولین وظیفه شما روی پروفایل پیش‌فرض اجرا می‌شود',
+    profileText:
+      'این نوار پروفایل‌ها را عوض می‌کند. الان پروفایل روشن، پیش‌فرض است و نشست وظیفه همان‌جاست. دیگری پروفایل راه‌اندازی است و گفتگوی خوش‌آمد همان‌جاست.',
+    sessionsTitle: 'هر پروفایل نشست‌های خودش را دارد',
+    sessionsText:
+      'این فهرست متعلق به پروفایل پیش‌فرض است. نشست جدید روی پروفایلی که انتخاب شده آغاز می‌شود. پروفایل را روی نوار عوض کنید و فهرست هم عوض می‌شود.',
+    stayTitle: 'رسا یک کلیک فاصله دارد',
+    stayText: 'هر وقت کمک خواستید به پروفایل راه‌اندازی بروید و «خوش‌آمد به رسا» را باز کنید. همان‌جا می‌ماند.'
+  },
+  guidedGreeting: {
+    line: 'سلام، خوش آمدید. من رسا هستم. دو دقیقه فرصت بدهید تا جا را برای شما مرتب کنم، بعد می‌توانید مرا سر کاری بگذارید که واقعاً می‌خواهید انجام شود.\n\nاما اول، به چه نامی صدام کنید؟',
+    nameSuggestion: (name: string) => `(اگر ترجیح می‌دهید، می‌توانم فقط صدايتان کنم ${name}.)`
   },
 
   install: {
@@ -3780,7 +4614,7 @@ export const fa = defineLocale({
       skipped: 'رد شد',
       failed: 'ناموفق'
     },
-    oneTimeTitle: 'Hermes به یک نصب یک‌باره نیاز دارد',
+    oneTimeTitle: 'رسا به یک نصب یک‌باره نیاز دارد',
     unsupportedDesc: platform =>
       `نصب خودکار اولین اجرا روی ${platform} هنوز در دسترس نیست. Terminal را باز کنید و فرمان زیر را اجرا کنید، سپس این برنامه را دوباره اجرا کنید. اجراهای بعدی این مرحله را رد می‌کنند.`,
     installCommand: 'فرمان نصب',
@@ -3788,22 +4622,27 @@ export const fa = defineLocale({
     viewDocs: 'مشاهده مستندات نصب',
     installTo: 'نصب خواهد شد در',
     retryAfterRun: 'اجرایش کردم -- تلاش دوباره',
-    setupChoiceTitle: 'راه‌اندازی Hermes Desktop',
+    setupChoiceTitle: 'راه‌اندازی رسا دسکتاپ',
     setupChoiceDesc:
-      'این برنامه را به دروازه Hermes که خودتان اجرا می‌کنید وصل کنید، یا Hermes را روی همین کامپیوتر محلی نصب کنید.',
-    connectExistingTitle: 'اتصال به Hermes موجود',
+      'این برنامه را به دروازه رسا که خودتان اجرا می‌کنید وصل کنید، یا رسا را روی همین کامپیوتر محلی نصب کنید.',
+    setupChoiceDescLocal: 'رسا را روی همین کامپیوتر نصب کنید، یا به دروازه رسا که خودتان اجرا می‌کنید وصل شوید.',
+    connectExistingTitle: 'اتصال به رسا موجود',
     connectExistingShort: 'اتصال به موجود',
     connectExistingDesc: 'از باک‌اند راه دور با توکن نشست یا ورود مرورگری استفاده کنید. نصب محلی شروع نمی‌شود.',
-    installLocalTitle: 'نصب محلی Hermes',
-    installLocalDesc: 'Hermes را دانلود، محیط Python اش را بسازد و باک‌اند را روی همین کامپیوتر اجرا کند.',
-    localStartUnavailable: 'نصب محلی نتوانست شروع شود. Hermes Desktop را راه‌اندازی مجدد و دوباره تلاش کنید.',
-    remoteSetupTitle: 'اتصال به Hermes موجود',
-    remoteSetupDesc: 'آدرس دروازه خود را وارد کنید. Hermes Desktop تشخیص می‌دهد که به توکن نیاز دارد یا ورود مرورگری.',
+    installLocalTitle: 'نصب محلی رسا',
+    installLocalDesc: 'رسا را دانلود، محیط Python اش را بسازد و باک‌اند را روی همین کامپیوتر اجرا کند.',
+    useLocalTitle: 'استفاده از رسا روی همین کامپیوتر',
+    useLocalDesc: 'یک محیط اجرای رسا همین‌جا نصب است — با یک کلیک شروعش کنید. هیچ‌چیز دانلود نمی‌شود.',
+    bundledLocalDesc: 'از محیط اجرای رسا همراه این برنامه استفاده کنید — باک‌اند همراه همان نصب محلی است.',
+    localStartUnavailable: 'نصب محلی نتوانست شروع شود. رسا دسکتاپ را راه‌اندازی مجدد و دوباره تلاش کنید.',
+    remoteSetupTitle: 'اتصال به رسا موجود',
+    remoteSetupDesc: 'آدرس دروازه خود را وارد کنید. رسا دسکتاپ تشخیص می‌دهد که به توکن نیاز دارد یا ورود مرورگری.',
     remoteUrlTitle: 'آدرس دروازه',
-    remoteUrlDesc: 'آدرس پایه دروازه Hermes را استفاده کنید، شامل https:// وقتی راه دور است.',
+    remoteUrlDesc: 'آدرس پایه دروازه رسا را استفاده کنید، شامل https:// وقتی راه دور است.',
     remoteUrlPlaceholder: 'https://gateway.example.com/hermes',
     probing: 'در حال تشخیص احراز هویت دروازه…',
-    probeError: 'دسترسی به آن دروازه Hermes ممکن نشد.',
+    probeError: 'دسترسی به آن دروازه رسا ممکن نشد.',
+    probeErrorDetails: 'جزئیات',
     identityProvider: 'ارائه‌دهنده هویت شما',
     authTitle: 'احراز هویت',
     authNeedsOauth: provider => `پیش از آزمایش این دروازه، با ${provider} وارد شوید.`,
@@ -3823,12 +4662,12 @@ export const fa = defineLocale({
     applyRemote: 'اعمال و اتصال مجدد',
     backToSetup: 'بازگشت',
     failedTitle: 'نصب ناموفق بود',
-    settingUpTitle: 'در حال راه‌اندازی Hermes Agent',
+    settingUpTitle: 'در حال راه‌اندازی ماه‌افزار هوشمند رسا',
     finishingTitle: 'در حال جمع‌بندی',
     failedDesc:
-      'یکی از گام‌های نصب شکست خورد. در ویندوز این ممکن است وقتی رخ دهد که نمونه دیگری از Hermes CLI یا دسکتاپ در حال اجراست. نمونه‌های در حال اجرا Hermes را متوقف کنید، سپس دوباره تلاش کنید. جزئیات زیر یا لاگ دسکتاپ را برای متن کامل ببینید.',
+      'یکی از گام‌های نصب شکست خورد. در ویندوز این ممکن است وقتی رخ دهد که نمونه دیگری از رسا CLI یا دسکتاپ در حال اجراست. نمونه‌های در حال اجرا رسا را متوقف کنید، سپس دوباره تلاش کنید. جزئیات زیر یا لاگ دسکتاپ را برای متن کامل ببینید.',
     activeDesc:
-      'این یک راه‌اندازی یک‌باره است. نصب‌کننده Hermes در حال دانلود وابستگی‌ها و پیکربندی دستگاه شماست. اجراهای بعدی این مرحله را رد می‌کنند.',
+      'این یک راه‌اندازی یک‌باره است. نصب‌کننده رسا در حال دانلود وابستگی‌ها و پیکربندی دستگاه شماست. اجراهای بعدی این مرحله را رد می‌کنند.',
     progress: (completed, total) => `${completed} از ${total} گام کامل شد`,
     currentStage: stage => ` -- اکنون: ${stage}`,
     fetchingManifest: 'در حال دریافت manifest نصب‌کننده…',
@@ -3842,14 +4681,15 @@ export const fa = defineLocale({
     transcriptSaved: 'متن کامل ذخیره شد در',
     copiedOutput: 'کپی شد!',
     copyOutput: 'کپی خروجی',
-    reloadRetry: 'بارگذاری مجدد و تلاش دوباره'
+    reloadRetry: 'بارگذاری مجدد و تلاش دوباره',
+    openLogs: 'باز کردن لاگ‌ها'
   },
 
   onboarding: {
-    headerTitle: 'بیایید شما را با Hermes Agent راه‌اندازی کنیم',
+    headerTitle: 'بیایید شما را با ماه‌افزار هوشمند رسا راه‌اندازی کنیم',
     headerDesc: 'برای شروع گفتگو، یک ارائه‌دهنده مدل وصل کنید. بیشتر گزینه‌ها یک کلیک‌اند.',
-    preparingInstall: 'Hermes در حال تمام کردن نصب است. در اولین اجرا معمولاً زیر یک دقیقه طول می‌کشد.',
-    starting: 'در حال شروع Hermes…',
+    preparingInstall: 'رسا در حال تمام کردن نصب است. در اولین اجرا معمولاً زیر یک دقیقه طول می‌کشد.',
+    starting: 'در حال شروع رسا…',
     lookingUpProviders: 'در حال بررسی ارائه‌دهندگان…',
     collapse: 'جمع کردن',
     otherProviders: 'ارائه‌دهندگان دیگر',
@@ -3857,8 +4697,10 @@ export const fa = defineLocale({
     chooseLater: 'بعداً ارائه‌دهنده انتخاب می‌کنم',
     recommended: 'توصیه‌شده',
     connected: 'متصل',
-    featuredPitch: 'یک اشتراک، بیش از ۳۰۰ مدل مرزی — روش توصیه‌شده اجرای Hermes',
+    featuredPitch: 'یک اشتراک، بیش از ۳۰۰ مدل مرزی — روش توصیه‌شده اجرای رسا',
     fireworksPitch: 'API مستقیم مدل — مدل‌های مرزی میزبانی‌شده در Fireworks',
+    localModelsTitle: 'اجرای مدل‌ها به‌صورت محلی',
+    localModelsPitch: 'بدون نیاز به حساب — یک مدل دانلود و روی همین ماشین اجرا کنید',
     openRouterPitch: 'یک کلید، صدها مدل — پیش‌فرض مطمئن',
     apiKeyOptions: {
       fireworks: {
@@ -3875,7 +4717,7 @@ export const fa = defineLocale({
       local: {
         short: 'خودمیزبان',
         description:
-          'Hermes را به یک نقطه پایانی محلی یا خودمیزبان سازگار با OpenAI اشاره کنید (vLLM، llama.cpp، Ollama و غیره).'
+          'رسا را به یک نقطه پایانی محلی یا خودمیزبان سازگار با OpenAI اشاره کنید (vLLM، llama.cpp، Ollama و غیره).'
       }
     },
     backToSignIn: 'بازگشت به ورود',
@@ -3883,12 +4725,13 @@ export const fa = defineLocale({
     replaceCurrent: 'جایگزینی مقدار فعلی',
     pasteApiKey: 'چسباندن کلید API',
     localApiKeyPlaceholder: 'کلید API (اختیاری — فقط اگر نقطه پایانی شما لازمش دارد)',
+    localModelNamePlaceholder: 'نام مدل (مثلاً command-a-plus-05-2026)',
     couldNotSave: 'ذخیره اعتبارنامه ممکن نشد.',
     connecting: 'در حال اتصال',
     update: 'به‌روزرسانی',
     flowSubtitles: {
       pkce: 'مرورگر شما برای ورود باز می‌شود، سپس اینجا ادامه می‌یابد',
-      device_code: 'صفحه تأیید در مرورگر شما باز می‌شود — Hermes خودکار وصل می‌شود',
+      device_code: 'صفحه تأیید در مرورگر شما باز می‌شود — رسا خودکار وصل می‌شود',
       external: 'یک‌بار در ترمینال خود وارد شوید، سپس برای گفتگو برگردید'
     },
     startingSignIn: provider => `در حال شروع ورود برای ${provider}…`,
@@ -3896,15 +4739,22 @@ export const fa = defineLocale({
     connectedProvider: provider => `${provider} متصل شد`,
     connectedPicking: provider => `${provider} متصل شد. در حال انتخاب مدل پیش‌فرض…`,
     signInFailed: 'ورود ناموفق بود. دوباره تلاش کنید.',
+    signInExpired:
+      'صفحه ورود پیش از پایان کار شما به وقت تمام شد. دوباره تلاش کنید و مرحله مرورگری را در چند دقیقه کامل کنید، یا به‌جای آن از کلید API استفاده کنید.',
+    signInDidNotFinish: provider =>
+      `ورود با ${provider} کامل نشد. اتصال اینترنت را بررسی و دوباره تلاش کنید، یا ارائه‌دهنده دیگری انتخاب کنید.`,
+    tryAgain: 'تلاش دوباره',
+    useApiKeyInstead: 'استفاده از کلید API',
+    errorDetails: 'جزئیات',
     pickDifferentProvider: 'ارائه‌دهنده دیگری انتخاب کنید',
     signInWith: provider => `ورود با ${provider}`,
     openedBrowser: provider => `${provider} را در مرورگر شما باز کردیم.`,
-    authorizeThere: 'Hermes را آنجا مجاز کنید.',
+    authorizeThere: 'رسا را آنجا مجاز کنید.',
     copyAuthCode: 'کد مجوز را کپی و زیر جای‌گذاری کنید.',
     pasteAuthCode: 'چسباندن کد مجوز',
     reopenAuthPage: 'باز کردن مجدد صفحه مجوز',
     autoBrowser: provider =>
-      `${provider} را در مرورگر شما باز کردیم. Hermes را آنجا مجاز کنید و خودکار وصل می‌شود — چیزی برای کپی یا چسباندن نیست.`,
+      `${provider} را در مرورگر شما باز کردیم. رسا را آنجا مجاز کنید و خودکار وصل می‌شود — چیزی برای کپی یا چسباندن نیست.`,
     reopenSignInPage: 'باز کردن مجدد صفحه ورود',
     waitingAuthorize: 'در انتظار مجوز دادن شما…',
     externalPending: provider =>
@@ -3923,6 +4773,74 @@ export const fa = defineLocale({
     docs: provider => `مستندات ${provider}`
   },
 
+  freeTier: {
+    providerRowTitle: 'Nous · رده رایگان',
+    providerRowPitch: 'با حساب Nous وارد شوید تا مدل‌ها و ابزارهای بیشتری باز شود.',
+    readyTitle: 'رسا آماده است.',
+    readyCaption: 'رایگان · رابط‌ها شامل است',
+    begin: 'شروع',
+    signInInstead: 'به‌جای آن با حساب Nous وارد شوید',
+    otherProviders: 'ارائه‌دهندگان دیگر',
+    stripTitle: 'استنتاج و رابط‌های رایگان Nous اکنون در دسترس‌اند.',
+    stripBody: 'برای امتحانشان انتخاب‌گر مدل را باز کنید، یا با حساب Nous وارد شوید.',
+    openModelPicker: 'باز کردن انتخاب‌گر مدل',
+    dismiss: 'نادیده گرفتن',
+    providerName: 'Nous',
+    statusLabel: model => `Nous · ${model}`,
+    signIn: 'ورود',
+    signInHeading: 'با حساب Nous وارد شوید تا مدل‌ها و ابزارهای بیشتری باز شود.',
+    settingUp: 'در حال راه‌اندازی استنتاج رایگان…',
+    codeBody: 'برای تمام کردن ورود، این کد را در مرورگر خود وارد کنید.',
+    copyLink: 'کپی پیوند',
+    doNotShare: 'این کد را با کسی در میان نگذارید.',
+    waiting: 'در انتظار ورود…',
+    finishingHeading: 'در حال پایان دادن به ورود…',
+    finishingBody: 'در مرورگر تأیید شد. در حال جمع‌آوری توکن‌های حساب شما.',
+    signedInAs: email => `وارد‌شده با ${email}`,
+    signedIn: 'وارد شدید.',
+    completedBody: 'حساب شما اکنون استنتاج و ابزارها را در اختیار دارد.',
+    defaultModel: 'مدل پیش‌فرض',
+    change: 'تغییر',
+    done: 'انجام شد',
+    notNow: 'فعلاً نه',
+    tryAgain: 'تلاش دوباره',
+    startAgain: 'شروع دوباره',
+    didNotComplete: 'ورود کامل نشد',
+    rejectedBody: 'اشکالی ندارد؛ هنوز روی سرویس رایگان Nous هستید. هر وقت آماده بودید وارد شوید.',
+    supersededBody: 'کد ورود جدیدتری جای این را گرفت. از جدیدترین کد استفاده کنید، یا از نو شروع کنید.',
+    timedOutHeading: 'آن پیوند ورود منقضی شده است',
+    timedOutBody: 'هر وقت آماده بودید از نو شروع کنید. هنوز روی سرویس رایگان Nous هستید.',
+    retiredBody:
+      'نشست شما پیش از پایان ورود بسته شد. رسا نشست جدیدی باز می‌کند؛ بعد هر وقت آماده بودید دوباره وارد شوید.',
+    errorBody: 'ورود کامل نشد. هر وقت آماده بودید دوباره تلاش کنید.',
+    busyHeading: 'نزدیک هستیم',
+    busyBody: wait =>
+      `رسا نتوانست ورود شما را تمام کند چون سرویس Nous شلوغ است. در ${wait} دوباره تلاش کنید. نشست شما تا آن موقع سر جایش است.`,
+    unreachableBody:
+      'رسا برای تمام کردن ورود شما نتوانست به سرویس Nous برسد. اتصال اینترنت را بررسی و دوباره تلاش کنید. نشست شما همچنان سر جایش است.',
+    alreadySignedInHeading: 'از قبل وارد شده‌اید.',
+    alreadySignedInBody: 'این رسا از قبل به یک حساب Nous وارد است.',
+    setupFailed: {
+      gateClosed:
+        'این نسخه رسا بدون حساب Nous نمی‌تواند شروع شود. وارد شوید یا حساب بسازید؛ رایگان است و فقط یک دقیقه طول می‌کشد.',
+      paused:
+        'استفاده از رسا بدون ورود موقتاً متوقف شده است. رسا به بررسی ادامه می‌دهد. ورود رایگان است و همین حالا راه می‌افتید.',
+      rateLimited: wait =>
+        `الان خیلی‌ها در حال شروع‌اند، پس رسا در ${wait} دوباره تلاش می‌کند. ورود رایگان است و منتظر نمی‌مانید.`,
+      unreachable:
+        'رسا نتوانست به سرویس Nous برسد. اتصال اینترنت را بررسی و «تلاش دوباره» را بزنید. یا فعلاً ارائه‌دهنده دیگری وصل کنید.',
+      serverError: 'سرویس Nous سکته‌ای زد. بعد از یک لحظه «تلاش دوباره» را بزنید، یا فعلاً ارائه‌دهنده دیگری وصل کنید.',
+      powRequired:
+        'سرور Nous اثبات کار خواست، اما این قابلیت هنوز در عامل شما پیاده نشده است. برای ادامه وارد شوید یا یک حساب رایگان Nous بسازید.',
+      locked: 'این نشست بدون ورود نمی‌تواند ادامه دهد. برای ادامه، وارد شوید یا یک حساب رایگان Nous بسازید.',
+      generic:
+        'رسا نتوانست دسترسی رایگان را بدون ورود راه بیندازد. ورود رایگان است، یا ارائه‌دهنده دیگری وصل کنید.',
+      signInBelow: 'ورود رایگان است. Nous را در زیر انتخاب کنید.',
+      tryAgain: 'تلاش دوباره',
+      retrying: 'در حال تلاش دوباره…'
+    }
+  },
+
   modelPicker: {
     title: 'تغییر مدل',
     current: 'فعلی:',
@@ -3931,20 +4849,33 @@ export const fa = defineLocale({
     noModels: 'مدلی یافت نشد.',
     addProvider: 'افزودن ارائه‌دهنده',
     loadFailed: 'بارگذاری مدل‌ها ممکن نشد',
+    loadingIntoMemory: 'در حال بارگذاری در حافظه',
+    downloading: 'در حال دانلود',
+    localDownloadsHeading: 'محلی',
     noAuthenticatedProviders: 'ارائه‌دهنده احراز‌هویت‌شده‌ای نیست.',
     pro: 'Pro',
     proNeedsSubscription: 'مدل‌های Pro به اشتراک پولی Nous نیاز دارند.',
     free: 'رایگان',
     freeTier: 'رده رایگان',
     priceTitle: 'قیمت ورودی / خروجی به ازای هر میلیون توکن',
-    wasPrice: 'قبلاً'
+    wasPrice: 'قبلاً',
+    customModel: 'مدل سفارشی',
+    addCustomModelAction: 'افزودن مدل سفارشی…',
+    customModelPlaceholder: 'شناسه مدل را بنویسید، مثلاً openai/gpt-5'
   },
 
   modelVisibility: {
     title: 'مدل‌ها',
     search: 'جستجوی مدل‌ها',
     noAuthenticatedProviders: 'ارائه‌دهنده احراز‌هویت‌شده‌ای نیست.',
-    addProvider: 'افزودن ارائه‌دهنده…'
+    addProvider: 'افزودن ارائه‌دهنده…',
+    addCustomModel: 'افزودن مدل سفارشی',
+    removeCustomModel: 'حذف مدل سفارشی',
+    resetToDefaults: 'بازگشت به پیش‌فرض‌ها',
+    resetConfirm: 'نمایانی مدل‌ها به پیش‌فرض‌ها بازنشانی شود؟',
+    resetDescription:
+      'انتخاب‌های نمایش/پنهان مدل‌های شما پاک می‌شود و فهرست پیش‌فرض هر ارائه‌دهنده برمی‌گردد. مدل‌های سفارشی که اضافه کرده‌اید نگه داشته و نمایش داده می‌شوند.',
+    resetAction: 'بازنشانی'
   },
 
   shell: {
@@ -3955,8 +4886,13 @@ export const fa = defineLocale({
       search: 'جستجوی مدل‌ها',
       noModels: 'مدلی یافت نشد',
       editModels: 'ویرایش مدل‌ها…',
+      followDefault: 'استفاده از پیش‌فرض تنظیمات',
       refreshModels: 'به‌روزرسانی مدل‌ها',
-      fast: 'سریع'
+      fast: 'سریع',
+      free: 'رایگان',
+      cacheRead: 'خواندن کش‌شده',
+      priceTitle: (input: string, output: string, cache: string) =>
+        `ورودی ${input}/Mtok · خروجی ${output}/Mtok` + (cache ? ` · خواندن کش‌شده ${cache}/Mtok` : '')
     },
     modelOptions: {
       noOptions: 'گزینه‌ای برای این مدل نیست',
@@ -3971,6 +4907,7 @@ export const fa = defineLocale({
       xhigh: 'خیلی زیاد',
       max: 'حداکثر',
       ultra: 'فوق‌العاده',
+      sendsOnRoute: (level: string) => `${level} را روی این مسیر ارسال می‌کند`,
       updateFailed: 'به‌روزرسانی گزینه مدل ناموفق بود',
       fastFailed: 'به‌روزرسانی حالت سریع ناموفق بود'
     },
@@ -4006,13 +4943,14 @@ export const fa = defineLocale({
       update: 'به‌روزرسانی',
       updateInProgress: 'به‌روزرسانی در جریان است',
       commitsBehind: (count, branch) => `${count} کامیت عقب‌تر از ${branch}`,
-      desktopVersion: version => `Hermes Desktop v${version}`,
+      releaseAvailable: (tag: string) => `نسخه ${tag} موجود است.`,
+      desktopVersion: version => `رسا دسکتاپ v${version}`,
       backendVersion: version => `باک‌اند v${version}`,
       clientLabel: version => `client v${version}`,
       connectionSsh: host => `SSH: ${host}`,
       connectionRemote: host => `راه دور: ${host}`,
       connectionCloud: host => `Cloud: ${host}`,
-      connectionCloudTooltip: host => `Hermes Cloud · ${host}`,
+      connectionCloudTooltip: host => `رسا کلاود · ${host}`,
       connectionSshTooltip: host => `SSH · ${host}`,
       connectionRemoteTooltip: host => `راه دور · ${host}`,
       backendLabel: version => `باک‌اند v${version}`,
@@ -4036,13 +4974,18 @@ export const fa = defineLocale({
       resetStatusbar: 'بازگشت به پیش‌فرض‌ها',
       toggleApprovalMode: 'تأییدها',
       toggleBackendVersion: 'نسخه باک‌اند',
+      toggleCacheHitRate: 'نرخ برخورد حافظه نهان',
       toggleCommandCenter: 'مرکز فرمان',
       toggleContextUsage: 'سنجه زمینه',
       toggleRunningTimer: 'تایمر نوبت',
       toggleSessionTimer: 'تایمر نشست',
       toggleTerminal: 'ترمینال',
+      toggleTokensPerSecond: 'توکن بر ثانیه',
       toggleVersion: 'نسخه و به‌روزرسانی‌ها',
+      toggleFreeTier: 'رده رایگان',
       toggleWorkspace: 'فضای کار',
+      cacheHitRateTitle: 'نرخ برخورد حافظه نهان پرامپت در این نشست — توکن‌های کش‌شده ارزان‌ترند، پس نرخ بالاتر یعنی ارزان‌تر',
+      tokensPerSecondTitle: 'توکن‌های خروجی بر ثانیه، میانگین ۱۰ فراخوانی آخر مدل',
       agents: 'عامل‌ها',
       closeAgents: 'بستن عامل‌ها',
       openAgents: 'باز کردن عامل‌ها',
@@ -4057,6 +5000,16 @@ export const fa = defineLocale({
       openStarmap: 'باز کردن گراف حافظه',
       turnRunning: 'در حال اجرا',
       contextUsage: 'مصرف زمینه',
+      compressions: count => `فشرده‌سازی‌ها: ${count}`,
+      systemResources: {
+        title: 'منابع سیستم',
+        loading: 'منابع…',
+        gpuUtilization: 'استفاده از GPU',
+        gpuMemory: 'حافظه GPU',
+        ram: 'RAM',
+        unifiedNote: 'حافظه یکپارچه — GPU و سیستم این استخر را به اشتراک می‌گذارند.',
+        toggle: 'منابع سیستم'
+      },
       contextUsagePanel: {
         categories: {
           conversation: 'مکالمه',
@@ -4074,7 +5027,8 @@ export const fa = defineLocale({
         title: 'مصرف زمینه',
         tokenSummary: (used, max) => `${used} / ${max} توکن`
       },
-
+      focusedSince: 'در فوکوس از',
+      focusedSinceTitle: 'زمان از آخرین فوکوس این گفتگو — نه مدت اجرای نوبت فعلی',
       yoloOn: 'YOLO روشن — تأیید خودکار فرمان‌های خطرناک. Shift+کلیک به‌صورت سراسری تغییرش می‌دهد.',
       yoloOff: 'YOLO خاموش. Shift+کلیک به‌صورت سراسری تغییرش می‌دهد.',
       modelNone: 'هیچ',
@@ -4088,6 +5042,10 @@ export const fa = defineLocale({
   },
 
   rightSidebar: {
+    terminalReadOnly: 'خروجی فقط‌خواندنی',
+    terminalReadOnlyHelp:
+      'برای پاسخ به پرامپت‌ها، فرمان پس‌زمینه را متوقف و در ترمینال جدیدی اجرا کنید. ترمینال جدید یک شل جداگانه باز می‌کند؛ به این فرایند وصل نمی‌شود.',
+    terminalOpenInteractive: 'باز کردن ترمینال جدید',
     aria: 'نوار کناری راست',
     panelsAria: 'پنل‌های نوار کناری راست',
     files: 'فایل‌سیستم',
@@ -4097,10 +5055,17 @@ export const fa = defineLocale({
     remotePickerTitle: 'انتخاب پوشه راه دور',
     remotePickerDescription: 'مرور پوشه‌ها روی باک‌اند متصل.',
     remotePickerSelect: 'انتخاب پوشه',
+    remotePickerNewFolder: 'پوشه جدید',
+    remotePickerFolderName: 'نام پوشه',
+    remotePickerCreateFolder: 'ایجاد پوشه',
+    remotePickerInvalidFolderName: 'یک نام پوشه بدون اسلش وارد کنید.',
+    remotePickerCreateFolderFailed: error => `ایجاد پوشه ممکن نشد (${error}).`,
     folderTip: cwd => cwd,
     openFolder: 'باز کردن پوشه',
     refreshTree: 'به‌روزرسانی درخت',
     collapseAll: 'جمع کردن همه پوشه‌ها',
+    showIgnored: 'نمایش فایل‌های gitignore‌شده',
+    hideIgnored: 'پنهان کردن فایل‌های gitignore‌شده',
     previewUnavailable: 'پیش‌نمایش در دسترس نیست',
     couldNotPreview: path => `پیش‌نمایش ${path} ممکن نشد`,
     noProjectTitle: 'بدون پروژه',
@@ -4129,6 +5094,7 @@ export const fa = defineLocale({
     closePane: 'بستن پنل پیش‌نمایش',
     loading: 'در حال بارگذاری پیش‌نمایش',
     unavailable: 'پیش‌نمایش در دسترس نیست',
+    missingTarget: 'آن مسیر روی این رایانه وجود ندارد',
     opening: 'در حال باز کردن…',
     hide: 'پنهان',
     openPreview: 'باز کردن پیش‌نمایش',
@@ -4145,7 +5111,7 @@ export const fa = defineLocale({
     binaryTitle: 'این شبیه یک فایل باینری است',
     binaryBody: label => `پیش‌نمایش ${label} ممکن است متن ناخوانا نشان دهد.`,
     largeTitle: 'این فایل بزرگ است',
-    largeBody: (label, size) => `${label} ${size} است. Hermes فقط ۵۱۲ کیلوبایت اول را نشان می‌دهد.`,
+    largeBody: (label, size) => `${label} ${size} است. رسا فقط ۵۱۲ کیلوبایت اول را نشان می‌دهد.`,
     previewAnyway: 'پیش‌نمایش با این حال',
     truncated: 'نمایش ۵۱۲ کیلوبایت اول.',
     noInlineTitle: 'پیش‌نمایش درون‌خطی نیست',
@@ -4186,11 +5152,11 @@ export const fa = defineLocale({
         'این آدرس به ماشینی اشاره می‌کند که عامل شما رویش اجراست، نه این یکی. پنل مرورگر صفحات را محلی بارگذاری می‌کند، پس سرور توسعه راه دور به port forward یا نام میزبان قابل‌دسترس نیاز دارد.',
       failedToLoad: 'بارگذاری پیش‌نمایش ناموفق بود',
       tryAgain: 'تلاش دوباره',
-      restarting: 'Hermes در حال راه‌اندازی مجدد است…',
-      askRestart: 'از Hermes بخواه سرور را راه‌اندازی مجدد کند',
-      lookingRestart: taskId => `Hermes در جستجوی سرور پیش‌نمایش برای راه‌اندازی مجدد است (${taskId})`,
+      restarting: 'رسا در حال راه‌اندازی مجدد است…',
+      askRestart: 'از رسا بخواه سرور را راه‌اندازی مجدد کند',
+      lookingRestart: taskId => `رسا در جستجوی سرور پیش‌نمایش برای راه‌اندازی مجدد است (${taskId})`,
       restartingTitle: 'در حال راه‌اندازی مجدد سرور پیش‌نمایش',
-      restartingMessage: 'Hermes در پس‌زمینه کار می‌کند. پیشرفت را در کنسول پیش‌نمایش ببینید.',
+      restartingMessage: 'رسا در پس‌زمینه کار می‌کند. پیشرفت را در کنسول پیش‌نمایش ببینید.',
       startRestartFailed: message => `شروع راه‌اندازی مجدد سرور ممکن نشد: ${message}`,
       restartFailed: 'راه‌اندازی مجدد سرور ناموفق بود',
       hideConsole: 'پنهان کردن کنسول پیش‌نمایش',
@@ -4202,17 +5168,17 @@ export const fa = defineLocale({
       reload: 'بارگذاری مجدد صفحه',
       address: 'آدرس',
       addressPlaceholder: 'آدرس را وارد کنید',
-      blankPageBody: 'برای مرور، آدرسی در بالا تایپ کنید یا از Hermes بخواه صفحه‌ای باز کند.',
+      blankPageBody: 'برای مرور، آدرسی در بالا تایپ کنید یا از رسا بخواه صفحه‌ای باز کند.',
       finishedRestarting: message =>
-        `Hermes راه‌اندازی مجدد سرور پیش‌نمایش را تمام کرد${message ? `: ${message}` : ''}`,
+        `رسا راه‌اندازی مجدد سرور پیش‌نمایش را تمام کرد${message ? `: ${message}` : ''}`,
       failedRestarting: message => `راه‌اندازی مجدد سرور ناموفق بود: ${message}`,
       unknownError: 'خطای نامشخص',
       restartedTitle: 'سرور پیش‌نمایش راه‌اندازی مجدد شد',
       reloadingNow: 'در حال بارگذاری مجدد پیش‌نمایش.',
       restartFailedTitle: 'راه‌اندازی مجدد پیش‌نمایش ناموفق بود',
-      restartFailedMessage: 'Hermes نتوانست سرور را راه‌اندازی مجدد کند.',
+      restartFailedMessage: 'رسا نتوانست سرور را راه‌اندازی مجدد کند.',
       stillWorking:
-        'Hermes هنوز در حال کار است، اما هنوز نتیجه راه‌اندازی مجددی نرسیده. ممکن است فرمان سرور در پیش‌زمینه اجرا می‌شود.',
+        'رسا هنوز در حال کار است، اما هنوز نتیجه راه‌اندازی مجددی نرسیده. ممکن است فرمان سرور در پیش‌زمینه اجرا می‌شود.',
       workspaceReloading: 'فضای کار تغییر کرد، در حال بارگذاری مجدد پیش‌نمایش',
       fileChanged: url => `فایل تغییر کرد، بارگذاری مجدد پیش‌نمایش: ${url}`,
       filesChanged: (count, url) => `${count} تغییر فایل، بارگذاری مجدد پیش‌نمایش: ${url}`,
@@ -4222,7 +5188,17 @@ export const fa = defineLocale({
       loadFailedConsole: (code, message) => `بارگذاری ناموفق${code ? ` (${code})` : ''}: ${message}`,
       unreachableDescription: 'به صفحه پیش‌نمایش دسترسی ممکن نشد.',
       openTarget: url => `باز کردن ${url}`,
-      fallbackTitle: 'پیش‌نمایش'
+      fallbackTitle: 'پیش‌نمایش',
+      annotate: 'حاشیه‌نویسی',
+      annotateOn: 'توقف حاشیه‌نویسی',
+      annotateNeedPage: 'ابتدا صفحه‌ای در مرورگر درون‌برنامه‌ای باز کنید.',
+      annotateFailed: 'شروع حالت حاشیه‌نویسی ممکن نشد',
+      commenting: 'در حال درج نظر',
+      addComments: count => (count === 1 ? 'افزودن ۱ نظر' : `افزودن ${count} نظر`),
+      commentPlaceholder: 'افزودن نظر…',
+      commentTitle: n => `نظر ${n}`,
+      saveComment: 'ذخیره',
+      cancelComment: 'لغو نظر'
     }
   },
 
@@ -4235,6 +5211,7 @@ export const fa = defineLocale({
     lastTabKeptBody:
       'این ناحیه حداقل به یک زبانه نمایان نیاز دارد. ابتدا زبانه دیگری نشان دهید، یا کل نوار کناری را جمع کنید.',
     toggleStripTab: title => `نمایش/پنهان زبانه ${title}`,
+    zoneMenuLabel: title => `گزینه‌های ناحیه برای ${title}`,
     minimize: 'کمینه',
     restore: 'بازگردانی',
     closeRunningTitle: 'زبانه در حال اجرا بسته شود؟',
@@ -4276,6 +5253,20 @@ export const fa = defineLocale({
     tabCount: count => `${count} زبانه`
   },
 
+  interfaceMode: {
+    title: 'حالت رابط',
+    hint: 'چیزی که نمایش داده می‌شود را تغییر می‌دهد، نه توانایی‌های رسا را.',
+    sessionNote: 'توسط حالت ساده تنظیم می‌شود. تغییری که این‌جا بدهید فقط برای همین نشست است؛ به حالت پیشرفته بروید تا همیشگی شود.',
+    simple: {
+      label: 'ساده',
+      description: 'برای گفتگو با رسا. نوار کناری و گفتگو؛ بدون ترمینال، پنل فایل یا دیف.'
+    },
+    advanced: {
+      label: 'پیشرفته',
+      description: 'برای توسعه‌دهندگان. ترمینال، فایل‌ها، دیف‌ها، نوار وضعیت و چیدمان‌ها، همان‌طور که تنظیم کرده‌اید.'
+    }
+  },
+
   contextMenu: {
     link: {
       openInApp: 'باز کردن در مرورگر درون‌برنامه',
@@ -4304,7 +5295,7 @@ export const fa = defineLocale({
     thread: {
       loadingSession: 'در حال بارگذاری نشست',
       showEarlier: 'نمایش پیام‌های قبلی',
-      loadingResponse: 'Hermes در حال بارگذاری پاسخ است',
+      loadingResponse: 'رسا در حال بارگذاری پاسخ است',
       loadingLocalModel: model => `بارگذاری ${model} در حافظه`,
       processingPrompt: 'در حال پردازش پرامپت',
       resumeWhenBackgroundDone: count =>
@@ -4336,15 +5327,15 @@ export const fa = defineLocale({
       errorLayerBodies: {
         auth: 'سرویس هوش مصنوعی ورود شما را رد کرد. اعتبارنامه‌های این ارائه‌دهنده را بررسی و پیام را دوباره بفرستید.',
         billing: 'حساب شما دیگر اعتباری برای این ارائه‌دهنده ندارد. اعتبار شارژ کنید یا ارائه‌دهنده را عوض کنید و دوباره بفرستید.',
-        disk: 'دیسک شما پر است، поэтому Hermes نتوانست این مکالمه را ذخیره کند. کمی فضا آزاد کنید و دوباره تلاش کنید.',
+        disk: 'دیسک شما پر است، поэтому رسا نتوانست این مکالمه را ذخیره کند. کمی فضا آزاد کنید و دوباره تلاش کنید.',
         endpoint:
-          'Hermes نمی‌تواند به سرور مدل سفارشی شما برسد. بررسی کنید در حال اجراست، سپس پیام را دوباره بفرستید.',
+          'رسا نمی‌تواند به سرور مدل سفارشی شما برسد. بررسی کنید در حال اجراست، سپس پیام را دوباره بفرستید.',
         gateway:
-          'Hermes هنگام شروع این پاسخ به خطای داخلی خورد. پیام را دوباره بفرستید؛ اگر تکرار شد، عیب‌یابی را ارسال کنید.',
-        generic: 'هنگام پاسخ دادن Hermes چیزی درست پیش نرفت. دوباره تلاش کنید، یا اگر تکرار شد جزئیات را کپی کنید.',
+          'رسا هنگام شروع این پاسخ به خطای داخلی خورد. پیام را دوباره بفرستید؛ اگر تکرار شد، عیب‌یابی را ارسال کنید.',
+        generic: 'هنگام پاسخ دادن رسا چیزی درست پیش نرفت. دوباره تلاش کنید، یا اگر تکرار شد جزئیات را کپی کنید.',
         provider: 'سرویس هوش مصنوعی نتوانست این درخواست را کامل کند. کمی بعد دوباره تلاش کنید یا ارائه‌دهنده را عوض کنید.',
         runtime:
-          'Hermes هنگام شروع این پاسخ به خطای داخلی خورد. پیام را دوباره بفرستید؛ اگر تکرار شد، عیب‌یابی را ارسال کنید.',
+          'رسا هنگام شروع این پاسخ به خطای داخلی خورد. پیام را دوباره بفرستید؛ اگر تکرار شد، عیب‌یابی را ارسال کنید.',
         streaming: 'اتصال پیش از پایان پاسخ قطع شد. برای ارسال دوباره، تلاش مجدد کنید.'
       },
       errorRetry: 'تلاش دوباره',
@@ -4390,7 +5381,7 @@ export const fa = defineLocale({
         },
         no_reply: {
           title: 'پاسخ تمام نشد',
-          body: 'Hermes این نوبت را بدون پاسخ بست. برای ارسال دوباره، تلاش مجدد کنید.'
+          body: 'رسا این نوبت را بدون پاسخ بست. برای ارسال دوباره، تلاش مجدد کنید.'
         },
         upstream_blocked: {
           title: 'یک فایروال درخواست را مسدود کرد',
@@ -4400,7 +5391,7 @@ export const fa = defineLocale({
         ssl_cert_verification: {
           title: 'اتصال امن ناموفق بود',
           body: provider =>
-            `Hermes نتوانست اتصال امن به ${provider} را تأیید کند. تنظیمات شبکه یا پروکسی را بررسی کنید یا ارائه‌دهنده را عوض کنید و پیام را دوباره بفرستید.`
+            `رسا نتوانست اتصال امن به ${provider} را تأیید کند. تنظیمات شبکه یا پروکسی را بررسی کنید یا ارائه‌دهنده را عوض کنید و پیام را دوباره بفرستید.`
         },
         context_overflow: {
           title: 'این مکالمه خیلی طولانی است',
@@ -4435,28 +5426,28 @@ export const fa = defineLocale({
         },
         invalid_response: {
           title: 'سرویس هوش مصنوعی پاسخ ناخوانا فرستاد',
-          body: provider => `${provider} چیزی برگرداند که Hermes نتوانست بخواند. کمی بعد دوباره تلاش کنید.`
+          body: provider => `${provider} چیزی برگرداند که رسا نتوانست بخواند. کمی بعد دوباره تلاش کنید.`
         },
         empty_response: {
           title: 'سرویس هوش مصنوعی پاسخ خالی فرستاد',
           body: provider => `${provider} برای این پیام چیزی برنگرداند. کمی بعد دوباره تلاش کنید.`
         },
         loop_error: {
-          title: 'Hermes در حلقه گیر کرد',
-          body: 'پاسخ مدام همان گام‌ها را تکرار کرد، پس Hermes متوقفش کرد. دوباره تلاش کنید، یا اگر تکرار شد گفتگوی جدیدی شروع کنید.'
+          title: 'رسا در حلقه گیر کرد',
+          body: 'پاسخ مدام همان گام‌ها را تکرار کرد، پس رسا متوقفش کرد. دوباره تلاش کنید، یا اگر تکرار شد گفتگوی جدیدی شروع کنید.'
         },
         SESSION_NOT_OWNED: {
           title: 'این گفتگو جای دیگری باز است',
-          body: 'این گفتگو الان در پنجره یا ترمینال دیگری از Hermes باز است. آنجا ببندیدش و پیام را دوباره بفرستید، یا اینجا گفتگوی جدیدی شروع کنید.'
+          body: 'این گفتگو الان در پنجره یا ترمینال دیگری از رسا باز است. آنجا ببندیدش و پیام را دوباره بفرستید، یا اینجا گفتگوی جدیدی شروع کنید.'
         },
         disk_full: {
           title: 'دیسک پر است',
-          body: 'دیسک شما پر است، پس Hermes نتوانست این مکالمه را ذخیره کند. کمی فضا آزاد کنید و دوباره تلاش کنید.'
+          body: 'دیسک شما پر است، پس رسا نتوانست این مکالمه را ذخیره کند. کمی فضا آزاد کنید و دوباره تلاش کنید.'
         },
         // Nous free tier. متن بدنه معمولاً جمله خود باک‌اند است (نام انتظار و راه پیش‌رو را می‌گوید)؛
         // این بدنه‌ها جای باک‌اند‌های قدیمی‌تر می‌نشینند که چیزی نفرستادند.
         free_tier_disabled: {
-          title: 'استفاده از Hermes بدون ورود فعلاً خاموش است',
+          title: 'استفاده از رسا بدون ورود فعلاً خاموش است',
           body: 'برای ادامه گفتگو با حساب Nous وارد شوید — رایگان است.'
         },
         free_tier_rate_limited: {
@@ -4469,10 +5460,10 @@ export const fa = defineLocale({
         },
         free_tier_model_not_free: {
           title: 'این مدل بدون ورود در دسترس نیست',
-          body: 'Hermes فعلاً از مدل رایگان استفاده می‌کند. برای مدل‌های بیشتر با حساب Nous وارد شوید — رایگان است.'
+          body: 'رسا فعلاً از مدل رایگان استفاده می‌کند. برای مدل‌های بیشتر با حساب Nous وارد شوید — رایگان است.'
         },
         free_tier_route: {
-          title: 'Hermes نتوانست به مدل رایگانِ این مسیر برسد',
+          title: 'رسا نتوانست به مدل رایگانِ این مسیر برسد',
           body: 'با حساب Nous وارد شوید — رایگان است — یا تنظیم NOUS_INFERENCE_BASE_URL را بررسی کنید.'
         },
         free_tier_outage: {
@@ -4480,7 +5471,7 @@ export const fa = defineLocale({
           body: 'یک دقیقه بعد پیام را دوباره بفرستید.'
         },
         free_tier_refused: {
-          title: 'Hermes نتوانست بدون ورود آن را بفرستد',
+          title: 'رسا نتوانست بدون ورود آن را بفرستد',
           body: 'ورود با حساب Nous رایگان است.'
         }
       },
@@ -4495,7 +5486,7 @@ export const fa = defineLocale({
       },
       errorDetails: 'جزئیات',
       errorGenericProvider: 'سرویس هوش مصنوعی',
-      errorToastTitle: "Hermes نتوانست پاسخ را تمام کند",
+      errorToastTitle: "رسا نتوانست پاسخ را تمام کند",
       errorLimitResets: time => `محدودیت در ${time} بازنشانی می‌شود`,
       errorRetryAtReset: time => `تلاش مجدد وقتی محدودیت بازنشانی شد (${time})`,
       errorRetryScheduled: (time, wait) => `تلاش مجدد در ${time} — تا ${wait}`,
@@ -4505,8 +5496,8 @@ export const fa = defineLocale({
       errorChooseModel: 'انتخاب مدل',
       errorCompressConversation: 'فشرده‌سازی مکالمه',
       errorCompressFailed: 'فشرده‌سازی مکالمه ممکن نشد',
-      errorOpenHermesFolder: 'باز کردن پوشه Hermes',
-      errorOpenHermesFolderFailed: 'باز کردن پوشه Hermes ممکن نشد',
+      errorOpenHermesFolder: 'باز کردن پوشه رسا',
+      errorOpenHermesFolderFailed: 'باز کردن پوشه رسا ممکن نشد',
       errorUpdateApiKey: 'به‌روزرسانی کلید API',
       errorSignInAgain: provider => `دوباره به ${provider} وارد شوید`,
       errorSignInFreeTier: 'ورود با حساب Nous',
@@ -4540,11 +5531,11 @@ export const fa = defineLocale({
       attachingFile: 'در حال پیوست…'
     },
     approval: {
-      gatewayDisconnected: 'دروازه Hermes متصل نیست',
+      gatewayDisconnected: 'دروازه رسا متصل نیست',
       sendFailed: 'ارسال پاسخ تأیید ممکن نشد',
       reconnect: 'اتصال دوباره',
       timedOutSystemLine:
-        'مهلت تأیید تمام شد — فرمان اجرا نشد. از Hermes بخواهید دوباره امتحان کند، یا مهلت را در تنظیمات ← ایمنی ← مهلت تأیید بالا ببرید.',
+        'مهلت تأیید تمام شد — فرمان اجرا نشد. از رسا بخواهید دوباره امتحان کند، یا مهلت را در تنظیمات ← ایمنی ← مهلت تأیید بالا ببرید.',
       openSafetySettings: 'باز کردن تنظیمات ایمنی',
       run: 'اجرا',
       command: 'فرمان',
@@ -4556,12 +5547,12 @@ export const fa = defineLocale({
       reject: 'رد',
       alwaysTitle: 'این فرمان همیشه مجاز شود؟',
       alwaysDescription: pattern =>
-        `این کار الگوی «${pattern}» را به فهرست سفید دائمی شما اضافه می‌کند (~/.hermes/config.yaml). Hermes دیگر برای فرمان‌هایی مثل این نمی‌پرسد — نه در این نشست و نه در نشست‌های بعدی.`,
+        `این کار الگوی «${pattern}» را به فهرست سفید دائمی شما اضافه می‌کند (~/.hermes/config.yaml). رسا دیگر برای فرمان‌هایی مثل این نمی‌پرسد — نه در این نشست و نه در نشست‌های بعدی.`,
       alwaysAllow: 'همیشه مجاز'
     },
     clarify: {
       notReady: 'درخواست شفاف‌سازی هنوز آماده نیست',
-      gatewayDisconnected: 'دروازه Hermes متصل نیست',
+      gatewayDisconnected: 'دروازه رسا متصل نیست',
       sendFailed: 'ارسال پاسخ شفاف‌سازی ممکن نشد',
       loadingQuestion: 'در حال بارگذاری پرسش…',
       other: 'دیگر (پاسخ خود را تایپ کنید)',
@@ -4612,7 +5603,7 @@ export const fa = defineLocale({
       envRequired: 'ابتدا اعتبارنامه‌های الزامی را پر کنید',
       sendFailed: 'ارسال پاسخ راه‌اندازی MCP ممکن نشد',
       reloadFailed: 'سرور ذخیره شد، اما بارگذاری مجدد ابزارهای MCP ناموفق بود — نشست بعدی بارگذاری می‌شوند',
-      gatewayDisconnected: 'دروازه Hermes متصل نیست'
+      gatewayDisconnected: 'دروازه رسا متصل نیست'
     },
     tool: {
       copyCode: 'کپی کد',
@@ -4739,15 +5730,46 @@ export const fa = defineLocale({
   },
 
   prompts: {
-    gatewayDisconnected: 'دروازه Hermes متصل نیست',
+    gatewayDisconnected: 'دروازه رسا متصل نیست',
+    reconnect: 'اتصال مجدد',
     sudoSendFailed: 'ارسال رمز sudo ممکن نشد',
     secretSendFailed: 'ارسال secret ممکن نشد',
     sudoTitle: 'رمز مدیر',
-    sudoDesc: 'Hermes برای اجرای یک فرمان دارای امتیاز به رمز sudo شما نیاز دارد. فقط به عامل محلی شما فرستاده می‌شود.',
+    sudoDesc: 'رسا برای اجرای یک فرمان دارای امتیاز به رمز sudo شما نیاز دارد. فقط به عامل محلی شما فرستاده می‌شود.',
+    sudoCommandUnavailable:
+      'این عامل خود فرمان را ارائه نکرده است. اگر نمی‌توانید آن را در گفتگو تأیید کنید، لغو کنید.',
+    sudoInstallDesc:
+      'رسا برای نصب بسته‌های Bot Screen (TigerVNC + Xfce) روی میزبان دروازه به رمز sudo شما نیاز دارد. فقط به همان میزبان فرستاده می‌شود.',
     sudoPlaceholder: 'رمز sudo',
     secretTitle: 'Secret لازم است',
-    secretDesc: 'Hermes برای ادامه به یک اعتبارنامه نیاز دارد.',
-    secretPlaceholder: 'مقدار secret'
+    secretDesc: 'رسا برای ادامه به یک اعتبارنامه نیاز دارد.',
+    secretPlaceholder: 'مقدار secret',
+    vaultUnlockSendFailed: 'ارسال رمز اصلی ممکن نشد',
+    vaultUnlockTitle: name => `باز کردن قفل ${name}`,
+    vaultUnlockDesc: name =>
+      `عامل می‌خواهد با ورودی ذخیره‌شده در ${name} وارد سایتی شود. رمز اصلی را وارد کنید تا برای این نشست باز شود — مستقیم به ${name} روی همین ماشین می‌رود و هرگز ذخیره یا به عامل نشان داده نمی‌شود.`,
+    vaultUnlockPlaceholder: 'رمز اصلی',
+    vaultUnlockKeepLocked: 'قفل بماند',
+    vaultUnlockConfirm: 'باز کردن قفل',
+    vaultSaveSendFailed: 'ذخیره ورودی ممکن نشد',
+    vaultSaveTitle: site => `ورودی ${site} شما ذخیره شود؟`,
+    vaultSaveDesc: origin =>
+      `رسا به صفحه ورود در ${origin} رسید و ورودی برای آن ندارد. یک‌بار این‌جا واردش کنید؛ روی همین ماشین رمزنگاری می‌شود و بدون آنکه مدل رمز را ببیند در صفحه پر می‌شود.`,
+    vaultSaveIdentifierLabel: 'ایمیل یا نام کاربری',
+    vaultSaveIdentifierPlaceholder: 'you@example.com',
+    vaultSavePasswordPlaceholder: 'رمز عبور',
+    vaultSaveFootnote: 'مدیریت ورودی‌های ذخیره‌شده در تنظیمات ← رمزها و ورودها.',
+    vaultSaveDecline: 'ذخیره نکن',
+    vaultSaveConfirm: 'ذخیره و ورود',
+    vaultCodeSendFailed: 'ارسال کد ممکن نشد',
+    vaultCodeTitle: site => `کد تأیید برای ${site}`,
+    vaultCodeDesc: site =>
+      `${site} یک کد یک‌بارمصرف می‌خواهد (پیامک، ایمیل یا برنامه احرازگر). آن را این‌جا وارد کنید و رسا در صفحه تایپش می‌کند؛ مدل هرگز آن را نمی‌بیند.`,
+    vaultCodeLabel: 'کد',
+    vaultCodeFootnote:
+      'نکته: کلید احرازگر را همراه همین ورودی در تنظیمات ← رمزها و ورودها ذخیره کنید تا رسا کدها را برایتان وارد کند.',
+    vaultCodeSkip: 'رد کردن',
+    vaultCodeConfirm: 'وارد کردن کد'
   },
 
   desktop: {
@@ -4755,6 +5777,9 @@ export const fa = defineLocale({
     sessionUnavailable: 'نشست در دسترس نیست',
     createSessionFailed: 'ایجاد نشست جدید ممکن نشد',
     promptFailed: 'پرامپت ناموفق بود',
+    staleSessionTitle: 'گفتگو قدیمی است',
+    staleSessionBody:
+      'این پنجره پشت نمای دیگری از همان گفتگو مانده بود. آخرین پیام‌ها بارگذاری شد. اگر هنوز می‌خواهید، دوباره بفرستید.',
     providerCredentialRequired: 'پیش از ارسال اولین پیام، اعتبارنامه ارائه‌دهنده اضافه کنید.',
     emptySlashCommand: 'فرمان اسلش خالی',
     desktopCommands: 'فرمان‌های دسکتاپ',
@@ -4784,6 +5809,9 @@ export const fa = defineLocale({
     resumeStrandedTitle: 'بارگذاری این نشست ممکن نشد',
     resumeStrandedBody:
       'اتصال به این نشست شکست خورد و تلاش‌های خودکار رها شدند. بررسی کنید دروازه در حال اجراست، سپس دوباره تلاش کنید.',
+    poolSlotTimeoutBody:
+      'تعداد ربات‌های همزمان در حال اجرا از سقف این رایانه بیشتر است. سقف را در تنظیمات ← پیشرفته بالا ببرید، یا منتظر بمانید یکی تمام شود و دوباره تلاش کنید.',
+    poolSlotTimeoutOpenSettings: 'باز کردن تنظیمات پیشرفته',
     resumeRetry: 'تلاش دوباره',
     nothingToBranch: 'چیزی برای انشعاب نیست',
     branchNeedsChat: 'پیش از انشعاب، گفتگویی را شروع یا از سر بگیرید.',
@@ -4795,17 +5823,25 @@ export const fa = defineLocale({
     deleteFailed: 'حذف ناموفق بود',
     archived: 'بایگانی شد',
     archiveFailed: 'بایگانی ناموفق بود',
+    restored: 'بازیابی شد',
+    unarchiveFailed: 'خروج از بایگانی ناموفق بود',
     cwdChangeFailed: 'تغییر پوشه کاری ناموفق بود',
     cwdStagedTitle: 'پوشه کاری آماده اعمال شد',
     cwdStagedMessage: 'برای اعمال تغییرات cwd به این نشست فعال، باک‌اند دسکتاپ را راه‌اندازی مجدد کنید.',
+    modelSwitchConfirmBody: 'این تغییر مدل نیازمند تأیید است.',
+    modelSwitchConfirmLabel: 'با این حال سوئیچ کن',
+    modelSwitchConfirmTitle: (model: string) => `سوئیچ به ${model}؟`,
+    modelSwitchConfirmTitleFallback: 'سوئیچ مدل‌ها؟',
     modelSwitchFailed: 'تغییر مدل ناموفق بود',
+    modelSwitchKeepLabel: 'حفظ مدل فعلی',
+    modelSwitchStaleNotice: 'انتخاب تغییر کرد — تغییر مدل اعمال نشد.',
     hydrationSyncing: (profile: string) => `در حال همگام‌سازی ${profile}…`,
     sessionExported: 'نشست خروجی گرفته شد',
     sessionExportFailed: 'خروجی گرفتن نشست ممکن نشد',
     imageSaved: 'تصویر ذخیره شد',
     downloadStarted: 'دانلود آغاز شد',
-    restartToUseSaveImage: 'برای استفاده از ذخیره تصویر، Hermes Desktop را راه‌اندازی مجدد کنید.',
-    restartToSaveImages: 'برای ذخیره تصاویر، Hermes Desktop را راه‌اندازی مجدد کنید',
+    restartToUseSaveImage: 'برای استفاده از ذخیره تصویر، رسا دسکتاپ را راه‌اندازی مجدد کنید.',
+    restartToSaveImages: 'برای ذخیره تصاویر، رسا دسکتاپ را راه‌اندازی مجدد کنید',
     imageDownloadFailed: 'دانلود تصویر ناموفق بود',
     openImage: 'باز کردن تصویر',
     downloadImage: 'دانلود تصویر',
@@ -4814,6 +5850,8 @@ export const fa = defineLocale({
     imageAttach: 'پیوست تصویر',
     imageWriteFailed: 'نوشتن تصویر روی دیسک ناموفق بود.',
     imageAttachFailed: 'پیوست تصویر ناموفق بود',
+    pastedContent: 'محتوای چسبانده‌شده',
+    pasteAttachFailed: 'پیوست متن چسبانده‌شده ممکن نشد',
     attachImages: 'پیوست تصاویر',
     clipboard: 'حافظه موقت',
     noClipboardImage: 'تصویری در حافظه موقت یافت نشد',
@@ -4824,7 +5862,9 @@ export const fa = defineLocale({
       success: platform => `به ${platform} تحویل شد. هر وقت خواستید همین‌جا ادامه دهید.`,
       systemNote: platform => `↻ به ${platform} تحویل شد — هر وقت خواستید همین‌جا ادامه دهید.`,
       failed: error => `تحویل ناموفق بود: ${error}`,
-      timedOut: 'انتظار برای دروازه به پایان رسید. آیا `hermes gateway` در حال اجراست؟'
+      timedOut:
+        'رسا نتوانست به اتصال پیام‌رسانی شما برسد. آن را از تنظیمات ← پیام‌رسانی راه بیندازید، سپس تحویل را دوباره امتحان کنید.',
+      startMessaging: 'راه‌اندازی پیام‌رسانی'
     }
   },
 
@@ -4837,14 +5877,14 @@ export const fa = defineLocale({
       },
       skills: {
         title: 'یک‌بار به آن بیاموز',
-        text: 'مهارت‌ها پوشه‌هایی از دستورالعمل‌ها هستند که Hermes وقتی کار اقتضا کند بارگذاری می‌کند.'
+        text: 'مهارت‌ها پوشه‌هایی از دستورالعمل‌ها هستند که رسا وقتی کار اقتضا کند بارگذاری می‌کند.'
       },
       messaging: {
-        title: 'Hermes دور از میز کار شما',
+        title: 'رسا دور از میز کار شما',
         text: 'Telegram، Discord، Slack و بیشتر را وصل کنید — همان عامل، همان حافظه.'
       },
       artifacts: {
-        title: 'همه‌چیزی که Hermes ساخت',
+        title: 'همه‌چیزی که رسا ساخت',
         text: 'تصاویر، فایل‌ها و لینک‌های همه نشست‌ها، فهرست‌بندی‌شده در یک‌جا.'
       },
       cron: {
@@ -4857,11 +5897,21 @@ export const fa = defineLocale({
       },
       profiles: {
         title: 'پروفایل‌ها جدایند',
-        text: 'هرکدام Hermes مستقل خودش است — کلیدها، حافظه و نشست‌های جداگانه.'
+        text: 'هرکدام رسا مستقل خودش است — کلیدها، حافظه و نشست‌های جداگانه.'
       },
       'composer-mentions': {
         title: 'پیوست و فرمان',
         text: '@ تایپ کنید تا فایلی به مکالمه بیاید، / تایپ کنید تا فرمانی اجرا شود.'
+      },
+      'local-runtime-update': {
+        title: 'به‌روزرسانی موتور محلی موجود است',
+        text: 'موتوری که مدل‌های محلی شما را اجرا می‌کند به‌روز کنید. درخواست‌های محلی فعال ممکن است قطع شوند.',
+        action: 'به‌روزرسانی الان'
+      },
+      'local-setup': {
+        title: 'این ماشین می‌تواند مدل‌ها را محلی اجرا کند',
+        text: 'سخت‌افزار شما می‌تواند یک مدل محلی را سرو کند. گفتگوها روی رایانه خودتان می‌مانند و هیچ هزینه‌ای ندارند.',
+        action: 'راه‌اندازی کن'
       },
       'right-pane': {
         title: 'پنل کاری',
@@ -4874,6 +5924,8 @@ export const fa = defineLocale({
     genericFailure: 'مشکلی پیش آمد',
     boundaryTitle: 'بخشی از رابط شکست',
     boundaryDesc: 'نما به خطای غیرمنتظره‌ای خورد. گفتگوها و تنظیمات شما سالم‌اند.',
+    boundaryDetails: 'جزئیات',
+    sendDiagnostics: 'ارسال عیب‌یابی',
     reloadWindow: 'بارگذاری مجدد پنجره',
     openLogs: 'باز کردن لاگ‌ها'
   },
@@ -4881,6 +5933,11 @@ export const fa = defineLocale({
   ui: {
     search: {
       clear: 'پاک کردن جستجو'
+    },
+    logs: {
+      bottom: 'پایین لاگ',
+      search: 'جستجوی لاگ‌ها…',
+      top: 'بالای لاگ'
     },
     pagination: {
       label: 'صفحه‌بندی',

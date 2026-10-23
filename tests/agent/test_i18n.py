@@ -37,6 +37,13 @@ def _flatten(d, prefix="") -> dict:
 
 
 
+# Locales maintained as curated partial catalogs (like scripts/check_i18n_parity.mjs
+# ``partialLocales``). They intentionally translate a user-facing subset; missing
+# keys fall back to English at runtime. The JS checker exempts these; the Python
+# test must stay in sync so a partial catalog is not a CI failure.
+PARTIAL_LOCALES: frozenset[str] = frozenset({"fa"})
+
+
 @pytest.mark.parametrize("lang", [l for l in i18n.SUPPORTED_LANGUAGES if l != "en"])
 def test_catalog_keys_match_english(lang: str):
     """Every non-English catalog must have exactly the same key set as English."""
@@ -44,6 +51,10 @@ def test_catalog_keys_match_english(lang: str):
     lang_keys = set(_flatten(_load_raw(lang)).keys())
     missing = en_keys - lang_keys
     extra = lang_keys - en_keys
+    if lang in PARTIAL_LOCALES:
+        # Partial catalogs: only guard against keys that do not exist in English.
+        assert not extra, f"{lang}.yaml has keys not in en.yaml: {sorted(extra)}"
+        return
     assert not missing, f"{lang}.yaml missing keys: {sorted(missing)}"
     assert not extra, f"{lang}.yaml has keys not in en.yaml: {sorted(extra)}"
 
@@ -62,6 +73,10 @@ def test_catalog_placeholders_match_english(lang: str):
     lang_flat = _flatten(_load_raw(lang))
     for key, en_value in en_flat.items():
         en_placeholders = set(placeholder_re.findall(en_value))
+        if lang in PARTIAL_LOCALES and key not in lang_flat:
+            # Partial catalog: untranslated keys fall back to English at runtime,
+            # so there is nothing to pin here yet.
+            continue
         lang_value = lang_flat.get(key, "")
         lang_placeholders = set(placeholder_re.findall(lang_value))
         assert en_placeholders == lang_placeholders, (

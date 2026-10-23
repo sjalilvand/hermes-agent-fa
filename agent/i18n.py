@@ -61,6 +61,8 @@ _LANGUAGE_ALIASES: dict[str, str] = {
     "hungarian": "hu", "magyar": "hu", "hu-hu": "hu",
     "arabic": "ar", "العربية": "ar",
     "ar-sa": "ar", "ar-eg": "ar", "ar-ae": "ar", "ar-ma": "ar", "ar-dz": "ar",
+    # Persian / Farsi — ماه‌افزار هوشمند رسا (Rasa) fork ships fa as a first-class locale.
+    "persian": "fa", "farsi": "fa", "فارسی": "fa", "fa-ir": "fa", "fa-utf8": "fa",
 }
 
 # (home, lang) -> merged catalog (packs over overlay over bundled). home -> supported tuple.

@@ -10,6 +10,9 @@ export const fa = defineLocale({
     cancel: "لغو",
     close: "بستن",
     confirm: "تأیید",
+    loadFailed: "بارگذاری {what} ممکن نشد. بررسی کنید سرور داشبورد در حال اجراست و روی «تلاش دوباره» بزنید.",
+    loadFailedDetails: "جزئیات: {detail}",
+    reloadPage: "بارگذاری مجدد صفحه",
     delete: "حذف",
     refresh: "به‌روزرسانی",
     retry: "تلاش دوباره",
@@ -59,21 +62,23 @@ export const fa = defineLocale({
   },
 
   app: {
-    brand: "Hermes Agent",
-    brandShort: "HA",
+    brand: "ماه‌افزار هوشمند رسا",
+    brandShort: "رسا",
     closeNavigation: "بستن ناوبری",
     closeModelTools: "بستن مدل و ابزارها",
     footer: {
-      org: "Nous Research",
+      org: "ماه‌افزار هوشمند رسا",
     },
     activeSessionsLabel: "نشست‌های فعال:",
     gatewayStatusLabel: "وضعیت دروازه:",
     gatewayStrip: {
+      degraded: "افت‌کرده",
       failed: "شروع ناموفق",
       off: "خاموش",
       running: "در حال اجرا",
       starting: "در حال شروع",
       stopped: "متوقف",
+      heartbeatStale: "نبض کهنه",
     },
     nav: {
       analytics: "تحلیل‌ها",
@@ -133,6 +138,8 @@ export const fa = defineLocale({
       "دیسک عامل شما تقریباً پر است. ذخیره پیام‌ها، حافظه‌ها و تنظیمات جدید ممکن است ناموفق باشد.",
     diskElevatedBanner:
       "دیسک عامل شما در حال پر شدن است. پاک کردن نشست‌های قدیمی یا افزایش فضای ذخیره‌سازی را در نظر بگیرید.",
+    multiplexStandaloneBanner:
+      "دروازه شما فقط یک پروفایل را سرو می‌کند. سرو نشده: {profiles}. علت: {reason}. راه‌حل: hermes gateway migrate --multiplex",
     dismiss: "نادیده گرفتن",
   },
 
@@ -159,7 +166,7 @@ export const fa = defineLocale({
     recentSessions: "نشست‌های اخیر",
     restartGateway: "راه‌اندازی مجدد دروازه",
     restartGatewayConfirmMessage:
-      "با این کار فرایند دروازه Hermes راه‌اندازی مجدد می‌شود. پس از آن کانال‌های متصل و نشست‌های فعال دوباره وصل می‌شوند.",
+      "با این کار فرایند دروازه رسا راه‌اندازی مجدد می‌شود. پس از آن کانال‌های متصل و نشست‌های فعال دوباره وصل می‌شوند.",
     restartGatewayConfirmTitle: "دروازه راه‌اندازی مجدد شود؟",
     restartingGateway: "راه‌اندازی مجدد دروازه…",
     running: "در حال اجرا",
@@ -168,12 +175,12 @@ export const fa = defineLocale({
     starting: "در حال شروع",
     startedInBackground: "در پس‌زمینه شروع شد — پیشرفت را در گزارش‌ها ببینید",
     stopped: "متوقف",
-    updateHermes: "به‌روزرسانی Hermes",
+    updateHermes: "به‌روزرسانی رسا",
     updateHermesConfirmMessage:
       "با این کار دستور hermes update اجرا و پس از پایان، دروازه راه‌اندازی مجدد می‌شود. نشست‌های فعال تا آن زمان کش پرامپت خود را نگه می‌دارند.",
     updateHermesConfirmNow: "به‌روزرسانی کن",
-    updateHermesConfirmTitle: "Hermes به‌روزرسانی شود؟",
-    updatingHermes: "در حال به‌روزرسانی Hermes…",
+    updateHermesConfirmTitle: "رسا به‌روزرسانی شود؟",
+    updatingHermes: "در حال به‌روزرسانی رسا…",
     waitingForOutput: "در انتظار خروجی…",
   },
 
@@ -231,8 +238,14 @@ export const fa = defineLocale({
       "{count} نشست انتخاب‌شده و همه پیام‌های آن‌ها برای همیشه حذف می‌شود. این اقدام قابل بازگشت نیست.",
     selectedSessionsDeleted: "{count} نشست حذف شد",
     failedToDeleteSelected: "حذف نشست‌های انتخاب‌شده ناموفق بود",
+    selectedSessionsSkippedActive:
+      "{deleted} حذف شد؛ {count} نگه داشته شد چون نوبت پردازش در جریان است",
     resumeInChat: "ادامه در گفتگو",
     newChat: "گفتگوی جدید",
+    workspace: "فضای کار",
+    workspaceDefault: "پیش‌فرض",
+    workspaceRescan: "اسکن مجدد مخزن‌ها",
+    workspaceCustom: "مسیر دیگر…",
     statTotal: "مجموع",
     statActiveInStore: "فعال در مخزن",
     statArchived: "بایگانی‌شده",
@@ -251,7 +264,7 @@ export const fa = defineLocale({
       sms: "پیامک",
       cron: "زمان‌بندی",
       tool: "ابزار",
-      hermes_flow: "Hermes Flow",
+      hermes_flow: "رسا Flow",
       vulcan_delegate: "واگذاری Vulcan",
       webhook: "وب‌هوک",
       local: "محلی",
@@ -407,6 +420,13 @@ export const fa = defineLocale({
   },
 
   cron: {
+    loadWhat: "وظایف زمان‌بندی‌شده",
+    // حالت فقط-اسکریپتی فعال است اما فیلد Script خالی است؛ به‌جای کلید پیکربندی no_agent
+    // نام فیلدی که باید پر شود را می‌گوییم.
+    scriptRequired:
+      "وظایف فقط‌اسکریپتی به مسیر اسکریپت نیاز دارند. فیلد Script را پر کنید یا کار را به حالت prompt برگردانید.",
+    overdueSince: "سررسید گذشته از",
+    schedulerLastTicked: "آخرین تیک زمان‌بند {when} بود — کارهایی که از آن موقع سررسیدند هنوز اجرا نشده‌اند",
     jobIdsPlaceholder: "هر خط یک شناسه کار",
     editJob: "ویرایش کار",
     confirmDeleteMessage:
@@ -585,7 +605,7 @@ export const fa = defineLocale({
       "ذخیره شد — برای اعمال تغییر، دروازه را راه‌اندازی دوباره کنید.",
     forceReinstall: "نصب مجدد اجباری (ابتدا پوشه موجود حذف می‌شود)",
     headline:
-      "کشف، نصب، فعال‌سازی و به‌روزرسانی افزونه‌های Hermes (معادل `hermes plugins`).",
+      "کشف، نصب، فعال‌سازی و به‌روزرسانی افزونه‌های رسا (معادل `hermes plugins`).",
     identifierLabel: "لینک Git یا owner/repo",
     inactive: "غیرفعال",
     installBtn: "نصب",
@@ -678,6 +698,8 @@ export const fa = defineLocale({
 
   skills: {
     title: "مهارت‌ها",
+    loadWhat: "مهارت‌ها",
+    browseHub: "مرور مرکز مهارت‌ها",
     editSkillMd: "ویرایش SKILL.md",
     learnUrlPlaceholder: "https://docs.example.com/api  (با web_extract واکشی می‌شود)",
     learnTextPlaceholder: "مثلاً چطور گزارش هزینه ثبت می‌کنم: پرتال را باز کن، …",
@@ -808,7 +830,7 @@ export const fa = defineLocale({
     hideValue: "پنهان کردن مقدار",
     customTitle: "کلیدهای سفارشی",
     customHint:
-      "متغیرهای محیطی دلخواه در فایل .env که Hermes آن‌ها را نمی‌شناسد. برای تزریق متغیر به مهارت‌ها، سرورهای MCP یا ابزارهای خودتان استفاده کنید.",
+      "متغیرهای محیطی دلخواه در فایل .env که رسا آن‌ها را نمی‌شناسد. برای تزریق متغیر به مهارت‌ها، سرورهای MCP یا ابزارهای خودتان استفاده کنید.",
     customConfigured: "{count} کلید سفارشی تنظیم شده",
     addCustomKey: "افزودن کلید سفارشی",
     customKeyName: "نام متغیر",
@@ -847,6 +869,8 @@ export const fa = defineLocale({
     loginFailed: "ورود ناموفق بود.",
     sessionExpired:
       "نشست منقضی شد. برای شروع ورود جدید «تلاش دوباره» را بزنید.",
+    sessionExpiredNoError:
+      "ورود بدون رسیدن به سرویس‌دهنده منقضی شد. این معمولاً یعنی صفحه ورود در تب باز‌شده متوقف مانده است (مشکل سمت سرور) — ورود را همان‌جا کامل کنید و بعد «تلاش دوباره» را بزنید. اگر تکرار شد، به‌جای آن از کلید API یا مسیر جایگزین CLI استفاده کنید.",
     reOpenAuth: "باز کردن مجدد صفحه احراز هویت",
     reOpenVerification: "باز کردن مجدد صفحه تأیید",
     submitCode: "ارسال کد",
@@ -905,11 +929,11 @@ export const fa = defineLocale({
   achievements: {
     hero: {
       kicker: "امتیاز بازی‌وار عامل",
-      title: "دستاوردهای Hermes",
+      title: "دستاوردهای رسا",
       subtitle:
-        "نشان‌های قابل‌جمع‌آوری Hermes که از تاریخچه واقعی نشست‌ها کسب می‌شوند. دستاوردهای ناتمام شناخته‌شده به‌صورت «کشف‌شده» نمایش داده می‌شوند؛ دستاوردهای مخفی تا ظهور نخستین رفتار متناظر پنهان می‌مانند.",
+        "نشان‌های قابل‌جمع‌آوری رسا که از تاریخچه واقعی نشست‌ها کسب می‌شوند. دستاوردهای ناتمام شناخته‌شده به‌صورت «کشف‌شده» نمایش داده می‌شوند؛ دستاوردهای مخفی تا ظهور نخستین رفتار متناظر پنهان می‌مانند.",
       scan_subtitle:
-        "در حال اسکن تاریخچه نشست‌های Hermes. نخستین اسکن روی تاریخچه‌های بزرگ ممکن است ۵ تا ۱۰ ثانیه طول بکشد.",
+        "در حال اسکن تاریخچه نشست‌های رسا. نخستین اسکن روی تاریخچه‌های بزرگ ممکن است ۵ تا ۱۰ ثانیه طول بکشد.",
     },
     actions: {
       rescan: "اسکن مجدد",
@@ -924,7 +948,7 @@ export const fa = defineLocale({
       highest_tier: "بالاترین رتبه",
       highest_tier_hint: "مفرغ ← نقره ← طلا ← الماس ← المپیا",
       latest: "آخرین",
-      latest_hint_empty: "بیشتر با Hermes کار کنید",
+      latest_hint_empty: "بیشتر با رسا کار کنید",
       none_yet: "هنوز هیچ",
     },
     state: {
@@ -955,10 +979,10 @@ export const fa = defineLocale({
       tiers_header: "رتبه‌ها",
       secret_header: "دستاوردهای مخفی",
       secret_body:
-        "مخفی‌ها محرک دقیق خود را پنهان می‌کنند. وقتی Hermes نشانه‌ای مرتبط ببیند، کارت «کشف‌شده» می‌شود و شرط آن را نشان می‌دهد.",
+        "مخفی‌ها محرک دقیق خود را پنهان می‌کنند. وقتی رسا نشانه‌ای مرتبط ببیند، کارت «کشف‌شده» می‌شود و شرط آن را نشان می‌دهد.",
       scan_status_header: "وضعیت اسکن",
       scan_status_body:
-        "Hermes یک‌بار تاریخچه محلی را اسکن می‌کند و سپس کارت‌ها به‌طور خودکار ظاهر می‌شوند. اگر این کار چند ثانیه طول بکشد چیزی گیر نکرده است.",
+        "رسا یک‌بار تاریخچه محلی را اسکن می‌کند و سپس کارت‌ها به‌طور خودکار ظاهر می‌شوند. اگر این کار چند ثانیه طول بکشد چیزی گیر نکرده است.",
       what_scanned_header: "چه چیزهایی اسکن می‌شود",
       what_scanned_body:
         "نشست‌ها، فراخوانی‌های ابزار، فراداده مدل، خطاها، دستاوردها و وضعیت محلی باز شدن.",
@@ -1005,7 +1029,7 @@ export const fa = defineLocale({
         "«اشتراک در X» پستی از پیش پرشده را در تب جدیدی باز می‌کند. اگر می‌خواهید نشان ۱۲۰۰×۶۳۰ ضمیمه شود، ابتدا «کپی تصویر» را بزنید — X اجازه می‌دهد آن را مستقیم در ویرایشگر توییت جای‌گذاری کنید. «دانلود PNG» فایل را برای استفاده در هر جا ذخیره می‌کند.",
       clipboard_unsupported:
         "کپی تصویر در این مرورگر پشتیبانی نمی‌شود — به‌جای آن از دانلود استفاده کنید.",
-      tweet_text: 'فقط "{tier_part}{name}" را در Hermes Agent ☤ باز کردم',
+      tweet_text: 'فقط "{tier_part}{name}" را در ماه‌افزار هوشمند رسا ☤ باز کردم',
     },
   },
 
@@ -1283,6 +1307,8 @@ export const fa = defineLocale({
 
   actions: {
     // راهنمای دکمه‌های آیکونی و aria-label های مشترک بین صفحات و دیالوگ‌ها.
+    checkServerStatus: "بررسی وضعیت سرور",
+    openLogs: "باز کردن گزارش‌ها",
     setDefault: "تنظیم به‌عنوان پیش‌فرض",
     deletePreset: "حذف",
     addPreset: "افزودن پیش‌فرض",
@@ -1543,7 +1569,7 @@ export const fa = defineLocale({
     bearerTokenHint:
       "در .env همین پروفایل ذخیره می‌شود؛ config.yaml فقط ارجاع به متغیر محیطی را نگه می‌دارد.",
     oauthHint:
-      "سرور را اضافه کنید و سپس از «احراز هویت» استفاده کنید. Hermes مرورگر OAuth را روی ماشینی باز می‌کند که باک‌اند داشبورد روی آن اجراست.",
+      "سرور را اضافه کنید و سپس از «احراز هویت» استفاده کنید. رسا مرورگر OAuth را روی ماشینی باز می‌کند که باک‌اند داشبورد روی آن اجراست.",
     installTitle: "نصب {name}",
     installRequires: "این MCP به مقادیر زیر نیاز دارد.",
     installing: "در حال نصب…",
@@ -1843,7 +1869,7 @@ export const fa = defineLocale({
     telegramQuickSetup: "راه‌اندازی سریع",
     telegramRecommended: "پیشنهادشده",
     telegramQuickSetupHint:
-      "یک کد QR اسکن کنید و در تلگرام تأیید کنید. Hermes بات را می‌سازد و شناسهٔ کاربری تلگرام شما را خودکار تشخیص می‌دهد.",
+      "یک کد QR اسکن کنید و در تلگرام تأیید کنید. رسا بات را می‌سازد و شناسهٔ کاربری تلگرام شما را خودکار تشخیص می‌دهد.",
     telegramCreateWithQr: "ساخت با QR",
     telegramStarting: "در حال شروع…",
     telegramOwnBot: "بات خودتان",
@@ -1851,7 +1877,7 @@ export const fa = defineLocale({
       "با @BotFather باتی بسازید یا باتی که از قبل دارید را با واردکردن توکن آن و انتخاب اینکه چه کسی بتواند از آن استفاده کند، متصل کنید.",
     telegramManualSetup: "راه‌اندازی دستی",
     telegramBothOptionsHint:
-      "هر دو گزینه باتی تحت کنترل شما را متصل می‌کنند و اطلاعات ورود آن را فقط در همین نصب Hermes ذخیره می‌کنند.",
+      "هر دو گزینه باتی تحت کنترل شما را متصل می‌کنند و اطلاعات ورود آن را فقط در همین نصب رسا ذخیره می‌کنند.",
     telegramOwnBotTitle: "استفاده از بات تلگرام خودتان",
     configureChannel: "پیکربندی {name}",
     botFatherGuide: "راهنمای BotFather",

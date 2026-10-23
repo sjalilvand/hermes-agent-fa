@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>راهنمای کامل Hermes Desktop</title>
+<title>راهنمای کامل رسا دسکتاپ</title>
 <style>
   :root {
     --bg: #0d1117;
@@ -219,7 +219,7 @@
 
 <div class="hero">
   <span class="badge">راهنمای کاربری</span>
-  <h1>راهنمای کامل <span class="en">Hermes Desktop</span></h1>
+  <h1>راهنمای کامل <span class="en">رسا دسکتاپ</span></h1>
   <p>توضیح گام‌به‌گام همه بخش‌های برنامه: از گفتگو با عامل و نشست‌ها تا مهارت‌ها، حافظه، پیام‌رسان‌ها، وظایف زمان‌بندی‌شده و تنظیمات.</p>
 </div>
 
@@ -253,7 +253,7 @@
 <!-- ════════════════ 1. معرفی ════════════════ -->
 <section id="intro">
   <h2><span class="num">۱</span> معرفی برنامه</h2>
-  <p class="lead"><strong>Hermes Desktop</strong> رابط گرافیکی دسکتاپ برای <strong>Hermes Agent</strong> — عامل هوش مصنوعی خودبهبوددهنده ساخت <a href="https://nousresearch.com" target="_blank" rel="noopener">Nous Research</a> — است. این عامل از تجربه مهارت می‌سازد، حافظه ماندگار دارد، گفتگوهای گذشته را جستجو می‌کند و با هر نشست شناخت عمیق‌تری از شما پیدا می‌کند.</p>
+  <p class="lead"><strong>رسا دسکتاپ</strong> رابط گرافیکی دسکتاپ برای <strong>ماه‌افزار هوشمند رسا</strong> — عامل هوش مصنوعی خودبهبوددهنده ساخت <a href="https://nousresearch.com" target="_blank" rel="noopener">Nous Research</a> — است. این عامل از تجربه مهارت می‌سازد، حافظه ماندگار دارد، گفتگوهای گذشته را جستجو می‌کند و با هر نشست شناخت عمیق‌تری از شما پیدا می‌کند.</p>
 
   <div class="grid">
     <div class="card"><strong>🔁 حلقه یادگیری بسته</strong><p class="muted">پس از وظایف پیچیده مهارت جدید می‌سازد و مهارت‌های موجود را در طول استفاده بهبود می‌دهد.</p></div>
@@ -274,7 +274,7 @@
   <table>
     <tr><th>مؤلفه</th><th>حداقل نسخه</th><th>توضیح</th></tr>
     <tr><td dir="ltr">Node.js</td><td dir="ltr">22.22 / 24.11 / 26+</td><td>برای اجرای رابط دسکتاپ (نسخه LTS توصیه می‌شود).</td></tr>
-    <tr><td dir="ltr">Python</td><td dir="ltr">3.11 – 3.13</td><td>برای باک‌اند عامل (Hermes Agent).</td></tr>
+    <tr><td dir="ltr">Python</td><td dir="ltr">3.11 – 3.13</td><td>برای باک‌اند عامل (ماه‌افزار هوشمند رسا).</td></tr>
     <tr><td>سیستم‌عامل</td><td>—</td><td>ویندوز ۱۰/۱۱ (نیتیو یا WSL2)، macOS یا Linux.</td></tr>
     <tr><td>اتصال اینترنت</td><td>—</td><td>برای دریافت مدل‌ها و به‌روزرسانی‌ها؛ اجرای روزانه بدون اینترنت هم ممکن است (مدل محلی).</td></tr>
   </table>
@@ -282,9 +282,9 @@
 
   <h3>راه اول: نصب نسخه آماده (توصیه‌شده برای کاربر عادی)</h3>
   <ol>
-    <li>به صفحه دانلود بروید: <span dir="ltr">hermes-agent.nousresearch.com</span> و نصب‌کننده Hermes Desktop را برای سیستم‌عامل خود بگیرید.</li>
+    <li>به صفحه دانلود بروید: <span dir="ltr">hermes-agent.nousresearch.com</span> و نصب‌کننده رسا دسکتاپ را برای سیستم‌عامل خود بگیرید.</li>
     <li>نصب‌کننده را اجرا کنید. در ویندوز نیازی به دسترسی مدیر (Admin) نیست؛ همه‌چیز زیر <span dir="ltr">%LOCALAPPDATA%\hermes</span> نصب می‌شود.</li>
-    <li>Hermes را از منوی استارت (ویندوز) یا پوشه Applications (مک) اجرا کنید.</li>
+    <li>رسا را از منوی استارت (ویندوز) یا پوشه Applications (مک) اجرا کنید.</li>
   </ol>
 
   <h3>راه دوم: اجرا از سورس (برای توسعه‌دهندگان)</h3>
@@ -293,13 +293,13 @@
     <li>وابستگی‌های ریشه را نصب کنید: <span dir="ltr">npm install</span></li>
     <li>باک‌اند عامل را آماده کنید: <span dir="ltr">python run_agent.py --help</span> باید بدون خطا اجرا شود.</li>
     <li>برنامه دسکتاپ را اجرا کنید: <span dir="ltr">cd apps/desktop && npm install && npm run dev</span> — این فرمان هم سرور رابط (Vite) و هم پوسته Electron را با هم بالا می‌آورد.</li>
-    <li>پنجره‌ای با عنوان «Hermes» باز می‌شود؛ همان برنامه اصلی است. نشانی <span dir="ltr">127.0.0.1:5174</span> را در مرورگر باز نکنید — فقط رابط است و بدون پوسته دسکتاپ بالا نمی‌آید (بخش «تفاوت مرورگر و برنامه دسکتاپ» را ببینید).</li>
+    <li>پنجره‌ای با عنوان «رسا» باز می‌شود؛ همان برنامه اصلی است. نشانی <span dir="ltr">127.0.0.1:5174</span> را در مرورگر باز نکنید — فقط رابط است و بدون پوسته دسکتاپ بالا نمی‌آید (بخش «تفاوت مرورگر و برنامه دسکتاپ» را ببینید).</li>
   </ol>
 
   <h3>اولین اجرا</h3>
   <ul>
-    <li>اجرای اول چند دقیقه طول می‌کشد: برنامه باک‌اند را از صفر راه می‌اندازد (نصب وابستگی‌ها و ساخت ایندکس‌ها). صفحه پیشرفت «راه‌اندازی Hermes Desktop…» را باز بگذارید.</li>
-    <li>پیکربندی برنامه در ویندوز زیر <span dir="ltr">%APPDATA%\Hermes</span> و در لینوکس/مک زیر <span dir="ltr">~/.hermes</span> ذخیره می‌شود. حذف برنامه این پوشه را پاک نمی‌کند.</li>
+    <li>اجرای اول چند دقیقه طول می‌کشد: برنامه باک‌اند را از صفر راه می‌اندازد (نصب وابستگی‌ها و ساخت ایندکس‌ها). صفحه پیشرفت «راه‌اندازی رسا دسکتاپ…» را باز بگذارید.</li>
+    <li>پیکربندی برنامه در ویندوز زیر <span dir="ltr">%APPDATA%\رسا</span> و در لینوکس/مک زیر <span dir="ltr">~/.hermes</span> ذخیره می‌شود. حذف برنامه این پوشه را پاک نمی‌کند.</li>
     <li>برای کار با مدل‌ها، از صفحه نخست یا بخش تنظیمات ← «ارائه‌دهنده‌ها» کلید API خود را وارد کنید (Nous Portal، OpenRouter، OpenAI، Anthropic، Ollama محلی و ده‌ها ارائه‌دهنده دیگر). ساده‌ترین مسیر: راه‌اندازی یک‌مرحله‌ای Nous Portal — پایین‌تر در همین بخش.</li>
     <li>زبان فارسی از مسیر تنظیمات ← «زبان» فعال می‌شود؛ کل رابط خودکار راست‌به‌چپ می‌شود.</li>
   </ul>
@@ -456,7 +456,7 @@ hermes portal tools</code></pre>
 <!-- ════════════════ 6. مهارت‌ها ════════════════ -->
 <section id="skills">
   <h2><span class="num">۷</span> مهارت‌ها <span class="pill">Skills</span></h2>
-  <p class="lead">مهارت‌ها حافظه رویه‌ای عامل‌اند: دستورالعمل‌های قابل استفاده مجدد که Hermes آن‌ها را می‌سازد، ذخیره و در طول استفاده بهبود می‌دهد.</p>
+  <p class="lead">مهارت‌ها حافظه رویه‌ای عامل‌اند: دستورالعمل‌های قابل استفاده مجدد که رسا آن‌ها را می‌سازد، ذخیره و در طول استفاده بهبود می‌دهد.</p>
   <ul class="plain">
     <li>عامل پس از انجام وظایف پیچیده خودش مهارت جدید می‌سازد.</li>
     <li>مهارت‌ها با استاندارد باز <a href="https://agentskills.io" target="_blank" rel="noopener">agentskills.io</a> سازگارند و در <code>~/.hermes/skills/</code> زندگی می‌کنند.</li>
@@ -468,7 +468,7 @@ hermes portal tools</code></pre>
 <!-- ════════════════ 7. پیام‌رسانی ════════════════ -->
 <section id="messaging">
   <h2><span class="num">۸</span> پیام‌رسانی <span class="pill">Messaging</span></h2>
-  <p class="lead">با دروازه (Gateway)، Hermes از Telegram، Discord، Slack، WhatsApp، Signal و ایمیل در دسترس است — همان عامل، همان حافظه، همان مهارت‌ها.</p>
+  <p class="lead">با دروازه (Gateway)، رسا از Telegram، Discord، Slack، WhatsApp، Signal و ایمیل در دسترس است — همان عامل، همان حافظه، همان مهارت‌ها.</p>
   <ul class="plain">
     <li>در ترمینال: <code>hermes gateway setup</code> و سپس <code>hermes gateway start</code>.</li>
     <li>صفحه پیام‌رسانی در دسکتاپ وضعیت پلتفرم‌ها و پیوستن/جدا شدن کانال‌ها را نشان می‌دهد.</li>
@@ -499,7 +499,7 @@ hermes portal tools</code></pre>
 <!-- ════════════════ 10. وظایف زمان‌بندی‌شده ════════════════ -->
 <section id="cron">
   <h2><span class="num">۱۱</span> وظایف زمان‌بندی‌شده <span class="pill">Cron</span></h2>
-  <p class="lead">وظایف تکرارشونده را به زبان طبیعی تعریف کنید؛ Hermes خودش برنامه زمانی می‌سازد و نتیجه را به پلتفرم دلخواه تحویل می‌دهد.</p>
+  <p class="lead">وظایف تکرارشونده را به زبان طبیعی تعریف کنید؛ رسا خودش برنامه زمانی می‌سازد و نتیجه را به پلتفرم دلخواه تحویل می‌دهد.</p>
   <pre><code># نمونه از ترمینال
 hermes cron add --schedule "0 9 * * *" --prompt "خلاصه اخبار دیروز را بده"
 hermes cron list</code></pre>
@@ -527,7 +527,7 @@ hermes cron list</code></pre>
   <h2><span class="num">۱۳</span> عامل‌ها</h2>
   <p class="lead">صفحه عامل‌ها نمای کلی از عامل‌های در دسترس (محلی و ابری) و وضعیت اجرای آن‌هاست.</p>
   <ul class="plain">
-    <li>اگر وارد <strong>Hermes Cloud</strong> شوید، عامل‌های حساب شما خودکار کشف می‌شوند.</li>
+    <li>اگر وارد <strong>رسا Cloud</strong> شوید، عامل‌های حساب شما خودکار کشف می‌شوند.</li>
     <li>برای هر عامل می‌توانید نشست تازه باز کنید و مستقیم داخل همان کار کنید.</li>
   </ul>
 </section>
@@ -559,7 +559,7 @@ hermes cron list</code></pre>
     </div>
     <div class="card">
       <strong>🔌 دروازه‌ها</strong>
-      <p class="muted">ثبت و مدیریت اتصال‌ها: محلی، راه دور (HTTP/S)، SSH یا Hermes Cloud. سوئیچ بین دروازه‌ها از صفحه نشست‌ها انجام می‌شود و کار دروازه‌های دیگر ادامه پیدا می‌کند.</p>
+      <p class="muted">ثبت و مدیریت اتصال‌ها: محلی، راه دور (HTTP/S)، SSH یا رسا Cloud. سوئیچ بین دروازه‌ها از صفحه نشست‌ها انجام می‌شود و کار دروازه‌های دیگر ادامه پیدا می‌کند.</p>
     </div>
     <div class="card">
       <strong>🔑 ابزارها و کلیدها</strong>
@@ -647,7 +647,7 @@ hermes cron list</code></pre>
 <section id="troubleshooting">
   <h2><span class="num">۱۹</span> عیب‌یابی و پرسش‌های رایج</h2>
 
-  <div class="warn">خطای <strong>«پل IPC دسکتاپ در دسترس نیست» (Desktop IPC bridge is unavailable)</strong> تقریباً همیشه یعنی نشانی <code>127.0.0.1:5174</code> را در یک مرورگر معمولی باز کرده‌اید — نه اینکه برنامه خراب باشد. پنجره برنامه دسکتاپ Hermes را باز کنید؛ توضیح کامل در «تفاوت مرورگر و برنامه دسکتاپ» پایین همین بخش.</div>
+  <div class="warn">خطای <strong>«پل IPC دسکتاپ در دسترس نیست» (Desktop IPC bridge is unavailable)</strong> تقریباً همیشه یعنی نشانی <code>127.0.0.1:5174</code> را در یک مرورگر معمولی باز کرده‌اید — نه اینکه برنامه خراب باشد. پنجره برنامه دسکتاپ رسا را باز کنید؛ توضیح کامل در «تفاوت مرورگر و برنامه دسکتاپ» پایین همین بخش.</div>
 
   <h3 id="browser-vs-desktop">تفاوت مرورگر و برنامه دسکتاپ</h3>
   <p>در حالت توسعه، برنامه از دو نیمه تشکیل شده که هر دو باید اجرا شوند:</p>
@@ -658,7 +658,7 @@ hermes cron list</code></pre>
   </table>
   <p class="lead">پل IPC توسط اسکریپت preload الکترون به صفحه تزریق می‌شود، پس در فایرفاکس، کروم یا هر تب پیش‌نمایشِ مرورگری هرگز وجود ندارد. نتیجه: صفحه بالا می‌آید و فارسی هم دیده می‌شود، اما بوت با همین خطا متوقف می‌شود. برنامه عمداً نیست — کلاینت الکترون غایب است.</p>
   <ul class="plain">
-    <li><strong>راه درست:</strong> پنجره دسکتاپ با عنوان «Hermes» را از نوار وظیفه باز کنید.</li>
+    <li><strong>راه درست:</strong> پنجره دسکتاپ با عنوان «رسا» را از نوار وظیفه باز کنید.</li>
     <li><strong>نشانی <code>127.0.0.1:5174</code></strong> فقط برای اتصال داخلی الکترون به رندرر است؛ باز کردن مستقیم آن در مرورگر خطای بالا را می‌دهد.</li>
     <li>از این نسخه، اگر رابط کاربری بیرون از الکترون باز شود، به‌جای صفحه خطای قدیمی کارتی فارسی نشان می‌دهد که همین توضیح را می‌دهد («در مرورگر باز شده، نه در برنامه دسکتاپ»).</li>
   </ul>
@@ -668,7 +668,7 @@ hermes cron list</code></pre>
 npm run dev</code></pre>
   <ul class="plain">
     <li><code>npm run dev</code> هر دو نیمه را با هم بالا می‌آورد: سرور Vite روی پورت <code>5174</code> و سپس پنجره الکترون که خودش به آن وصل می‌شود.</li>
-    <li>اولین اجرا ممکن است چند دقیقه طول بکشد (ساخت باندل‌ها و راه‌اندازی باک‌اند)؛ پنجره با صفحه پیشرفت «راه‌اندازی Hermes Desktop…» نشان می‌دهد.</li>
+    <li>اولین اجرا ممکن است چند دقیقه طول بکشد (ساخت باندل‌ها و راه‌اندازی باک‌اند)؛ پنجره با صفحه پیشرفت «راه‌اندازی رسا دسکتاپ…» نشان می‌دهد.</li>
     <li>اگر فقط سرور Vite بالا باشد و پنجره الکترون باز نشود، دوباره <code>npm run dev</code> را اجرا کنید — یا در ترمینال دیگری <code>npm run dev:electron</code> تا فقط پوسته دسکتاپ به سرور در حال اجرا وصل شود.</li>
     <li>تغییر کد رندرر با HSL/HMR فوراً در پنجره اعمال می‌شود؛ اگر تغییری اعمال نشد، پنجره را با <kbd>Ctrl+R</kbd> بازخوانی کنید.</li>
     <li>برای تست بدون کلید API واقعی: <code>npm run dev:mock</code> یک سرور ساختگی پاسخ‌های آماده می‌سازد.</li>
@@ -676,16 +676,16 @@ npm run dev</code></pre>
 
   <table>
     <tr><th>مشکل</th><th>راه‌حل</th></tr>
-    <tr><td>«پل IPC دسکتاپ در دسترس نیست»</td><td>نشانی سرور توسعه را در مرورگر باز کرده‌اید. پنجره برنامه دسکتاپ Hermes را باز کنید (بخش «تفاوت مرورگر و برنامه دسکتاپ» بالا).</td></tr>
+    <tr><td>«پل IPC دسکتاپ در دسترس نیست»</td><td>نشانی سرور توسعه را در مرورگر باز کرده‌اید. پنجره برنامه دسکتاپ رسا را باز کنید (بخش «تفاوت مرورگر و برنامه دسکتاپ» بالا).</td></tr>
     <tr><td>راه‌اندازی دسکتاپ ناموفق بود</td><td>از صفحه خطا «تلاش دوباره»، «تعمیر نصب» یا «استفاده از دروازه محلی» را امتحان کنید؛ هیچ‌کدام گفتگوها یا تنظیمات را حذف نمی‌کنند. لاگ‌ها از دکمه «باز کردن لاگ‌ها» در دسترس‌اند.</td></tr>
-    <tr><td>«Hermes couldn't start the desktop UI» با کد <strong>(-6)</strong> و مسیر <code>apps\desktop\dist\index.html</code></td><td>یعنی برنامه بدون متغیر محیطیِ سرور توسعه اجرا شده: الکترون به‌جای اتصال به سرور Vite به‌دنبال باندل نسخه ساخته‌شده (<code>dist</code>) می‌گردد که در مخزن توسعه وجود ندارد (-6 = فایل پیدا نشد). برنامه را با <code>cd apps/desktop</code> و سپس <code>npm run dev</code> اجرا کنید؛ اجرای مستقیم <code>electron .</code> دقیقاً همین خطا را می‌دهد. گزینه <code>hermes desktop --force-build</code> فقط برای نسخه نصب‌شده کاربرد دارد، نه مخزن توسعه.</td></tr>
+    <tr><td>«رسا couldn't start the desktop UI» با کد <strong>(-6)</strong> و مسیر <code>apps\desktop\dist\index.html</code></td><td>یعنی برنامه بدون متغیر محیطیِ سرور توسعه اجرا شده: الکترون به‌جای اتصال به سرور Vite به‌دنبال باندل نسخه ساخته‌شده (<code>dist</code>) می‌گردد که در مخزن توسعه وجود ندارد (-6 = فایل پیدا نشد). برنامه را با <code>cd apps/desktop</code> و سپس <code>npm run dev</code> اجرا کنید؛ اجرای مستقیم <code>electron .</code> دقیقاً همین خطا را می‌دهد. گزینه <code>hermes desktop --force-build</code> فقط برای نسخه نصب‌شده کاربرد دارد، نه مخزن توسعه.</td></tr>
     <tr><td>«Backend exited before it became ready» همراه با خطای «rejected the session token»</td><td>پیامِ توکن گمراه‌کننده است — علت واقعی تقریباً همیشه ناهم‌خوانی وابستگی‌های پایتون است: هنگام بررسی WebSocket، باک‌اند زنجیره import مسیر ws را بارگیری می‌کند و می‌شکند (رایج‌ها: <code>uvicorn</code> قدیمی‌تر از <span dir="ltr">0.31</span> بدون <code>capture_signals</code>، نسخه اصلی ناسازگار <code>websockets</code>، یا نبودن ماژول <code>concurrent_log_handler</code>). در <code>desktop.log</code> دنبال Traceback واقعی بگردید، روی همان مفسر پایتونِ باک‌اند <code>pip install -e ".[web]"</code> (یا <code>uv sync --extra web</code>) را اجرا کنید و برنامه را دوباره باز کنید؛ <code>hermes doctor</code> نیز وضعیت محیط را می‌سنجد.</td></tr>
     <tr><td>چک‌لیست ناهم‌خوانی محیط پایتون (خطاهای import یا نسخه هنگام بوت باک‌اند)</td><td>چهار گام به‌ترتیب: <strong>۱)</strong> <span dir="ltr">pip check</span> — باید «No broken requirements found» بدهد؛ هر خطی که «requires X, but you have Y» گفت یعنی آن بسته را با نسخه خواسته‌شده نصب کنید. <strong>۲)</strong> نسخه‌های نصی را با پین‌های پروژه بسنجید: نسخه دقیق هر وابستگی در <code>pyproject.toml</code> (بخش <code>[project.optional-dependencies]</code> برای وب: <code>uvicorn</code>، <code>fastapi</code>، <code>starlette</code>، <code>websockets</code>، <code>python-multipart</code>) و <code>[project.dependencies]</code> برای بقیه؛ هم‌ترازی کامل با <code>pip install -e ".[web]"</code> روی همان مفسرِ باک‌اند. <strong>۳)</strong> اگر pip هشدار «Ignoring invalid distribution ~xyz» داد، پوشه باقی‌ماندهٔ نصب نیمه‌کاره را حذف کنید — در <code>Lib/site-packages</code> هر پوشه‌ای که با <code>~</code> شروع می‌شود (مثل <code>~vicorn</code> یا <code>~qlalchemy</code>) خرده‌نصبِ خراب است و باید پاک شود. <strong>۴)</strong> سلامت زنجیره ورود ماژول‌ها را مستقیم بیازمایید: <span dir="ltr">python -c "import uvicorn, fastapi, websockets; from tui_gateway.ws import handle_ws"</span> — اگر این بدون خطا گذشت، محیط سالم است.</td></tr>
     <tr><td>چک‌لیست ناهم‌خوانی محیط npm/Node (خطاهای نصب، EENGINE)</td><td>چهار گام به‌ترتیب: <strong>۱)</strong> نصب‌های تکراری را با <code>npm ci</code> انجام دهید — این دستور درخت <code>node_modules</code> را حذف و دقیقاً مطابق <code>package-lock.json</code> بازسازی می‌کند؛ <code>npm install</code> برای نصب روزمره است و ممکن است lockfile را جابه‌جا کند. <strong>۲)</strong> بهداشت lockfile: این مخزن تک‌قفل‌نامه است — همه کارهای نصب از ریشه مخزن انجام شود و <code>package-lock.json</code> را همراه هر تغییر وابستگی کامیت کنید؛ پراکندگیِ <code>npm install</code> در زیرپوشه‌ها (مثل <code>ui-tui</code>) رزولوشن پکیج‌های داخلی را می‌شکند. <strong>۳)</strong> خطای <code>EENGINE</code> یعنی npm نصب‌شده در بازه مجاز <code>engines</code> پروژه نیست (<code>&lt;11.10.0 || &gt;=11.17.0</code>) — نسخه سازگار نصب کنید (مثل <code>npm i -g npm@12</code>) و از دورزدن با <code>--engine-strict=false</code> جز در مواقع ضروری خودداری کنید، چون <code>.npmrc</code> پروژه این را عمداً سخت‌گیرانه کرده است.</td></tr>
     <tr><td>خطای <code>EALLOWSCRIPTS</code> یا اجرا نشدن اسکریپت‌های postinstall</td><td>این خطا یعنی postinstallهای بسته‌ها (مثل دانلود باینری الکترون) اجرا نشده‌اند. علت رایج: خط <code>allow-scripts</code> در <code>~/.npmrc</code> کاربر — آن خط را حذف کنید تا پیکربندی پروژه حاکم شود. اگر ممنوعیت اسکریپت عمدی است (سیاست امنیتی)، به‌جای غیرفعال‌سازی سراسری از <code>npm ci --ignore-scripts</code> آگاهانه استفاده کنید. آزمون سلامت: باینری الکترون باید در <code>node_modules/electron/dist</code> باشد؛ نبودش یعنی postinstall اجرا نشده است.</td></tr>
     <tr><td>اولین اجرا طول می‌کشد</td><td>در اولین اجرا، برنامه باک‌اند را از صفر راه می‌اندازد (نصب وابستگی‌ها)؛ صفحه پیشرفت را باز بگذارید. اجراهای بعدی سریع‌اند.</td></tr>
     <tr><td>اتصال با دروازه قطع شد</td><td>برنامه خودش در پس‌زمینه تلاش مجدد می‌کند؛ اگر باقی ماند، تنظیمات دروازه را باز کنید و برای دروازه راه دور دوباره وارد شوید.</td></tr>
-    <tr><td>«باک‌اند قدیمی است»</td><td>زمان اجرای Hermes از برنامه دسکتاپ عقب است — از اعلان «به‌روزرسانی Hermes» استفاده کنید.</td></tr>
+    <tr><td>«باک‌اند قدیمی است»</td><td>زمان اجرای رسا از برنامه دسکتاپ عقب است — از اعلان «به‌روزرسانی رسا» استفاده کنید.</td></tr>
     <tr><td>متن فارسی به‌هم‌ریخته در ترمینال</td><td>فونت ترمینال را در تنظیمات ← ظاهر به یک فونت پشتیبان RTL (مثل Vazirmatn یا JetBrains Mono) تغییر دهید.</td></tr>
     <tr><td>فارسی اعمال نشد</td><td>در ترمینال: <code>hermes config get display.language</code> — مقدار باید <code>fa</code> باشد. متغیر <code>HERMES_LANGUAGE</code> بر پیکربندی اولویت دارد.</td></tr>
     <tr><td>خطای کلی</td><td>از ترمینال <code>hermes doctor</code> را اجرا کنید؛ برای ارسال گزارش به Nous از «ارسال عیب‌یابی» استفاده کنید (اسرار سانسور و بسته پس از ۱۴ روز حذف می‌شود).</td></tr>
@@ -704,7 +704,7 @@ npm run dev</code></pre>
 </div>
 
 <footer>
-  <p><strong>Hermes Desktop</strong> — ساخته <a href="https://nousresearch.com" target="_blank" rel="noopener">Nous Research</a> · مجوز MIT</p>
+  <p><strong>رسا دسکتاپ</strong> — ساخته <a href="https://nousresearch.com" target="_blank" rel="noopener">Nous Research</a> · مجوز MIT</p>
   <p>این راهنما از روی منبع برنامه (نسخه شاخه <code class="en">localization/fa-ir</code>) نوشته شده است.</p>
 </footer>
 
