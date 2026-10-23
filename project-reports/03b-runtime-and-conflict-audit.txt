@@ -1,0 +1,1116 @@
+HERMES AGENT - RUNTIME AND INSTALLATION CONFLICT AUDIT
+Generated: 2026-08-30 00:15:51 +03:30
+Project: D:\Projects\hermes-agent-fa
+Branch: localization/fa-ir
+Commit: 4209d371aa1bb8840ce8447555bdd863a1a96c38
+Read-only audit: YES
+Dependencies installed: NO
+
+========================================================================
+1. REQUIRED RUNTIME VERSION FILES
+========================================================================
+
+--- .python-version ---
+SHA256: CEBA8FA5C10F40FBED8FEB7EB5238B63DDA568908ACFD874EE413747B29936C8
+Total lines: 1
+3.11
+
+--- .nvmrc ---
+SHA256: 2218C54AC6A0D40E422F1E643C5DF24BCBBE62F33FFE335CA2501DC36629C402
+Total lines: 1
+26
+
+--- .npmrc ---
+SHA256: C59091333089E44B3F05D37E0173559329C87FC722A12805F2623412F76073DD
+Total lines: 63
+# needed to prevent bad npm that has min-release-age but not exclude
+engine-strict=true
+
+min-release-age=14
+# allow assistant-ui packages & a couple specific deps since they update a LOT.
+# remove this when we stabilize (or we haven't updated in 2 wks)
+min-release-age-exclude[]=@assistant-ui/*
+min-release-age-exclude[]=assistant-cloud
+min-release-age-exclude[]=assistant-stream
+min-release-age-exclude[]=@radix-ui/*
+min-release-age-exclude[]=radix-ui
+min-release-age-exclude[]=safe-content-frame
+
+# react-router 8.3.0 includes fixes for vulns. remove this when 8.3.0 is > 2wks old.
+min-release-age-exclude[]=react-router
+
+# eslint 10.8.0 includes fixes for vulns. remove this when 10.8.0 is > 2wks old.
+min-release-age-exclude[]=eslint
+min-release-age-exclude[]=@eslint/*
+
+# tar 7.5.21 includes fixes for vulns. remove this when 7.5.21 is > 2wks  old
+min-release-age-exclude[]=tar
+
+# concurrently 10.0.4 includes fixes for vulns. remove this when 10.0.4 is > 2wks  old
+min-release-age-exclude[]=concurrently
+
+# fast-uri 3.1.4 includes fixes for vulns. remove this when 3.1.4 is > 2wks  old
+min-release-age-exclude[]=fast-uri
+
+# minimatch 10.2.6 includes fixes for vulns. remove this when 10.2.6 is > 2wks  old
+min-release-age-exclude[]=minimatch
+
+
+# brace-expansion 5.0.9 includes fixes for vulns. remove this when 5.0.9 is > 2wks  old
+min-release-age-exclude[]=brace-expansion
+
+# js-yaml 4.3.1 includes fixes for GHSA-5p4m-2wfm-xmqj. remove when > 2wks old (rel 2026-07-31)
+min-release-age-exclude[]=js-yaml
+
+# nanoid 3.3.17 includes fixes for GHSA-2v37-7h3g-55p8. remove when > 2wks old (rel 2026-08-03)
+min-release-age-exclude[]=nanoid
+
+# mermaid 11.16.1 includes fixes for 5 GHSAs. remove when > 2wks old (rel 2026-08-04)
+min-release-age-exclude[]=mermaid
+
+# dompurify 3.4.13 includes fixes for GHSA-55q2-fjhq-7xh7. remove when > 2wks old (rel 2026-08-03)
+min-release-age-exclude[]=dompurify
+
+# vite 8.2.0 is the first release depending on rolldown >= 1.2.1, which fixes
+# a rolldown panic that breaks `npm run build` in apps/desktop
+# (rolldown/rolldown#10337 — a regression in 1.1.5, the version vite 8.1.5
+# pins as ~1.1.5). @oxc-project/types is here because rolldown 1.2.1 pins it
+# as `=0.142.0` — an exact pin, so no older release satisfies it and the age
+# gate would fail the whole install with ETARGET.
+# remove these once vite 8.2.0 is > 2wks old.
+min-release-age-exclude[]=vite
+min-release-age-exclude[]=rolldown
+min-release-age-exclude[]=@rolldown/*
+min-release-age-exclude[]=@oxc-project/types
+
+# ink needs
+min-release-age-exclude[]=lightningcss
+min-release-age-exclude[]=postcss
+
+========================================================================
+2. CURRENT COMMAND RESOLUTION
+========================================================================
+hermes : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\bin\hermes.exe
+python : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\python.exe
+python : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Microsoft\WindowsApps\python.exe
+python3 : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Microsoft\WindowsApps\python3.exe
+py : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\Python\Launcher\py.exe
+pip : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\Scripts\pip.exe
+pip : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python314\Scripts\pip.exe
+uv : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\bin\uv.exe
+uv : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\Scripts\uv.exe
+node : Type=Application; Path=C:\Program Files\nodejs\node.exe
+node : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\node.exe
+npm : Type=ExternalScript; Path=C:\Program Files\nodejs\npm.ps1
+npm : Type=Application; Path=C:\Program Files\nodejs\npm.cmd
+npm : Type=Application; Path=C:\Program Files\nodejs\npm
+npm : Type=ExternalScript; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\npm.ps1
+npm : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\npm.cmd
+npm : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\npm
+npm : Type=ExternalScript; Path=C:\Users\emdadadmin\AppData\Roaming\npm\npm.ps1
+npm : Type=Application; Path=C:\Users\emdadadmin\AppData\Roaming\npm\npm.cmd
+npm : Type=Application; Path=C:\Users\emdadadmin\AppData\Roaming\npm\npm
+npx : Type=ExternalScript; Path=C:\Program Files\nodejs\npx.ps1
+npx : Type=Application; Path=C:\Program Files\nodejs\npx.cmd
+npx : Type=Application; Path=C:\Program Files\nodejs\npx
+npx : Type=ExternalScript; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\npx.ps1
+npx : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\npx.cmd
+npx : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\hermes\node\npx
+npx : Type=ExternalScript; Path=C:\Users\emdadadmin\AppData\Roaming\npm\npx.ps1
+npx : Type=Application; Path=C:\Users\emdadadmin\AppData\Roaming\npm\npx.cmd
+npx : Type=Application; Path=C:\Users\emdadadmin\AppData\Roaming\npm\npx
+git : Type=Application; Path=C:\Program Files\Git\cmd\git.exe
+docker : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe
+docker : Type=Application; Path=C:\Users\emdadadmin\AppData\Local\Programs\DockerDesktop\resources\bin\docker
+cargo : NOT FOUND
+rustc : NOT FOUND
+
+========================================================================
+3. CURRENT TOOL VERSIONS
+========================================================================
+PowerShell : 7.6.5
+Python : Python 3.11.9
+Python executable : C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\python.exe
+Python prefix : prefix=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311 | base_prefix=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311
+Python launcher :  -V:3.14 *        C:\Python314\python.exe |  -V:3.13          C:\Users\emdadadmin\AppData\Local\Programs\Python\Python313\python.exe |  -V:3.11          C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\python.exe
+pip : pip 26.2.1 from C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip (python 3.11) | 
+uv : uv 0.12.7 (61291a8ca 2026-08-27 x86_64-pc-windows-msvc)
+Node.js : v22.23.1
+npm : 11.16.0
+npm prefix : npm warn Unknown project config "min-release-age-exclude". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options. | C:\Users\emdadadmin\AppData\Roaming\npm
+Git : git version 2.55.0.windows.3
+Docker : Docker version 29.5.2, build 79eb04c
+Cargo : ERROR - The term 'cargo' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+Rust : ERROR - The term 'rustc' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+========================================================================
+4. ACTIVE ENVIRONMENT PATHS - NO SECRET VALUES
+========================================================================
+VIRTUAL_ENV = [NOT SET]
+CONDA_PREFIX = [NOT SET]
+PYENV_ROOT = [NOT SET]
+NVM_HOME = [NOT SET]
+NVM_SYMLINK = [NOT SET]
+APPDATA = C:\Users\emdadadmin\AppData\Roaming
+LOCALAPPDATA = C:\Users\emdadadmin\AppData\Local
+USERPROFILE = C:\Users\emdadadmin
+
+========================================================================
+5. POSSIBLE EXISTING HERMES LOCATIONS
+========================================================================
+[NOT FOUND] C:\Users\emdadadmin\.hermes
+[FOUND] C:\Users\emdadadmin\AppData\Local\hermes
+  [DIR ] audio_cache
+  [DIR ] bin
+  [DIR ] cache
+  [DIR ] cron
+  [DIR ] gateway-service
+  [DIR ] hermes-agent
+  [DIR ] hooks
+  [DIR ] image_cache
+  [DIR ] kanban
+  [DIR ] logs
+  [DIR ] memories
+  [DIR ] node
+  [DIR ] pairing
+  [DIR ] pending_messages
+  [DIR ] platforms
+  [DIR ] sessions
+  [DIR ] skills
+  [DIR ] state
+  [FILE] .env
+  [FILE] .hermes_history
+  [FILE] .skills_prompt_snapshot.json
+  [FILE] .update_check
+  [FILE] auth.json
+  [FILE] auth.lock
+  [FILE] channel_directory.json
+  [FILE] config.yaml
+  [FILE] config.yaml.bak.20260829_173128
+  [FILE] gateway_state.json
+  [FILE] gateway-starts.log
+  [FILE] gateway.lock
+  [FILE] gateway.pid
+  [FILE] kanban.db
+  [FILE] kanban.db.dispatch.lock
+  [FILE] kanban.db.init.lock
+  [FILE] models_dev_cache.etag
+  [FILE] models_dev_cache.json
+  [FILE] ollama_cloud_models_cache.json
+  [FILE] provider_models_cache.json
+  [FILE] SOUL.md
+  [FILE] state.db
+[NOT FOUND] C:\Users\emdadadmin\AppData\Roaming\hermes
+[NOT FOUND] C:\Users\emdadadmin\AppData\Local\Programs\Hermes
+[NOT FOUND] C:\Users\emdadadmin\AppData\Local\Programs\hermes
+[NOT FOUND] C:\Program Files\Hermes
+[NOT FOUND] C:\Program Files (x86)\Hermes
+
+========================================================================
+6. PYTHON PACKAGE IDENTITY FROM PYPROJECT
+========================================================================
+Line 3: [project]
+    name = "hermes-agent"
+    version = "0.20.6"
+    description = "The self-improving AI agent — creates skills from experience, improves them during use, and runs anywhere"
+    readme = "README.md"
+    # Upper bound is load-bearing, not cosmetic. uv resolves the project's
+    # Python from `requires-python`, and an inherited `UV_PYTHON` env var (or a
+    # fresh distro whose newest interpreter uv auto-picks) will otherwise select
+    # 3.14, where Rust-backed transitives (e.g. pydantic-core) have no cp314
+Line 4: name = "hermes-agent"
+    version = "0.20.6"
+    description = "The self-improving AI agent — creates skills from experience, improves them during use, and runs anywhere"
+    readme = "README.md"
+    # Upper bound is load-bearing, not cosmetic. uv resolves the project's
+    # Python from `requires-python`, and an inherited `UV_PYTHON` env var (or a
+    # fresh distro whose newest interpreter uv auto-picks) will otherwise select
+    # 3.14, where Rust-backed transitives (e.g. pydantic-core) have no cp314
+    # wheel yet and fall back to a maturin source build that fails. Capping at
+Line 5: version = "0.20.6"
+    description = "The self-improving AI agent — creates skills from experience, improves them during use, and runs anywhere"
+    readme = "README.md"
+    # Upper bound is load-bearing, not cosmetic. uv resolves the project's
+    # Python from `requires-python`, and an inherited `UV_PYTHON` env var (or a
+    # fresh distro whose newest interpreter uv auto-picks) will otherwise select
+    # 3.14, where Rust-backed transitives (e.g. pydantic-core) have no cp314
+    # wheel yet and fall back to a maturin source build that fails. Capping at
+    # <3.14 makes uv refuse 3.14 with a clear error instead of attempting that
+Line 15: requires-python = ">=3.11,<3.14"
+    authors = [{ name = "Nous Research" }]
+    license = "MIT"
+    license-files = ["LICENSE"]
+    dependencies = [
+      # Core — every direct dep is exact-pinned to ==X.Y.Z (no ranges).
+      # Rationale: ranges allow PyPI to ship a fresh version of a transitive
+      # at any time without a code review on our side. Exact pins mean the
+      # only way a new package version reaches a user is via an intentional
+Line 19: dependencies = [
+      # Core — every direct dep is exact-pinned to ==X.Y.Z (no ranges).
+      # Rationale: ranges allow PyPI to ship a fresh version of a transitive
+      # at any time without a code review on our side. Exact pins mean the
+      # only way a new package version reaches a user is via an intentional
+      # update on our end (bump the pin in this file, regenerate uv.lock).
+      # This was tightened on 2026-05-12 in response to the Mini Shai-Hulud
+      # worm hitting mistralai 2.4.6 on PyPI; if that release had been
+      # captured by `mistralai>=2.3.0,<3` rather than an exact pin, every
+Line 181: [project.optional-dependencies]
+    # Native Anthropic provider — only needed when provider=anthropic (not via
+    # OpenRouter or other aggregators).
+    anthropic = ["anthropic==0.87.0"]  # CVE-2026-34450, CVE-2026-34452
+    # Web search backends — each only loaded when the user picks it as their
+    # search provider (configured via `hermes tools` or config.yaml).
+    exa = ["exa-py==2.10.2"]
+    firecrawl = ["firecrawl-py==4.17.0"]
+    parallel-web = ["parallel-web==0.4.2"]
+Line 383: [build-system]
+    requires = ["setuptools==83.0.0"]
+    build-backend = "setuptools.build_meta"
+    
+    [project.scripts]
+    hermes = "hermes_cli.main:main"
+    hermes-agent = "run_agent:main"
+    hermes-acp = "acp_adapter.entry:main"
+    
+Line 387: [project.scripts]
+    hermes = "hermes_cli.main:main"
+    hermes-agent = "run_agent:main"
+    hermes-acp = "acp_adapter.entry:main"
+    
+    [tool.uv]
+    override-dependencies = [
+      # discord.py's latest published version, 2.7.1, pins pynacl at <1.6. however, pynacl 1.5.0 has known vulnerabilities.
+      # discord.py has updated pynacl to 1.6 on `main`, but has not yet published a patch release.
+Line 388: hermes = "hermes_cli.main:main"
+    hermes-agent = "run_agent:main"
+    hermes-acp = "acp_adapter.entry:main"
+    
+    [tool.uv]
+    override-dependencies = [
+      # discord.py's latest published version, 2.7.1, pins pynacl at <1.6. however, pynacl 1.5.0 has known vulnerabilities.
+      # discord.py has updated pynacl to 1.6 on `main`, but has not yet published a patch release.
+      # so, we force-override this to pynacl 1.6. here.
+Line 389: hermes-agent = "run_agent:main"
+    hermes-acp = "acp_adapter.entry:main"
+    
+    [tool.uv]
+    override-dependencies = [
+      # discord.py's latest published version, 2.7.1, pins pynacl at <1.6. however, pynacl 1.5.0 has known vulnerabilities.
+      # discord.py has updated pynacl to 1.6 on `main`, but has not yet published a patch release.
+      # so, we force-override this to pynacl 1.6. here.
+      # remove this when we update discord.py
+
+========================================================================
+7. ROOT NPM WORKSPACE METADATA
+========================================================================
+name: hermes-agent
+version: 1.0.0
+packageManager: 
+engines: {"node":"^22.22.0 || ^24.11.0 || >=26.0.0","npm":"<11.10.0 || >=11.17.0"}
+workspaces:
+  - apps/*
+  - ui-tui
+  - ui-tui/packages/*
+  - web
+  - tests-js
+scripts:
+  postinstall = echo '✅ Node dependencies installed. Run: python run_agent.py --help'
+  install:root = npm install --workspaces=false
+  install:web = npm install --workspace web
+  install:tui = npm install --workspace ui-tui
+  install:desktop = npm install --workspace apps/desktop
+  audit:root = npm audit --workspaces=false
+  audit:web = npm audit --workspace web
+  audit:tui = npm audit --workspace ui-tui
+  audit:fix:root = npm audit fix --workspaces=false
+  audit:fix:web = npm audit fix --workspace web
+  audit:fix:tui = npm audit fix --workspace ui-tui
+  check = npm run --ws check
+  fix = npm run --ws fix
+
+========================================================================
+8. DESKTOP APPLICATION METADATA
+========================================================================
+name: hermes
+version: 0.17.0
+main: dist/electron-main.mjs
+engines: {"node":"^22.22.0 || ^24.11.0 || >=26.0.0"}
+scripts:
+  clean = npm run clean:e2e && npm run clean:renderer && npm run clean:electron
+  clean:e2e = tsc --build tsconfig.e2e.json --clean
+  clean:renderer = tsc --build tsconfig.json --clean 
+  clean:electron = tsc --build tsconfig.electron.json --clean
+  dev = concurrently -k "npm:dev:renderer" "npm:dev:electron"
+  dev:fake-boot = cross-env HERMES_DESKTOP_BOOT_FAKE=1 HERMES_DESKTOP_BOOT_FAKE_STEP_MS=650 npm run dev
+  dev:mock = node scripts/dev-mock.mjs
+  dev:renderer = node scripts/assert-root-install.mjs && npm run clean:renderer && vite --host 127.0.0.1 --port 5174
+  dev:electron = tsc --build tsconfig.electron.json && wait-on http://127.0.0.1:5174 && node scripts/bundle-electron-main.mjs --dev && cross-env XCURSOR_SIZE=24 HERMES_DESKTOP_DEV_SERVER=http://127.0.0.1:5174 electron .
+  profile:main = tsc --build tsconfig.electron.json && wait-on http://127.0.0.1:5174 && node scripts/bundle-electron-main.mjs --dev && cross-env XCURSOR_SIZE=24 HERMES_DESKTOP_DEV_SERVER=http://127.0.0.1:5174 electron --inspect=9229 .
+  profile:main:cpu = tsc --build tsconfig.electron.json && wait-on http://127.0.0.1:5174 && node scripts/bundle-electron-main.mjs --dev && cross-env XCURSOR_SIZE=24 NODE_OPTIONS=--cpu-prof HERMES_DESKTOP_DEV_SERVER=http://127.0.0.1:5174 electron .
+  start = npm run build && electron .
+  prebuild = npm run clean
+  build = node scripts/assert-root-install.mjs && node scripts/write-build-stamp.mjs && vite build && node scripts/bundle-electron-main.mjs && node scripts/stage-native-deps.mjs
+  postbuild = node scripts/assert-dist-built.mjs
+  prebuilder = node scripts/patch-electron-builder-mac-binary.mjs
+  builder = cross-env NODE_OPTIONS=--max-old-space-size=16384 node scripts/run-electron-builder.mjs
+  pack = npm run build && npm run builder -- --dir --publish never
+  dist = npm run build && npm run builder
+  dist:mac = npm run build && npm run builder -- --mac
+  dist:mac:dmg = npm run build && npm run builder -- --mac dmg
+  dist:mac:zip = npm run build && npm run builder -- --mac zip
+  dist:win = npm run build && npm run builder -- --win
+  dist:win:msi = npm run build && npm run builder -- --win msi
+  dist:win:nsis = npm run build && npm run builder -- --win nsis
+  dist:linux = npm run build && npm run builder -- --linux AppImage deb rpm
+  perf = node scripts/perf/run.mjs
+  update:shim = bash ../../scripts/desktop-update/repro.sh shim
+  update:shim:fail = bash ../../scripts/desktop-update/repro.sh shim-fail
+  update:repro:fresh = bash ../../scripts/desktop-update/repro.sh fresh
+  update:repro:behind = bash ../../scripts/desktop-update/repro.sh behind
+  update:repro:error = bash ../../scripts/desktop-update/repro.sh error
+  update:repro:gate = bash ../../scripts/desktop-update/repro.sh gate
+  update:repro:launch = bash ../../scripts/desktop-update/repro.sh launch
+  perf:serve = node scripts/perf/serve.mjs
+  test:desktop = node scripts/test-desktop.mjs
+  test:desktop:all = node scripts/test-desktop.mjs all
+  test:desktop:dmg = node scripts/test-desktop.mjs dmg
+  test:desktop:nsis = node scripts/test-desktop.mjs nsis
+  test:desktop:existing = node scripts/test-desktop.mjs existing
+  test:desktop:fresh = node scripts/test-desktop.mjs fresh
+  typecheck = tsc -p . --noEmit && tsc -p tsconfig.electron.json --noEmit && tsc -p tsconfig.e2e.json --noEmit
+  lint = eslint src/ electron/
+  lint:fix = eslint src/ electron/ --fix
+  fmt = prettier --write 'src/**/*.{ts,tsx}' 'electron/**/*.ts' 'vite.config.ts'
+  fix = npm run lint:fix && npm run fmt
+  test:ui = vitest run --project ui
+  test:desktop:platforms = vitest run --project electron
+  test:find-in-page-native = electron electron/find-in-page-native-fixture
+  test = vitest run
+  preview = node scripts/assert-root-install.mjs && vite preview --host 127.0.0.1 --port 4174
+  check:test:ui = npm run test:ui
+  check:test:desktop:platforms = npm run test:desktop:platforms
+  check:test:desktop:all = npm run test:desktop:all
+  check:lint = npm run typecheck && npm run lint
+  check = npm run check:lint && npm run test:ui && npm run test:desktop:platforms && npm run test:desktop:all
+  test:e2e = npm run build && playwright test e2e/
+  test:e2e:visual = npm run build && WLR_BACKENDS=headless WLR_NO_HARDWARE_CURSORS=1 cage -- npx playwright test e2e/ --reporter=list
+  test:e2e:update-snapshots = npm run build && WLR_BACKENDS=headless WLR_NO_HARDWARE_CURSORS=1 cage -- npx playwright test e2e/ --reporter=list --update-snapshots
+  repro:short-session-hang = node scripts/run-short-session-hang-repro.mjs
+  repro:short-session-hang:test = node --test scripts/run-short-session-hang-repro.test.mjs
+selected dependencies:
+  electron = 40.10.2
+  electron-builder = 26.15.3
+  electron-is-dev = [NOT DECLARED HERE]
+  vite = 8.2.0
+  react = 19.2.7
+  typescript = 6.0.3
+
+========================================================================
+9. OFFICIAL INSTALLATION EVIDENCE
+========================================================================
+
+--- CONTRIBUTING.md ---
+SHA256: 3588CDD63AB36A82F3207517672BDAC63D74374FF3724ADC0772522D20632D36
+Total lines: 993
+# Contributing to Hermes Agent
+
+Thank you for contributing to Hermes Agent! This guide covers everything you need: setting up your dev environment, understanding the architecture, deciding what to build, and getting your PR merged.
+
+---
+
+## Contribution Priorities
+
+We value contributions in this order:
+
+1. **Bug fixes** — crashes, incorrect behavior, data loss. Always top priority.
+2. **Cross-platform compatibility** — macOS, different Linux distros, and WSL2 on Windows. We want Hermes to work everywhere.
+3. **Security hardening** — shell injection, prompt injection, path traversal, privilege escalation. See [Security](#security-considerations).
+4. **Performance and robustness** — retry logic, error handling, graceful degradation.
+5. **New skills** — but only broadly useful ones. See [Should it be a Skill or a Tool?](#should-it-be-a-skill-or-a-tool)
+6. **New tools** — rarely needed. Most capabilities should be skills. See below.
+7. **Documentation** — fixes, clarifications, new examples.
+
+---
+
+## Before You Start: Search First
+
+A quick search before you build saves your time and keeps the PR queue clean — duplicates are common here, so it's worth a minute up front.
+
+- **Search both open *and* merged PRs and issues** for your topic or error symptom — the duplicate-check in the PR template fires at review time, after you've already done the work:
+  ```bash
+  gh search issues --repo NousResearch/hermes-agent "<your terms>"
+  gh search prs --repo NousResearch/hermes-agent --state all "<your terms>"
+  ```
+  Or use the web UI: [issues](https://github.com/NousResearch/hermes-agent/issues?q=) · [PRs (all states)](https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr).
+- **The issue tracker can lag the code.** Many requested features are already implemented in-tree, so also search the source (`search_files`, or your editor's grep) for the capability before proposing it.
+- **If an open PR already addresses it**, consider reviewing or improving that one instead of opening a competing duplicate.
+- **For larger work**, comment on the issue to signal you're working on it, so others don't start the same thing.
+
+Related: #38284 covers the agent-side analog — Hermes itself checking existing issues and PRs before deep self-troubleshooting. This section is the human-contributor complement.
+
+---
+
+## Should it be a Skill or a Tool?
+
+This is the most common question for new contributors. The answer is almost always **skill**.
+
+### Make it a Skill when:
+
+- The capability can be expressed as instructions + shell commands + existing tools
+- It wraps an external CLI or API that the agent can call via `terminal` or `web_extract`
+- It doesn't need custom Python integration or API key management baked into the agent
+- Examples: arXiv search, git workflows, Docker management, PDF processing, email via CLI tools
+
+### Make it a Tool when:
+
+- It requires end-to-end integration with API keys, auth flows, or multi-component configuration managed by the agent harness
+- It needs custom processing logic that must execute precisely every time (not "best effort" from LLM interpretation)
+- It handles binary data, streaming, or real-time events that can't go through the terminal
+- Examples: browser automation (Browserbase session management), TTS (audio encoding + platform delivery), vision analysis (base64 image handling)
+
+### Should the Skill be bundled?
+
+Bundled skills (in `skills/`) ship with every Hermes install. They should be **broadly useful to most users**:
+
+- Document handling, web research, common dev workflows, system administration
+- Used regularly by a wide range of people
+
+If your skill is official and useful but not universally needed (e.g., a paid service integration, a heavyweight dependency), put it in **`optional-skills/`** — it ships with the repo but isn't activated by default. Users can discover it via `hermes skills browse` (labeled "official") and install it with `hermes skills install` (no third-party warning, built-in trust).
+
+If your skill is specialized, community-contributed, or niche, it's better suited for a **Skills Hub** — upload it to a skills registry and share it in the [Nous Research Discord](https://discord.gg/NousResearch). Users can install it with `hermes skills install`.
+
+---
+
+## Memory Providers: Ship as a Standalone Plugin
+
+**We are no longer accepting new memory providers into this repo.** The set of built-in providers under `plugins/memory/` (honcho, mem0, supermemory, byterover, hindsight, holographic, openviking, retaindb) is closed. If you want to add a new memory backend, publish it as a **standalone plugin repo** that users install into `~/.hermes/plugins/` (or via a pip entry point).
+
+Standalone memory plugins:
+
+- Implement the same `MemoryProvider` ABC (`agent/memory_provider.py`) — `sync_turn`, `prefetch`, `shutdown`, and optionally `post_setup(hermes_home, config)` for setup-wizard integration
+- Use the same discovery system — `discover_memory_providers()` picks them up from user/project plugin directories and pip entry points
+- Integrate with `hermes memory setup` via `post_setup()` — no need to touch core code
+- Can register their own CLI subcommands via `register_cli(subparser)` in a `cli.py` file
+- Get all the same lifecycle hooks and config plumbing as in-tree providers
+
+PRs that add a new directory under `plugins/memory/` will be closed with a pointer to publish the provider as its own repo. Existing in-tree providers stay; bug fixes to them are welcome.
+
+This isn't a quality bar — it's a coupling-and-maintenance decision. Memory providers are the most common plugin type and they shouldn't all live in this tree.
+
+---
+
+## Third-Party Product Integrations: Ship as a Standalone Plugin
+
+The same rule extends to **any plugin that integrates someone else's product or project** — observability/metrics backends, vendor SaaS connectors, analytics dashboards, paid-service tie-ins, and similar third-party integrations. **These do not land in this repo.**
+
+The reason is maintenance load, not quality. Every external product absorbed into the core tree becomes ours to keep working against a fast-moving codebase, for a backend we don't own and can't control. Hermes ships a lot and the core moves quickly; coupling third-party products into it creates an open-ended burden on the maintainers.
+
+Publish these as a **standalone plugin repo** instead:
+
+- Implement the relevant ABC and use the existing plugin discovery path (`~/.hermes/plugins/`, project `.hermes/plugins/`, or a pip entry point) — see [Build a Hermes Plugin](https://hermes-agent.nousresearch.com/docs/guides/build-a-hermes-plugin)
+- Register lifecycle hooks (`pre_tool_call`, `post_tool_call`, `pre_llm_call`, `post_llm_call`, `on_session_start`, `on_session_end`), tools (`ctx.register_tool`), and CLI subcommands (`ctx.register_cli_command`) through the surface we already expose — no core changes needed
+- If your plugin needs a capability the framework doesn't expose, that's a feature request to **widen the generic plugin surface** (a new hook or `ctx` method) — never special-case your plugin in core
+- Promote it in the [Nous Research Discord](https://discord.gg/NousResearch) `#plugins-skills-and-skins` channel so users can find and install it
+
+A well-built third-party-product plugin can clear automated review and still be closed for this reason — it's a placement decision, not a verdict on the code. PRs that add such a directory under `plugins/` will be closed with a pointer to publish it as its own repo.
+
+---
+
+## Development Setup
+
+### Prerequisites
+
+| Requirement | Notes |
+|-------------|-------|
+| **Git** | With the `git-lfs` extension installed |
+| **Python 3.11–3.13** | uv will install it if missing |
+| **uv** | Fast Python package manager ([install](https://docs.astral.sh/uv/)) |
+| **Node.js 20+** | Optional — needed for browser tools and WhatsApp bridge (matches root `package.json` engines) |
+
+### Install with the standard installer
+
+For most contributors, the best development bootstrap is the same path users
+take: run the standard installer, then work inside the repository it cloned.
+The installer creates the Hermes venv, wires the `hermes` command, stamps the
+install method for `hermes update`, and clones the full git project into
+`$HERMES_HOME/hermes-agent` (usually `~/.hermes/hermes-agent`). That keeps your
+development environment on the same layout the CLI, updater, lazy dependency
+installer, gateway, and docs assume.
+
+```bash
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+cd "${HERMES_HOME:-$HOME/.hermes}/hermes-agent"
+
+# Add dev/test extras on top of the standard install.
+uv pip install -e ".[all,dev]"
+
+# Optional: docs site + workspace dependencies.
+npm install
+```
+
+After that, create branches and run tests from that checkout:
+
+```bash
+git checkout -b fix/description
+scripts/run_tests.sh
+```
+
+### Manual clone fallback
+
+Use this only if you intentionally do not want Hermes' managed install layout
+(for example, a throwaway clone inside a container or CI job). If you install
+this way, make sure you run the `hermes` entrypoint from this venv; running the
+system `python3 -m hermes_cli.main` can pick up unrelated system Python
+packages.
+
+Create the venv **outside** the cloned source tree. A venv that lives inside
+the directory the agent operates from can be wiped by a relative-path command
+the agent runs against its own checkout (`rm -rf venv`, `uv venv venv`, etc.),
+which silently destroys the running runtime mid-session. Keeping it outside the
+tree means no relative path from the workspace resolves to it.
+
+```bash
+git clone https://github.com/NousResearch/hermes-agent.git
+cd hermes-agent
+
+# Create venv with Python 3.11, OUTSIDE the source tree
+uv venv ~/.hermes/venvs/hermes-dev --python 3.11
+export VIRTUAL_ENV="$HOME/.hermes/venvs/hermes-dev"
+export PATH="$VIRTUAL_ENV/bin:$PATH"
+
+# Install with all extras (messaging, cron, CLI menus, dev tools)
+uv pip install -e ".[all,dev]"
+
+# Optional: workspace / docs dependencies
+npm install
+```
+
+### Configure for development
+
+```bash
+mkdir -p ~/.hermes/{cron,sessions,logs,memories,skills}
+cp cli-config.yaml.example ~/.hermes/config.yaml
+touch ~/.hermes/.env
+
+# Add at minimum an LLM provider key:
+echo "OPENROUTER_API_KEY=***" >> ~/.hermes/.env
+```
+
+### Run
+
+```bash
+# The standard installer already put `hermes` on PATH.
+hermes doctor
+hermes chat -q "Hello"
+```
+
+If you used the manual clone fallback, run `./hermes` from the checkout or
+symlink this clone's venv explicitly:
+
+```bash
+mkdir -p ~/.local/bin
+ln -sf "$(pwd)/venv/bin/hermes" ~/.local/bin/hermes
+```
+
+### Run tests
+
+```bash
+# Preferred — matches CI (hermetic `env -i`, per-file subprocess isolation
+# via run_tests_parallel.py, worker count auto-scaled); see AGENTS.md
+scripts/run_tests.sh
+
+# Alternative (activate the venv first). The wrapper is still recommended
+# for parity with GitHub Actions before you open a PR:
+pytest tests/ -v
+```
+
+---
+
+## Project Structure
+
+```
+hermes-agent/
+├── run_agent.py              # AIAgent class — core conversation loop, tool dispatch, session persistence
+├── cli.py                    # HermesCLI class — interactive TUI, prompt_toolkit integration
+├── model_tools.py            # Tool orchestration (thin layer over tools/registry.py)
+├── toolsets.py               # Tool groupings and presets (hermes-cli, hermes-telegram, etc.)
+├── hermes_state.py           # SQLite session database with FTS5 full-text search, session titles
+├── batch_runner.py           # Parallel batch processing for trajectory generation
+│
+├── agent/                    # Agent internals (extracted modules)
+│   ├── prompt_builder.py         # System prompt assembly (identity, skills, context files, memory)
+│   ├── context_compressor.py     # Auto-summarization when approaching context limits
+│   ├── auxiliary_client.py       # Resolves auxiliary OpenAI clients (summarization, vision)
+│   ├── display.py                # KawaiiSpinner, tool progress formatting
+[TRUNCATED AFTER 230 LINES]
+
+--- apps\desktop\README.md ---
+SHA256: 518B39878E4F4429FBBAE9BBDDBAE707D54DA37DE28534DFD97948EAC27B5774
+Total lines: 244
+# Hermes Desktop ☤
+
+<p align="center">
+  <a href="https://github.com/NousResearch/hermes-agent/releases"><img src="https://img.shields.io/badge/Download-macOS%20%C2%B7%20Windows%20%C2%B7%20Linux-FFD700?style=for-the-badge" alt="Download"></a>
+  <a href="https://hermes-agent.nousresearch.com/docs/"><img src="https://img.shields.io/badge/Docs-hermes--agent.nousresearch.com-FFD700?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://discord.gg/NousResearch"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://github.com/NousResearch/hermes-agent/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
+</p>
+
+**The native desktop app for [Hermes Agent](../../README.md) — the self-improving AI agent from [Nous Research](https://nousresearch.com).** Same agent, same skills, same memory as the CLI and gateway, in a polished native window — chat with streaming tool output, side-by-side previews, a file browser, voice, and settings, no terminal required. Available for **macOS, Windows, and Linux**.
+
+<table>
+<tr><td><b>Chat with the full agent</b></td><td>Streaming responses, live tool activity, structured tool summaries, and the same conversation history as every other Hermes surface.</td></tr>
+<tr><td><b>Side-by-side previews</b></td><td>Render web pages, files, and tool outputs in a right-hand pane while you keep chatting.</td></tr>
+<tr><td><b>File browser</b></td><td>Explore and preview the working directory without leaving the app.</td></tr>
+<tr><td><b>Voice</b></td><td>Talk to Hermes and hear it back.</td></tr>
+<tr><td><b>Settings & onboarding</b></td><td>Manage providers, models, tools, and credentials from a real UI. First-run setup gets you to your first message in seconds.</td></tr>
+<tr><td><b>Stays current</b></td><td>Built-in updates pull the latest agent and rebuild the app in place.</td></tr>
+</table>
+
+---
+
+## Install
+
+### Install with Hermes (recommended)
+
+Already have the Hermes CLI? Just run:
+
+```bash
+hermes desktop
+```
+
+It builds and launches the GUI against your existing install — same config, keys, sessions, and skills. If Desktop cannot find a usable runtime or saved remote connection, first launch lets you connect to an existing Hermes gateway or install Hermes locally. Local onboarding then walks you through choosing a provider and model.
+
+### Prebuilt installers
+
+Prebuilt installers are built and distributed via [the Hermes Desktop website.](https://hermes-agent.nousresearch.com/).
+
+---
+
+## Updating
+
+The app checks for updates in the background and offers a one-click update when one is ready. You can also update any time from the CLI:
+
+```bash
+hermes update
+```
+
+---
+
+## Requirements
+
+The installer handles everything for you (Python 3.11+, a portable Git, ripgrep).
+
+---
+
+## Development
+
+Want to hack on the app itself? Install workspace deps from the repo root once, then run the dev server from this directory:
+
+```bash
+npm install          # from repo root — links apps/desktop, web, apps/shared
+cd apps/desktop
+npm run dev          # Vite renderer + Electron, which boots the Python backend
+```
+
+Point the app at a specific source checkout, or sandbox it away from your real config:
+
+```bash
+# throwaway HERMES_HOME, separate Electron userData, distinct app name to avoid the single-instance lock
+../scripts/dev-sandbox.sh npm run dev
+HERMES_DESKTOP_HERMES_ROOT=/path/to/clone npm run dev
+HERMES_HOME=/tmp/throwaway npm run dev
+npm run dev:fake-boot   # exercise the startup overlay with deterministic delays
+```
+
+### Building installers
+
+```bash
+npm run dist:mac     # DMG + zip
+npm run dist:win     # NSIS + MSI
+npm run dist:linux   # AppImage + deb + rpm
+npm run pack         # unpacked app under release/ (no installer)
+```
+
+Installers are built and uploaded to GitHub Releases manually. macOS/Windows signing & notarization happen automatically when the relevant credentials are present in the environment (`CSC_LINK` / `CSC_KEY_PASSWORD` / `APPLE_*` for macOS, `WIN_CSC_*` for Windows).
+
+### How it works
+
+The packaged app ships the Electron shell and a native React chat surface. On
+first launch it can install the Hermes Agent runtime into `HERMES_HOME`
+(`~/.hermes`, or `%LOCALAPPDATA%\hermes` on Windows), using the same layout as a
+CLI install.
+
+The app has three boundaries:
+
+- **Electron** resolves and validates a runnable backend, owns native
+  filesystem/git/window capabilities, and exposes a narrow preload bridge.
+- **React** owns the Desktop routes, panes, interaction state, and
+  `@assistant-ui/react` transcript.
+- **Hermes Agent** runs as a headless `hermes serve` process and exposes the
+  `tui_gateway` JSON-RPC/WebSocket API. The renderer connects through
+  [`apps/shared`](../shared/), which is also used by the browser dashboard.
+
+Backend resolution is an ordered ladder:
+
+1. `HERMES_DESKTOP_HERMES_ROOT`
+2. the current source checkout during development
+3. a completed managed install
+4. `HERMES_DESKTOP_HERMES`, or `hermes` on `PATH`
+5. a system Python that can import the Hermes runtime
+6. the first-launch bootstrap installer
+
+Candidates are probed before use; an existing shim or interpreter is not enough.
+A runtime that predates `serve` falls back to headless
+`dashboard --no-open`. This is compatibility for the backend command only and
+does not launch or embed the dashboard UI.
+
+The Electron orchestration entry point is `electron/main.ts`; pure resolution,
+probe, hardening, and platform policies live in focused modules beside it. The
+renderer is under `src/`, with shared atoms in `src/store` and transport/native
+adapters in `src/lib`.
+
+Before changing the app, read:
+
+- [`AGENTS.md`](./AGENTS.md): architecture, state ownership, resolver/fallback,
+  transport, performance, and testing rules.
+- [`DESIGN.md`](./DESIGN.md): visual system, information architecture, motion,
+  direct manipulation, and keyboard behavior.
+
+### Connections, projects, and switching
+
+Desktop supports a managed local backend, explicit remote gateways, and Hermes
+Cloud connections. Remote and cloud modes use the same remote-capability path;
+authentication and discovery differ, not the renderer feature model.
+
+When no usable local runtime or saved remote connection exists, the first-run
+screen offers **Connect to existing Hermes** before starting the local installer.
+Desktop probes the gateway to discover token or OAuth authentication, requires a
+successful HTTP and WebSocket connection test, and saves the connection using
+the same encrypted Desktop configuration used by Settings. A saved remote
+connection bypasses this choice on later launches. The regular Desktop build
+still includes the local-install option; this is a remote operating mode, not a
+separate client-only application.
+
+In remote mode the gateway host is the execution boundary: agent tools,
+terminal commands, and file operations run against the remote Hermes host, not
+the computer displaying the Desktop UI.
+
+Remote gateways that sit behind an access proxy may require extra headers on
+every HTTP and WebSocket request. Configure them per connection in Settings →
+Connections (Extra gateway headers), or add a `headers` object to Desktop's
+Electron `userData/connection.json` remote block:
+
+```json
+{
+  "mode": "remote",
+  "remote": {
+    "url": "https://hermes.example.com",
+    "authMode": "token",
+    "token": { "encoding": "safeStorage", "value": "..." },
+    "headers": {
+      "CF-Access-Client-Id": { "encoding": "safeStorage", "value": "..." },
+      "CF-Access-Client-Secret": { "encoding": "safeStorage", "value": "..." }
+    }
+  }
+}
+```
+
+Per-profile remote entries under `profiles[name].headers` use the same shape.
+Desktop applies these headers only to matching remote gateway requests, treats
+`https` and `wss` as the same gateway origin for WebSocket upgrades, and drops
+transport- or Hermes-managed header names such as `Authorization`, `Cookie`,
+`Host`, `Origin`, `Referer`, and `X-Hermes-Session-Token`.
+
+Projects are the workspace abstraction. A project may own multiple folders,
+repositories, worktrees, and sessions; a bare new chat remains detached unless
+the user enters a project or configures a default project directory. Use the
+Projects UI rather than adding a second per-session folder-picker workflow.
+
+Changing profiles or connection modes is a soft workspace switch, not another
+cold boot. The shell and current management overlay remain mounted while
+gateway-bound nanostores are wiped, query-backed data is invalidated, and the
+new connection repopulates skeletons. This prevents rows or transcripts from
+the previous gateway bleeding into the next one. Switching changes only the
+foreground view and request route: it does not cancel turns or stop a backend,
+and retained background sockets continue receiving events from running jobs.
+
+### Verification
+
+Run before opening a PR (lint may surface pre-existing warnings but must exit cleanly):
+
+```bash
+npm run fix
+npm run typecheck
+npm run lint
+npm run test:ui
+npm run test:desktop:platforms
+```
+
+Run `npm run test:desktop:all` for install, boot, update, packaging, or other
+release-path changes.
+
+### Troubleshooting
+
+Boot logs land in `HERMES_HOME/logs/desktop.log` (includes backend output and recent Python tracebacks) — check it first if the app reports a boot failure.
+
+**macOS / Linux:**
+
+```bash
+# Force a clean first-launch setup
+rm "$HOME/.hermes/hermes-agent/.hermes-bootstrap-complete"
+# Rebuild a broken Python venv
+rm -rf "$HOME/.hermes/hermes-agent/venv"
+# Reset a stuck macOS microphone prompt (macOS only)
+tccutil reset Microphone com.nousresearch.hermes
+```
+
+**Windows (PowerShell):**
+
+```powershell
+# Force a clean first-launch setup
+Remove-Item "$env:LOCALAPPDATA\hermes\hermes-agent\.hermes-bootstrap-complete"
+# Rebuild a broken Python venv
+Remove-Item -Recurse -Force "$env:LOCALAPPDATA\hermes\hermes-agent\venv"
+```
+
+> The default Hermes home on Windows is `%LOCALAPPDATA%\hermes`. Set the `HERMES_HOME` env var if you've relocated it.
+
+---
+
+## Community
+
+- 💬 [Discord](https://discord.gg/NousResearch)
+- 📖 [Documentation](https://hermes-agent.nousresearch.com/docs/)
+- 🐛 [Issues](https://github.com/NousResearch/hermes-agent/issues)
+
+---
+
+## License
+[TRUNCATED AFTER 240 LINES]
+
+--- website\docs\getting-started\installation.md ---
+SHA256: 7387385374A067E080DC69827F1B8DCC409A7ADF401D4AEAE2DAD0622D705DA2
+Total lines: 176
+---
+sidebar_position: 2
+title: "Installation"
+description: "Install Hermes Agent on Linux, macOS, WSL2, native Windows, or Android via Termux"
+---
+
+# Installation
+
+Get Hermes Agent up and running in under two minutes!
+
+:::tip Platform Support
+For the full platform support matrix (which OSes, distribution methods, and
+platform-gated features are supported), see **[Platform Support](./platform-support.md)**.
+:::
+
+## Quick Install
+### With the Hermes Desktop installer on macOS or Windows (recommended)
+To easily install the command-line and desktop applications, [download the Hermes Desktop installer](https://hermes-agent.nousresearch.com/) from our website and run it.
+
+### Without Hermes Desktop:
+For a command-line only install without Hermes Desktop, run:
+
+#### Linux / macOS / WSL2 / Android (Termux)
+```bash
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+```
+
+#### Windows (native)
+
+Run in powershell:
+```powershell
+iex (irm https://hermes-agent.nousresearch.com/install.ps1) 
+```
+
+If you want to install & run Hermes Desktop after a command-line only install, simply run
+```bash
+hermes desktop
+```
+
+### What the Installer Does
+
+The installer handles everything automatically — all dependencies (Python, Node.js, ripgrep, ffmpeg), the repo clone, virtual environment, global `hermes` command setup, and LLM provider configuration. By the end, you're ready to chat.
+
+#### Install Layout
+
+Where the installer puts things depends on whether you're installing as a normal user or as root:
+
+| Installer                              | Code lives at                  | `hermes` binary                         | Data directory                       |
+| -------------------------------------- | ------------------------------ | --------------------------------------- | ------------------------------------ |
+| Per-user (git installer)               | `~/.hermes/hermes-agent/`      | `~/.local/bin/hermes` (symlink)         | `~/.hermes/`                         |
+| Root-mode (`sudo curl … \| sudo bash`) | `/usr/local/lib/hermes-agent/` | `/usr/local/bin/hermes`                 | `/root/.hermes/` (or `$HERMES_HOME`) |
+
+The root-mode **FHS layout** (`/usr/local/lib/…`, `/usr/local/bin/hermes`) matches where other system-wide developer tools land on Linux. It's useful for shared-machine deployments where one system install should serve every user. Per-user config (auth, skills, sessions) still lives under each user's `~/.hermes/` or explicit `HERMES_HOME`.
+
+### After Installation
+
+Reload your shell and start chatting:
+
+```bash
+source ~/.bashrc   # or: source ~/.zshrc
+hermes             # Start chatting!
+```
+
+To reconfigure individual settings later, use the dedicated commands:
+
+```bash
+hermes model          # Choose your LLM provider and model
+hermes tools          # Configure which tools are enabled
+hermes gateway setup  # Set up messaging platforms
+hermes config set     # Set individual config values
+hermes config get     # Inspect individual config values
+hermes setup          # Or run the full setup wizard to configure everything at once
+```
+
+:::tip Fastest path: Nous Portal
+One subscription covers 300+ models plus the [Tool Gateway](/user-guide/features/tool-gateway) (web search, image generation, TTS, cloud browser). Skip the per-tool key juggling:
+
+```bash
+hermes setup --portal
+```
+
+That logs you in, sets Nous as your provider, and turns on the Tool Gateway in one command.
+:::
+
+:::tip Already running Hermes on another machine?
+You don't need to rebuild your setup from scratch. Restore a full backup with `hermes import` (see [Exporting Hermes to another machine](/reference/faq#exporting-hermes-to-another-machine)), or bring over a single agent with `hermes profile import` (see [Moving a single profile to another machine](/reference/faq#moving-a-single-profile-to-another-machine)). Note that a profile export excludes credentials by design, so an export alone is not a full backup — [`hermes backup` vs `hermes profile export`](/reference/faq#hermes-backup-vs-hermes-profile-export) explains which to use.
+:::
+
+---
+
+## Prerequisites
+
+**Installer:** On non-Windows platforms, the only prerequisite is **Git**. On Linux, also make sure `curl` and `xz-utils` are available (the installer downloads Node.js as a `.tar.xz` archive). The desktop app additionally requires `g++` (or `build-essential` on Debian/Ubuntu) to compile native modules. The installer automatically handles everything else:
+
+- **uv** (fast Python package manager)
+- **Python 3.11** (via uv, no sudo needed)
+- **Node.js v26** (for browser automation and WhatsApp bridge; existing system Node 22.22+, 24.11+, or 26+ is used as-is)
+- **ripgrep** (fast file search)
+- **ffmpeg** (audio format conversion for TTS)
+
+:::info
+You do **not** need to install Python, Node.js, ripgrep, or ffmpeg manually. The installer detects what's missing and installs it for you. Just make sure `git` is available (`git --version`). On Linux, ensure `curl` and `xz-utils` are installed (`sudo apt install curl xz-utils` on Debian/Ubuntu). For the desktop app, also install `build-essential` (`sudo apt install build-essential`).
+:::
+
+:::tip Nix users
+Nix is **no longer an explicitly supported install path** (best-effort only). If you already use Nix (on NixOS, macOS, or Linux), there's a dedicated setup path with a Nix flake, declarative NixOS module, and optional container mode. See the **[Nix & NixOS Setup](./nix-setup.md)** guide.
+:::
+
+---
+
+## Manual / Developer Installation
+
+If you want to clone the repo and install from source — for contributing, running from a specific branch, or having full control over the virtual environment — see the [Development Setup](../developer-guide/contributing.md#development-setup) section in the Contributing guide.
+
+---
+
+## Non-Sudo / System Service User Installs
+
+Running Hermes as a dedicated unprivileged user (e.g. a `hermes` systemd service account, or any user without `sudo` access) is supported. The only thing on the install path that genuinely needs root is Playwright's `--with-deps` step, which `apt`-installs shared libraries (`libnss3`, `libxkbcommon`, etc.) used by Chromium. The installer detects whether sudo is available and gracefully degrades when it isn't — it will install the Chromium binary into the service user's own Playwright cache and print the exact command an administrator needs to run separately.
+
+**Recommended split (Debian/Ubuntu):**
+
+1. **One time, as an admin user with sudo**, install the system libraries Chromium needs:
+   ```bash
+   sudo npx playwright install-deps chromium
+   ```
+   (You can run this from anywhere — `npx` will fetch Playwright on the fly.)
+
+2. **As the unprivileged service user**, run the regular installer. It will detect the missing sudo, skip `--with-deps`, and install Chromium into the user's local Playwright cache:
+   ```bash
+   curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+   ```
+
+   If you want to skip the Playwright step entirely — for example because you're running headless and don't need browser automation — pass `--skip-browser`:
+   ```bash
+   curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --skip-browser
+   ```
+
+   The installer also pre-installs [`cua-driver`](../user-guide/features/computer-use.md) so the Computer Use toolset works the moment you enable it; pass `--skip-computer-use` to opt out (it will then install on demand when you enable the tool).
+
+3. **Make `hermes` available to the service user's shells.** The installer writes the launcher to `~/.local/bin/hermes`. System service accounts often have a minimal PATH that doesn't include `~/.local/bin`. Either add it to the user's environment, or symlink the launcher into a system location:
+   ```bash
+   # Option A — add to the service user's profile
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
+   # Option B — symlink system-wide (run as an admin)
+   sudo ln -s /home/hermes/.hermes/hermes-agent/venv/bin/hermes /usr/local/bin/hermes
+   ```
+
+4. **Verify:** `hermes doctor` should now run cleanly. If you get `ModuleNotFoundError: No module named 'dotenv'`, you're invoking the repo source `hermes` file (`~/.hermes/hermes-agent/hermes`) with system Python instead of the venv launcher (`~/.hermes/hermes-agent/venv/bin/hermes`) — fix step 3.
+
+5. **Running the messaging gateway from this account?** A user-level service stops at logout and does not start at boot until you enable lingering for the service user:
+
+   ```bash
+   sudo loginctl enable-linger <service-user>
+   ```
+
+   See [Messaging Gateway](/user-guide/messaging/) for the service setup itself.
+
+The same pattern works on Arch (the installer uses pacman with the same sudo-detection logic), Fedora/RHEL, and openSUSE — those distros don't support `--with-deps` at all, so an administrator always installs the system libraries separately. The relevant `dnf`/`zypper` commands are printed by the installer.
+
+---
+
+## Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `hermes: command not found` | Reload your shell (`source ~/.bashrc`) or check PATH |
+| `API key not set` | Run `hermes model` to configure your provider, or `hermes config set OPENROUTER_API_KEY your_key` |
+| Missing config after update | Run `hermes config check` then `hermes config migrate` |
+
+For more diagnostics, run `hermes doctor` — it will tell you exactly what's missing and how to fix it.
+
+## Install method auto-detection
+
+Hermes auto-detects whether it was installed via the git installer, Docker, or NixOS, and `hermes update` prints the matching update command for that path. There's no env var to set — the detection is based on the install layout (`~/.hermes/hermes-agent/` checkout, Docker image stamp, or Nix store path). `hermes doctor` also surfaces the detected method under its environment summary.
+
+========================================================================
+10. INSTALLER FILE HASHES
+========================================================================
+scripts\install.ps1
+  SHA256: 9EABA433848BC1C7AD5C2778CD3B31849C3C30B0D93269F48ECC143C665C0841
+  Size: 247723 bytes
+scripts\install.cmd
+  SHA256: 3D36F5E3800FCE24E93B5E2FC75F19A835BCA7884F62E1E087056CC8CF81D5C6
+  Size: 1173 bytes
+scripts\install.sh
+  SHA256: E6C7F2B516B2888AB740FD36CBCEB5FD4E1DB68D2EBC29F7306C6313C835B7D9
+  Size: 158386 bytes
+pyproject.toml
+  SHA256: 8FDD016886353ED18AD293C840A0422F0F750B64B30D1E19AD21649441B3F80B
+  Size: 30872 bytes
+uv.lock
+  SHA256: C7BADB9D95BD177B0C80220F71799E3C1CB12118E4D9A5E7F37E843BEBB8A1DE
+  Size: 725941 bytes
+package.json
+  SHA256: 8B5B2EA9721E8D4BDEDEA457F5B5BAB038E7F3E11EA4E1381BD43F2E87CE04CD
+  Size: 2320 bytes
+package-lock.json
+  SHA256: 83BEEBA3F6E7826312444C7B64067488AFAE9ED88AD7326ECEF61AC235BAB86D
+  Size: 721545 bytes
+apps\desktop\package.json
+  SHA256: 778DCD5D2D20A9DC8F80501753E90BE996A2A9F425766CDFF5263423D16DA7FD
+  Size: 12452 bytes
+apps\bootstrap-installer\package.json
+  SHA256: C7D578038DF3936D6C4F3E0DF5B31CE064F28D438F5BE12DA59A0237BB3F1E58
+  Size: 1555 bytes
+apps\bootstrap-installer\src-tauri\Cargo.toml
+  SHA256: E70B8FFA47D22D576FB5990979DEFDA255CA7519448B4E207FE2FA49E89E6CC6
+  Size: 2334 bytes
+
+========================================================================
+11. GIT SAFETY CHECK
+========================================================================
+Status:
+## localization/fa-ir
+
+AUDIT RESULT
+Read-only inspection completed.
+No pip, uv, npm, cargo, or installer command was executed.

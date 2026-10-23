@@ -1,0 +1,122 @@
+import { applyDocumentLocale, setRuntimeFormatLocale } from "@hermes/shared/i18n";
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
+import type { Locale, Translations } from "./types";
+import { en } from "./en";
+import { zh } from "./zh";
+import { zhHant } from "./zh-hant";
+import { ja } from "./ja";
+import { de } from "./de";
+import { es } from "./es";
+import { fr } from "./fr";
+import { tr } from "./tr";
+import { uk } from "./uk";
+import { af } from "./af";
+import { ko } from "./ko";
+import { it } from "./it";
+import { ga } from "./ga";
+import { pt } from "./pt";
+import { ru } from "./ru";
+import { hu } from "./hu";
+import { ar } from "./ar";
+import { fa } from "./fa";
+
+const TRANSLATIONS: Record<Locale, Translations> = {
+  en,
+  zh,
+  "zh-hant": zhHant,
+  ja,
+  de,
+  es,
+  fr,
+  tr,
+  uk,
+  af,
+  ko,
+  it,
+  ga,
+  pt,
+  ru,
+  hu,
+  ar,
+  fa,
+};
+
+const SUPPORTED_LOCALES = Object.keys(TRANSLATIONS) as Locale[];
+const STORAGE_KEY = "hermes-locale";
+
+function isLocale(value: string): value is Locale {
+  return (SUPPORTED_LOCALES as string[]).includes(value);
+}
+
+function getInitialLocale(): Locale {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && isLocale(stored)) return stored;
+  } catch {
+    // SSR or privacy mode
+  }
+  return "en";
+}
+
+interface I18nContextValue {
+  locale: Locale;
+  setLocale: (l: Locale) => void;
+  t: Translations;
+}
+
+const I18nContext = createContext<I18nContextValue>({
+  locale: "en",
+  setLocale: () => {},
+  t: en,
+});
+
+export function I18nProvider({ children }: { children: ReactNode }) {
+  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
+
+  const setLocale = useCallback((l: Locale) => {
+    setLocaleState(l);
+    try {
+      localStorage.setItem(STORAGE_KEY, l);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    applyDocumentLocale(locale);
+    // Every Intl.* formatter that should follow the UI language (dates,
+    // numbers, relative time) resolves its tag through this registration —
+    // without it they key off the ambient browser locale instead.
+    setRuntimeFormatLocale(locale);
+  }, [locale]);
+
+  const value: I18nContextValue = {
+    locale,
+    setLocale,
+    t: TRANSLATIONS[locale],
+  };
+
+  return (
+    <I18nContext.Provider value={value}>
+      {children}
+    </I18nContext.Provider>
+  );
+}
+
+// eslint-disable-next-line react-refresh/only-export-components -- canonical context+hook pairing; the hook consumes this file's provider, so splitting files would not change fast-refresh behaviour
+export function useI18n() {
+  return useContext(I18nContext);
+}
+
+/** Current catalog outside React (module-scope helpers, lib files).
+ *  Mirrors the desktop's translateNow: reads the same localStorage key the
+ *  provider persists to, so it never drifts from the rendered locale. */
+export function translateNow(): Translations {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && isLocale(stored)) return TRANSLATIONS[stored];
+  } catch {
+    // SSR or privacy mode
+  }
+  return en;
+}

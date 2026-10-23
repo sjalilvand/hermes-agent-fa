@@ -1,0 +1,898 @@
+HERMES AGENT - INSTALLATION AND ARCHITECTURE AUDIT
+Generated: 2026-08-30 00:00:07 +03:30
+
+============================================================
+1. GIT
+============================================================
+Project: D:\Projects\hermes-agent-fa
+Branch: localization/fa-ir
+Commit: 4209d371aa1bb8840ce8447555bdd863a1a96c38
+Remote: https://github.com/NousResearch/hermes-agent.git
+Shallow: true
+
+Status:
+## localization/fa-ir
+
+============================================================
+2. INSTALLATION / DEPENDENCY MANIFESTS
+============================================================
+.nvmrc
+.python-version
+apps/bootstrap-installer/package.json
+apps/bootstrap-installer/src-tauri/Cargo.toml
+apps/desktop/electron/find-in-page-native-fixture/package.json
+apps/desktop/package.json
+apps/shared/package.json
+constraints-termux.txt
+docker-compose.windows.yml
+docker-compose.yml
+Dockerfile
+hermes_cli/setup.py
+hermes_cli/subcommands/setup.py
+optional-skills/finance/dcf-model/requirements.txt
+optional-skills/software-development/ast-grep/install.ps1
+optional-skills/software-development/ast-grep/install.sh
+package-lock.json
+package.json
+plugins/platforms/photon/sidecar/package-lock.json
+plugins/platforms/photon/sidecar/package.json
+pyproject.toml
+scripts/install.cmd
+scripts/install.ps1
+scripts/install.sh
+scripts/whatsapp-bridge/package-lock.json
+scripts/whatsapp-bridge/package.json
+setup.py
+skills/productivity/google-workspace/scripts/setup.py
+skills/research/research-paper-writing/templates/neurips2025/Makefile
+tests-js/package.json
+tests/e2e/matrix_xsign_bootstrap/docker-compose.yml
+ui-tui/package.json
+ui-tui/packages/hermes-ink/package.json
+uv.lock
+web/package.json
+website/package-lock.json
+website/package.json
+
+============================================================
+3. INSTALLATION DOCUMENTATION
+============================================================
+agent/lsp/install.py
+apps/desktop/README.md
+apps/desktop/scripts/perf/README.md
+apps/desktop/src/debug/README.md
+apps/desktop/src/plugins/README.md
+apps/desktop/src/themes/install.test.ts
+apps/desktop/src/themes/install.ts
+CONTRIBUTING.es.md
+CONTRIBUTING.md
+contributors/README.md
+docs/middleware/README.md
+docs/observability/README.md
+evals/browser_use/README.md
+evals/compaction/README.md
+evals/readtool/README.md
+evals/session_search_schema/README.md
+native/fts5_cjk/README.md
+optional-skills/creative/kanban-video-orchestrator/references/kanban-setup.md
+optional-skills/mlops/saelens/references/README.md
+optional-skills/security/unbroker/README.md
+optional-skills/software-development/ast-grep/install.ps1
+optional-skills/software-development/ast-grep/install.sh
+optional-skills/software-development/ast-grep/references/install.md
+optional-skills/software-development/code-wiki/templates/getting-started.md
+optional-skills/software-development/code-wiki/templates/README.md
+plugins/disk-cleanup/README.md
+plugins/google_meet/README.md
+plugins/hermes-achievements/README.md
+plugins/memory/byterover/README.md
+plugins/memory/hindsight/README.md
+plugins/memory/holographic/README.md
+plugins/memory/honcho/README.md
+plugins/memory/mem0/README.md
+plugins/memory/openviking/README.md
+plugins/memory/retaindb/README.md
+plugins/memory/supermemory/README.md
+plugins/model-providers/README.md
+plugins/observability/langfuse/README.md
+plugins/platforms/a2a/README.md
+plugins/platforms/photon/README.md
+plugins/platforms/photon/sidecar/README.md
+plugins/security-guidance/README.md
+providers/README.md
+README.es.md
+README.md
+README.ur-pk.md
+README.zh-CN.md
+scripts/install.cmd
+scripts/install.ps1
+scripts/install.sh
+scripts/toolperf_abeval/README.md
+skills/creative/ascii-video/README.md
+skills/creative/comfyui/tests/README.md
+skills/creative/comfyui/workflows/README.md
+skills/creative/manim-video/README.md
+skills/creative/p5js/README.md
+skills/productivity/box/references/oauth-setup.md
+skills/productivity/box/references/sdk-development.md
+skills/research/research-paper-writing/templates/aaai2026/README.md
+skills/research/research-paper-writing/templates/acl/README.md
+skills/research/research-paper-writing/templates/colm2025/README.md
+skills/research/research-paper-writing/templates/README.md
+tests/conformance/persistence/README.md
+tests/e2e/matrix_xsign_bootstrap/README.md
+tools/wakewords/README.md
+ui-tui/README.md
+web/README.md
+website/docs/developer-guide/contributing.md
+website/docs/getting-started/installation.md
+website/docs/getting-started/nix-setup.md
+website/docs/getting-started/quickstart.md
+website/docs/guides/local-ollama-setup.md
+website/docs/user-guide/skills/bundled/software-development/software-development-dogfood.md
+website/docs/user-guide/skills/bundled/software-development/software-development-hermes-agent-skill-authoring.md
+website/docs/user-guide/skills/bundled/software-development/software-development-inspecting-hermes-desktop-dom.md
+website/docs/user-guide/skills/bundled/software-development/software-development-node-inspect-debugger.md
+website/docs/user-guide/skills/bundled/software-development/software-development-plan.md
+website/docs/user-guide/skills/bundled/software-development/software-development-python-debugpy.md
+website/docs/user-guide/skills/bundled/software-development/software-development-requesting-code-review.md
+website/docs/user-guide/skills/bundled/software-development/software-development-simplify-code.md
+website/docs/user-guide/skills/bundled/software-development/software-development-spike.md
+website/docs/user-guide/skills/bundled/software-development/software-development-systematic-debugging.md
+website/docs/user-guide/skills/bundled/software-development/software-development-test-driven-development.md
+website/docs/user-guide/skills/optional/devops/devops-actual-setup.md
+website/docs/user-guide/skills/optional/devops/devops-setup-wizard-generator.md
+website/docs/user-guide/skills/optional/software-development/software-development-code-wiki.md
+website/docs/user-guide/skills/optional/software-development/software-development-grill-me.md
+website/docs/user-guide/skills/optional/software-development/software-development-rest-graphql-debug.md
+website/docs/user-guide/skills/optional/software-development/software-development-subagent-driven-development.md
+website/docs/user-guide/skills/optional/web-development/web-development-cloudflare-temporary-deploy.md
+website/docs/user-guide/skills/optional/web-development/web-development-page-agent.md
+website/docs/user-guide/skills/optional/web-development/web-development-publish-site.md
+website/docs/user-guide/windows-wsl-quickstart.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/developer-guide/contributing.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/getting-started/installation.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/getting-started/nix-setup.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/getting-started/quickstart.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/guides/local-ollama-setup.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-dogfood.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-hermes-agent-skill-authoring.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-node-inspect-debugger.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-plan.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-python-debugpy.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-requesting-code-review.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-spike.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-systematic-debugging.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/bundled/software-development/software-development-test-driven-development.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/optional/software-development/software-development-rest-graphql-debug.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/skills/optional/web-development/web-development-page-agent.md
+website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/windows-wsl-quickstart.md
+website/README.md
+
+============================================================
+4. INSTALLATION EVIDENCE
+============================================================
+agent/lsp/install.py:244: Uses ``npm install --prefix`` so the binaries land in
+agent/lsp/install.py:254: # PATH, so a bare which() misses the Node that Hermes installed and
+agent/lsp/install.py:264: "[install] npm install --prefix %s %s",
+agent/lsp/install.py:279: "[install] npm install failed for %s: %s", pkg, proc.stderr.strip()[:500]
+agent/lsp/install.py:283: logger.warning("[install] npm install errored for %s: %s", pkg, e)
+agent/lsp/install.py:302: logger.warning("[install] npm install for %s succeeded but bin %s not found", pkg, bin_name)
+agent/lsp/install.py:348: ``pip install --target``.  Bins go into
+agent/lsp/install.py:356: logger.info("[install] pip install --target %s %s", pip_target, pkg)
+agent/lsp/install.py:365: "[install] pip install failed for %s: %s", pkg, (proc.stderr or "").strip()[:500]
+agent/lsp/install.py:369: logger.warning("[install] pip install errored for %s: %s", pkg, e)
+apps/bootstrap-installer/package.json:5: "description": "Hermes Setup — signed installer that drives scripts/install.ps1 with a polished native UI.",
+apps/bootstrap-installer/package.json:16: "check": "npm run typecheck && npm run lint",
+apps/bootstrap-installer/package.json:19: "fix": "npm run lint:fix"
+apps/bootstrap-installer/package.json:21: "dependencies": {
+apps/bootstrap-installer/package.json:43: "devDependencies": {
+apps/bootstrap-installer/src-tauri/Cargo.toml:4: description = "Hermes Setup — signed installer that drives scripts/install.ps1"
+apps/bootstrap-installer/src-tauri/Cargo.toml:24: [build-dependencies]
+apps/bootstrap-installer/src-tauri/Cargo.toml:27: [dependencies]
+apps/bootstrap-installer/src-tauri/Cargo.toml:61: [target.'cfg(windows)'.dependencies]
+apps/bootstrap-installer/src-tauri/Cargo.toml:71: [target.'cfg(unix)'.dependencies]
+apps/desktop/package.json:18: "clean": "npm run clean:e2e && npm run clean:renderer && npm run clean:electron",
+apps/desktop/package.json:23: "dev:fake-boot": "cross-env HERMES_DESKTOP_BOOT_FAKE=1 HERMES_DESKTOP_BOOT_FAKE_STEP_MS=650 npm run dev",
+apps/desktop/package.json:25: "dev:renderer": "node scripts/assert-root-install.mjs && npm run clean:renderer && vite --host 127.0.0.1 --port 5174",
+apps/desktop/package.json:29: "start": "npm run build && electron .",
+apps/desktop/package.json:30: "prebuild": "npm run clean",
+apps/desktop/package.json:35: "pack": "npm run build && npm run builder -- --dir --publish never",
+apps/desktop/package.json:36: "dist": "npm run build && npm run builder",
+apps/desktop/package.json:37: "dist:mac": "npm run build && npm run builder -- --mac",
+apps/desktop/package.json:38: "dist:mac:dmg": "npm run build && npm run builder -- --mac dmg",
+apps/desktop/package.json:39: "dist:mac:zip": "npm run build && npm run builder -- --mac zip",
+apps/desktop/package.json:40: "dist:win": "npm run build && npm run builder -- --win",
+apps/desktop/package.json:41: "dist:win:msi": "npm run build && npm run builder -- --win msi",
+apps/desktop/package.json:42: "dist:win:nsis": "npm run build && npm run builder -- --win nsis",
+apps/desktop/package.json:43: "dist:linux": "npm run build && npm run builder -- --linux AppImage deb rpm",
+apps/desktop/package.json:63: "fix": "npm run lint:fix && npm run fmt",
+apps/desktop/package.json:69: "check:test:ui": "npm run test:ui",
+apps/desktop/package.json:70: "check:test:desktop:platforms": "npm run test:desktop:platforms",
+apps/desktop/package.json:71: "check:test:desktop:all": "npm run test:desktop:all",
+apps/desktop/package.json:72: "check:lint": "npm run typecheck && npm run lint",
+apps/desktop/package.json:73: "check": "npm run check:lint && npm run test:ui && npm run test:desktop:platforms && npm run test:desktop:all",
+apps/desktop/package.json:74: "test:e2e": "npm run build && playwright test e2e/",
+apps/desktop/package.json:75: "test:e2e:visual": "npm run build && WLR_BACKENDS=headless WLR_NO_HARDWARE_CURSORS=1 cage -- npx playwright test e2e/ --reporter=list",
+apps/desktop/package.json:76: "test:e2e:update-snapshots": "npm run build && WLR_BACKENDS=headless WLR_NO_HARDWARE_CURSORS=1 cage -- npx playwright test e2e/ --reporter=list --update-snapshots",
+apps/desktop/package.json:80: "dependencies": {
+apps/desktop/package.json:154: "optionalDependencies": {
+apps/desktop/package.json:157: "devDependencies": {
+apps/desktop/README.md:62: npm install          # from repo root — links apps/desktop, web, apps/shared
+apps/desktop/README.md:64: npm run dev          # Vite renderer + Electron, which boots the Python backend
+apps/desktop/README.md:71: ../scripts/dev-sandbox.sh npm run dev
+apps/desktop/README.md:72: HERMES_DESKTOP_HERMES_ROOT=/path/to/clone npm run dev
+apps/desktop/README.md:73: HERMES_HOME=/tmp/throwaway npm run dev
+apps/desktop/README.md:74: npm run dev:fake-boot   # exercise the startup overlay with deterministic delays
+apps/desktop/README.md:80: npm run dist:mac     # DMG + zip
+apps/desktop/README.md:81: npm run dist:win     # NSIS + MSI
+apps/desktop/README.md:82: npm run dist:linux   # AppImage + deb + rpm
+apps/desktop/README.md:83: npm run pack         # unpacked app under release/ (no installer)
+apps/desktop/README.md:194: npm run fix
+apps/desktop/README.md:195: npm run typecheck
+apps/desktop/README.md:196: npm run lint
+apps/desktop/README.md:197: npm run test:ui
+apps/desktop/README.md:198: npm run test:desktop:platforms
+apps/desktop/README.md:201: Run `npm run test:desktop:all` for install, boot, update, packaging, or other
+apps/desktop/README.md:213: # Rebuild a broken Python venv
+apps/desktop/README.md:214: rm -rf "$HOME/.hermes/hermes-agent/venv"
+apps/desktop/README.md:224: # Rebuild a broken Python venv
+apps/desktop/README.md:225: Remove-Item -Recurse -Force "$env:LOCALAPPDATA\hermes\hermes-agent\venv"
+apps/desktop/scripts/perf/README.md:13: npm run perf -- --spawn
+apps/desktop/scripts/perf/README.md:16: npm run perf:serve            # leaves an instance on :9222
+apps/desktop/scripts/perf/README.md:17: npm run perf                  # attaches, runs the CI suite, gates on baseline
+apps/desktop/scripts/perf/README.md:20: npm run perf -- stream --cpuprofile --tokens 800
+apps/desktop/scripts/perf/README.md:23: npm run perf -- cold-start stream keystroke transcript --spawn --prod
+apps/desktop/scripts/perf/README.md:26: npm run perf -- cold-start stream keystroke transcript --spawn --prod --update-baseline
+apps/desktop/src/debug/README.md:66: directly: MIT, zero dependencies.
+apps/shared/package.json:17: "fix": "npm run lint:fix",
+apps/shared/package.json:19: "check": "npm run typecheck && npm run lint"
+apps/shared/package.json:21: "devDependencies": {
+constraints-termux.txt:4: #   python -m pip install -e '.[termux]' -c constraints-termux.txt
+CONTRIBUTING.es.md:87: # Crear venv con Python 3.11
+CONTRIBUTING.es.md:88: uv venv venv --python 3.11
+CONTRIBUTING.es.md:89: export VIRTUAL_ENV="$(pwd)/venv"
+CONTRIBUTING.es.md:92: uv pip install -e ".[all,dev]"
+CONTRIBUTING.es.md:95: npm install
+CONTRIBUTING.es.md:114: ln -sf "$(pwd)/venv/bin/hermes" ~/.local/bin/hermes
+CONTRIBUTING.es.md:127: # Alternativa (activa el venv primero). El wrapper sigue recomendándose
+CONTRIBUTING.es.md:540: 1. **Ejecutar tests**: `scripts/run_tests.sh` (recomendado; igual que CI) o `pytest tests/ -v` con el venv del proyecto activado
+CONTRIBUTING.md:59: Bundled skills (in `skills/`) ship with every Hermes install. They should be **broadly useful to most users**:
+CONTRIBUTING.md:120: The installer creates the Hermes venv, wires the `hermes` command, stamps the
+CONTRIBUTING.md:131: uv pip install -e ".[all,dev]"
+CONTRIBUTING.md:133: # Optional: docs site + workspace dependencies.
+CONTRIBUTING.md:134: npm install
+CONTRIBUTING.md:148: this way, make sure you run the `hermes` entrypoint from this venv; running the
+CONTRIBUTING.md:152: Create the venv **outside** the cloned source tree. A venv that lives inside
+CONTRIBUTING.md:154: the agent runs against its own checkout (`rm -rf venv`, `uv venv venv`, etc.),
+CONTRIBUTING.md:162: # Create venv with Python 3.11, OUTSIDE the source tree
+CONTRIBUTING.md:163: uv venv ~/.hermes/venvs/hermes-dev --python 3.11
+CONTRIBUTING.md:164: export VIRTUAL_ENV="$HOME/.hermes/venvs/hermes-dev"
+CONTRIBUTING.md:168: uv pip install -e ".[all,dev]"
+CONTRIBUTING.md:170: # Optional: workspace / docs dependencies
+CONTRIBUTING.md:171: npm install
+CONTRIBUTING.md:194: symlink this clone's venv explicitly:
+CONTRIBUTING.md:198: ln -sf "$(pwd)/venv/bin/hermes" ~/.local/bin/hermes
+CONTRIBUTING.md:208: # Alternative (activate the venv first). The wrapper is still recommended
+CONTRIBUTING.md:376: """Return True if this tool's dependencies are available."""
+CONTRIBUTING.md:553: Gateway and messaging sessions never collect secrets in-band; they instruct the user to run `hermes setup` or update `~/.hermes/.env` locally.
+CONTRIBUTING.md:613: 7. **Tests live at `tests/skills/test_<skill>_skill.py`** and use only stdlib + pytest + `unittest.mock`. No live network calls. Run via `scripts/run_tests.sh tests/skills/test_<skill>_skill.py -q`. Must pass under the hermetic CI env (no API keys leaking through). Use `monkeypatch` and `tmp_path` for any env-var or filesystem dependencies.
+CONTRIBUTING.md:619: - **No external dependencies unless absolutely necessary.** Prefer stdlib Python, curl, and existing Hermes tools (`web_extract`, `terminal`, `read_file`).
+CONTRIBUTING.md:707: for scaffold-phase imports before pip install finishes), use
+CONTRIBUTING.md:876: After the [litellm supply chain compromise](https://github.com/BerriAI/litellm/issues/24512) in March 2026 and the [Mini Shai-Hulud worm campaign](https://socket.dev/blog/tanstack-npm-packages-compromised-mini-shai-hulud-supply-chain-attack) in May 2026, all dependencies must follow these rules:
+CONTRIBUTING.md:883: | **CI-only pip installs** | `==exact` | Hermetic CI builds; churn is acceptable. |
+CONTRIBUTING.md:931: 1. **Run tests**: `scripts/run_tests.sh` (recommended; same as CI) or `pytest tests/ -v` with the project venv activated
+docker-compose.windows.yml:10: #   docker compose -f docker-compose.windows.yml up -d
+docker-compose.yml:5: #   HERMES_UID=$(id -u) HERMES_GID=$(id -g) docker compose up -d
+Dockerfile:41: make install
+Dockerfile:64: # Install system dependencies in one layer, clear APT cache.
+Dockerfile:73: ca-certificates curl iputils-ping python3 python-is-python3 ripgrep ffmpeg gcc g++ make cmake python3-dev python3-venv libffi-dev libolm-dev libatomic1 procps git openssh-client docker-cli xz-utils && \
+Dockerfile:78: # venv resolve the replacement without changing Python import paths.
+Dockerfile:172: # Copy only package manifests first so npm install + Playwright are cached
+Dockerfile:195: # runtime `npm install` that then failed with EACCES.  Keeping the env
+Dockerfile:199: RUN npm install --prefer-offline --no-audit --fetch-retries=5 && \
+Dockerfile:209: # `npm ci` on first connect would hit EROFS — bake the deps here instead
+Dockerfile:219: npm ci --no-audit --fetch-retries=5 && \
+Dockerfile:233: # `uv sync --frozen --no-install-project --extra all --extra messaging --extra otlp`
+Dockerfile:247: # Health export is enabled. Collector and observability-backend dependencies
+Dockerfile:251: # for the same reason: it lazy-installs into /opt/hermes/.venv at first
+Dockerfile:264: # The editable link is created after the source copy below.
+Dockerfile:267: RUN uv sync --frozen --no-install-project --extra all --extra messaging --extra otlp --extra anthropic --extra bedrock --extra azure-identity --extra hindsight --extra matrix
+Dockerfile:275: RUN cd web && npm run build && \
+Dockerfile:276: cd ../ui-tui && npm run build
+Dockerfile:282: # `chmod -R` pass that previously walked ~30k files across the venv +
+Dockerfile:289: # Link hermes-agent itself (editable). Deps are already installed in the
+Dockerfile:292: RUN uv pip install --no-cache-dir --no-deps -e "."
+Dockerfile:295: # already root-owned (COPY, uv sync, npm install all run as root) and
+Dockerfile:331: # The arg is optional — local `docker build` without --build-arg omits the
+Dockerfile:370: # `ui-tui && npm run build`). This makes _make_tui_argv take the prebuilt-bundle
+Dockerfile:372: # _tui_need_npm_install / runtime `npm install` branch entirely — exactly the
+Dockerfile:378: # never `npm install`ed here). So the actualized node_modules permanently
+Dockerfile:380: # every launch, and the runtime `npm install` it triggers (a) can never
+Dockerfile:390: # lazy install can't mutate the agent's own venv and brick it. But opt-in
+Dockerfile:397: # so the sealed-venv guarantee holds even with installs re-enabled. The dir
+Dockerfile:408: # transparently re-exec's the real venv binary via `s6-setuidgid hermes`
+Dockerfile:411: # Recursion is impossible because the shim exec's the venv binary by
+Dockerfile:412: # absolute path (/opt/hermes/.venv/bin/hermes). See the shim source for
+Dockerfile:417: # Pre-s6 entrypoint.sh did `source .venv/bin/activate` which exported
+Dockerfile:418: # the venv bin onto PATH; Architecture B's main-wrapper.sh does the
+Dockerfile:420: # cont-init.d scripts don't pass through the wrapper. Expose the venv
+Dockerfile:422: # subprocess that doesn't activate the venv first still find hermes.
+Dockerfile:424: # /opt/hermes/bin is prepended ahead of the venv so the privilege-drop
+Dockerfile:425: # shim wins PATH resolution. The shim's last act is to exec the venv
+Dockerfile:428: ENV PATH="/opt/hermes/bin:/opt/hermes/.venv/bin:/opt/data/.local/bin:${PATH}"
+Dockerfile:436: # `docker run --init`, some schedulers), `/init` would abort with
+Dockerfile:452: #   docker run <image>                  → entrypoint-dispatch.sh   (CMD default)
+Dockerfile:453: #   docker run <image> chat -q "hi"     → entrypoint-dispatch.sh chat -q hi
+Dockerfile:454: #   docker run <image> sleep infinity   → entrypoint-dispatch.sh sleep infinity
+Dockerfile:455: #   docker run <image> --tui            → entrypoint-dispatch.sh --tui
+docs/middleware/README.md:135: uv sync
+docs/middleware/README.md:136: uv run hermes plugins enable <plugin-name>
+docs/middleware/README.md:137: uv run hermes chat --query 'Reply exactly ok'
+evals/compaction/README.md:19: # from repo root, venv active
+hermes_cli/setup.py:190: print(color("⚕ Hermes Setup — Non-interactive mode", Colors.CYAN, Colors.BOLD))
+hermes_cli/setup.py:202: print_info("Run 'hermes setup' in an interactive terminal to use the full wizard.")
+hermes_cli/setup.py:471: print_warning("  Skipped (configure later with 'hermes setup')")
+hermes_cli/setup.py:493: print_info("    hermes setup --portal   (Nous Portal OAuth, no API key)")
+hermes_cli/setup.py:513: tool_status.append(("Vision (image analysis)", False, "run 'hermes setup' to configure"))
+hermes_cli/setup.py:537: missing_browser_hint = "npm install -g agent-browser, set CAMOFOX_URL, or configure Browser Use or Browserbase"
+hermes_cli/setup.py:540: "npm install -g agent-browser and set "
+hermes_cli/setup.py:545: "npm install -g agent-browser and set BROWSER_USE_API_KEY"
+hermes_cli/setup.py:551: "npm install -g agent-browser && agent-browser install --with-deps"
+hermes_cli/setup.py:635: tool_status.append(("Text-to-Speech (NeuTTS — not installed)", False, "run 'hermes setup tts'"))
+hermes_cli/setup.py:644: tool_status.append(("Text-to-Speech (KittenTTS — not installed)", False, "run 'hermes setup tts'"))
+hermes_cli/setup.py:683: tool_status.append(("Modal Execution", False, "run 'hermes setup terminal'"))
+hermes_cli/setup.py:735: "Some tools are disabled. Run 'hermes setup tools' to configure them,"
+hermes_cli/setup.py:775: print(f"   {color('hermes setup', Colors.GREEN)}          Re-run the full wizard")
+hermes_cli/setup.py:776: print(f"   {color('hermes setup model', Colors.GREEN)}    Change model/provider")
+hermes_cli/setup.py:777: print(f"   {color('hermes setup terminal', Colors.GREEN)} Change terminal backend")
+hermes_cli/setup.py:778: print(f"   {color('hermes setup gateway', Colors.GREEN)}  Configure messaging")
+hermes_cli/setup.py:779: print(f"   {color('hermes setup tools', Colors.GREEN)}    Configure tool providers")
+hermes_cli/setup.py:942: # between `hermes tools` and `hermes setup tools`).
+hermes_cli/setup.py:995: # on demand via `hermes auth add`, `hermes setup` vision, and
+hermes_cli/setup.py:996: # `hermes setup tts`. This keeps both quick and full setup thin.
+hermes_cli/setup.py:1014: """Install NeuTTS dependencies with user approval. Returns True on success."""
+hermes_cli/setup.py:1052: # venvs (Ubuntu 25.10 `python -m venv`, `uv venv`) work out of the box.
+hermes_cli/setup.py:1059: print_info("Try manually: uv pip install -U 'neutts[all]'")
+hermes_cli/setup.py:1066: print_info("Try manually: uv pip install -U 'neutts[all]'")
+hermes_cli/setup.py:1071: """Install KittenTTS dependencies with user approval. Returns True on success."""
+hermes_cli/setup.py:1087: print_info(f"Try manually: uv pip install -U '{wheel_url}' soundfile")
+hermes_cli/setup.py:1094: print_info(f"Try manually: uv pip install -U '{wheel_url}' soundfile")
+hermes_cli/setup.py:1230: if prompt_yes_no("Install NeuTTS dependencies now?", True):
+hermes_cli/setup.py:1308: f"via hermes setup model or {_dhh()}/.env to use xAI TTS. "
+hermes_cli/setup.py:1392: """Standalone TTS setup (for 'hermes setup tts')."""
+hermes_cli/setup.py:1473: # configurable later via `hermes setup terminal` / config.yaml.
+hermes_cli/setup.py:1487: # Image and resource limits use defaults; tune via `hermes setup terminal`.
+hermes_cli/setup.py:1527: # Image and resource limits use defaults; tune via `hermes setup terminal`.
+hermes_cli/setup.py:1587: print_warning("Install failed — run manually: uv pip install modal")
+hermes_cli/setup.py:1628: print_warning("Install failed — run manually: uv pip install daytona")
+hermes_cli/setup.py:1648: # Image and resource limits use defaults; tune via `hermes setup terminal`.
+hermes_cli/setup.py:1656: print_info("Requires the optional SDK: pip install 'hermes-agent[vercel]'")
+hermes_cli/setup.py:1665: # which() misses the uv Hermes installed. Bootstrapping one is
+hermes_cli/setup.py:1667: # mid-install, and the alternative tier is a pip that a `uv venv`
+hermes_cli/setup.py:1668: # venv may not even have.
+hermes_cli/setup.py:1687: print_warning("Install failed — run manually: pip install 'hermes-agent[vercel]'")
+hermes_cli/setup.py:1786: # explicitly so the choice is visible/editable in config.yaml.
+hermes_cli/setup.py:1795: print_info("  Run `hermes setup agent` later to customize.")
+hermes_cli/setup.py:2287: print_info("No platforms selected. Run 'hermes setup gateway' later to configure.")
+hermes_cli/setup.py:2346: # via `hermes import` or `hermes setup gateway`). Gating this on
+hermes_cli/setup.py:2413: Both `hermes setup tools` and `hermes tools` use the same flow:
+hermes_cli/setup.py:2872: Wired into ``hermes setup --portal`` and ``hermes portal``. This is the
+hermes_cli/setup.py:2877: ``hermes setup`` and hunt for the quick-setup option.
+hermes_cli/setup.py:2895: print(color("│     ⚕ Hermes Setup — Nous Portal (one-shot)             │", Colors.MAGENTA))
+hermes_cli/setup.py:3072: hermes setup           — full or quick (auto-detected)
+hermes_cli/setup.py:3073: hermes setup model     — just model/provider
+hermes_cli/setup.py:3074: hermes setup tts       — just text-to-speech
+hermes_cli/setup.py:3075: hermes setup terminal  — just terminal backend
+hermes_cli/setup.py:3076: hermes setup gateway   — just messaging platforms
+hermes_cli/setup.py:3077: hermes setup tools     — just tool configuration
+hermes_cli/setup.py:3078: hermes setup telemetry — just local shared metrics
+hermes_cli/setup.py:3079: hermes setup agent     — just agent settings
+hermes_cli/setup.py:3141: print(color(f"│     ⚕ Hermes Setup — {label:<34s} │", Colors.MAGENTA))
+hermes_cli/setup.py:3225: print_info("Tip: jump straight to a section with 'hermes setup model|terminal|")
+hermes_cli/setup.py:3297: # Tune later with `hermes setup agent`.
+hermes_cli/setup.py:3360: settings, tools); the user can customize later via ``hermes setup <section>``
+hermes_cli/setup.py:3407: "Skip — set up later with 'hermes setup gateway'",
+hermes_cli/setup.py:3425: print_info("  Configure all settings:    hermes setup")
+hermes_cli/setup.py:3427: print_info("  Connect Telegram/Discord:  hermes setup gateway")
+hermes_cli/setup.py:3520: Everything here is opt-in afterwards via ``hermes setup agent`` /
+hermes_cli/setup.py:3617: print_info("  Tune agent settings: hermes setup agent")
+hermes_cli/setup.py:3707: print_info("  Tune agent settings: hermes setup agent")
+hermes_cli/setup.py:3744: print_info("Run 'hermes setup' and choose 'Full Setup' to reconfigure,")
+hermes_cli/setup.py:3807: print_info("You can configure these later with 'hermes setup gateway'.")
+hermes_cli/subcommands/setup.py:1: """``hermes setup`` subcommand parser.
+hermes_cli/subcommands/setup.py:22: "hermes setup model|tts|terminal|gateway|tools|telemetry|agent",
+hermes_cli/subcommands/setup.py:52: "compatibility — a bare 'hermes setup' now does this.",
+optional-skills/creative/kanban-video-orchestrator/references/kanban-setup.md:120: installs). If absent: `pip install pyyaml`.
+optional-skills/finance/dcf-model/requirements.txt:1: # DCF Model Builder - Python Dependencies
+optional-skills/mlops/saelens/references/README.md:19: pip install sae-lens
+optional-skills/software-development/ast-grep/install.ps1:110: Log "trying: npm install -g @ast-grep/cli"
+optional-skills/software-development/ast-grep/install.ps1:111: try { npm install -g '@ast-grep/cli'; return $LASTEXITCODE -eq 0 }
+optional-skills/software-development/ast-grep/install.ps1:132: Log "trying: $pip install --user ast-grep-cli"
+optional-skills/software-development/ast-grep/install.ps1:134: if ($pip -eq 'py') { py -m pip install --user ast-grep-cli }
+optional-skills/software-development/ast-grep/install.ps1:135: else { & $pip install --user ast-grep-cli }
+optional-skills/software-development/ast-grep/install.ps1:231: Err "  npm install -g @ast-grep/cli                           # any OS with Node"
+optional-skills/software-development/ast-grep/install.ps1:233: Err "  pip install ast-grep-cli                               # any OS with Python"
+optional-skills/software-development/ast-grep/install.sh:126: log "trying: npm install -g @ast-grep/cli"
+optional-skills/software-development/ast-grep/install.sh:127: npm install -g @ast-grep/cli && return 0 || return 1
+optional-skills/software-development/ast-grep/install.sh:144: log "trying: pipx install ast-grep-cli"
+optional-skills/software-development/ast-grep/install.sh:145: pipx install ast-grep-cli && return 0 || true
+optional-skills/software-development/ast-grep/install.sh:149: log "trying: $PIP install --user ast-grep-cli"
+optional-skills/software-development/ast-grep/install.sh:150: $PIP install --user ast-grep-cli && return 0 || return 1
+optional-skills/software-development/ast-grep/install.sh:282: err "  npm install -g @ast-grep/cli          # any OS with Node"
+optional-skills/software-development/ast-grep/install.sh:284: err "  pip install ast-grep-cli              # any OS with Python"
+optional-skills/software-development/ast-grep/references/install.md:21: npm install -g @ast-grep/cli           # if you have Node already
+optional-skills/software-development/ast-grep/references/install.md:29: npm install -g @ast-grep/cli
+optional-skills/software-development/ast-grep/references/install.md:31: pip install ast-grep-cli
+optional-skills/software-development/ast-grep/references/install.md:54: npm install -g @ast-grep/cli           # any OS with Node
+optional-skills/software-development/ast-grep/references/install.md:70: | **npm** | `npm install -g @ast-grep/cli` | Fast, prebuilt platform binaries | Needs Node 18+ |
+optional-skills/software-development/ast-grep/references/install.md:73: | **pip** | `pip install ast-grep-cli` | Works in any Python venv | Needs Python 3.8+ |
+optional-skills/software-development/ast-grep/references/install.md:74: | **pipx** | `pipx install ast-grep-cli` | Isolated install | Needs pipx |
+package-lock.json:19: "devDependencies": {
+package-lock.json:35: "dependencies": {
+package-lock.json:57: "devDependencies": {
+package-lock.json:69: "dependencies": {
+package-lock.json:143: "devDependencies": {
+package-lock.json:176: "optionalDependencies": {
+package-lock.json:186: "dependencies": {
+package-lock.json:210: "dependencies": {
+package-lock.json:255: "dependencies": {
+package-lock.json:273: "dependencies": {
+package-lock.json:343: "dependencies": {
+package-lock.json:357: "dependencies": {
+package-lock.json:373: "dependencies": {
+package-lock.json:388: "dependencies": {
+package-lock.json:407: "dependencies": {
+package-lock.json:421: "dependencies": {
+package-lock.json:433: "optionalDependencies": {
+package-lock.json:443: "dependencies": {
+package-lock.json:449: "peerDependencies": {
+package-lock.json:456: "peerDependenciesMeta": {
+package-lock.json:473: "peerDependencies": {
+package-lock.json:476: "peerDependenciesMeta": {
+package-lock.json:489: "dependencies": {
+package-lock.json:507: "dependencies": {
+package-lock.json:547: "devDependencies": {
+package-lock.json:556: "dependencies": {
+package-lock.json:569: "dependencies": {
+package-lock.json:583: "dependencies": {
+package-lock.json:600: "dependencies": {
+package-lock.json:633: "dependencies": {
+package-lock.json:637: "peerDependencies": {
+package-lock.json:645: "peerDependenciesMeta": {
+package-lock.json:665: "dependencies": {
+package-lock.json:684: "peerDependencies": {
+package-lock.json:690: "peerDependenciesMeta": {
+package-lock.json:704: "dependencies": {
+package-lock.json:711: "peerDependencies": {
+package-lock.json:720: "peerDependenciesMeta": {
+package-lock.json:761: "dependencies": {
+package-lock.json:764: "peerDependencies": {
+package-lock.json:769: "peerDependenciesMeta": {
+package-lock.json:780: "peerDependencies": {
+package-lock.json:784: "peerDependenciesMeta": {
+package-lock.json:801: "dependencies": {
+package-lock.json:804: "peerDependencies": {
+package-lock.json:815: "dependencies": {
+package-lock.json:840: "dependencies": {
+package-lock.json:871: "dependencies": {
+package-lock.json:888: "dependencies": {
+package-lock.json:915: "dependencies": {
+package-lock.json:929: "dependencies": {
+package-lock.json:937: "peerDependencies": {
+package-lock.json:977: "dependencies": {
+package-lock.json:991: "dependencies": {
+package-lock.json:1016: "dependencies": {
+package-lock.json:1031: "dependencies": {
+package-lock.json:1050: "dependencies": {
+package-lock.json:1070: "dependencies": {
+package-lock.json:1094: "dependencies": {
+package-lock.json:1106: "dependencies": {
+package-lock.json:1118: "dependencies": {
+package-lock.json:1132: "dependencies": {
+package-lock.json:1142: "dependencies": {
+package-lock.json:1155: "dependencies": {
+package-lock.json:1168: "dependencies": {
+package-lock.json:1185: "dependencies": {
+package-lock.json:1195: "dependencies": {
+package-lock.json:1210: "dependencies": {
+package-lock.json:1226: "dependencies": {
+package-lock.json:1236: "dependencies": {
+package-lock.json:1249: "dependencies": {
+package-lock.json:1265: "dependencies": {
+package-lock.json:1280: "dependencies": {
+package-lock.json:1293: "dependencies": {
+package-lock.json:1306: "dependencies": {
+package-lock.json:1316: "dependencies": {
+package-lock.json:1329: "dependencies": {
+package-lock.json:1343: "dependencies": {
+package-lock.json:1357: "dependencies": {
+package-lock.json:1369: "dependencies": {
+package-lock.json:1383: "dependencies": {
+package-lock.json:1398: "dependencies": {
+package-lock.json:1412: "dependencies": {
+package-lock.json:1443: "dependencies": {
+package-lock.json:1452: "dependencies": {
+package-lock.json:1463: "dependencies": {
+package-lock.json:1472: "dependencies": {
+package-lock.json:1518: "peerDependencies": {
+package-lock.json:1539: "dependencies": {
+package-lock.json:1546: "peerDependencies": {
+package-lock.json:1570: "peerDependencies": {
+package-lock.json:1590: "peerDependencies": {
+package-lock.json:1593: "peerDependenciesMeta": {
+package-lock.json:1624: "dependencies": {
+package-lock.json:1627: "peerDependencies": {
+package-lock.json:1636: "dependencies": {
+package-lock.json:1641: "peerDependencies": {
+package-lock.json:1651: "dependencies": {
+package-lock.json:1655: "peerDependencies": {
+package-lock.json:1665: "dependencies": {
+package-lock.json:1668: "peerDependencies": {
+package-lock.json:1678: "dependencies": {
+package-lock.json:1696: "dependencies": {
+package-lock.json:1709: "dependencies": {
+package-lock.json:1724: "dependencies": {
+package-lock.json:1740: "dependencies": {
+package-lock.json:1757: "dependencies": {
+package-lock.json:1773: "dependencies": {
+package-lock.json:1776: "optionalDependencies": {
+package-lock.json:1786: "dependencies": {
+package-lock.json:1809: "dependencies": {
+package-lock.json:1824: "dependencies": {
+package-lock.json:1840: "dependencies": {
+package-lock.json:1843: "optionalDependencies": {
+package-lock.json:1863: "dependencies": {
+package-lock.json:1885: "dependencies": {
+package-lock.json:1913: "dependencies": {
+package-lock.json:1916: "optionalDependencies": {
+package-lock.json:1936: "dependencies": {
+package-lock.json:1957: "dependencies": {
+package-lock.json:1976: "dependencies": {
+package-lock.json:1991: "dependencies": {
+package-lock.json:1994: "optionalDependencies": {
+package-lock.json:2004: "dependencies": {
+package-lock.json:2032: "dependencies": {
+package-lock.json:2054: "dependencies": {
+package-lock.json:2071: "dependencies": {
+package-lock.json:2074: "optionalDependencies": {
+package-lock.json:2096: "dependencies": {
+package-lock.json:2107: "dependencies": {
+package-lock.json:2117: "dependencies": {
+package-lock.json:2576: "dependencies": {
+package-lock.json:2585: "peerDependencies": {
+package-lock.json:2619: "dependencies": {
+package-lock.json:2635: "dependencies": {
+package-lock.json:2649: "dependencies": {
+package-lock.json:2687: "dependencies": {
+package-lock.json:2704: "peerDependencies": {
+package-lock.json:2707: "peerDependenciesMeta": {
+package-lock.json:2718: "dependencies": {
+package-lock.json:2727: "dependencies": {
+package-lock.json:2737: "dependencies": {
+package-lock.json:2740: "peerDependencies": {
+package-lock.json:2757: "dependencies": {
+
+============================================================
+5. TOP-LEVEL ARCHITECTURE
+============================================================
+[DIR ] .github
+[DIR ] acp_adapter
+[DIR ] agent
+[DIR ] apps
+[DIR ] assets
+[DIR ] contributors
+[DIR ] cron
+[DIR ] datagen-config-examples
+[DIR ] docker
+[DIR ] docs
+[DIR ] evals
+[DIR ] gateway
+[DIR ] hermes_cli
+[DIR ] locales
+[DIR ] mcp-research-data
+[DIR ] native
+[DIR ] nix
+[DIR ] optional-mcps
+[DIR ] optional-skills
+[DIR ] plugins
+[DIR ] providers
+[DIR ] scripts
+[DIR ] skills
+[DIR ] tests
+[DIR ] tests-js
+[DIR ] tools
+[DIR ] tui_gateway
+[DIR ] ui-tui
+[DIR ] web
+[DIR ] website
+[FILE] .coderabbit.yaml
+[FILE] .dockerignore
+[FILE] .env.example
+[FILE] .envrc
+[FILE] .gitattributes
+[FILE] .gitignore
+[FILE] .hadolint.yaml
+[FILE] .mailmap
+[FILE] .npmrc
+[FILE] .nvmrc
+[FILE] .prettierignore
+[FILE] .prettierrc
+[FILE] .python-version
+[FILE] AGENTS.md
+[FILE] batch_runner.py
+[FILE] cli-config.yaml.example
+[FILE] cli.py
+[FILE] constraints-termux.txt
+[FILE] CONTRIBUTING.es.md
+[FILE] CONTRIBUTING.md
+[FILE] docker-compose.windows.yml
+[FILE] docker-compose.yml
+[FILE] Dockerfile
+[FILE] eslint.config.shared.mjs
+[FILE] flake.lock
+[FILE] flake.nix
+[FILE] hermes
+[FILE] hermes_bootstrap.py
+[FILE] hermes_constants.py
+[FILE] hermes_logging.py
+[FILE] hermes_state_common.py
+[FILE] hermes_state_portability.py
+[FILE] hermes_state_schema.py
+[FILE] hermes_state_search.py
+[FILE] hermes_state.py
+[FILE] hermes_time.py
+[FILE] LICENSE
+[FILE] mcp_serve.py
+[FILE] mini_swe_runner.py
+[FILE] model_tools.py
+[FILE] package-lock.json
+[FILE] package.json
+[FILE] pyproject.toml
+[FILE] README.es.md
+[FILE] README.md
+[FILE] README.ur-pk.md
+[FILE] README.zh-CN.md
+[FILE] registration_lifecycle.py
+[FILE] run_agent.py
+[FILE] SECURITY.es.md
+[FILE] SECURITY.md
+[FILE] setup-hermes.sh
+[FILE] setup.py
+[FILE] toolset_distributions.py
+[FILE] toolsets.py
+[FILE] trajectory_compressor.py
+[FILE] utils.py
+[FILE] uv.lock
+
+============================================================
+6. DIRECTORY STATISTICS
+============================================================
+tests                                   3499 files
+apps                                    2260 files
+contributors                             850 files
+website                                  792 files
+optional-skills                          565 files
+skills                                   485 files
+ui-tui                                   474 files
+plugins                                  349 files
+hermes_cli                               299 files
+agent                                    205 files
+web                                      184 files
+tools                                    162 files
+gateway                                   99 files
+scripts                                   82 files
+optional-mcps                             65 files
+[ROOT FILES]                              58 files
+.github                                   42 files
+evals                                     38 files
+tui_gateway                               30 files
+docs                                      20 files
+nix                                       18 files
+docker                                    18 files
+locales                                   17 files
+cron                                      14 files
+tests-js                                  12 files
+acp_adapter                               11 files
+native                                     5 files
+mcp-research-data                          5 files
+datagen-config-examples                    4 files
+providers                                  3 files
+assets                                     1 files
+
+============================================================
+7. FILE EXTENSION STATISTICS
+============================================================
+.py                      4747 files
+.ts                      1940 files
+.md                      1562 files
+.tsx                      794 files
+.com                      658 files
+.yaml                     196 files
+.json                     105 files
+.mjs                      100 files
+.png                       53 files
+.local                     43 files
+.yml                       41 files
+.sh                        38 files
+[no extension]             33 files
+.nix                       18 files
+.js                        15 files
+.css                       15 files
+.sty                       13 files
+.woff2                     13 files
+.tex                       11 files
+.cn                        11 files
+.net                       11 files
+.ps1                       11 files
+.html                      11 files
+.ai                        10 files
+.rs                        10 files
+.gitignore                  9 files
+.txt                        9 files
+.me                         8 files
+.dev                        8 files
+.org                        6 files
+
+============================================================
+8. ENTRY POINT EVIDENCE
+============================================================
+cli.py:21241: def main(
+cli.py:21878: if __name__ == "__main__":
+hermes_cli/cli_commands_mixin.py:613: parser = argparse.ArgumentParser(prog="/journey", add_help=False)
+hermes_cli/clipboard.py:261: _POWERSHELL_HAS_IMAGE_SCRIPTS = (
+hermes_cli/clipboard.py:267: _POWERSHELL_EXTRACT_IMAGE_SCRIPTS = (
+hermes_cli/main.py:9229: ``__main__.__file__``, the module spec origin) cover the rest — the
+hermes_cli/main.py:9230: runpy/zipapp launch puts ``<shim>\\__main__.py`` there, which a plain
+hermes_cli/main.py:9247: if path.name.lower() == "__main__.py":
+hermes_cli/main.py:9252: main_mod = sys.modules.get("__main__")
+hermes_cli/main.py:9437: scripts = venv_bin_dir(venv_dir, windows=_is_windows())
+hermes_cli/main.py:9452: # The gateway shim is not a [project.scripts] entry point, but older
+hermes_cli/main.py:10138: _verify_console_scripts_installed(install_cmd_prefix, env=env)
+hermes_cli/main.py:10176: _verify_console_scripts_installed(install_cmd_prefix, env=env)
+hermes_cli/main.py:10180: """Return ``[project.scripts]`` entry-point names from pyproject.toml."""
+hermes_cli/main.py:10193: scripts = data.get("project", {}).get("scripts", {}) or {}
+hermes_cli/main.py:10200: def _verify_console_scripts_installed(
+hermes_cli/main.py:13104: def main():
+hermes_cli/main.py:14785: if __name__ == "__main__":
+hermes_cli/onepassword_secrets_cli.py:47: def register_cli(parent_parser: argparse.ArgumentParser) -> None:
+hermes_cli/proxy_cli.py:36: def register_cli(parent_parser: argparse.ArgumentParser) -> None:
+hermes_cli/secrets_cli.py:76: def register_cli(parent_parser: argparse.ArgumentParser) -> None:
+optional-skills/blockchain/evm/scripts/evm_client.py:1379: def build_parser() -> argparse.ArgumentParser:
+optional-skills/blockchain/evm/scripts/evm_client.py:1382: parser = argparse.ArgumentParser(
+optional-skills/blockchain/evm/scripts/evm_client.py:1483: def main() -> None:
+optional-skills/blockchain/evm/scripts/evm_client.py:1507: if __name__ == "__main__":
+optional-skills/blockchain/hyperliquid/scripts/hyperliquid_client.py:1532: def _add_json_flag(parser: argparse.ArgumentParser) -> None:
+optional-skills/blockchain/hyperliquid/scripts/hyperliquid_client.py:1536: def build_parser() -> argparse.ArgumentParser:
+optional-skills/blockchain/hyperliquid/scripts/hyperliquid_client.py:1537: parser = argparse.ArgumentParser(description="Hyperliquid CLI Tool for Hermes Agent")
+optional-skills/blockchain/hyperliquid/scripts/hyperliquid_client.py:1647: def main(argv: Optional[List[str]] = None) -> int:
+optional-skills/blockchain/hyperliquid/scripts/hyperliquid_client.py:1659: if __name__ == "__main__":
+optional-skills/blockchain/solana/scripts/solana_client.py:643: def main():
+optional-skills/blockchain/solana/scripts/solana_client.py:644: parser = argparse.ArgumentParser(
+optional-skills/blockchain/solana/scripts/solana_client.py:697: if __name__ == "__main__":
+optional-skills/finance/stocks/scripts/stocks_client.py:673: def build_parser() -> argparse.ArgumentParser:
+optional-skills/finance/stocks/scripts/stocks_client.py:674: parser = argparse.ArgumentParser(
+optional-skills/finance/stocks/scripts/stocks_client.py:728: def main() -> None:
+optional-skills/finance/stocks/scripts/stocks_client.py:754: if __name__ == "__main__":
+optional-skills/research/domain-intel/scripts/domain_intel.py:365: def main():
+optional-skills/research/domain-intel/scripts/domain_intel.py:396: if __name__ == "__main__":
+optional-skills/web-development/har-derived-api-client/scripts/har_to_client.py:57: def main() -> int:
+optional-skills/web-development/har-derived-api-client/scripts/har_to_client.py:58: ap = argparse.ArgumentParser()
+optional-skills/web-development/har-derived-api-client/scripts/har_to_client.py:146: if __name__ == "__main__":
+plugins/google_meet/cli.py:34: def register_cli(subparser: argparse.ArgumentParser) -> None:
+plugins/google_meet/cli.py:472: if __name__ == "__main__":  # pragma: no cover
+plugins/google_meet/cli.py:473: parser = argparse.ArgumentParser(prog="hermes meet")
+plugins/google_meet/node/cli.py:21: def register_cli(subparser: argparse.ArgumentParser) -> None:
+plugins/platforms/photon/cli.py:66: def register_cli(parser: argparse.ArgumentParser) -> None:
+plugins/teams_pipeline/cli.py:31: def register_cli(subparser: argparse.ArgumentParser) -> None:
+pyproject.toml:387: [project.scripts]
+skills/productivity/google-workspace/scripts/setup.py:485: def main():
+skills/productivity/google-workspace/scripts/setup.py:486: parser = argparse.ArgumentParser(description="Google Workspace OAuth setup for Hermes")
+skills/productivity/google-workspace/scripts/setup.py:513: if __name__ == "__main__":
+skills/productivity/maps/scripts/maps_client.py:1087: parser = argparse.ArgumentParser(
+skills/productivity/maps/scripts/maps_client.py:1274: def main():
+skills/productivity/maps/scripts/maps_client.py:1296: if __name__ == "__main__":
+tests/agent/test_copilot_acp_client.py:164: if __name__ == "__main__":
+tests/cli/test_cli_interrupt_subagent.py:170: if __name__ == "__main__":
+tests/cli/test_cli_steer_busy_path.py:143: if __name__ == "__main__":  # pragma: no cover
+tests/hermes_cli/test_kanban_cli.py:77: parser = argparse.ArgumentParser(prog="hermes", add_help=False)
+tests/hermes_cli/test_projects_cli.py:15: parser = argparse.ArgumentParser()
+tests/hermes_cli/test_slack_cli.py:17: parser = argparse.ArgumentParser()
+
+============================================================
+9. PYTHON ENVIRONMENT
+============================================================
+Python version:
+Python 3.11.9
+
+Python executable:
+C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\python.exe
+
+Python prefixes:
+prefix=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311
+base_prefix=C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311
+venv=False
+
+pip:
+pip 26.2.1 from C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip (python 3.11)
+
+VIRTUAL_ENV:
+(متغیر VIRTUAL_ENV تنظیم نشده است)
+
+Python command:
+
+CommandType : Application
+Name        : python.exe
+Source      : C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\python.exe
+Path        : C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\python.exe
+Version     : 3.11.9150.1013
+
+
+
+pip command:
+
+CommandType : Application
+Name        : pip.exe
+Source      : C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\Scripts\pip.exe
+Path        : C:\Users\emdadadmin\AppData\Local\Programs\Python\Python311\Scripts\pip.exe
+Version     : 0.0.0.0
+
+
+
+Installed Hermes metadata:
+No matching Hermes Python distribution was found in this interpreter.
+
+============================================================
+10. HERMES COMMAND RESOLUTION
+============================================================
+Get-Command:
+
+CommandType : Application
+Name        : hermes.exe
+Source      : C:\Users\emdadadmin\AppData\Local\hermes\bin\hermes.exe
+Path        : C:\Users\emdadadmin\AppData\Local\hermes\bin\hermes.exe
+Definition  : C:\Users\emdadadmin\AppData\Local\hermes\bin\hermes.exe
+
+
+
+where.exe:
+D:\Projects\hermes-agent-fa\hermes
+C:\Users\emdadadmin\AppData\Local\hermes\bin\hermes.exe
+
+Version:
+Hermes Agent v0.20.6 (2026.8.27) · upstream 5241df3d
+Install directory: C:\Users\emdadadmin\AppData\Local\hermes\hermes-agent
+Install method: git
+Python: 3.11.9
+OpenAI SDK: 2.24.0
+Update available: 20 commits behind — run 'hermes update'
+
+Conclusion:
+فرمان hermes موجود در PATH مستقیماً از پوشه سورس جدید اجرا نمی‌شود؛ سورس Clone‌شده و CLI فعلی در حال حاضر جدا هستند.
+
+============================================================
+11. EXTERNAL TOOLS
+============================================================
+Git: git version 2.55.0.windows.3
+Node.js: v22.23.1
+npm: 11.16.0
+uv: uv 0.12.7 (61291a8ca 2026-08-27 x86_64-pc-windows-msvc)
+Docker: Docker version 29.5.2, build 79eb04c
+
+============================================================
+12. ENVIRONMENT VARIABLES - VALUES HIDDEN
+============================================================
+VIRTUAL_ENV = NOT SET
+PYTHONPATH = SET (value hidden)
+OPENAI_API_KEY = NOT SET
+OPENAI_BASE_URL = NOT SET
+GITHUB_TOKEN = NOT SET
+NOUS_API_KEY = NOT SET
+HERMES_HOME = SET (value hidden)
+
+============================================================
+13. READ-ONLY VALIDATION
+============================================================
+ممیزی هیچ تغییر Track‌شده یا ثبت‌نشده‌ای خارج از پوشه گزارش‌ها ایجاد نکرد.
+
+Tracked files counted: 10666
