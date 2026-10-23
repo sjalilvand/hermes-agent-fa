@@ -3,10 +3,12 @@
 # ماه‌افزار هوشمند رسا (Rasa) — راه‌اندازی سریع روی مدل GLM (Z.AI)
 #
 # استفاده:
-#   bash scripts/rasa_glm_setup.sh
+#   bash scripts/rasa_glm_setup.sh                # کلید را می‌پرسد
+#   bash scripts/rasa_glm_setup.sh کلید-شما       # کلید به‌صورت آرگومان
+#   GLM_API_KEY=کلید-شما bash scripts/rasa_glm_setup.sh
 #
 # این اسکریپت:
-#   1) کلید GLM_API_KEY را می‌پرسد (یا از متغیر محیطی می‌خواند)
+#   1) کلید GLM_API_KEY را از آرگومان یا متغیر محیطی می‌خواند (وگرنه می‌پرسد)
 #   2) آن را در ~/.hermes/.env ذخیره می‌کند
 #   3) ~/.hermes/config.yaml را روی ارائه‌دهنده zai + مدل GLM تنظیم می‌کند
 #   4) زبان رابط را فارسی می‌کند
@@ -20,7 +22,9 @@ CFG_FILE="$HERMES_HOME/config.yaml"
 echo "🌙 ماه‌افزار هوشمند رسا — راه‌اندازی مدل GLM (Z.AI)"
 echo "─────────────────────────────────────────────────"
 
-if [[ -z "${GLM_API_KEY:-}" ]]; then
+if [[ $# -ge 1 && -n "$1" ]]; then
+  GLM_API_KEY="$1"
+elif [[ -z "${GLM_API_KEY:-}" ]]; then
   read -r -p "کلید API خود را از z.ai وارد کنید: " GLM_API_KEY
 fi
 if [[ -z "$GLM_API_KEY" ]]; then
@@ -43,7 +47,7 @@ fi
 # 2) اگر ترجیح می‌دهید ویزارد رسمی اجرا شود
 if command -v hermes >/dev/null 2>&1; then
   hermes config set model.provider zai 2>/dev/null || true
-  hermes config set model.default "${RASA_GLM_MODEL:-glm-5.2}" 2>/dev/null || true
+  hermes config set model.default "${RASA_GLM_MODEL:-glm-5.3}" 2>/dev/null || true
   hermes config set display.language fa 2>/dev/null || true
   echo "✓ پیکربندی با hermes config اعمال شد."
 else
@@ -60,7 +64,7 @@ text = cfg.read_text(encoding="utf-8") if cfg.exists() else ""
 block = f"""# rasa-glm-managed
 model:
   provider: "zai"
-  default: "{__import__('os').environ.get('RASA_GLM_MODEL', 'glm-5.2')}"
+  default: "{__import__('os').environ.get('RASA_GLM_MODEL', 'glm-5.3')}"
   streaming: true
 
 agent:

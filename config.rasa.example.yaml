@@ -2,14 +2,17 @@
 # ماه‌افزار هوشمند رسا (Rasa) — پیکربندی نمونه برای مدل GLM (Z.AI)
 #
 # استفاده:
-#   1) کلید API خود را از https://z.ai بگیرید.
-#   2) کلید را در ~/.hermes/.env بگذارید:
+#   1) راهنمای گام‌به‌گام دریافت کلید:  api-key-guide.html (در ریشهٔ پروژه)
+#   2) کلید API خود را از https://z.ai/model-api بگیرید.
+#   3) کلید را در ~/.hermes/.env بگذارید:
 #        echo 'GLM_API_KEY=کلید-شما' >> ~/.hermes/.env
-#   3) این فایل را به ~/.hermes/config.yaml کپی کنید:
+#   4) این فایل را به ~/.hermes/config.yaml کپی کنید:
 #        mkdir -p ~/.hermes && cp config.rasa.example.yaml ~/.hermes/config.yaml
-#   4) اجرا:  rasa   (یا: hermes)
+#   5) اجرا:  rasa   (یا: hermes)
 #
-# راه سریع‌تر:  bash scripts/rasa_glm_setup.sh
+# راه سریع‌تر:
+#   ویندوز (PowerShell):  .\scripts\rasa_glm_setup.ps1 -ApiKey "کلید-شما"
+#   لینوکس/مک/Git Bash:   bash scripts/rasa_glm_setup.sh "کلید-شما"
 # ویزارد تعاملی رسمی:  hermes model   →  گزینه «Z.AI / GLM»
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -17,11 +20,11 @@ model:
   # ارائه‌دهنده Z.AI / GLM — به‌صورت توکار پشتیبانی می‌شود (plugins/model-providers/zai)
   provider: "zai"
   # مدل پیش‌فرض. گزینه‌های پرکاربرد:
-  #   glm-5.3        ← قوی‌ترین (استدلال بالا)
-  #   glm-5.2        ← متعادل (پیشنهادی)
+  #   glm-5.3        ← قوی‌ترین (پیش‌فرض رسا)
+  #   glm-5.2        ← متعادل و ارزان‌تر
   #   glm-5.1 / glm-5 / glm-4.7  ← سریع‌تر و ارزان‌تر
   #   glm-4.5-flash  ← کم‌هزینه‌ترین (برای مدل کمکی)
-  default: "glm-5.2"
+  default: "glm-5.3"
   # آدرس پایه API — به‌صورت خودکار تشخیص داده می‌شود؛ برای صراحت می‌توانید نگه دارید:
   # base_url: "https://api.z.ai/api/paas/v4"
   streaming: true

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>راهنمای دریافت کلید API — ماه‌افزار هوشمند رسا 🌙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1020; --panel:#141b31; --panel2:#18213c; --line:#26314f;
+    --text:#e8ecf8; --muted:#9aa5c3; --gold:#f2c14e; --blue:#6ea8ff;
+    --green:#34d399; --red:#f87171; --amber:#fbbf24;
+    --mono:'JetBrains Mono',Consolas,'Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.9; font-size:16px;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:24px 20px 80px}
+
+  /* ── هدر ─────────────────────────────── */
+  header{
+    background:linear-gradient(135deg,#101736 0%,#1a1440 55%,#0d1a33 100%);
+    border:1px solid var(--line); border-radius:20px; padding:36px 28px; text-align:center;
+    position:relative; overflow:hidden; margin-bottom:34px;
+  }
+  header::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(600px 200px at 80% -20%, rgba(242,193,78,.14), transparent 60%),
+               radial-gradient(500px 220px at 10% 120%, rgba(110,168,255,.12), transparent 60%);
+    pointer-events:none;
+  }
+  .moon{width:64px;height:64px;margin:0 auto 14px;color:var(--gold);
+    filter:drop-shadow(0 0 18px rgba(242,193,78,.45))}
+  h1{font-size:1.75rem;font-weight:800;letter-spacing:-.5px}
+  h1 small{display:block;font-size:.95rem;font-weight:400;color:var(--muted);margin-top:8px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    background:rgba(242,193,78,.1);border:1px solid rgba(242,193,78,.35);
+    color:var(--gold);border-radius:999px;padding:6px 16px;font-size:.85rem
+  }
+
+  /* ── بخش‌ها ───────────────────────────── */
+  section{margin-bottom:38px}
+  h2{
+    display:flex;align-items:center;gap:12px;
+    font-size:1.25rem;font-weight:800;margin-bottom:6px
+  }
+  h2 .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),#d99b26);color:#1a1440;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:1rem;box-shadow:0 0 14px rgba(242,193,78,.35)
+  }
+  .lead{color:var(--muted);font-size:.95rem;margin:4px 4px 18px}
+
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;margin-bottom:14px;transition:border-color .2s
+  }
+  .card:hover{border-color:#3b4a75}
+  .card h3{font-size:1.02rem;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .step-n{
+    flex:none;width:28px;height:28px;border-radius:50%;font-size:.85rem;font-weight:800;
+    background:var(--panel2);border:1px solid var(--line);
+    display:inline-flex;align-items:center;justify-content:center;color:var(--gold)
+  }
+  .card p{color:var(--muted);font-size:.93rem}
+  .card p b, .card li b{color:var(--text)}
+
+  a{color:var(--blue);text-decoration:none;border-bottom:1px dotted rgba(110,168,255,.4)}
+  a:hover{color:#9cc2ff}
+
+  /* ── کد ───────────────────────────────── */
+  .code{
+    position:relative;direction:ltr;text-align:left;
+    background:#0a0f1e;border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin:12px 0 4px;overflow-x:auto
+  }
+  .code pre{font-family:var(--mono);font-size:.85rem;line-height:1.7;color:#c9d6f2;white-space:pre}
+  .code .cmt{color:#5d6b8f}
+  .code .str{color:#8fd6a4}
+  .code .key{color:var(--gold)}
+  .copy{
+    position:absolute;top:8px;right:8px;cursor:pointer;
+    background:var(--panel2);border:1px solid var(--line);color:var(--muted);
+    border-radius:8px;padding:4px 12px;font-family:inherit;font-size:.75rem;
+    transition:all .15s
+  }
+  .copy:hover{color:var(--text);border-color:#3b4a75}
+  .copy.ok{color:var(--green);border-color:rgba(52,211,153,.5)}
+
+  /* ── تب‌ها ────────────────────────────── */
+  .tabs{display:flex;gap:8px;margin:18px 0 0;flex-wrap:wrap}
+  .tab{
+    cursor:pointer;background:var(--panel);border:1px solid var(--line);color:var(--muted);
+    border-radius:12px;padding:9px 18px;font-family:inherit;font-size:.88rem;font-weight:600;
+    transition:all .15s
+  }
+  .tab:hover{color:var(--text)}
+  .tab.active{background:linear-gradient(135deg,rgba(242,193,78,.16),rgba(242,193,78,.06));
+    border-color:rgba(242,193,78,.45);color:var(--gold)}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .os{font-size:.75rem;color:var(--muted);background:var(--panel2);border:1px solid var(--line);
+    border-radius:6px;padding:2px 8px;margin-right:6px}
+
+  /* ── جدول ─────────────────────────────── */
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:right;vertical-align:top}
+  th{background:var(--panel2);font-weight:700;color:var(--gold);white-space:nowrap}
+  td{color:var(--muted)}
+  td b{color:var(--text)}
+  tr:hover td{background:rgba(24,33,60,.5)}
+
+  /* ── هشدارها ──────────────────────────── */
+  .note{
+    border-radius:12px;padding:14px 18px;font-size:.9rem;margin:14px 0;
+    display:flex;gap:12px;align-items:flex-start
+  }
+  .note .ic{flex:none;font-size:1.1rem;line-height:1.9}
+  .note.warn{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.3)}
+  .note.warn b{color:var(--amber)}
+  .note.danger{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.35)}
+  .note.danger b{color:var(--red)}
+  .note.good{background:rgba(52,211,153,.07);border:1px solid rgba(52,211,153,.3)}
+  .note.good b{color:var(--green)}
+  .note p{color:var(--muted)}
+  .note b{color:var(--text)}
+
+  footer{
+    margin-top:50px;padding-top:22px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.85rem;text-align:center
+  }
+  footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  @media(max-width:640px){h1{font-size:1.35rem}.wrap{padding:14px 12px 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+  <h1>راهنمای دریافت کلید API از Z.AI
+    <small>ماه‌افزار هوشمند رسا — اتصال عامل شما به مدل GLM</small>
+  </h1>
+  <div class="badge">🌙 زمان لازم: حدود ۵ دقیقه &nbsp;•&nbsp; سطح: مقدماتی</div>
+</header>
+
+<!-- ══════════ بخش ۱: دریافت کلید ══════════ -->
+<section>
+  <h2><span class="num">۱</span>دریافت کلید از پلتفرم Z.AI</h2>
+  <p class="lead">رسا برای فکرکردن و پاسخ‌دادن به یک مدل زبانی نیاز دارد. این پروژه به‌صورت پیش‌فرض روی مدل <b>GLM</b> شرکت Z.AI تنظیم شده و ارائه‌دهندهٔ <code>zai</code> به‌صورت توکار پشتیبانی می‌شود؛ فقط کافی است یک کلید API بگیرید.</p>
+
+  <div class="card">
+    <h3><span class="step-n">۱</span>ثبت‌نام یا ورود به پلتفرم</h3>
+    <p>به <a href="https://z.ai/model-api" target="_blank" rel="noopener">پلتفرم متن‌باز Z.AI (Open Platform)</a> بروید و با ایمیل خود حساب بسازید یا وارد شوید. ثبت‌نام با گوگل هم امکان‌پذیر است. اگر قبلاً در Z.AI یا Zhipu حساب دارید، با همان حساب وارد شوید.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="step-n">۲</span>شارژ حساب (در صورت نیاز)</h3>
+    <p>به صفحهٔ <a href="https://z.ai/manage-apikey/billing" target="_blank" rel="noopener">صورت‌حساب و پرداخت (Billing)</a> بروید. برخی حساب‌های جدید اعتبار آزمایشی رایگان دریافت می‌کنند؛ اگر ندارید، مبلغ کمی (مثلاً ۵ دلار) شارژ کنید. برای کار روزانه، کارت بانکی بین‌المللی لازم است.</p>
+    <div class="note good"><span class="ic">💡</span><p><b>کدنویس حرفه‌ای هستید؟</b> طرح <a href="https://z.ai/subscribe" target="_blank" rel="noopener">GLM Coding Plan</a> از حدود ۱۸ دلار در ماه، دسترسی ماهانه به مدل‌های قدرتمند را ارزان‌تر از پرداختِ به‌ازای هر توکن می‌کند.</p></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="step-n">۳</span>ساخت کلید API</h3>
+    <p>به صفحهٔ <a href="https://z.ai/manage-apikey/apikey-list" target="_blank" rel="noopener">مدیریت کلیدها (API Keys)</a> بروید و دکمهٔ ساخت کلید جدید را بزنید. نوع <b>Standard API Key</b> را انتخاب کنید — همین نوع برای رسا مناسب است. یک نام دلخواه (مثلاً <code>rasa</code>) بگذارید و تأیید کنید.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="step-n">۴</span>کپی و نگهداری امن کلید</h3>
+    <p>کلید ساخته‌شده را بلافاصله کپی کنید — برخی پلتفرم‌ها بعد از بستن پنجره دیگر کل کلید را نشان نمی‌دهند. کلید چیزی شبیه <code>xz_••••••••••••••••••••</code> است. آن را فقط در فایل <code>.env</code> محلی نگه دارید؛ <b>هرگز در گروه، اسکرین‌شات یا گیت کامیت نکنید.</b></p>
+  </div>
+</section>
+
+<!-- ══════════ بخش ۲: جای‌گذاری کلید ══════════ -->
+<section>
+  <h2><span class="num">۲</span>جای‌گذاری کلید در رسا</h2>
+  <p class="lead">بعد از اینکه کلید را گرفتید، طبق سیستم‌عامل خود یکی از سه روش زیر را انتخاب کنید. هر سه روش کارِ یکسانی می‌کنند: کلید را در <code>~/.hermes/.env</code> می‌گذارند و پیکربندی مدل را روی <code>zai</code> تنظیم می‌کنند.</p>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="ps">PowerShell <span class="os">ویندوز</span></button>
+    <button class="tab" data-tab="bash">Git Bash <span class="os">ویندوز/لینوکس/مک</span></button>
+    <button class="tab" data-tab="manual">روش دستی <span class="os">بدون اسکریپت</span></button>
+  </div>
+
+  <!-- تب PowerShell -->
+  <div class="panel active" id="panel-ps">
+    <div class="card">
+      <h3>🌙 پیشنهادی برای ویندوز — اسکریپت PowerShell</h3>
+      <p>در پوشهٔ پروژه (<code>D:\Projects\hermes-agent-fa</code>)، کلید را مستقیم به اسکریپت بدهید تا دیگر سوالی پرسیده نشود:</p>
+      <div class="code"><button class="copy">کپی</button><pre><span class="cmt"># در PowerShell، از ریشهٔ پروژه:</span>
+<span class="key">.\scripts\rasa_glm_setup.ps1</span> <span class="str">-ApiKey "کلید-شما"</span></pre></div>
+      <p>یا حالت تعاملی (کلید را می‌پرسد):</p>
+      <div class="code"><button class="copy">کپی</button><pre>.\scripts\rasa_glm_setup.ps1</pre></div>
+      <p>اگر پیام خطای سیاست اجرا (Execution Policy) دیدید:</p>
+      <div class="code"><button class="copy">کپی</button><pre>powershell <span class="str">-ExecutionPolicy Bypass</span> <span class="str">-File</span> .\scripts\rasa_glm_setup.ps1</pre></div>
+    </div>
+  </div>
+
+  <!-- تب Bash -->
+  <div class="panel" id="panel-bash">
+    <div class="card">
+      <h3>اسکریپت Bash (Git Bash / لینوکس / مک)</h3>
+      <p>کلید را به‌صورت آرگومان بدهید — این همان روشی است که مشکل «✗ کلید خالی است» را کاملاً حل می‌کند:</p>
+      <div class="code"><button class="copy">کپی</button><pre><span class="cmt"># ویندوز (Git Bash) — پوشهٔ پروژه:</span>
+<span class="key">cd</span> /d/Projects/hermes-agent-fa
+<span class="key">bash</span> scripts/rasa_glm_setup.sh <span class="str">"کلید-شما"</span>
+
+<span class="cmt"># لینوکس / مک:</span>
+<span class="key">bash</span> scripts/rasa_glm_setup.sh <span class="str">"کلید-شما"</span></pre></div>
+      <p>یا با متغیر محیطی:</p>
+      <div class="code"><button class="copy">کپی</button><pre><span class="key">GLM_API_KEY</span>=<span class="str">"کلید-شما"</span> bash scripts/rasa_glm_setup.sh</pre></div>
+    </div>
+  </div>
+
+  <!-- تب دستی -->
+  <div class="panel" id="panel-manual">
+    <div class="card">
+      <h3>روش دستی — بدون هیچ اسکریپتی</h3>
+      <p><b>در PowerShell (ویندوز):</b></p>
+      <div class="code"><button class="copy">کپی</button><pre><span class="key">New-Item</span> -ItemType Directory -Force -Path <span class="str">"$env:USERPROFILE\.hermes"</span> | Out-Null
+<span class="key">Add-Content</span> -Path <span class="str">"$env:USERPROFILE\.hermes\.env"</span> -Value <span class="str">'GLM_API_KEY=کلید-شما'</span>
+<span class="key">Copy-Item</span> config.rasa.example.yaml <span class="str">"$env:USERPROFILE\.hermes\config.yaml"</span></pre></div>
+      <p><b>در Bash (لینوکس / مک / Git Bash):</b></p>
+      <div class="code"><button class="copy">کپی</button><pre><span class="key">mkdir</span> -p ~/.hermes
+<span class="key">echo</span> <span class="str">'GLM_API_KEY=کلید-شما'</span> &gt;&gt; ~/.hermes/.env
+<span class="key">cp</span> config.rasa.example.yaml ~/.hermes/config.yaml</pre></div>
+      <p>اگر فایل <code>config.yaml</code> از قبل تنظیمات دیگری دارد، فقط بخش <code>model:</code> را مطابق <code>config.rasa.example.yaml</code> ویرایش کنید تا بقیهٔ تنظیمات حفظ شود.</p>
+    </div>
+  </div>
+
+  <div class="note warn"><span class="ic">⚠️</span><p><b>جای «کلید-شما»</b> کلید واقعی خودتان را بگذارید (همراه با گیومه). مثال: <code>-ApiKey "xz_1234abcd…"</code></p></div>
+</section>
+
+<!-- ══════════ بخش ۳: اجرای رسا ══════════ -->
+<section>
+  <h2><span class="num">۳</span>اجرای رسا و رفع خطای «rasa is not recognized»</h2>
+  <p class="lead">دستور <code>rasa</code> بعد از <b>نصب پکیج پایتون پروژه</b> در دسترس قرار می‌گیرد. اگر پیام «rasa is not recognized» گرفتید، یعنی هنوز نصب نشده — فقط یک‌بار این مراحل را انجام دهید:</p>
+
+  <div class="card">
+    <h3><span class="step-n">۱</span>راه رسمی پروژه (پیشنهادی)</h3>
+    <div class="code"><button class="copy">کپی</button><pre><span class="cmt"># در PowerShell، از ریشهٔ پروژه:</span>
+<span class="key">cd</span> D:\Projects\hermes-agent-fa
+<span class="key">.\activate.ps1</span>      <span class="cmt"># محیط را می‌سازد و فعال می‌کند (بار اول چند دقیقه طول می‌کشد)</span>
+<span class="key">rasa</span>                <span class="cmt"># 🌙 اجرای ماه‌افزار هوشمند رسا</span></pre></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="step-n">۲</span>راه جایگزین (نصب دستی)</h3>
+    <div class="code"><button class="copy">کپی</button><pre><span class="key">cd</span> D:\Projects\hermes-agent-fa
+<span class="key">pip install</span> <span class="str">-e .</span>    <span class="cmt"># نصب پروژه به‌صورت قابل‌ویرایش + ثبت دستور rasa</span>
+<span class="key">rasa</span></pre></div>
+    <p>اگر <code>pip</code> در دسترس نبود، از <code>python -m pip install -e .</code> استفاده کنید. بعد از نصب، اگر ترمینال را بستید و دوباره باز کردید لازم نیست دوباره نصب کنید — فقط <code>activate.ps1</code> یا محیط مجازی را فعال نگه دارید.</p>
+  </div>
+
+  <div class="note good"><span class="ic">✓</span><p><b>بعد از اجرا:</b> با دستور <code>/model</code> می‌توانید مدل را عوض کنید و با <code>hermes doctor</code> سلامت پیکربندی را ببینید. رابط کاربری به‌صورت خودکار فارسی است.</p></div>
+</section>
+
+<!-- ══════════ بخش ۴: تست کلید ══════════ -->
+<section>
+  <h2><span class="num">۴</span>تست صحت کلید (اختیاری)</h2>
+  <p class="lead">قبل از اجرای رسا می‌توانید با یک درخواست ساده مطمئن شوید کلید کار می‌کند:</p>
+
+  <div class="card">
+    <h3>با curl</h3>
+    <div class="code"><button class="copy">کپی</button><pre><span class="key">curl</span> -X POST <span class="str">"https://api.z.ai/api/paas/v4/chat/completions"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -H <span class="str">"Authorization: Bearer کلید-شما"</span> \
+  -d <span class="str">'{"model": "glm-5.3", "messages": [{"role": "user", "content": "سلام"}]}'</span></pre></div>
+  </div>
+
+  <div class="card">
+    <h3>با پایتون (SDK رسمی)</h3>
+    <div class="code"><button class="copy">کپی</button><pre><span class="cmt"># نصب:  pip install zai-sdk</span>
+<span class="key">from</span> zai <span class="key">import</span> ZaiClient
+
+client = ZaiClient(api_key=<span class="str">"کلید-شما"</span>)
+r = client.chat.completions.create(
+    model=<span class="str">"glm-5.3"</span>,
+    messages=[{<span class="str">"role"</span>: <span class="str">"user"</span>, <span class="str">"content"</span>: <span class="str">"سلام! خودت را معرفی کن"</span>}],
+)
+<span class="key">print</span>(r.choices[0].message.content)</pre></div>
+    <p>اگر پاسخ مدل را دیدید، همه‌چیز آماده است. فهرست کامل مدل‌ها در <a href="https://docs.z.ai/guides/overview/quick-start" target="_blank" rel="noopener">مستندات رسمی Z.AI</a> موجود است.</p>
+  </div>
+</section>
+
+<!-- ══════════ بخش ۵: عیب‌یابی ══════════ -->
+<section>
+  <h2><span class="num">۵</span>عیب‌یابی مشکلات رایج</h2>
+  <table>
+    <tr><th style="width:32%">مشکل</th><th>راه‌حل</th></tr>
+    <tr><td><b>✗ کلید خالی است</b><br>(موقع اجرای اسکریپت Bash)</td><td>کلید را به‌صورت آرگومان بدهید: <code>bash scripts/rasa_glm_setup.sh "کلید"</code> — یا در ویندوز از اسکریپت PowerShell با <code>-ApiKey</code> استفاده کنید.</td></tr>
+    <tr><td><b>خطای 401 / Invalid API key</b></td><td>کلید ناقص کپی شده یا اشتباه است. در صفحهٔ API Keys یک کلید جدید بسازید و دوباره تنظیم کنید. مطمئن شوید گیومه‌های ابتدا و انتها وارد فایل نشده‌اند.</td></tr>
+    <tr><td><b>Insufficient balance</b></td><td>اعتبار حساب تمام شده. از صفحهٔ Billing شارژ کنید؛ یا اگر با مدل‌های گران آزمایش می‌کنید، موقتاً از <code>glm-5.2</code> یا <code>glm-4.5-flash</code> استفاده کنید.</td></tr>
+    <tr><td><b>Model not found</b></td><td>نام مدل را بررسی کنید — پیش‌فرض رسا <code>glm-5.3</code> است. با دستور <code>hermes model</code> مدل را عوض کنید.</td></tr>
+    <tr><td><b>rasa شناخته نشد</b></td><td>پکیج نصب نیست → بخش ۳ همین راهنما: <code>.\activate.ps1</code> یا <code>pip install -e .</code></td></tr>
+    <tr><td><b>تایم‌اوت یا قطعی شبکه</b></td><td>اگر از پروکسی استفاده می‌کنید، در <code>~/.hermes/.env</code> مقدار <code>GATEWAY_PROXY_URL</code> را تنظیم کنید.</td></tr>
+    <tr><td><b>حروف فارسی به‌هم‌ریخته در ترمینال</b></td><td>از Windows Terminal استفاده کنید و یک‌بار <code>chcp 65001</code> را اجرا کنید تا کدپیج UTF-8 شود.</td></tr>
+  </table>
+</section>
+
+<!-- ══════════ بخش ۶: امنیت ══════════ -->
+<section>
+  <h2><span class="num">۶</span>نکات امنیتی مهم</h2>
+  <div class="note danger"><span class="ic">🔐</span><p><b>کلید API محرمانه است:</b> هر کسی که کلید را داشته باشد با حساب شما صحبت می‌کند و هزینه‌اش را شما می‌پردازید. کلید فقط در <code>~/.hermes/.env</code> بماند (این فایل به‌صورت پیش‌فرض خارج از گیت است).</p></div>
+  <div class="note danger"><span class="ic">🔐</span><p><b>توکن GitHub که در گفتگو فرستادید:</b> چون در متن چت به‌صورت خام آمده، بعد از پایان کار حتماً آن را باطل (Revoke) کنید: <b>GitHub → Settings → Developer settings → Personal access tokens → Delete</b>. کلید API را هم اگر جایی به اشتراک گذاشتید، از همان صفحهٔ API Keys با دکمهٔ Regenerate بازسازی کنید.</p></div>
+</section>
+
+<footer>
+  <p>🌙 ماه‌افزار هوشمند رسا — نسخهٔ بومی‌سازی‌شدهٔ فارسی از Hermes Agent</p>
+  <div class="links">
+    <a href="https://docs.z.ai/guides/overview/quick-start" target="_blank" rel="noopener">مستندات رسمی Z.AI</a>
+    <a href="https://z.ai/model-api" target="_blank" rel="noopener">پلتفرم Z.AI</a>
+    <a href="https://z.ai/manage-apikey/apikey-list" target="_blank" rel="noopener">مدیریت کلیدها</a>
+    <a href="README.fa-IR.md">راهنمای فارسی پروژه</a>
+    <a href="guide.html">راهنمای استفاده</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  // تب‌ها
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');
+      document.getElementById('panel-'+t.dataset.tab).classList.add('active');
+    });
+  });
+  // دکمه‌های کپی
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var pre = b.parentElement.querySelector('pre');
+      var txt = pre ? pre.innerText : '';
+      function done(){ b.textContent='✓ کپی شد'; b.classList.add('ok');
+        setTimeout(function(){ b.textContent='کپی'; b.classList.remove('ok'); },1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done).catch(function(){ fallback(txt); done(); });
+      } else { fallback(txt); done(); }
+      function fallback(s){
+        var ta=document.createElement('textarea'); ta.value=s; document.body.appendChild(ta);
+        ta.select(); try{document.execCommand('copy')}catch(e){} document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>
